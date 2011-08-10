@@ -3,44 +3,49 @@ package org.riedelcastro.cmonnoun
 import java.net.URL
 import io.Source
 import util.parsing.json.JSON
-import org.riedelcastro.nurupo.Util
 import collection.mutable.HashSet
 import java.io.{PrintStream, File, InputStream}
+import org.riedelcastro.nurupo.{HasLogger, Counting, Util}
 
 /**
  * @author sriedel
  */
-object CMonNoun {
+object CMonNoun extends HasLogger {
 
   def getTotalCount(json: List[Any]): Option[Double] = {
-    val searchResponse = json.find({
-      case ("SearchResponse", _) => true
-      case _ => false
-    }).map({
-      case (_, l: List[_]) => l
-    })
-    val web = searchResponse.get.find({
-      case ("Web", _) => true
-      case _ => false
-    }).map({
-      case (_, l: List[_]) => l
-    })
-    val total = web.get.find({
-      case ("Total", _) => true
-      case _ => false
-    }).map({
-      case (_, s: Double) => s
-    })
-    total
+    try {
+      val searchResponse = json.find({
+        case ("SearchResponse", _) => true
+        case _ => false
+      }).map({
+        case (_, l: List[_]) => l
+      })
+      val web = searchResponse.get.find({
+        case ("Web", _) => true
+        case _ => false
+      }).map({
+        case (_, l: List[_]) => l
+      })
+      val total = web.get.find({
+        case ("Total", _) => true
+        case _ => false
+      }).map({
+        case (_, s: Double) => s
+      })
+      total
+    }
+    catch {
+      case _ => None
+    }
   }
 
-  val vowels = Set('a','e','o','u','i')
+  val vowels = Set('a', 'e', 'o', 'u', 'i')
 
   case class Pattern(text: String) {
     def inject(value: String) = {
       val xReplaced = text.replaceAll("X", value)
       val indef = if (vowels(value.head)) "an" else "a"
-      val indefReplaced = xReplaced.replaceAll("INDEF",indef)
+      val indefReplaced = xReplaced.replaceAll("INDEF", indef)
       "\"" + indefReplaced + "\""
     }
   }
@@ -49,8 +54,7 @@ object CMonNoun {
   val playsAs = Pattern("plays as X for")
   val hiredAs = Pattern("hired as X for")
   val makeMoney = Pattern("money as an X for")
-  val heIsIn = Pattern("he is INDEF X for")
-
+  val heIs = Pattern("he is INDEF X for")
 
 
   def queryCount(queryRaw: String, appID: String): Option[Double] = {
@@ -65,13 +69,39 @@ object CMonNoun {
   }
 
   def main(args: Array[String]) {
+    println(args.mkString("\n"))
     val appID = args(0)
-    val nounFile = Source.fromInputStream(Util.getStreamFromClassPathOrFile("data/nounlist.txt")).getLines().take(200)
-    for (noun <- nounFile) {
-      val query = heIsIn.inject(noun)
+    val nouns = args(1)
+    val dest = args(2)
+    val pattern = Pattern(args(3))
+    writeoutPatternStats(nouns, pattern, new File(dest), appID)
+  }
+
+  def writeoutPatternStats(nouns: String, pattern: Pattern, dest: File, appID: String) {
+    val out = new PrintStream(dest)
+    out.println(pattern.text)
+    val nounFile = Source.fromInputStream(Util.getStreamFromClassPathOrFile(nouns)).getLines()
+    val counter = new Counting(20, count => logger.info("Processed %d nouns".format(count)))
+    for (noun <- counter(nounFile)) {
+      val query = heIs.inject(noun)
       for (total <- queryCount(noun, appID); count <- queryCount(query, appID))
-        println("%-15s %f %f %f".format(noun, count / total, count, total))
+        out.println("%-15s %f %f".format(noun, count, total))
     }
+    out.close()
+  }
+}
+
+object GetBingPriors extends HasLogger {
+  def main(args: Array[String]) {
+    val appID = args(0)
+    val out = new PrintStream("data/stats/bing_priors.txt")
+    val nounFile = Source.fromInputStream(Util.getStreamFromClassPathOrFile("data/combined.txt")).getLines()
+    val counter = new Counting(100, count => logger.info("Processed %d nouns".format(count)))
+    for (noun <- counter(nounFile)) {
+      val total = CMonNoun.queryCount(noun, appID).getOrElse(-1.0)
+      out.println("%s\t%f".format(noun, total))
+    }
+    out.close()
   }
 
 }
@@ -90,6 +120,22 @@ object Http {
       }
     }
 }
+
+object FilterByPrior {
+  def main(args: Array[String]) {
+    val lines = Source.fromFile(args(0)).getLines()
+    val out = new PrintStream(args(1))
+    val thresh = args(2).toDouble
+    for (line <- lines) {
+      val Array(noun, prior) = line.split("\t")
+      if (prior.toDouble >= thresh) {
+        out.println(line)
+      }
+    }
+    out.close()
+  }
+}
+
 
 object FilterWordNetEntity {
   def main(args: Array[String]) {
