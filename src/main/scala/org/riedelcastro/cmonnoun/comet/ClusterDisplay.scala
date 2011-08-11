@@ -3,17 +3,22 @@ package org.riedelcastro.cmonnoun.comet
 import net.liftweb.http.{SessionVar, CometActor}
 import akka.actor.{Actor, Actors}
 import org.riedelcastro.cmonnoun.{StopClustering, StartClustering, Result, ClusterEngine}
-import net.liftweb.common.{Full, Empty, Box}
+import net.liftweb.common.{Full, Box}
+import org.riedelcastro.cmonnoun.clusterhub.ProblemManager
 
 case class ClientState(words: Seq[String])
+
+trait WithBridge {
+  protected val bridge = Actors.actorOf(classOf[BridgeActor]).start()
+  bridge ! this
+
+}
 
 /**
  * @author sriedel
  */
-class ClusterDisplay extends CometActor {
+class ClusterDisplay extends CometActor with WithBridge {
 
-  private val bridge = Actors.actorOf(classOf[BridgeActor]).start()
-  bridge ! this
 
   object currentState extends SessionVar[Box[ClientState]](Full(ClientState(Seq.empty)))
 
@@ -50,6 +55,7 @@ class ClusterDisplay extends CometActor {
 
 object Controller {
   val engine = Actors.actorOf(classOf[ClusterEngine]).start()
+  val problemManager = Actors.actorOf(classOf[ProblemManager]).start()
 }
 
 class BridgeActor extends Actor {
