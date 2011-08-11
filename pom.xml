@@ -55,6 +55,11 @@
             <name>repo.novus snaps</name>
             <url>http://repo.novus.com/snapshots/</url>
         </repository>
+        <repository>
+            <id>akka</id>
+            <name>Akka Maven Repository</name>
+            <url>http://akka.io/repository</url>
+        </repository>
 
 
     </repositories>
@@ -113,6 +118,13 @@
             <artifactId>lift-mapper_${scala.version}</artifactId>
             <version>2.4-M3</version>
         </dependency>
+
+        <dependency>
+            <groupId>se.scalablesolutions.akka</groupId>
+            <artifactId>akka-actor</artifactId>
+            <version>1.0</version>
+        </dependency>
+
 
         <!--FROM LIFT -->
         <dependency>
