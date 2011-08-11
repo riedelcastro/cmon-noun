@@ -2,7 +2,6 @@ aa
 aalge
 aalii
 aardvark
-aardvark
 aardwolf
 ab
 aba
@@ -228,7 +227,6 @@ acaulis
 accelerando
 acceleration
 accelerator
-accelerator
 accelerometer
 accent
 accenting
@@ -269,16 +267,13 @@ accomplishment
 accord
 accordance
 accordion
-accordion
 accordionist
 accouchement
 accoucheur
 accoucheuse
 account
-account
 accountability
 accountancy
-accountant
 accountant
 accountantship
 accounting
@@ -377,7 +372,6 @@ ack-ack
 ackee
 acknowledgement
 acknowledgment
-acknowledgment
 acme
 acne
 acolyte
@@ -387,7 +381,6 @@ aconitifolius
 acorea
 acorn
 acousma
-acoustic
 acoustic
 acoustician
 acousticophobia
@@ -438,10 +431,8 @@ acrostichoides
 acrylamide
 acrylate
 acrylic
-acrylic
 acrylonitrile
 acrylonitrile-butadiene-styrene
-act
 act
 actin
 acting
@@ -467,22 +458,17 @@ actinopod
 actinotherapy
 actinozoan
 action
-action
 activating
 activation
 activator
-active
 active
 activeness
 activewear
 activism
 activist
 activity
-activity
 actomyosin
 actor
-actor
-actress
 actress
 acts
 actualisation
@@ -531,7 +517,6 @@ adansonii
 adaptability
 adaptation
 adapter
-adapter
 adaption
 adaptor
 add-in
@@ -543,11 +528,9 @@ adder
 addict
 addiction
 addition
-addition
 additive
 addle-head
 addlehead
-address
 address
 addressee
 adducer
@@ -606,7 +589,6 @@ adjunction
 adjuration
 adjuster
 adjustment
-adjustment
 adjustor
 adjutant
 adjuvant
@@ -662,7 +644,6 @@ adspersus
 adulation
 adulator
 adult
-adult
 adulterant
 adulteration
 adulterator
@@ -674,7 +655,6 @@ adumbration
 advance
 advancement
 advancer
-advantage
 advantage
 advantageousness
 advection
@@ -694,14 +674,12 @@ advert
 advertence
 advertency
 advertisement
-advertisement
 advertiser
 advertising
 advertizement
 advertizer
 advertizing
 advertorial
-advice
 advice
 advisability
 advisee
@@ -841,8 +819,6 @@ afterglow
 afterimage
 afterlife
 aftermath
-aftermath
-afternoon
 afternoon
 afterpains
 afterpiece
@@ -852,7 +828,6 @@ aftershaft
 aftershave
 aftershock
 aftertaste
-afterthought
 afterthought
 afterworld
 afzelii
@@ -874,14 +849,12 @@ agate
 agateware
 agave
 age
-age
 aged
 agedness
 ageing
 ageism
 agelessness
 agency
-agenda
 agenda
 agendum
 agenesia
@@ -942,7 +915,6 @@ agraphia
 agreeability
 agreeableness
 agreement
-agreement
 agrestis
 agribusiness
 agriculturalist
@@ -983,13 +955,11 @@ aim
 aimlessness
 aioli
 air
-air
 air-intake
 air-sleeve
 airbrake
 airbrush
 airburst
-airbus
 airbus
 aircraft
 aircraftman
@@ -1014,18 +984,14 @@ airline
 airliner
 airlock
 airmail
-airmail
 airmailer
 airman
 airmanship
 airplane
-airplane
-airport
 airport
 airpost
 airs
 airscrew
-airship
 airship
 airsickness
 airspace
@@ -1063,7 +1029,6 @@ alalia
 alalunga
 alanine
 alarm
-alarm
 alarmism
 alarmist
 alarum
@@ -1076,7 +1041,6 @@ alba
 albacares
 albacore
 albanum
-albatross
 albatross
 albedo
 albellus
@@ -1118,7 +1082,6 @@ alchata
 alchemist
 alchemy
 alcicorne
-alcohol
 alcohol
 alcoholic
 alcoholism
@@ -1164,7 +1127,6 @@ algarobilla
 algarroba
 algarrobilla
 algebra
-algebra
 algebraist
 algeria
 algida
@@ -1179,7 +1141,6 @@ algophobia
 algorism
 algorithm
 alias
-alibi
 alibi
 alidad
 alidade
@@ -1259,13 +1220,11 @@ alleviant
 alleviation
 alleviator
 alley
-alley
 alleyway
 allgood
 alliance
 allice
 allies
-alligator
 alligator
 alligatorfish
 alliodora
@@ -1296,7 +1255,6 @@ allotropism
 allotropy
 allowance
 alloy
-alloy
 allspice
 allure
 allurement
@@ -1307,7 +1265,6 @@ alluvion
 alluvium
 ally
 allyl
-almanac
 almanac
 almandine
 almandite
@@ -1338,7 +1295,6 @@ alpha-interferon
 alpha-lipoprotein
 alpha-naphthol
 alpha-tocopheral
-alphabet
 alphabet
 alphabetisation
 alphabetiser
@@ -1374,7 +1330,6 @@ altimeter
 altissima
 altitude
 alto
-alto
 altocumulus
 altogether
 altoist
@@ -1388,8 +1343,6 @@ alumbloom
 alumina
 aluminate
 aluminium
-aluminium
-aluminum
 aluminum
 alumna
 alumnus
@@ -1456,7 +1409,6 @@ amboyna
 ambrosia
 ambrosioides
 ambulacrum
-ambulance
 ambulance
 ambulans
 ambulation
@@ -1558,7 +1510,6 @@ amorphophallus
 amortisation
 amortization
 amount
-amount
 amour
 amoxicillin
 amp
@@ -1612,7 +1563,6 @@ amrinone
 amsinckia
 amulet
 amurense
-amusement
 amusement
 amygdala
 amygdalin
@@ -1710,7 +1660,6 @@ anatinus
 anatomical
 anatomist
 anatomy
-anatomy
 anatotitan
 anatoxin
 ancestor
@@ -1793,7 +1742,6 @@ angelique
 angelology
 angelus
 anger
-anger
 angiitis
 angina
 angiocardiogram
@@ -1816,7 +1764,6 @@ angiotelectasia
 angiotensin
 angiotonin
 anglais
-angle
 angle
 angledozer
 angler
@@ -1860,7 +1807,6 @@ aniline
 anima
 animadversion
 animal
-animal
 animal-worship
 animalcule
 animalculum
@@ -1873,7 +1819,6 @@ animation
 animatism
 animator
 animatronics
-anime
 anime
 animism
 animist
@@ -1892,7 +1837,6 @@ anisometropia
 anisotropy
 anisum
 anjou
-ankle
 ankle
 anklebone
 anklet
@@ -1980,22 +1924,18 @@ anoxia
 anser
 anserina
 answer
-answer
 answerability
 answerableness
 answerer
-ant
 ant
 antacid
 antagonism
 antagonist
 antapex
 antarctica
-antarctica
 antarcticus
 antbird
 ante
-anteater
 anteater
 antecedence
 antecedency
@@ -2003,7 +1943,6 @@ antecedent
 antechamber
 antediluvian
 antefix
-antelope
 antelope
 antenna
 antepenult
@@ -2038,7 +1977,6 @@ anthropogeny
 anthropoid
 anthropolatry
 anthropologist
-anthropology
 anthropology
 anthropometry
 anthropomorphism
@@ -2193,7 +2131,6 @@ aparinoides
 apart
 apartheid
 apartment
-apartment
 apathy
 apatite
 apatosaur
@@ -2255,7 +2192,6 @@ apologia
 apologist
 apologue
 apology
-apology
 apolune
 apomict
 apomixis
@@ -2283,14 +2219,11 @@ appalling
 appanage
 apparatchik
 apparatus
-apparatus
-apparel
 apparel
 apparency
 apparent
 apparentness
 apparition
-appeal
 appeal
 appealingness
 appeals
@@ -2309,7 +2242,6 @@ appendicle
 appendicularia
 appendicularis
 appendix
-appendix
 apperception
 appetence
 appetency
@@ -2322,7 +2254,6 @@ appiculatum
 applauder
 applause
 apple
-apple
 applecart
 applejack
 applemint
@@ -2330,7 +2261,6 @@ apples
 applesauce
 applet
 applewood
-appliance
 appliance
 applicability
 applicant
@@ -2364,7 +2294,6 @@ approbation
 appropriateness
 appropriation
 appropriator
-approval
 approval
 approver
 approving
@@ -2465,12 +2394,10 @@ arccotangent
 arcdegree
 arcella
 arch
-arch
 archaebacteria
 archaebacterium
 archaeobacteria
 archaeologist
-archaeology
 archaeology
 archaeopteryx
 archaeornis
@@ -2491,9 +2418,7 @@ archenteron
 archeobacteria
 archeologist
 archeology
-archeology
 archeopteryx
-archer
 archer
 archerfish
 archery
@@ -2510,7 +2435,6 @@ archipelago
 archippus
 architect
 architectonics
-architecture
 architecture
 architeuthis
 architrave
@@ -2543,7 +2467,6 @@ ardor
 ardour
 arduousness
 are
-area
 area
 areas
 areata
@@ -2589,7 +2512,6 @@ argot
 arguer
 arguing
 argument
-argument
 argumentation
 argus
 arguta
@@ -2607,7 +2529,6 @@ arida
 aridity
 aridness
 aries
-aries
 arietans
 arietinum
 arietta
@@ -2620,7 +2541,6 @@ aristocracy
 aristocrat
 arithmancy
 arithmetic
-arithmetic
 arithmetician
 arity
 arizonica
@@ -2628,16 +2548,13 @@ ark
 arkansanum
 arles
 arm
-arm
 arm-twisting
 armada
-armadillo
 armadillo
 armament
 armamentarium
 armature
 armband
-armchair
 armchair
 armena
 armeniaca
@@ -2667,7 +2584,6 @@ armpit
 armrest
 arms
 arms-runner
-army
 army
 armyworm
 arnica
@@ -2706,7 +2622,6 @@ arrogance
 arrogation
 arrogator
 arrow
-arrow
 arrowhead
 arrowroot
 arrowsmith
@@ -2723,7 +2638,6 @@ arsenopyrite
 arsine
 arson
 arsonist
-art
 art
 artedi
 artefact
@@ -2829,7 +2743,6 @@ asdic
 asepsis
 asexuality
 ash
-ash
 ash-bin
 ash-key
 ash-pan
@@ -2841,7 +2754,6 @@ ashes
 ashlar
 ashore
 ashram
-ashtray
 ashtray
 asia
 asiatica
@@ -2859,7 +2771,6 @@ asparaginase
 asparagine
 asparagoides
 asparagus
-asparagus
 aspartame
 aspect
 aspen
@@ -2873,7 +2784,6 @@ aspersion
 aspersorium
 asperum
 asperus
-asphalt
 asphalt
 asphodel
 asphyxia
@@ -2960,7 +2870,6 @@ astereognosis
 asterias
 asterion
 asterisk
-asterisk
 asterism
 asteroid
 asthenia
@@ -3000,7 +2909,6 @@ astronaut
 astronautics
 astronavigation
 astronomer
-astronomy
 astronomy
 astrophysicist
 astrophysics
@@ -3047,7 +2955,6 @@ atheroma
 atherosclerosis
 athetosis
 athlete
-athlete
 athleticism
 athletics
 athodyd
@@ -3056,13 +2963,11 @@ atlantica
 atlanticus
 atlas
 atm
-atm
 atmometer
 atmosphere
 atmospherics
 atole
 atoll
-atom
 atom
 atomisation
 atomiser
@@ -3108,7 +3013,6 @@ atrox
 attache
 attachment
 attack
-attack
 attacker
 attainability
 attainableness
@@ -3116,14 +3020,12 @@ attainder
 attainment
 attar
 attempt
-attempt
 attempter
 attendance
 attendant
 attendee
 attender
 attending
-attention
 attention
 attentiveness
 attenuata
@@ -3136,14 +3038,12 @@ attester
 attestor
 atthis
 attic
-attic
 attire
 attitude
 attorney
 attorneyship
 attosecond
 attracter
-attraction
 attraction
 attractiveness
 attractor
@@ -3195,7 +3095,6 @@ augustifolium
 augustissimum
 auk
 auklet
-aunt
 aunt
 auntie
 aunty
@@ -3257,17 +3156,13 @@ authentication
 authenticator
 authenticity
 author
-author
 authoress
-authorisation
 authorisation
 authoriser
 authoritarian
 authoritarianism
 authorities
 authority
-authority
-authorization
 authorization
 authorizer
 authorship
@@ -3359,7 +3254,6 @@ avenger
 avens
 aventail
 aventurine
-avenue
 avenue
 average
 averageness
@@ -3472,10 +3366,8 @@ babirussa
 babka
 baboo
 baboon
-baboon
 babu
 babushka
-baby
 baby
 baby-sitter
 baby-walker
@@ -3503,7 +3395,6 @@ bachelorhood
 bacillus
 bacitracin
 back
-back
 back-blast
 back-formation
 back-number
@@ -3516,7 +3407,6 @@ backbend
 backbiter
 backblast
 backboard
-backbone
 backbone
 backchat
 backcloth
@@ -3575,7 +3465,6 @@ backwoods
 backwoodsman
 backyard
 bacon
-bacon
 bacteremia
 bacteria
 bacteriacide
@@ -3596,8 +3485,6 @@ bad
 baddeleyite
 baddie
 badge
-badge
-badger
 badger
 badgerer
 badgering
@@ -3610,12 +3497,10 @@ baffle
 baffled
 bafflement
 bag
-bag
 bagascosis
 bagasse
 bagassosis
 bagatelle
-bagel
 bagel
 bagful
 baggage
@@ -3625,13 +3510,11 @@ bagging
 bagman
 bagnio
 bagpipe
-bagpipe
 bagpiper
 baguet
 baguette
 bahamensis
 baht
-bail
 bail
 bailee
 bailey
@@ -3644,15 +3527,12 @@ bain-marie
 bairn
 baisa
 bait
-bait
 baiting
 baiza
 baize
 bakeapple
 bakehouse
 baker
-baker
-bakery
 bakery
 bakeshop
 baking
@@ -3663,7 +3543,6 @@ bakshish
 balaclava
 balagan
 balalaika
-balance
 balance
 balancer
 balancing
@@ -3695,7 +3574,6 @@ balker
 balkiness
 balkline
 ball
-ball
 ball-breaker
 ball-buster
 ballad
@@ -3714,7 +3592,6 @@ ballistics
 ballistocardiogram
 ballistocardiograph
 ballock
-balloon
 balloon
 balloonfish
 ballooning
@@ -3749,17 +3626,13 @@ balustrade
 bam
 bambino
 bamboo
-bamboo
 bambusoides
 ban
 banality
 banana
-banana
-band
 band
 bandage
 bandaging
-bandana
 bandana
 bandanna
 bandbox
@@ -3793,18 +3666,13 @@ banger
 banging
 bangladesh
 bangle
-bangle
 bangtail
 banian
 banishment
 banister
 banjo
-banjo
-bank
 bank
 bankbook
-bankbook
-banker
 banker
 banking
 banknote
@@ -3839,7 +3707,6 @@ baptism
 baptistery
 baptistry
 bar
-bar
 baranduki
 barb
 barba-jovis
@@ -3847,7 +3714,6 @@ barbacan
 barbadense
 barbados
 barbae
-barbara
 barbara
 barbarea
 barbarian
@@ -3865,7 +3731,6 @@ barbecuing
 barbel
 barbell
 barbeque
-barber
 barber
 barberry
 barbershop
@@ -3890,7 +3755,6 @@ bargain
 bargainer
 bargaining
 barge
-barge
 bargee
 bargello
 bargeman
@@ -3898,7 +3762,6 @@ baridgesii
 barilla
 baring
 barite
-baritone
 baritone
 barium
 bark
@@ -3921,7 +3784,6 @@ barnful
 barnstormer
 barnyard
 barograph
-barometer
 barometer
 barometz
 baron
@@ -3989,13 +3851,10 @@ basalis
 basalt
 bascule
 base
-base
-baseball
 baseball
 baseboard
 baseline
 baseman
-basement
 basement
 baseness
 basenji
@@ -4016,15 +3875,12 @@ basilica
 basilicum
 basilisk
 basin
-basin
 basinet
 basinful
 basis
 basivertebralis
 basjoo
 basket
-basket
-basketball
 basketball
 basketeer
 basketful
@@ -4035,7 +3891,6 @@ basophil
 basophile
 basophilia
 bass
-bass
 bassana
 bassarisk
 basset
@@ -4044,7 +3899,6 @@ bassine
 bassinet
 bassist
 basso
-bassoon
 bassoon
 bassoonist
 basswood
@@ -4063,12 +3917,10 @@ bastnaesite
 bastnasite
 basuco
 bat
-bat
 batata
 batatas
 batch
 batfish
-bath
 bath
 bathe
 bather
@@ -4080,8 +3932,6 @@ bathometer
 bathos
 bathrobe
 bathroom
-bathroom
-bathtub
 bathtub
 bathymeter
 bathymetry
@@ -4103,10 +3953,8 @@ batter
 battercake
 battering
 battery
-battery
 battery-acid
 batting
-battle
 battle
 battle-ax
 battle-axe
@@ -4136,7 +3984,6 @@ bawdyhouse
 bawler
 bawling
 bay
-bay
 baya
 bayat
 bayberry
@@ -4150,7 +3997,6 @@ bbl
 bbs
 bdellium
 beach
-beach
 beachball
 beachcomber
 beachdrops
@@ -4158,7 +4004,6 @@ beachfront
 beachhead
 beachwear
 beacon
-bead
 bead
 beading
 beadle
@@ -4170,9 +4015,7 @@ beagling
 beak
 beaker
 beam
-beam
 beam-ends
-bean
 bean
 beanbag
 beanball
@@ -4184,10 +4027,8 @@ beans
 beanstalk
 beany
 bear
-bear
 bearberry
 bearcat
-beard
 beard
 bearer
 bearing
@@ -4195,10 +4036,8 @@ bearnaise
 bearskin
 bearwood
 beast
-beast
 beastliness
 beasts
-beat
 beat
 beater
 beatification
@@ -4212,11 +4051,8 @@ beaugregory
 beaut
 beauteousness
 beautician
-beautician
 beautification
 beauty
-beauty
-beaver
 beaver
 bebop
 beccabunga
@@ -4224,7 +4060,6 @@ bechamel
 beck
 becket
 becomingness
-bed
 bed
 bed-and-breakfast
 bed-ground
@@ -4248,7 +4083,6 @@ bedrest
 bedrock
 bedroll
 bedroom
-bedroom
 bedside
 bedsit
 bedsitter
@@ -4260,14 +4094,11 @@ bedstraw
 bedtime
 bedwetter
 bee
-bee
 beebalm
 beebread
 beech
-beech
 beechnut
 beechwood
-beef
 beef
 beefalo
 beefburger
@@ -4282,11 +4113,8 @@ beeline
 beep
 beeper
 beer
-beer
 beeswax
 beet
-beet
-beetle
 beetle
 beetleweed
 beetroot
@@ -4294,7 +4122,6 @@ befooling
 befoulment
 befuddlement
 begetter
-beggar
 beggar
 beggar's-ticks
 beggar-my-neighbor
@@ -4306,16 +4133,13 @@ beggarwoman
 beggary
 begging
 beginner
-beginner
 beginning
-begonia
 begonia
 beguilement
 beguiler
 beguine
 begum
 behalf
-behavior
 behavior
 behaviorism
 behaviorist
@@ -4344,13 +4168,11 @@ belemnite
 belfry
 belgian
 belief
-belief
 believability
 believe
 believer
 believing
 belittling
-bell
 bell
 bell-bottoms
 belladonna
@@ -4390,7 +4212,6 @@ belonging
 belongings
 beloved
 belt
-belt
 belting
 beltway
 beluga
@@ -4398,7 +4219,6 @@ belvedere
 bema
 bemusement
 ben
-bench
 bench
 benchmark
 bend
@@ -4458,7 +4278,6 @@ berceuse
 bereaved
 bereavement
 beret
-beret
 berg
 bergall
 bergamia
@@ -4476,7 +4295,6 @@ bernicla
 beroe
 berretta
 berries
-berry
 berry
 berserk
 berserker
@@ -4496,7 +4314,6 @@ bestiary
 bestowal
 bestower
 bestowment
-bestseller
 bestseller
 besylate
 bet
@@ -4523,7 +4340,6 @@ better
 betterment
 bettong
 bettor
-betty
 betty
 betulinus
 betulus
@@ -4552,7 +4368,6 @@ bib-and-tucker
 bible
 bibliographer
 bibliography
-bibliography
 bibliolatry
 bibliomania
 bibliophile
@@ -4575,7 +4390,6 @@ bicorn
 bicorne
 bicornis
 bicuspid
-bicycle
 bicycle
 bicycle-built-for-two
 bicycler
@@ -4626,7 +4440,6 @@ bijou
 bijuga
 bijugatus
 bike
-bike
 bikers
 bikini
 bilabial
@@ -4650,9 +4463,7 @@ bilingualist
 biliousness
 bilirubin
 bill
-bill
 billabong
-billboard
 billboard
 billet
 billfish
@@ -4729,7 +4540,6 @@ biohazard
 biologism
 biologist
 biology
-biology
 bioluminescence
 biomass
 biome
@@ -4766,15 +4576,12 @@ bipinnata
 bipinnatifida
 bipinnulata
 biplane
-biplane
 biprism
 bipunctata
 biquadrate
 biquadratic
 birch
-birch
 birchbark
-bird
 bird
 bird-on-the-wing
 bird-scarer
@@ -4799,8 +4606,6 @@ birostris
 birr
 birretta
 birth
-birth
-birthday
 birthday
 birthing
 birthmark
@@ -4829,12 +4634,10 @@ bistre
 bistro
 bisulfate
 bit
-bit
 bitartrate
 bitch
 bitchery
 bitchiness
-bite
 bite
 biteplate
 biter
@@ -4869,7 +4672,6 @@ bizarreness
 bize
 blabber
 blabbermouth
-black
 black
 blackamoor
 blackball
@@ -4911,12 +4713,10 @@ blackwash
 blackwater
 blackwood
 bladder
-bladder
 bladdernose
 bladderpod
 bladderwort
 bladderwrack
-blade
 blade
 blaeberry
 blah
@@ -4933,7 +4733,6 @@ blanda
 blandishment
 blandness
 blank
-blanket
 blanket
 blankets
 blankness
@@ -5011,7 +4810,6 @@ bling
 blini
 blink
 blinker
-blinker
 blinking
 blinks
 blintz
@@ -5028,12 +4826,10 @@ blitz
 blitzing
 blitzkrieg
 blizzard
-blizzard
 bloat
 bloater
 blob
 bloc
-block
 block
 blockade
 blockade-runner
@@ -5050,7 +4846,6 @@ blolly
 blond
 blonde
 blondness
-blood
 blood
 blood-twig
 bloodbath
@@ -5084,15 +4879,12 @@ blot
 blotch
 blotter
 blouse
-blouse
-blow
 blow
 blowback
 blowball
 blower
 blowfish
 blowfly
-blowgun
 blowgun
 blowhard
 blowhole
@@ -5109,7 +4901,6 @@ blubberer
 blucher
 bludgeon
 bludgeoner
-blue
 blue
 blue-belly
 blue-blindness
@@ -5163,7 +4954,6 @@ bo'sun
 boa
 boar
 board
-board
 boarder
 boarding
 boardinghouse
@@ -5176,7 +4966,6 @@ boast
 boaster
 boastfulness
 boasting
-boat
 boat
 boatbill
 boatbuilder
@@ -5198,7 +4987,6 @@ bobbysock
 bobbysocks
 bobbysoxer
 bobcat
-bobcat
 bobfloat
 bobolink
 bobsled
@@ -5217,7 +5005,6 @@ bodice
 bodies
 boding
 bodkin
-body
 body
 body-build
 bodybuilder
@@ -5273,12 +5060,10 @@ bolshie
 bolshy
 bolster
 bolt
-bolt
 bolt-hole
 bolti
 bolts
 bolus
-bomb
 bomb
 bombard
 bombardier
@@ -5286,7 +5071,6 @@ bombardment
 bombardon
 bombast
 bombazine
-bomber
 bomber
 bombie
 bombifrons
@@ -5319,7 +5103,6 @@ bonduc
 bonducella
 bondwoman
 bone
-bone
 bonefish
 bonehead
 bonelet
@@ -5332,7 +5115,6 @@ boneshaker
 bonfire
 bong
 bongo
-bongo
 bonheur
 bonhomie
 boniface
@@ -5342,7 +5124,6 @@ bonnet
 bonnethead
 bonnets
 bonobo
-bonsai
 bonsai
 bonum
 bonus
@@ -5361,11 +5142,9 @@ boogeyman
 boogie
 boogie-woogie
 book
-book
 bookbinder
 bookbindery
 bookbinding
-bookcase
 bookcase
 bookclub
 bookdealer
@@ -5377,7 +5156,6 @@ booking
 bookishness
 bookkeeper
 bookkeeping
-booklet
 booklet
 booklouse
 booklover
@@ -5403,7 +5181,6 @@ boor
 boorishness
 boost
 booster
-boot
 boot
 bootblack
 bootboys
@@ -5433,7 +5210,6 @@ borax
 borbonia
 bordelaise
 bordello
-border
 border
 borderer
 borderland
@@ -5481,7 +5257,6 @@ bota
 botanical
 botanist
 botany
-botany
 botch
 botcher
 botfly
@@ -5490,7 +5265,6 @@ botheration
 botrys
 botrytis
 bottae
-bottle
 bottle
 bottle-grass
 bottle-tree
@@ -5501,7 +5275,6 @@ bottleneck
 bottlenose
 bottler
 bottletree
-bottom
 bottom
 bottom-dweller
 bottom-feeder
@@ -5532,7 +5305,6 @@ bounciness
 bouncing
 bound
 boundary
-boundary
 boundedness
 bounder
 boundlessness
@@ -5557,7 +5329,6 @@ bovid
 bovine
 bovista
 bow
-bow
 bow-tie
 bow-wow
 bowdlerisation
@@ -5573,20 +5344,17 @@ bowhead
 bowing
 bowknot
 bowl
-bowl
 bowlder
 bowleg
 bowler
 bowlful
 bowline
 bowling
-bowling
 bowls
 bowman
 bowsprit
 bowstring
 bowtie
-box
 box
 boxberry
 boxcar
@@ -5599,7 +5367,6 @@ boxful
 boxing
 boxthorn
 boxwood
-boy
 boy
 boycott
 boyfriend
@@ -5614,9 +5381,7 @@ bpi
 bpm
 bps
 bra
-bra
 braccio
-brace
 brace
 bracelet
 bracer
@@ -5638,7 +5403,6 @@ brachyrhyncos
 brachyuran
 bracing
 bracken
-bracket
 bracket
 brackishness
 bract
@@ -5665,7 +5429,6 @@ braiding
 brail
 braille
 brain
-brain
 brain-fag
 brain-stem
 brain-teaser
@@ -5683,7 +5446,6 @@ brainwave
 brainworker
 braising
 brake
-brake
 brakeman
 brakes
 brama
@@ -5691,18 +5453,15 @@ bramble
 brambling
 bran
 branch
-branch
 branchia
 branching
 branchiopod
 branchiopodan
 branchlet
 brand
-brand
 brand-newness
 branding
 brandish
-brandy
 brandy
 brandyball
 brandysnap
@@ -5710,7 +5469,6 @@ brant
 brashness
 brasier
 brasiliensis
-brass
 brass
 brassard
 brassavola
@@ -5736,10 +5494,8 @@ bray
 brazenness
 brazier
 brazil
-brazil
 brazilwood
 breach
-bread
 bread
 bread-bin
 bread-stick
@@ -5755,7 +5511,6 @@ breadstuff
 breadth
 breadwinner
 break
-break
 break-axe
 break-in
 breakability
@@ -5768,7 +5523,6 @@ breakaxe
 breakdown
 breaker
 breakers
-breakfast
 breakfast
 breaking
 breakout
@@ -5784,7 +5538,6 @@ breastplate
 breaststroke
 breaststroker
 breastwork
-breath
 breath
 breathalyser
 breathalyzer
@@ -5836,7 +5589,6 @@ briber
 bribery
 bric-a-brac
 brick
-brick
 brickbat
 brickfield
 brickkiln
@@ -5854,7 +5606,6 @@ bride-to-be
 bridecake
 bridegroom
 bridesmaid
-bridge
 bridge
 bridged-T
 bridgehead
@@ -5932,9 +5683,7 @@ broadsword
 broadtail
 brocade
 broccoli
-broccoli
 brochette
-brochure
 brochure
 brocket
 brodiaea
@@ -5944,7 +5693,6 @@ broil
 broiler
 broiling
 brokenheartedness
-broker
 broker
 broker-dealer
 brokerage
@@ -5971,7 +5719,6 @@ broncobuster
 brontosaur
 brontosaurus
 bronze
-bronze
 brooch
 brood
 brooder
@@ -5991,17 +5738,13 @@ brosme
 broth
 brothel
 brother
-brother
-brother-in-law
 brother-in-law
 brotherhood
 brotula
 brougham
 brouhaha
 brow
-brow
 browallia
-brown
 brown
 brownie
 browning
@@ -6025,7 +5768,6 @@ brunnea
 brunt
 brunus
 brush
-brush
 brush-off
 brushing
 brushup
@@ -6042,7 +5784,6 @@ bryony
 bryophyte
 bryozoan
 bubalis
-bubble
 bubble
 bubblejet
 bubbler
@@ -6061,7 +5802,6 @@ buckaroo
 buckbean
 buckboard
 buckeroo
-bucket
 bucket
 bucketful
 buckeye
@@ -6091,7 +5831,6 @@ budgereegah
 budgerigar
 budgerygah
 budget
-budget
 budgie
 budworm
 buena
@@ -6099,8 +5838,6 @@ buff
 buffalo
 buffalofish
 buffer
-buffer
-buffet
 buffet
 buffeting
 bufflehead
@@ -6118,7 +5855,6 @@ buggery
 bugginess
 buggy
 bugle
-bugle
 bugler
 bugleweed
 bugloss
@@ -6128,9 +5864,7 @@ buhl
 build
 builder
 building
-building
 buildup
-bulb
 bulb
 bulbi
 bulbifera
@@ -6150,7 +5884,6 @@ bulk
 bulkhead
 bulkiness
 bull
-bull
 bull's-eye
 bull-snake
 bulla
@@ -6159,7 +5892,6 @@ bullata
 bullbat
 bullbrier
 bulldog
-bulldozer
 bulldozer
 bullet
 bullethead
@@ -6196,12 +5928,10 @@ bumf
 bummer
 bump
 bumper
-bumper
 bumph
 bumpiness
 bumpkin
 bumptiousness
-bun
 bun
 bun-fight
 buna
@@ -6257,7 +5987,6 @@ burgess
 burgh
 burgher
 burglar
-burglar
 burglary
 burgomaster
 burgoo
@@ -6273,7 +6002,6 @@ burlesque
 burly
 burma
 burmeisteri
-burn
 burn
 burnability
 burner
@@ -6301,17 +6029,14 @@ bursarius
 bursary
 bursitis
 burst
-burst
 burster
 burthen
 burunduki
 burying
 bus
-bus
 busbar
 busboy
 busby
-bush
 bush
 bushbaby
 bushbuck
@@ -6320,7 +6045,6 @@ bushing
 bushman
 bushtit
 bushwhacker
-business
 business
 businessman
 businessmen
@@ -6347,12 +6071,10 @@ busywork
 butacaine
 butadiene
 butane
-butane
 butanol
 butanone
 butat
 butch
-butcher
 butcher
 butcherbird
 butchering
@@ -6366,7 +6088,6 @@ butt
 butt-weld
 butt-welding
 butte
-butter
 butter
 butter-and-eggs
 butter-flower
@@ -6392,7 +6113,6 @@ buttinsky
 buttock
 buttocks
 button
-button
 button-quail
 buttonhole
 buttonhook
@@ -6414,7 +6134,6 @@ buyer
 buying
 buyout
 buzz
-buzzard
 buzzard
 buzzer
 buzzword
@@ -6459,7 +6178,6 @@ cabaret
 cabasset
 cabassous
 cabbage
-cabbage
 cabbageworm
 cabbala
 cabbalah
@@ -6468,12 +6186,10 @@ cabdriver
 caber
 cabin
 cabinet
-cabinet
 cabinetmaker
 cabinetmaking
 cabinetry
 cabinetwork
-cable
 cable
 cablegram
 cablin
@@ -6510,7 +6226,6 @@ cacomistle
 cacomixle
 cacophony
 cactus
-cactus
 cad
 cadaster
 cadastre
@@ -6545,7 +6260,6 @@ caesius
 caespitosum
 caesura
 cafe
-cafe
 cafeteria
 caff
 caffein
@@ -6572,7 +6286,6 @@ caisson
 caitiff
 cajan
 cajolery
-cake
 cake
 cakehole
 cakewalk
@@ -6613,8 +6326,6 @@ calcium
 calcium-cyanamide
 calculation
 calculator
-calculator
-calculus
 calculus
 caldera
 caldron
@@ -6622,10 +6333,8 @@ calean
 caleche
 calefaction
 calendar
-calendar
 calender
 calendula
-calf
 calf
 calfskin
 caliber
@@ -6650,7 +6359,6 @@ calisaya
 calisthenics
 calk
 calkin
-call
 call
 call-back
 call-board
@@ -6731,7 +6439,6 @@ cambric
 cambrica
 camcorder
 camel
-camel
 camelhair
 camelia
 camellia
@@ -6740,7 +6447,6 @@ camelopardalis
 camelpox
 camelus
 cameo
-camera
 camera
 cameraman
 camilla
@@ -6752,7 +6458,6 @@ camo
 camomile
 camosh
 camouflage
-camp
 camp
 campaign
 campaigner
@@ -6784,7 +6489,6 @@ camshaft
 camtschatica
 camwood
 can
-can
 cana
 canada
 canadense
@@ -6808,7 +6512,6 @@ cancan
 cancel
 cancellation
 cancer
-cancer
 cancerweed
 cancrivorus
 cancroid
@@ -6826,7 +6529,6 @@ candidiasis
 candidissimum
 candidness
 candidum
-candle
 candle
 candleberry
 candlelight
@@ -6881,7 +6583,6 @@ cannibalism
 cannikin
 cannister
 cannon
-cannon
 cannonade
 cannonball
 cannoneer
@@ -6889,7 +6590,6 @@ cannula
 cannulation
 cannulisation
 cannulization
-canoe
 canoe
 canoeist
 canola
@@ -6925,7 +6625,6 @@ canum
 canus
 canutus
 canvas
-canvas
 canvasback
 canvass
 canvasser
@@ -6933,7 +6632,6 @@ canvassing
 canyon
 canyonside
 caoutchouc
-cap
 cap
 cap-lily
 capability
@@ -6961,7 +6659,6 @@ capillifolium
 capillus-veneris
 capiscum
 capital
-capital
 capitalis
 capitalisation
 capitalism
@@ -6981,7 +6678,6 @@ caplin
 capo
 capon
 capote
-cappelletti
 cappelletti
 cappuccino
 caprea
@@ -7005,10 +6701,8 @@ capstan
 capstone
 capsule
 captain
-captain
 captaincy
 captainship
-caption
 caption
 captivation
 captive
@@ -7024,7 +6718,6 @@ capulin
 caput
 caput-medusae
 capybara
-car
 car
 car-ferry
 car-mechanic
@@ -7051,7 +6744,6 @@ carapace
 carassius
 carat
 caravan
-caravan
 caravanning
 caravansary
 caravanserai
@@ -7064,7 +6756,6 @@ carbineer
 carbo
 carbohydrate
 carbomycin
-carbon
 carbon
 carbonado
 carbonara
@@ -7088,13 +6779,11 @@ carcinoid
 carcinoma
 carcinosarcoma
 card
-card
 card-house
 cardamom
 cardamomum
 cardamon
 cardamum
-cardboard
 cardboard
 cardcase
 cardcastle
@@ -7103,7 +6792,6 @@ cardhouse
 cardia
 cardiaca
 cardiacus
-cardigan
 cardigan
 cardinal
 cardinalate
@@ -7129,7 +6817,6 @@ cardsharp
 cardsharper
 carduelis
 cardunculus
-care
 care
 careen
 career
@@ -7176,7 +6863,6 @@ carnality
 carnallite
 carnaria
 carnation
-carnation
 carnauba
 carne
 carnea
@@ -7190,7 +6876,6 @@ carnosaur
 carnotite
 carob
 caroche
-carol
 carol
 caroler
 carolina
@@ -7217,11 +6902,9 @@ carouse
 carousel
 carouser
 carp
-carp
 carpal
 carpatica
 carpel
-carpenter
 carpenter
 carpenteria
 carpentry
@@ -7247,12 +6930,10 @@ carrefour
 carrel
 carrell
 carriage
-carriage
 carriageway
 carrier
 carrion
 carrizo
-carrot
 carrot
 carrottop
 carrousel
@@ -7261,7 +6942,6 @@ carry-forward
 carry-over
 carryall
 carrycot
-cart
 cart
 cartage
 carte
@@ -7277,7 +6957,6 @@ cartographer
 cartography
 carton
 cartonful
-cartoon
 cartoon
 cartoonist
 cartouch
@@ -7307,7 +6986,6 @@ cascadae
 cascade
 cascara
 cascarilla
-case
 case
 casebook
 caseful
@@ -7346,7 +7024,6 @@ cassiterite
 cassock
 cassowary
 cast
-cast
 castanet
 castanets
 castanotis
@@ -7366,7 +7043,6 @@ casualty
 casuarina
 casuist
 casuistry
-cat
 cat
 cat's-claw
 cat's-ear
@@ -7392,7 +7068,6 @@ catalpa
 catalufa
 catalysis
 catalyst
-catamaran
 catamaran
 catamenia
 catamite
@@ -7446,7 +7121,6 @@ catenatus
 caterer
 catering
 caterpillar
-caterpillar
 caterwaul
 catesbaei
 catesbeiana
@@ -7457,7 +7131,6 @@ cathartic
 cathartica
 cathartid
 cathedra
-cathedral
 cathedral
 catheter
 catheterisation
@@ -7477,13 +7150,11 @@ catodon
 catoptrics
 catostomid
 catsup
-catsup
 catta
 cattail
 cattalo
 cattie
 cattiness
-cattle
 cattle
 cattleianum
 cattleman
@@ -7503,7 +7174,6 @@ caul
 cauldron
 cauliflora
 cauliflower
-cauliflower
 caulk
 caulking
 caurinus
@@ -7511,7 +7181,6 @@ causa
 causalgia
 causality
 causation
-cause
 cause
 causerie
 causeway
@@ -7523,7 +7192,6 @@ cauterisation
 cauterization
 cautery
 caution
-caution
 cautious
 cautiousness
 cava
@@ -7533,7 +7201,6 @@ cavalla
 cavalry
 cavalryman
 cavaticus
-cave
 cave
 caveat
 caveman
@@ -7557,7 +7224,6 @@ cayuse
 cazique
 cc
 ccortex
-cd
 cd
 cearensis
 cease
@@ -7584,7 +7250,6 @@ ceiba
 ceibo
 ceilidh
 ceiling
-ceiling
 celandine
 celebrant
 celebrater
@@ -7596,9 +7261,7 @@ celecoxib
 celeriac
 celerity
 celery
-celery
 celesta
-celeste
 celeste
 celestite
 celiaca
@@ -7610,14 +7273,11 @@ celiocentesis
 celioma
 celioscopy
 cell
-cell
-cellar
 cellar
 cellarage
 cellaret
 cellblock
 cellist
-cello
 cello
 cellophane
 cellphone
@@ -7636,10 +7296,8 @@ cembalo
 cembra
 cembroides
 cement
-cement
 cementite
 cementum
-cemetery
 cemetery
 cenchroides
 cenobite
@@ -7651,7 +7309,6 @@ censoring
 censorship
 censure
 census
-cent
 cent
 cental
 centare
@@ -7677,7 +7334,6 @@ centile
 centiliter
 centilitre
 centime
-centimeter
 centimeter
 centimetre
 centimo
@@ -7712,7 +7368,6 @@ centrum
 centum
 centurion
 century
-century
 cepa
 cepaestipes
 cephalalgia
@@ -7732,7 +7387,6 @@ cephalothin
 cephalus
 cepulae
 ceramic
-ceramic
 ceramicist
 ceramics
 ceramist
@@ -7751,7 +7405,6 @@ ceratozamia
 cerca
 cercaria
 cere
-cereal
 cereal
 cereale
 cerealella
@@ -7785,7 +7438,6 @@ cerris
 cert
 certainty
 certificate
-certification
 certification
 certiorari
 certitude
@@ -7839,11 +7491,9 @@ chaffweed
 chafing
 chagrin
 chain
-chain
 chain-smoker
 chains
 chainsaw
-chair
 chair
 chairlift
 chairman
@@ -7865,7 +7515,6 @@ chalcopyrite
 chaldron
 chalet
 chalice
-chalk
 chalk
 chalkboard
 chalkpit
@@ -7909,7 +7558,6 @@ championship
 chanal
 chanar
 chance
-chance
 chance-medley
 chancel
 chancellery
@@ -7924,7 +7572,6 @@ chandler
 chandlery
 chanfron
 change
-change
 change-of-pace
 change-up
 changeability
@@ -7934,7 +7581,6 @@ changelessness
 changeling
 changeover
 changer
-channel
 channel
 channelisation
 channelization
@@ -7971,7 +7617,6 @@ charabanc
 characid
 characin
 character
-character
 characterisation
 characteristic
 characterization
@@ -7981,7 +7626,6 @@ charades
 charantia
 charcoal
 charcuterie
-chard
 chard
 charge
 chargeman
@@ -8031,7 +7675,6 @@ chatterbox
 chatterer
 chattering
 chauffeur
-chauffeur
 chauffeuse
 chaulmoogra
 chaulmugra
@@ -8051,7 +7694,6 @@ cheatgrass
 cheating
 chebab
 check
-check
 check-in
 checkbook
 checker
@@ -8069,7 +7711,6 @@ checksum
 checkup
 cheddar
 cheek
-cheek
 cheekbone
 cheekiness
 cheekpiece
@@ -8082,7 +7723,6 @@ cheerio
 cheerleader
 cheerlessness
 cheese
-cheese
 cheeseboard
 cheeseburger
 cheesecake
@@ -8090,9 +7730,7 @@ cheesecloth
 cheeseflower
 cheesemonger
 cheetah
-cheetah
 cheewink
-chef
 chef
 chef-d'oeuvre
 cheilitis
@@ -8114,7 +7752,6 @@ chemisorption
 chemist
 chemist's
 chemistry
-chemistry
 chemoimmunology
 chemoreceptor
 chemosis
@@ -8126,7 +7763,6 @@ chemotherapy
 chenfish
 chenille
 cheque
-cheque
 chequebook
 chequer
 chequers
@@ -8136,16 +7772,13 @@ cherimoya
 cheroot
 cherries
 cherry
-cherry
 cherrystone
 chert
 cherub
 chervil
 chess
-chess
 chessboard
 chessman
-chest
 chest
 chesterfield
 chestnut
@@ -8174,9 +7807,7 @@ chichi
 chichipe
 chichita
 chick
-chick
 chickadee
-chicken
 chicken
 chickenfeed
 chickenpox
@@ -8187,10 +7818,8 @@ chickweed
 chicle
 chicness
 chicory
-chicory
 chicot
 chiding
-chief
 chief
 chieftain
 chieftaincy
@@ -8205,7 +7834,6 @@ chignon
 chigoe
 chilblain
 chilblains
-child
 child
 childbearing
 childbed
@@ -8223,7 +7851,6 @@ chiliasm
 chiliast
 chiliensis
 chill
-chill
 chiller
 chilli
 chilliness
@@ -8231,7 +7858,6 @@ chilling
 chilly
 chiloensis
 chimaera
-chime
 chime
 chimera
 chimney
@@ -8242,13 +7868,10 @@ chimneysweep
 chimneysweeper
 chimp
 chimpanzee
-chimpanzee
-chin
 chin
 chin-up
 chin-wag
 chin-wagging
-china
 china
 chinaberry
 chinaware
@@ -8305,7 +7928,6 @@ chittimwood
 chivalry
 chivaree
 chive
-chive
 chives
 chlamydia
 chlamydospore
@@ -8353,7 +7975,6 @@ choanocyte
 choc
 choc-ice
 chock
-chocolate
 chocolate
 choi
 choice
@@ -8411,7 +8032,6 @@ chopstick
 choragus
 choral
 chorale
-chord
 chord
 chordamesoderm
 chordate
@@ -8478,7 +8098,6 @@ chronicler
 chronograph
 chronology
 chronometer
-chronometer
 chronoscope
 chrysaetos
 chrysalis
@@ -8523,7 +8142,6 @@ chunga
 chunk
 chunking
 church
-church
 church-state
 churchgoer
 churchman
@@ -8545,7 +8163,6 @@ chyme
 chymosin
 ciao
 cibarius
-cicada
 cicada
 cicala
 cicatrice
@@ -8584,7 +8201,6 @@ cinder
 cine-camera
 cine-film
 cinema
-cinema
 cinematographer
 cinematography
 cineraria
@@ -8608,7 +8224,6 @@ ciprofloxacin
 circinalis
 circinatum
 circle
-circle
 circlet
 circuit
 circuitry
@@ -8616,7 +8231,6 @@ circular
 circularisation
 circularity
 circularization
-circulation
 circulation
 circumcision
 circumduction
@@ -8643,7 +8257,6 @@ cirripede
 cirrocumulus
 cirrostratus
 cirrus
-cirrus
 cisco
 cissoides
 cistern
@@ -8659,7 +8272,6 @@ cither
 cithern
 citizen
 citizenry
-citizenship
 citizenship
 citole
 citrana
@@ -8679,7 +8291,6 @@ citrophthora
 citrulline
 citrus
 cittern
-city
 city
 city-state
 cityscape
@@ -8706,7 +8317,6 @@ claim
 claimant
 clairvoyance
 clairvoyant
-clam
 clam
 clambake
 clamber
@@ -8745,7 +8355,6 @@ clarence
 claret
 clarification
 clarinet
-clarinet
 clarinetist
 clarinettist
 clarion
@@ -8754,7 +8363,6 @@ claro
 clary
 clash
 clasp
-class
 class
 classic
 classical
@@ -8822,7 +8430,6 @@ cleavage
 cleaver
 cleavers
 clef
-clef
 cleft
 cleg
 clegg
@@ -8846,7 +8453,6 @@ clerid
 clerihew
 clerisy
 clerk
-clerk
 clerking
 clerkship
 cleverness
@@ -8856,11 +8462,9 @@ clews
 clianthus
 cliche
 click
-click
 click-clack
 clickety-clack
 clickety-click
-client
 client
 clientage
 clientele
@@ -8872,7 +8476,6 @@ climate
 climatologist
 climatology
 climax
-climb
 climb
 climb-down
 climber
@@ -8900,7 +8503,6 @@ clip-clop
 clip-on
 clipboard
 clipper
-clipper
 clippety-clop
 clipping
 clique
@@ -8914,10 +8516,8 @@ cloaca
 cloak
 cloakmaker
 cloakroom
-cloakroom
 clobber
 cloche
-clock
 clock
 clock-watching
 clocking
@@ -8942,12 +8542,10 @@ clonus
 clop
 clopping
 close
-close
 closedown
 closeness
 closeout
 closer
-closet
 closet
 closeup
 closing
@@ -8956,7 +8554,6 @@ clostridium
 closure
 clot
 clotbur
-cloth
 cloth
 clothes
 clothesbrush
@@ -8969,7 +8566,6 @@ clothing
 clotting
 cloture
 cloud
-cloud
 cloud-cuckoo-land
 cloudberry
 cloudburst
@@ -8980,7 +8576,6 @@ cloudy
 clout
 clove
 clover
-clover
 clover-root
 cloverleaf
 cloveroot
@@ -8989,7 +8584,6 @@ clowder
 clown
 clowning
 clozapine
-club
 club
 club-head
 club-moss
@@ -9017,7 +8611,6 @@ clusiana
 cluster
 clustering
 clutch
-clutch
 clutches
 clutter
 clypeata
@@ -9041,7 +8634,6 @@ co-respondent
 co-star
 co-worker
 coach
-coach
 coach-and-four
 coachbuilder
 coaching
@@ -9054,7 +8646,6 @@ coagulase
 coagulation
 coagulator
 coagulum
-coal
 coal
 coalbin
 coalescence
@@ -9070,13 +8661,11 @@ coarctata
 coarctation
 coarseness
 coast
-coast
 coaster
 coastguard
 coastguardsman
 coastland
 coastline
-coat
 coat
 coatdress
 coatee
@@ -9105,7 +8694,6 @@ cobbling
 cobia
 cobnut
 cobra
-cobweb
 cobweb
 coca
 cocain
@@ -9156,18 +8744,15 @@ cockloft
 cockney
 cockpit
 cockroach
-cockroach
 cockscomb
 cocksfoot
 cockspur
 cocksucker
 cocksureness
 cocktail
-cocktail
 cockup
 cocky-leeky
 coco
-cocoa
 cocoa
 cocoanut
 cocobolo
@@ -9180,7 +8765,6 @@ cocotte
 cocoyam
 cocozelle
 cocuswood
-cod
 cod
 coda
 coddler
@@ -9221,7 +8805,6 @@ coextension
 cofactor
 coffearia
 coffee
-coffee
 coffeeberry
 coffeecake
 coffeehouse
@@ -9259,9 +8842,7 @@ coiffure
 coign
 coigne
 coil
-coil
 coils
-coin
 coin
 coinage
 coincidence
@@ -9271,14 +8852,12 @@ coir
 coition
 coitus
 coke
-coke
 col
 cola
 colada
 colander
 colchicine
 colchicus
-cold
 cold
 coldcream
 coldheartedness
@@ -9306,7 +8885,6 @@ collagen
 collagenase
 collapse
 collar
-collar
 collarbone
 collard
 collards
@@ -9327,7 +8905,6 @@ collectivization
 collector
 colleen
 college
-college
 collegian
 collembolan
 collet
@@ -9340,7 +8917,6 @@ colligation
 collimation
 collimator
 collins
-collision
 collision
 collocation
 collodion
@@ -9356,7 +8932,6 @@ colobus
 cologne
 colombia
 colon
-colon
 colonel
 colonial
 colonialism
@@ -9371,10 +8946,8 @@ colonnade
 colonoscope
 colonoscopy
 colony
-colony
 colophon
 colophony
-color
 color
 coloradillo
 colorata
@@ -9403,7 +8976,6 @@ colpocystitis
 colpocystocele
 colpoxerosis
 colt
-colt
 coltan
 colter
 coltsfoot
@@ -9426,12 +8998,10 @@ columbium
 columbo
 columella
 column
-column
 columnaris
 columnea
 columniation
 columnifera
-columnist
 columnist
 colza
 com
@@ -9439,7 +9009,6 @@ coma
 comatoseness
 comatulid
 comatus
-comb
 comb
 comb-out
 comb-plate
@@ -9473,12 +9042,10 @@ comeupance
 comeuppance
 comfit
 comfort
-comfort
 comfortableness
 comforter
 comforts
 comfrey
-comic
 comic
 comicality
 coming
@@ -9487,8 +9054,6 @@ comitans
 comitatus
 comity
 comma
-comma
-command
 command
 commandant
 commander
@@ -9520,7 +9085,6 @@ commissar
 commissariat
 commissary
 commission
-commission
 commissionaire
 commissioner
 commissioning
@@ -9528,7 +9092,6 @@ commissure
 commitment
 committal
 committedness
-committee
 committee
 committeeman
 committeewoman
@@ -9565,7 +9128,6 @@ communisation
 communism
 communist
 community
-community
 communization
 commutability
 commutata
@@ -9589,12 +9151,10 @@ companionableness
 companionship
 companionway
 company
-company
 comparability
 comparative
 compare
 comparing
-comparison
 comparison
 compartment
 compartmentalisation
@@ -9611,9 +9171,7 @@ compere
 competence
 competency
 competition
-competition
 competitiveness
-competitor
 competitor
 compilation
 compiler
@@ -9648,11 +9206,9 @@ compline
 component
 comportment
 composer
-composer
 composing
 composite
 compositeness
-composition
 composition
 compositions
 compositor
@@ -9681,7 +9237,6 @@ compulsiveness
 compulsivity
 compunction
 computation
-computer
 computer
 computerization
 computing
@@ -9763,7 +9318,6 @@ condescendingness
 condescension
 condiment
 condition
-condition
 conditionality
 conditioner
 conditioning
@@ -9773,7 +9327,6 @@ condolence
 condom
 condominium
 condonation
-condor
 condor
 conduct
 conductance
@@ -9785,7 +9338,6 @@ conductress
 conduit
 condyle
 condylion
-cone
 cone
 coneflower
 conenose
@@ -9820,7 +9372,6 @@ configurationism
 confinement
 confines
 confirmation
-confirmation
 confiscation
 confit
 confiture
@@ -9840,7 +9391,6 @@ confusedness
 confusion
 confutation
 confuter
-conga
 conga
 conge
 congealment
@@ -9863,7 +9413,6 @@ conglomerate
 conglomeration
 conglutination
 congo
-congo
 congou
 congratulation
 congratulations
@@ -9881,7 +9430,6 @@ conica
 conidiophore
 conidiospore
 conidium
-conifer
 conifer
 conima
 conjecture
@@ -9904,7 +9452,6 @@ connata
 connectedness
 connecter
 connectilis
-connection
 connection
 connective
 connectivity
@@ -9959,7 +9506,6 @@ console
 consolidation
 consomme
 consonance
-consonant
 consonant
 consort
 consortium
@@ -10051,7 +9597,6 @@ contiguousness
 continence
 continency
 continent
-continent
 contingence
 contingency
 contingent
@@ -10106,7 +9651,6 @@ contriteness
 contrition
 contrivance
 contriver
-control
 control
 controller
 controllership
@@ -10171,14 +9715,12 @@ convulsion
 cony
 coo
 cook
-cook
 cookbook
 cooker
 cookery
 cookfire
 cookhouse
 cookie
-cooking
 cooking
 cookout
 cookstove
@@ -10230,7 +9772,6 @@ copiousness
 copolymer
 copout
 copper
-copper
 copperas
 copperhead
 copperplate
@@ -10248,7 +9789,6 @@ copula
 copulation
 copulative
 copy
-copy
 copybook
 copycat
 copyhold
@@ -10256,7 +9796,6 @@ copyholder
 copying
 copyist
 copyreader
-copyright
 copyright
 copywriter
 coquetry
@@ -10282,7 +9821,6 @@ corbie-step
 corbiestep
 corbina
 corchorus
-cord
 cord
 corda
 cordage
@@ -10319,7 +9857,6 @@ coriander
 coriaria
 corium
 cork
-cork
 corkage
 corkboard
 corker
@@ -10327,8 +9864,6 @@ corkscrew
 corkwood
 corm
 cormorant
-cormorant
-corn
 corn
 cornbread
 corncob
@@ -10340,7 +9875,6 @@ cornelian
 corner
 cornerback
 cornerstone
-cornet
 cornet
 cornetfish
 cornetist
@@ -10413,7 +9947,6 @@ correlation
 correlative
 correlativity
 correspondence
-correspondent
 correspondent
 corrida
 corridor
@@ -10490,7 +10023,6 @@ cosmos
 cosmotron
 coss
 cost
-cost
 costa
 costalgia
 costermonger
@@ -10525,7 +10057,6 @@ cottar
 cotter
 cottier
 cotton
-cotton
 cottonmouth
 cottonseed
 cottontail
@@ -10537,11 +10068,8 @@ coturnix
 cotyledon
 coucal
 couch
-couch
 couchette
 cougar
-cougar
-cough
 cough
 coughing
 coulisse
@@ -10644,7 +10172,6 @@ counting
 countinghouse
 countlessness
 country
-country
 country-dance
 countryfolk
 countryman
@@ -10669,11 +10196,9 @@ courgette
 courier
 courlan
 course
-course
 courser
 coursework
 coursing
-court
 court
 court-martial
 courtesan
@@ -10686,7 +10211,6 @@ courtroom
 courtship
 courtyard
 couscous
-cousin
 cousin
 cousin-german
 couture
@@ -10701,7 +10225,6 @@ cove
 coven
 covenant
 cover
-cover
 cover-up
 coverage
 coverall
@@ -10713,14 +10236,12 @@ covetousness
 covey
 coville
 cow
-cow
 cowage
 coward
 cowardice
 cowardliness
 cowbane
 cowbarn
-cowbell
 cowbell
 cowberry
 cowbird
@@ -10766,7 +10287,6 @@ coziness
 cozy
 cps
 crab
-crab
 crabapple
 crabbedness
 crabbiness
@@ -10776,10 +10296,8 @@ crabro
 crabs
 cracca
 crack
-crack
 crack-up
 crackdown
-cracker
 cracker
 crackerberry
 crackerjack
@@ -10796,7 +10314,6 @@ craft
 crafter
 craftiness
 crafts
-craftsman
 craftsman
 craftsmanship
 crag
@@ -10845,7 +10362,6 @@ crassipes
 crassitude
 crassness
 crate
-crate
 crateful
 crater
 craterium
@@ -10856,7 +10372,6 @@ cravenness
 craving
 craw
 crawdad
-crawdad
 crawdaddy
 crawfish
 crawl
@@ -10864,8 +10379,6 @@ crawler
 crawling
 crawlspace
 crayfish
-crayfish
-crayon
 crayon
 craze
 craziness
@@ -10873,7 +10386,6 @@ crazy
 crazyweed
 creak
 creaking
-cream
 cream
 creamcups
 creamer
@@ -10888,8 +10400,6 @@ creationism
 creativeness
 creativity
 creator
-creator
-creature
 creature
 crecca
 creche
@@ -10902,8 +10412,6 @@ credenza
 credibility
 credibleness
 credit
-credit
-creditor
 creditor
 credits
 creditworthiness
@@ -10911,7 +10419,6 @@ credo
 credulity
 credulousness
 creed
-creek
 creek
 creel
 creep
@@ -10962,17 +10469,13 @@ crewet
 crewman
 crex
 crib
-crib
 cribbage
 cricetus
 crick
 cricket
-cricket
 cricketer
 crier
 crime
-crime
-criminal
 criminal
 criminalisation
 criminalism
@@ -11030,15 +10533,12 @@ crock
 crockery
 crocket
 crocodile
-crocodile
 crocodilian
 crocolite
-crocus
 crocus
 crocuta
 croft
 crofter
-croissant
 croissant
 cromlech
 cromorne
@@ -11046,13 +10546,11 @@ crone
 crony
 cronyism
 crook
-crook
 crookback
 crookedness
 crookneck
 crooner
 crooning
-crop
 crop
 crop-dusting
 cropper
@@ -11061,7 +10559,6 @@ croquet
 croquette
 crore
 crosier
-cross
 cross
 cross-classification
 cross-division
@@ -11131,18 +10628,15 @@ croupier
 croute
 crouton
 crow
-crow
 crow-bait
 crow-shrike
 crowbait
 crowbar
 crowberry
 crowd
-crowd
 crowding
 crowfoot
 crowing
-crown
 crown
 crown-beard
 crown-of-the-field
@@ -11188,14 +10682,12 @@ crusader
 cruse
 crusgalli
 crush
-crush
 crusher
 crushing
 crust
 crustacean
 crutch
 crux
-cry
 cry
 cryaesthesia
 crybaby
@@ -11250,7 +10742,6 @@ ctene
 ctenidium
 ctenophore
 cub
-cub
 cuban
 cubby
 cubbyhole
@@ -11276,7 +10767,6 @@ cuckoopint
 cucullaria
 cucullata
 cucullatus
-cucumber
 cucumber
 cucurbit
 cud
@@ -11315,7 +10805,6 @@ cultist
 cultivar
 cultivation
 cultivator
-cultivator
 cultorum
 culturati
 culture
@@ -11348,12 +10837,9 @@ cunning
 cunninghamii
 cunt
 cup
-cup
 cupanioides
 cupbearer
 cupboard
-cupboard
-cupcake
 cupcake
 cupel
 cupflower
@@ -11411,7 +10897,6 @@ curiousness
 curium
 curl
 curler
-curler
 curlew
 curlicue
 curliness
@@ -11423,8 +10908,6 @@ currajong
 currant
 currawong
 currency
-currency
-current
 current
 currentness
 curriculum
@@ -11438,14 +10921,12 @@ cursive
 cursor
 curtailment
 curtain
-curtain
 curtilage
 curtness
 curtsey
 curtsy
 curvaceousness
 curvature
-curve
 curve
 curvet
 curvirostra
@@ -11454,7 +10935,6 @@ cuscus
 cush-cush
 cushat
 cushaw
-cushion
 cushion
 cushioning
 cusk
@@ -11467,7 +10947,6 @@ cuspidor
 cuss
 cussedness
 custard
-custard
 custodian
 custodianship
 custody
@@ -11475,11 +10954,9 @@ custom
 custom-built
 custom-made
 customer
-customer
 customhouse
 customs
 customshouse
-cut
 cut
 cut-and-thrust
 cut-in
@@ -11489,7 +10966,6 @@ cutaway
 cutback
 cutch
 cuteness
-cuticle
 cuticle
 cuticula
 cutin
@@ -11548,7 +11024,6 @@ cyborg
 cycad
 cyclamen
 cycle
-cycle
 cycles/second
 cyclicity
 cycling
@@ -11557,7 +11032,6 @@ cyclobenzaprine
 cyclocarpa
 cyclohexanol
 cycloid
-cyclone
 cyclone
 cyclooxygenase
 cyclooxygenase-1
@@ -11579,7 +11053,6 @@ cygnet
 cygnoides
 cygnus
 cylinder
-cylinder
 cylindraceum
 cylindrica
 cylindricality
@@ -11588,7 +11061,6 @@ cylindricum
 cylix
 cyma
 cymatium
-cymbal
 cymbal
 cymbalist
 cymbals
@@ -11707,13 +11179,11 @@ dactyloides
 dactylomegaly
 dactylon
 dad
-dad
 dada
 dadaism
 daddy
 dado
 daemon
-daffodil
 daffodil
 daftness
 dag
@@ -11725,7 +11195,6 @@ dago
 daguerreotype
 dah
 dahl
-dahlia
 dahlia
 dai
 daikon
@@ -11740,7 +11209,6 @@ dairymaid
 dairyman
 dais
 daishiki
-daisy
 daisy
 daisy-bush
 daisybush
@@ -11760,7 +11228,6 @@ dalmatian
 dalo
 dam
 dama
-damage
 damage
 damages
 damar
@@ -11791,8 +11258,6 @@ damselfly
 damson
 danaid
 dance
-dance
-dancer
 dancer
 dancing
 dancing-master
@@ -11802,7 +11267,6 @@ dandruff
 dandy
 dandyism
 danewort
-danger
 danger
 dangerousness
 dangle-berry
@@ -11850,9 +11314,7 @@ darts
 darwiniensis
 das
 dash
-dash
 dash-pot
-dashboard
 dashboard
 dasheen
 dashiki
@@ -11865,8 +11327,6 @@ dasyure
 dasyurid
 data
 database
-database
-date
 date
 dateline
 dating
@@ -11875,7 +11335,6 @@ datum
 daub
 dauber
 daubing
-daughter
 daughter
 daughter-in-law
 dauntlessness
@@ -11892,7 +11351,6 @@ dawdler
 dawdling
 dawn
 dawning
-day
 day
 daybed
 daybook
@@ -11925,7 +11383,6 @@ deacon
 deaconess
 deactivation
 dead
-dead
 dead-man's-fingers
 dead-men's-fingers
 deadbeat
@@ -11934,7 +11391,6 @@ deadening
 deadeye
 deadhead
 deadlight
-deadline
 deadline
 deadliness
 deadlock
@@ -11946,7 +11402,6 @@ deaf-mute
 deaf-muteness
 deaf-mutism
 deafness
-deal
 deal
 dealbata
 dealer
@@ -11967,7 +11422,6 @@ dearie
 dearness
 dearth
 deary
-death
 death
 death-roll
 deathbed
@@ -12000,15 +11454,12 @@ debridement
 debriefing
 debris
 debt
-debt
-debtor
 debtor
 debugger
 debunking
 debut
 debutante
 dec
-decade
 decade
 decadence
 decadency
@@ -12062,7 +11513,6 @@ decile
 deciliter
 decilitre
 decimal
-decimal
 decimalisation
 decimalization
 decimation
@@ -12070,7 +11520,6 @@ decimeter
 decimetre
 decipherer
 decipherment
-decision
 decision
 decisiveness
 deck
@@ -12115,7 +11564,6 @@ decorum
 decoupage
 decoy
 decrease
-decrease
 decree
 decrement
 decrepitation
@@ -12130,7 +11578,6 @@ decumary
 decurrens
 decussation
 dedication
-dedication
 dedifferentiation
 deductible
 deduction
@@ -12141,7 +11588,6 @@ deep
 deep-freeze
 deepening
 deepness
-deer
 deer
 deer's-ear
 deer's-ears
@@ -12174,7 +11620,6 @@ defendant
 defender
 defenestration
 defense
-defense
 defenselessness
 defensibility
 defensive
@@ -12188,7 +11633,6 @@ defiance
 defibrillation
 defibrillator
 deficiency
-deficit
 deficit
 defilade
 defile
@@ -12225,7 +11669,6 @@ degeneration
 deglutition
 degradation
 degrader
-degree
 degree
 degustation
 dehiscence
@@ -12286,7 +11729,6 @@ delirium
 deliverable
 deliverance
 deliverer
-delivery
 delivery
 deliveryman
 dell
@@ -12375,7 +11817,6 @@ demyelination
 demythologisation
 demythologization
 den
-den
 denationalisation
 denationalization
 denaturant
@@ -12386,7 +11827,6 @@ dengue
 denial
 denier
 denigration
-denim
 denim
 denizen
 denomination
@@ -12417,7 +11857,6 @@ dentifrice
 dentin
 dentine
 dentist
-dentist
 dentistry
 dentition
 denture
@@ -12429,7 +11868,6 @@ denunciation
 deodar
 deodara
 deodorant
-deodorant
 deodourant
 deossification
 deoxyadenosine
@@ -12440,7 +11878,6 @@ deoxyribose
 deoxythymidine
 departed
 departer
-department
 department
 departure
 dependability
@@ -12468,7 +11905,6 @@ deportation
 deportee
 deportment
 deposer
-deposit
 deposit
 depositary
 deposition
@@ -12537,14 +11973,12 @@ descender
 descensus
 descent
 description
-description
 descriptivism
 descriptor
 desecration
 desegregation
 desensitisation
 desensitization
-desert
 desert
 deserter
 desertification
@@ -12556,7 +11990,6 @@ desiccant
 desiccation
 desideratum
 design
-design
 designation
 designatum
 designer
@@ -12565,8 +11998,6 @@ desipramine
 desirability
 desirableness
 desire
-desire
-desk
 desk
 deskman
 desktop
@@ -12594,7 +12025,6 @@ despot
 despotism
 desquamation
 dessert
-dessert
 dessertspoon
 dessertspoonful
 dessiatine
@@ -12608,7 +12038,6 @@ destitution
 destroyer
 destructibility
 destruction
-destruction
 destructiveness
 destructor
 destruens
@@ -12618,14 +12047,12 @@ desynchronization
 desynchronizing
 detachment
 detail
-detail
 detailing
 details
 detainee
 detainment
 detecting
 detection
-detective
 detective
 detector
 detent
@@ -12675,7 +12102,6 @@ devastation
 developer
 developing
 development
-development
 deviance
 deviant
 deviate
@@ -12710,7 +12136,6 @@ devotion
 devotional
 devourer
 devoutness
-dew
 dew
 dewberry
 dewdrop
@@ -12775,7 +12200,6 @@ diamante
 diameter
 diamine
 diamond
-diamond
 diamondback
 diamonds
 dianthiflora
@@ -12788,7 +12212,6 @@ diapheromera
 diaphone
 diaphoresis
 diaphoretic
-diaphragm
 diaphragm
 diaphysis
 diapir
@@ -12813,7 +12236,6 @@ diazepam
 diazonium
 diazoxide
 dibber
-dibble
 dibble
 dibbuk
 dibrach
@@ -12869,7 +12291,6 @@ dictator
 dictatorship
 diction
 dictionary
-dictionary
 dictostylium
 dictum
 dictyosome
@@ -12917,10 +12338,8 @@ diethylstilbesterol
 diethylstilbestrol
 diethylstilboestrol
 dietician
-dietician
 dieting
 dietitian
-difference
 difference
 differentia
 differential
@@ -12944,10 +12363,8 @@ digester
 digestibility
 digestibleness
 digestion
-digestion
 digestive
 digestorium
-digger
 digger
 digging
 diggings
@@ -12991,7 +12408,6 @@ dilemma
 dilettante
 diligence
 dill
-dill
 dillenia
 dilly-dallier
 dillydallier
@@ -12999,7 +12415,6 @@ diltiazem
 diluent
 dilutant
 dilution
-dime
 dime
 dimenhydrinate
 dimension
@@ -13017,7 +12432,6 @@ dimness
 dimorphism
 dimout
 dimple
-dimple
 dimwit
 din
 dinar
@@ -13029,7 +12443,6 @@ ding-dong
 dingbat
 dinge
 dinghy
-dinghy
 dinginess
 dingle
 dingo
@@ -13040,13 +12453,11 @@ dink
 dinkey
 dinky
 dinner
-dinner
 dinnertime
 dinnerware
 dinoceras
 dinocerate
 dinoflagellate
-dinosaur
 dinosaur
 dint
 dinucleotide
@@ -13080,7 +12491,6 @@ diploica
 diploid
 diploidy
 diploma
-diploma
 diplomacy
 diplomat
 diplomate
@@ -13094,12 +12504,10 @@ dipping
 dipsomania
 dipsomaniac
 dipstick
-dipstick
 dipteran
 dipterocarp
 dipteron
 diptych
-direction
 direction
 directionality
 directive
@@ -13117,7 +12525,6 @@ dirigible
 dirk
 dirndl
 dirt
-dirt
 dirtiness
 dirtying
 disa
@@ -13126,7 +12533,6 @@ disabled
 disablement
 disaccharidase
 disaccharide
-disadvantage
 disadvantage
 disaffection
 disaffirmation
@@ -13203,7 +12609,6 @@ discourse
 discourtesy
 discoverer
 discovery
-discovery
 discredit
 discreetness
 discrepancy
@@ -13215,10 +12620,8 @@ discursiveness
 discus
 discussant
 discussion
-discussion
 disdain
 disdainfulness
-disease
 disease
 disembarkation
 disembarkment
@@ -13246,9 +12649,7 @@ disgracefulness
 disgruntlement
 disguise
 disgust
-disgust
 disgustingness
-dish
 dish
 dishabille
 disharmony
@@ -13388,7 +12789,6 @@ dissyllable
 dissymmetry
 distaff
 distance
-distance
 distaste
 distastefulness
 distemper
@@ -13418,8 +12818,6 @@ distressingness
 distributary
 distributer
 distribution
-distribution
-distributor
 distributor
 district
 distrust
@@ -13480,11 +12878,9 @@ divinatorius
 divine
 diviner
 diving
-diving
 divinity
 divinorum
 divisibility
-division
 division
 divisor
 divorce
@@ -13521,7 +12917,6 @@ doc
 docent
 docility
 dock
-dock
 dock-walloper
 dockage
 docker
@@ -13531,7 +12926,6 @@ docking
 dockside
 dockworker
 dockyard
-doctor
 doctor
 doctor-fish
 doctorate
@@ -13557,7 +12951,6 @@ doe
 doer
 doeskin
 dog
-dog
 dog-ear
 dog-iron
 dogbane
@@ -13579,7 +12972,6 @@ dogmatist
 dogsbody
 dogshit
 dogsled
-dogsled
 dogtooth
 dogtrot
 dogwatch
@@ -13599,8 +12991,6 @@ dolichocephaly
 doliolum
 dolius
 doll
-doll
-dollar
 dollar
 dollarfish
 dollhouse
@@ -13615,10 +13005,8 @@ dolomite
 dolor
 dolour
 dolphin
-dolphin
 dolphinfish
 dolt
-domain
 domain
 domatium
 dombeya
@@ -13657,9 +13045,7 @@ dong
 dongle
 donjon
 donkey
-donkey
 donkeywork
-donna
 donna
 donor
 donut
@@ -13676,7 +13062,6 @@ doojigger
 doom
 doomed
 doomsday
-door
 door
 doorbell
 doorcase
@@ -13737,7 +13122,6 @@ dotterel
 dottle
 doublasii
 double
-double
 double-bogey
 double-crosser
 double-crossing
@@ -13758,7 +13142,6 @@ doubleton
 doubletree
 doubling
 doubloon
-doubt
 doubt
 doubter
 doubtfulness
@@ -13813,7 +13196,6 @@ downswing
 downtick
 downtime
 downtown
-downtown
 downturn
 dowry
 dowse
@@ -13858,23 +13240,18 @@ dragger
 dragnet
 dragoman
 dragon
-dragon
 dragonet
-dragonfly
 dragonfly
 dragonhead
 dragoon
-drain
 drain
 drainage
 drainboard
 drainpipe
 drainplug
 drake
-drake
 drakes
 dram
-drama
 drama
 dramatics
 dramatisation
@@ -13888,13 +13265,10 @@ draught
 draughts
 draughtsman
 draw
-draw
 drawback
 drawbar
 drawbridge
-drawbridge
 drawee
-drawer
 drawer
 drawers
 drawing
@@ -13913,7 +13287,6 @@ dreadlock
 dreadnaught
 dreadnought
 dream
-dream
 dreamer
 dreaminess
 dreaming
@@ -13923,17 +13296,13 @@ dreariness
 dreck
 dredge
 dredger
-dredger
 dreg
 dregei
 dregs
 drenching
 dress
-dress
 dressage
 dresser
-dresser
-dressing
 dressing
 dressmaker
 dressmaking
@@ -13951,9 +13320,7 @@ driftfish
 drifting
 driftwood
 drill
-drill
 drilling
-drink
 drink
 drinkable
 drinker
@@ -13966,17 +13333,13 @@ dripping
 drippings
 dripstone
 drive
-drive
 drive-in
 drivel
 driveller
 driver
-driver
 driveshaft
 driveway
 driving
-driving
-drizzle
 drizzle
 drogue
 drollery
@@ -13990,7 +13353,6 @@ droning
 drool
 drooler
 droop
-drop
 drop
 drop-leaf
 drop-off
@@ -14020,13 +13382,11 @@ drubbing
 drudge
 drudgery
 drug
-drug
 drugget
 drugging
 druggist
 drugstore
 druidism
-drum
 drum
 drumbeat
 drumbeater
@@ -14048,11 +13408,9 @@ drupelet
 drusen
 druthers
 dry
-dry
 dry-gulching
 dryad
 drydock
-dryer
 dryer
 drygoods
 dryness
@@ -14079,11 +13437,9 @@ duce
 duchess
 duchy
 duck
-duck
 duckbill
 duckboard
 ducking
-duckling
 duckling
 duckpin
 duckpins
@@ -14116,7 +13472,6 @@ duffle
 dug
 dugon
 dugong
-dugout
 dugout
 duke
 dukedom
@@ -14152,7 +13507,6 @@ dunderhead
 dune
 dung
 dungaree
-dungeon
 dungeon
 dunghill
 dunk
@@ -14190,7 +13544,6 @@ durrajong
 durum
 dusk
 duskiness
-dust
 dust
 dustbin
 dustcart
@@ -14280,10 +13633,8 @@ eV
 eager
 eagerness
 eagle
-eagle
 eaglet
 eagre
-ear
 ear
 ear-shell
 earache
@@ -14312,7 +13663,6 @@ earrings
 ears
 earshot
 earth
-earth
 earth-ball
 earth-closet
 earth-god
@@ -14325,7 +13675,6 @@ earthling
 earthman
 earthnut
 earthquake
-earthquake
 earthstar
 earthtongue
 earthwork
@@ -14334,12 +13683,10 @@ earwax
 earwig
 earworm
 ease
-ease
 easel
 easement
 easiness
 easing
-east
 east
 easter
 easterly
@@ -14459,8 +13806,6 @@ edelweiss
 edema
 edentate
 edge
-edge
-edger
 edger
 edginess
 edging
@@ -14473,8 +13818,6 @@ edifice
 editing
 edition
 editor
-editor
-editorial
 editorial
 editorialist
 editorship
@@ -14482,7 +13825,6 @@ editorum
 edmontosaurus
 edodes
 educatee
-education
 education
 educationalist
 educationist
@@ -14492,7 +13834,6 @@ edulis
 edutainment
 edward
 eel
-eel
 eelblenny
 eelgrass
 eelpout
@@ -14500,7 +13841,6 @@ eels
 eelworm
 eeriness
 effacement
-effect
 effect
 effecter
 effectiveness
@@ -14540,7 +13880,6 @@ egalitarianism
 egalite
 egality
 egg
-egg
 egg-and-anchor
 egg-and-dart
 egg-and-tongue
@@ -14551,8 +13890,6 @@ egger
 eggfruit
 egghead
 eggnog
-eggnog
-eggplant
 eggplant
 eggs
 eggshake
@@ -14578,7 +13915,6 @@ eider
 eiderdown
 eidos
 eigenvalue
-eight
 eight
 eight-spot
 eighteen
@@ -14627,7 +13963,6 @@ elation
 elatior
 elatius
 elatus
-elbow
 elbow
 elbowing
 eld
@@ -14697,11 +14032,9 @@ elegans
 elegist
 elegy
 element
-element
 elements
 elemi
 elenchi
-elephant
 elephant
 elephant's-foot
 elephant-tusk
@@ -14730,7 +14063,6 @@ elk-wood
 elkhound
 elkwood
 ell
-ellipse
 ellipse
 ellipsis
 ellipsoid
@@ -14812,7 +14144,6 @@ emergency
 emeritus
 emersion
 emery
-emery
 emesis
 emetic
 emf
@@ -14852,8 +14183,6 @@ emplacement
 employ
 employable
 employee
-employee
-employer
 employer
 employment
 emporium
@@ -14931,10 +14260,8 @@ encyclopaedia
 encyclopaedism
 encyclopaedist
 encyclopedia
-encyclopedia
 encyclopedism
 encyclopedist
-end
 end
 end-all
 end-plate
@@ -15001,12 +14328,10 @@ endurance
 enduringness
 enema
 enemy
-enemy
 energid
 energiser
 energizer
 energizing
-energy
 energy
 enervation
 enfeeblement
@@ -15021,10 +14346,7 @@ engagement
 engelmannia
 engelmannii
 engine
-engine
 engineer
-engineer
-engineering
 engineering
 enginery
 english
@@ -15065,7 +14387,6 @@ enormousness
 enosis
 enough
 enquirer
-enquiry
 enquiry
 enragement
 enrichment
@@ -15141,7 +14462,6 @@ entozoon
 entr'acte
 entrails
 entrance
-entrance
 entrancement
 entranceway
 entrant
@@ -15167,7 +14487,6 @@ enuresis
 envelope
 envelopment
 enviousness
-environment
 environment
 environmentalism
 environmentalist
@@ -15298,12 +14617,10 @@ epitope
 epizoan
 epizoon
 epoch
-epoch
 eponym
 eponymy
 epops
 epos
-epoxy
 epoxy
 epsilon
 eptatretus
@@ -15334,11 +14651,9 @@ equina
 equine
 equinoctial
 equinox
-equinox
 equinoxes
 equinus
 equipage
-equipment
 equipment
 equipoise
 equipping
@@ -15351,7 +14666,6 @@ equivalent
 equivocalness
 equivocation
 equivocator
-era
 era
 eradication
 eradicator
@@ -15406,7 +14720,6 @@ errand
 errantry
 erratum
 erroneousness
-error
 error
 ersatz
 erucoides
@@ -15516,7 +14829,6 @@ esthetic
 esthetician
 esthetics
 estimate
-estimate
 estimation
 estimator
 estivation
@@ -15550,7 +14862,6 @@ ethanol
 ethchlorvynol
 ethene
 ether
-ethernet
 ethernet
 ethic
 ethician
@@ -15620,7 +14931,6 @@ eunuchoidism
 eupatoria
 euphemism
 euphonium
-euphonium
 euphony
 euphorbia
 euphorbium
@@ -15672,12 +14982,10 @@ evecta
 even
 evenfall
 evening
-evening
 evening-snow
 eveningwear
 evenness
 evensong
-event
 event
 eventide
 eventration
@@ -15708,12 +15016,10 @@ ex
 ex-boyfriend
 ex-gambler
 ex-husband
-ex-husband
 ex-mayor
 ex-president
 ex-serviceman
 ex-spouse
-ex-wife
 ex-wife
 exabit
 exabyte
@@ -15728,10 +15034,8 @@ exaltation
 exam
 examen
 examination
-examination
 examinee
 examiner
-example
 example
 exanthem
 exanthema
@@ -15755,7 +15059,6 @@ excerption
 excess
 excessiveness
 exchange
-exchange
 exchangeability
 exchanger
 exchequer
@@ -15768,7 +15071,6 @@ excitant
 excitation
 excitement
 exclaiming
-exclamation
 exclamation
 exclusion
 exclusive
@@ -15817,7 +15119,6 @@ exfoliation
 exfoliativa
 exhalation
 exhaust
-exhaust
 exhaustion
 exhibit
 exhibition
@@ -15833,7 +15134,6 @@ exigua
 exiguity
 exile
 exilis
-existence
 existence
 existentialism
 existentialist
@@ -15871,7 +15171,6 @@ exotropia
 expansa
 expanse
 expansion
-expansion
 expansionism
 expansiveness
 expansivity
@@ -15897,12 +15196,10 @@ expenditure
 expense
 expensiveness
 experience
-experience
 experiment
 experimentalism
 experimentation
 experimenter
-expert
 expert
 expertise
 expertness
@@ -15911,7 +15208,6 @@ expiration
 expiry
 explanandum
 explanans
-explanation
 explanation
 expletive
 explicandum
@@ -16022,14 +15318,12 @@ exurbia
 exuviae
 eyas
 eye
-eye
 eye-beaming
 eye-catcher
 eye-drop
 eye-lotion
 eyeball
 eyebath
-eyebrow
 eyebrow
 eyecup
 eyedness
@@ -16039,12 +15333,10 @@ eyeglass
 eyeglasses
 eyehole
 eyelash
-eyelash
 eyelessness
 eyelet
 eyelid
 eyelids
-eyeliner
 eyeliner
 eyepatch
 eyepiece
@@ -16080,7 +15372,6 @@ fabricator
 fabulist
 facade
 face
-face
 face-off
 facelift
 faceplate
@@ -16098,7 +15389,6 @@ facility
 facing
 facsimile
 fact
-fact
 faction
 factoid
 factor
@@ -16106,7 +15396,6 @@ factorial
 factoring
 factorisation
 factorization
-factory
 factory
 factotum
 facts
@@ -16178,7 +15467,6 @@ falconeri
 falconry
 falderol
 fall
-fall
 fall-board
 fallaciousness
 fallacy
@@ -16208,12 +15496,10 @@ familiarisation
 familiarity
 familiarization
 family
-family
 famine
 famishment
 famotidine
 famulus
-fan
 fan
 fan-jet
 fanaloka
@@ -16226,7 +15512,6 @@ fancywork
 fandango
 fandom
 fanfare
-fang
 fang
 fanion
 fanjet
@@ -16262,9 +15547,7 @@ farinosa
 farkleberry
 farleyense
 farm
-farm
 farm-place
-farmer
 farmer
 farmerette
 farmhand
@@ -16321,7 +15604,6 @@ fasting
 fastnacht
 fastness
 fat
-fat
 fatale
 fatalism
 fatalist
@@ -16330,9 +15612,7 @@ fatback
 fate
 fathead
 father
-father
 father-figure
-father-in-law
 father-in-law
 fatherhood
 fatherland
@@ -16357,7 +15637,6 @@ fatwa
 fatwah
 faubourg
 fauces
-faucet
 faucet
 fauld
 fault
@@ -16387,17 +15666,14 @@ fax
 fay
 fealty
 fear
-fear
 fearfulness
 fearlessness
 feasibility
 feasibleness
 feast
-feast
 feastii
 feasting
 feat
-feather
 feather
 feather-foil
 featherbed
@@ -16408,7 +15684,6 @@ featheriness
 feathering
 feathertop
 featherweight
-feature
 feature
 febricity
 febrifuge
@@ -16436,7 +15711,6 @@ feeblemindedness
 feebleness
 feed
 feedback
-feedback
 feedbag
 feeder
 feeding
@@ -16445,9 +15719,7 @@ feedstock
 feel
 feeler
 feeling
-feeling
 feelings
-feet
 feet
 feigning
 feijoa
@@ -16474,12 +15746,10 @@ felly
 felo-de-se
 felon
 felony
-felony
 felspar
 felt
 felucca
 felwort
-female
 female
 femaleness
 feminine
@@ -16505,7 +15775,6 @@ fence-sitter
 fencer
 fencesitter
 fencing
-fender
 fender
 fender-bender
 fenestella
@@ -16547,8 +15816,6 @@ ferromagnetism
 ferruginea
 ferrule
 ferry
-ferry
-ferryboat
 ferryboat
 ferrying
 ferryman
@@ -16556,7 +15823,6 @@ fertilisation
 fertiliser
 fertility
 fertilization
-fertilizer
 fertilizer
 ferule
 fervency
@@ -16617,13 +15883,10 @@ fib
 fibber
 fibbing
 fiber
-fiber
 fiberboard
-fiberglass
 fiberglass
 fiberoptics
 fiberscope
-fibre
 fibre
 fibreboard
 fibreglass
@@ -16654,7 +15917,6 @@ fice
 fichu
 fickleness
 fiction
-fiction
 fictionalisation
 fictionalization
 fiddle
@@ -16669,7 +15931,6 @@ fidgetiness
 fiduciary
 fief
 fiefdom
-field
 field
 fielder
 fieldfare
@@ -16688,7 +15949,6 @@ fife
 fifteen
 fifteenth
 fifth
-fifth
 fifties
 fiftieth
 fifty
@@ -16696,8 +15956,6 @@ fig
 fig-bird
 figeater
 fight
-fight
-fighter
 fighter
 fighting
 figment
@@ -16719,7 +15977,6 @@ filaria
 filariasis
 filature
 filbert
-file
 file
 filefish
 filename
@@ -16773,16 +16030,13 @@ financing
 finback
 finch
 find
-find
 finder
 finding
 findings
 fine
-fine
 fineness
 finery
 finesse
-finger
 finger
 finger-flower
 finger-painting
@@ -16819,8 +16073,6 @@ finocchio
 fiord
 fipple
 fir
-fir
-fire
 fire
 fire-bush
 fire-eater
@@ -16856,8 +16108,6 @@ firelight
 firelighter
 firelock
 fireman
-fireman
-fireplace
 fireplace
 fireplug
 firepower
@@ -16867,7 +16117,6 @@ firestone
 firestorm
 firethorn
 firetrap
-firewall
 firewall
 firewater
 fireweed
@@ -16888,13 +16137,11 @@ firstborn
 firth
 fisc
 fish
-fish
 fish-fly
 fish-worship
 fishbone
 fishbowl
 fisher
-fisherman
 fisherman
 fishery
 fishgig
@@ -16962,7 +16209,6 @@ flaccida
 flaccidity
 flack
 flag
-flag
 flag-waver
 flagellant
 flagellaris
@@ -16989,7 +16235,6 @@ flamande
 flambeau
 flamboyance
 flamboyant
-flame
 flame
 flame-flower
 flame-out
@@ -17022,7 +16267,6 @@ flapper
 flapping
 flaps
 flare
-flare
 flare-up
 flash
 flash-forward
@@ -17041,7 +16285,6 @@ flashover
 flashpoint
 flask
 flaskful
-flat
 flat
 flatbed
 flatboat
@@ -17081,7 +16324,6 @@ flavobrunneum
 flavone
 flavonoid
 flavor
-flavor
 flavorer
 flavoring
 flavorlessness
@@ -17096,7 +16338,6 @@ flavum
 flavus
 flaw
 flawlessness
-flax
 flax
 flaxseed
 flea
@@ -17114,7 +16355,6 @@ fleer
 fleet
 fleetingness
 fleetness
-flesh
 flesh
 fleshiness
 flesus
@@ -17137,7 +16377,6 @@ flicker
 flickertail
 flier
 flies
-flight
 flight
 flightiness
 flimflam
@@ -17173,12 +16412,10 @@ floccosus
 flocculation
 floccule
 flock
-flock
 flodmanii
 floe
 flogger
 flogging
-flood
 flood
 floodgate
 floodhead
@@ -17186,7 +16423,6 @@ flooding
 floodlight
 floodplain
 floom
-floor
 floor
 floorboard
 flooring
@@ -17232,7 +16468,6 @@ flow
 flowage
 flowchart
 flower
-flower
 flower-of-an-hour
 flowerbed
 floweret
@@ -17250,7 +16485,6 @@ fluegelhorn
 fluency
 fluff
 fluffiness
-flugelhorn
 flugelhorn
 fluid
 fluidity
@@ -17294,7 +16528,6 @@ flurry
 flush
 fluster
 flute
-flute
 fluting
 flutist
 flutter
@@ -17306,7 +16539,6 @@ flux
 fluxion
 fluxions
 fluxmeter
-fly
 fly
 fly-by
 fly-by-night
@@ -17329,7 +16561,6 @@ flyweight
 flywheel
 fo'c'sle
 foal
-foam
 foam
 foamflower
 foaminess
@@ -17358,7 +16589,6 @@ foetoscope
 foetoscopy
 foetus
 fog
-fog
 fogbank
 fogey
 fogginess
@@ -17373,7 +16603,6 @@ foiling
 foina
 folacin
 folate
-fold
 fold
 folder
 folderal
@@ -17414,12 +16643,10 @@ fondu
 fondue
 fonkii
 font
-font
 fontanel
 fontanelle
 fontanesiana
 fontinalis
-food
 food
 foodie
 foods
@@ -17430,13 +16657,11 @@ foolhardiness
 foolishness
 foolscap
 foot
-foot
 foot-lambert
 foot-pound
 foot-poundal
 foot-ton
 footage
-football
 football
 footballer
 footbath
@@ -17455,7 +16680,6 @@ footlights
 footlocker
 footman
 footmark
-footnote
 footnote
 footpad
 footpath
@@ -17486,7 +16710,6 @@ forbearance
 forbiddance
 forbidding
 force
-force
 force-out
 forcefulness
 forcemeat
@@ -17505,7 +16728,6 @@ forebear
 foreboding
 forebrain
 forecast
-forecast
 forecaster
 forecasting
 forecastle
@@ -17520,7 +16742,6 @@ forefront
 foreground
 foregrounding
 forehand
-forehead
 forehead
 foreigner
 foreignness
@@ -17555,7 +16776,6 @@ foresightedness
 foresightfulness
 foreskin
 forest
-forest
 forestage
 forestalling
 forestay
@@ -17577,7 +16797,6 @@ forficatus
 forge
 forger
 forgery
-forgery
 forget-me-not
 forgetfulness
 forging
@@ -17587,11 +16806,9 @@ forgivingness
 forgoing
 forint
 fork
-fork
 forking
 forklift
 forlornness
-form
 form
 formal
 formaldehyde
@@ -17603,7 +16820,6 @@ formality
 formalization
 formalness
 formalwear
-format
 format
 formation
 formative
@@ -17641,7 +16857,6 @@ fortification
 fortis
 fortissimo
 fortitude
-fortnight
 fortnight
 fortress
 fortuitousness
@@ -17685,7 +16900,6 @@ foulness
 foumart
 found
 foundation
-foundation
 founder
 foundering
 founding
@@ -17693,7 +16907,6 @@ foundling
 foundress
 foundry
 fount
-fountain
 fountain
 fountainhead
 four
@@ -17715,13 +16928,10 @@ fourteenth
 fourth
 fovea
 fowl
-fowl
 fowler
-fox
 fox
 fox-trot
 foxberry
-foxglove
 foxglove
 foxhole
 foxhound
@@ -17742,7 +16952,6 @@ fragility
 fragment
 fragmentation
 fragrance
-fragrance
 fragrancy
 fragrans
 frail
@@ -17752,7 +16961,6 @@ fraise
 frambesia
 framboesia
 framboise
-frame
 frame
 frame-up
 framer
@@ -17796,7 +17004,6 @@ frazzle
 freak
 freakishness
 freckle
-freckle
 free
 free-for-all
 free-lance
@@ -17829,15 +17036,12 @@ freewheel
 freewheeler
 freewoman
 freeze
-freeze
 freeze-drying
-freezer
 freezer
 freezing
 fregit
 freight
 freightage
-freighter
 freighter
 frenata
 french
@@ -17866,12 +17070,9 @@ fricandeau
 fricassee
 fricative
 friction
-friction
 friday
 fridge
-fridge
 friedcake
-friend
 friend
 friendlessness
 friendliness
@@ -17908,7 +17109,6 @@ frivolousness
 frizz
 frock
 frog
-frog
 frog's-bit
 frogbit
 frogfish
@@ -17920,7 +17120,6 @@ frolicsomeness
 frond
 frondosa
 frondosus
-front
 front
 front-runner
 front-stall
@@ -17936,7 +17135,6 @@ frontispiece
 frontlet
 frontstall
 frost
-frost
 frost-weed
 frostbite
 frostii
@@ -17949,7 +17147,6 @@ frothiness
 frottage
 frotteur
 frown
-frown
 fructification
 fructose
 fructosuria
@@ -17957,7 +17154,6 @@ frugality
 frugalness
 frugilegus
 frugiperda
-fruit
 fruit
 fruitage
 fruitcake
@@ -17999,7 +17195,6 @@ fucus
 fuddle
 fuddy-duddy
 fudge
-fuel
 fuel
 fueling
 fug
@@ -18082,7 +17277,6 @@ funniness
 funny
 funrun
 fur
-fur
 fur-piece
 furan
 furane
@@ -18100,7 +17294,6 @@ furlough
 furnace
 furnishing
 furnishings
-furniture
 furniture
 furor
 furore
@@ -18224,7 +17417,6 @@ gallbladder
 galleon
 gallery
 galley
-galley
 gallfly
 galli
 gallimaufry
@@ -18235,7 +17427,6 @@ gallinae
 gallinago
 gallinule
 gallium
-gallon
 gallon
 gallop
 gallopavo
@@ -18262,7 +17453,6 @@ gambling
 gamboge
 gambol
 gambrel
-game
 game
 gamebag
 gameboard
@@ -18291,7 +17481,6 @@ gammon
 gammopathy
 gamp
 gamut
-gander
 gander
 ganef
 gang
@@ -18325,7 +17514,6 @@ gap
 gape
 gar
 garage
-garage
 garambulla
 garb
 garbage
@@ -18334,7 +17522,6 @@ garbanzo
 garboard
 garboil
 garbology
-garden
 garden
 gardener
 gardenia
@@ -18349,7 +17536,6 @@ gari
 garibaldi
 garishness
 garland
-garlic
 garlic
 garment
 garment-worker
@@ -18377,7 +17563,6 @@ garters
 garullus
 garzetta
 gas
-gas
 gasbag
 gasconade
 gaseousness
@@ -18392,7 +17577,6 @@ gasman
 gasmask
 gasohol
 gasolene
-gasoline
 gasoline
 gasometer
 gasp
@@ -18426,14 +17610,12 @@ gastrulation
 gasworks
 gat
 gate
-gate
 gateau
 gatecrasher
 gatefold
 gatehouse
 gatekeeper
 gatepost
-gateway
 gateway
 gather
 gatherer
@@ -18447,7 +17629,6 @@ gaudery
 gaudiness
 gaudy
 gauffer
-gauge
 gauge
 gauntlet
 gauntness
@@ -18476,7 +17657,6 @@ gaze
 gazebo
 gazella
 gazelle
-gazelle
 gazette
 gazetteer
 gazillion
@@ -18484,11 +17664,9 @@ gazing
 gazpacho
 gean
 gear
-gear
 gearbox
 gearing
 gearset
-gearshift
 gearshift
 gearstick
 geartrain
@@ -18530,7 +17708,6 @@ gen
 gendarme
 gendarmerie
 gendarmery
-gender
 gender
 gene
 gene-splicing
@@ -18614,9 +17791,7 @@ geoffroyi
 geographer
 geographics
 geography
-geography
 geologist
-geology
 geology
 geomancer
 geomancy
@@ -18624,7 +17799,6 @@ geometer
 geometrician
 geometrid
 geometrizans
-geometry
 geometry
 geomorphology
 geophagia
@@ -18640,7 +17814,6 @@ georgiana
 geosphere
 geostrategy
 geotropism
-geranium
 geranium
 gerardia
 gerardii
@@ -18697,13 +17870,11 @@ gherkin
 ghetto
 ghillie
 ghost
-ghost
 ghostfish
 ghostliness
 ghostwriter
 ghoul
 ghrelin
-giant
 giant
 giantess
 giantism
@@ -18786,14 +17957,11 @@ ginzo
 gipsy
 gipsywort
 giraffe
-giraffe
 girandola
 girandole
 girasol
 girder
 girdle
-girdle
-girl
 girl
 girlfriend
 girlhood
@@ -18835,7 +18003,6 @@ gladiata
 gladiator
 gladiola
 gladiolus
-gladiolus
 gladis
 gladius
 gladness
@@ -18858,7 +18025,6 @@ glantulosa
 glare
 glareole
 glasnost
-glass
 glass
 glass-cutter
 glassblower
@@ -18896,8 +18062,6 @@ glia
 glibness
 glide
 glider
-glider
-gliding
 gliding
 glimmer
 glimmering
@@ -18939,7 +18103,6 @@ globulus
 glochid
 glochidium
 glockenspiel
-glockenspiel
 glogg
 glomerata
 glomeratus
@@ -18972,7 +18135,6 @@ glottidis
 glottis
 glottochronology
 glove
-glove
 glow
 glower
 glowing
@@ -18985,7 +18147,6 @@ glucosamine
 glucose
 glucoside
 glucosuria
-glue
 glue
 glueyness
 gluiness
@@ -19059,14 +18220,12 @@ go-slow
 goad
 goading
 goal
-goal
 goal-kick
 goalie
 goalkeeper
 goalmouth
 goalpost
 goaltender
-goat
 goat
 goatee
 goatfish
@@ -19111,7 +18270,6 @@ goiter
 goitre
 goitrogen
 gold
-gold
 gold-beater
 gold-worker
 goldbeater
@@ -19128,7 +18286,6 @@ goldfield
 goldfields
 goldfinch
 goldfish
-goldfish
 goldiana
 goldilocks
 goldmine
@@ -19137,7 +18294,6 @@ goldstone
 goldthread
 goldworker
 golem
-golf
 golf
 golf-club
 golfcart
@@ -19155,11 +18311,9 @@ gonad
 gonadotrophin
 gonadotropin
 gondola
-gondola
 gondolier
 gondoliere
 goner
-gong
 gong
 gongylodes
 gonif
@@ -19176,7 +18330,6 @@ goo
 goober
 good
 good-by
-good-bye
 good-bye
 good-for-naught
 good-for-nothing
@@ -19208,7 +18361,6 @@ goony
 goop
 goosander
 goose
-goose
 goose-tansy
 gooseberry
 goosebump
@@ -19228,11 +18380,9 @@ gorget
 gorgonian
 gorgonzola
 gorilla
-gorilla
 gorse
 gosan-chiku
 goshawk
-gosling
 gosling
 gosmore
 gospel
@@ -19267,9 +18417,7 @@ governed
 governess
 governing
 government
-government
 government-in-exile
-governor
 governor
 governorship
 gown
@@ -19289,7 +18437,6 @@ grackle
 grad
 gradation
 grade
-grade
 grader
 gradient
 grading
@@ -19307,12 +18454,10 @@ grafting
 graham
 grail
 grain
-grain
 grainfield
 graininess
 graining
 grains
-gram
 gram
 grama
 gramicidin
@@ -19339,10 +18484,8 @@ grandchild
 granddad
 granddaddy
 granddaughter
-granddaughter
 grandee
 grandeur
-grandfather
 grandfather
 grandicornis
 grandidentata
@@ -19357,13 +18500,11 @@ grandis
 grandma
 grandmaster
 grandmother
-grandmother
 grandnephew
 grandness
 grandniece
 grandpa
 grandparent
-grandson
 grandson
 grandstand
 grandstander
@@ -19392,14 +18533,12 @@ granulomatosis
 granulosa
 granulosum
 grape
-grape
 grapefruit
 grapes
 grapeshot
 grapevine
 graph
 grapheme
-graphic
 graphic
 graphics
 graphite
@@ -19415,11 +18554,9 @@ gras
 grasp
 grasping
 grass
-grass
 grass-of-Parnassus
 grassfinch
 grassfire
-grasshopper
 grasshopper
 grassland
 grata
@@ -19459,7 +18596,6 @@ gravity-assist
 gravure
 gravy
 gray
-gray
 grayback
 graybeard
 grayhen
@@ -19468,7 +18604,6 @@ grayness
 graze
 grazier
 grazing
-grease
 grease
 grease-gun
 greaseball
@@ -19493,7 +18628,6 @@ greed
 greediness
 greegree
 greek
-green
 green
 green-blindness
 greenback
@@ -19536,13 +18670,11 @@ gregorii
 greisen
 gremlin
 grenade
-grenade
 grenadier
 grenadine
 gres-gris
 grevillea
 grevyi
-grey
 grey
 greyana
 greyback
@@ -19566,7 +18698,6 @@ griffon
 grifter
 grigri
 grill
-grill
 grille
 grilling
 grillroom
@@ -19586,7 +18717,6 @@ gringo
 grinner
 grinning
 griot
-grip
 grip
 gripe
 gripes
@@ -19657,7 +18787,6 @@ grotesquery
 grotto
 grouch
 ground
-ground
 ground-berry
 ground-shaker
 groundball
@@ -19682,13 +18811,11 @@ groundsman
 groundspeed
 groundwork
 group
-group
 grouper
 groupie
 grouping
 groupthink
 groupware
-grouse
 grouse
 grouse-berry
 grouseberry
@@ -19702,7 +18829,6 @@ growl
 growler
 growling
 grownup
-growth
 growth
 groyne
 grub
@@ -19748,7 +18874,6 @@ guanosine
 guar
 guarani
 guarantee
-guarantee
 guarantor
 guaranty
 guarauna
@@ -19789,7 +18914,6 @@ guianensis
 guib
 guidance
 guide
-guide
 guidebook
 guideline
 guidepost
@@ -19812,7 +18936,6 @@ guineensis
 guineese
 guise
 guitar
-guitar
 guitarfish
 guitarist
 gula
@@ -19831,7 +18954,6 @@ gulper
 gulping
 gulyas
 gum
-gum
 gum-lac
 gumbo
 gumbo-limbo
@@ -19849,7 +18971,6 @@ gumshield
 gumshoe
 gumweed
 gumwood
-gun
 gun
 gun-sight
 gunboat
@@ -19910,10 +19031,8 @@ guyot
 guzzler
 guzzling
 gym
-gym
 gymkhana
 gymnasium
-gymnast
 gymnast
 gymnastics
 gymnocarpa
@@ -19989,7 +19108,6 @@ hackle
 hackles
 hackmatack
 hackney
-hacksaw
 hacksaw
 hackwork
 haddie
@@ -20074,11 +19192,9 @@ haick
 haik
 haiku
 hail
-hail
 hailer
 hailstone
 hailstorm
-hair
 hair
 hair's-breadth
 hair-raiser
@@ -20086,7 +19202,6 @@ hairball
 hairbrush
 haircare
 haircloth
-haircut
 haircut
 hairdo
 hairdresser
@@ -20128,7 +19243,6 @@ half
 half-and-half
 half-breed
 half-brother
-half-brother
 half-caste
 half-century
 half-cock
@@ -20144,7 +19258,6 @@ half-pay
 half-pint
 half-relief
 half-sister
-half-sister
 half-slip
 half-staff
 half-term
@@ -20158,7 +19271,6 @@ halftime
 halftone
 haliaetus
 halibut
-halibut
 halicacabum
 halide
 halimifolia
@@ -20166,7 +19278,6 @@ halimifolium
 halite
 halitosis
 halitus
-hall
 hall
 hallah
 hallelujah
@@ -20180,7 +19291,6 @@ hallucinogen
 hallucinosis
 hallucis
 hallux
-hallway
 hallway
 halm
 halma
@@ -20211,12 +19321,10 @@ hamartoma
 hamate
 hamatum
 hamburger
-hamburger
 hame
 hamelia
 hamiltoni
 hamlet
-hammer
 hammer
 hammerhead
 hammering
@@ -20227,14 +19335,11 @@ hammock
 hammondii
 hamper
 hamster
-hamster
 hamstring
 hanburyi
 hand
-hand
 hand-me-down
 handbag
-handball
 handball
 handbarrow
 handbasin
@@ -20257,14 +19362,12 @@ handgrip
 handgun
 handhold
 handicap
-handicap
 handicapped
 handicapper
 handicraft
 handiness
 handiwork
 handkerchief
-handle
 handle
 handle-bars
 handlebar
@@ -20281,7 +19384,6 @@ handover
 handrail
 handrest
 hands
-handsaw
 handsaw
 handsbreadth
 handset
@@ -20337,7 +19439,6 @@ harasser
 harassment
 harbinger
 harbor
-harbor
 harborage
 harbour
 harbourage
@@ -20346,8 +19447,6 @@ hardback
 hardbake
 hardball
 hardboard
-hardboard
-hardcover
 hardcover
 hardening
 hardhat
@@ -20362,7 +19461,6 @@ hardpan
 hardship
 hardtack
 hardtop
-hardware
 hardware
 hardwareman
 hardwickii
@@ -20386,7 +19484,6 @@ harmattan
 harmfulness
 harmonic
 harmonica
-harmonica
 harmonics
 harmoniousness
 harmonisation
@@ -20395,9 +19492,7 @@ harmonium
 harmonization
 harmonizer
 harmony
-harmony
 harness
-harp
 harp
 harper
 harpist
@@ -20441,7 +19536,6 @@ hastatus
 haste
 hastiness
 hat
-hat
 hatband
 hatbox
 hatch
@@ -20452,7 +19546,6 @@ hatchet
 hatching
 hatchling
 hatchway
-hate
 hate
 hatefulness
 hatemonger
@@ -20489,7 +19582,6 @@ haw
 haw-haw
 hawala
 hawfinch
-hawk
 hawk
 hawk's-beard
 hawk's-beards
@@ -20538,7 +19630,6 @@ he-goat
 he-huckleberry
 he-man
 head
-head
 head-shrinker
 headache
 headband
@@ -20557,8 +19648,6 @@ heading
 headlamp
 headland
 headlight
-headlight
-headline
 headline
 headliner
 headlinese
@@ -20599,7 +19688,6 @@ headword
 healer
 healing
 health
-health
 healthcare
 healthfulness
 healthiness
@@ -20607,10 +19695,8 @@ heap
 heaps
 hearer
 hearing
-hearing
 hearsay
 hearse
-heart
 heart
 heart-leaf
 heart-to-heart
@@ -20636,7 +19722,6 @@ heartstrings
 heartthrob
 heartwood
 heat
-heat
 heater
 heath
 heathen
@@ -20648,7 +19733,6 @@ heating
 heatstroke
 heaume
 heave
-heaven
 heaven
 heavens
 heaver
@@ -20678,7 +19762,6 @@ heddewigii
 hederaceae
 hederifolium
 hedge
-hedge
 hedgefund
 hedgehog
 hedger
@@ -20703,7 +19786,6 @@ hegira
 heidelbergensis
 heifer
 height
-height
 heights
 heinousness
 heir
@@ -20719,7 +19801,6 @@ helianthemum
 helianthoides
 helianthus
 helicon
-helicopter
 helicopter
 heliogram
 heliograph
@@ -20738,9 +19819,7 @@ heliotype
 heliozoan
 heliport
 helium
-helium
 helix
-hell
 hell
 hell-kite
 hell-rooster
@@ -20758,14 +19837,12 @@ hellion
 hello
 helm
 helmet
-helmet
 helmetflower
 helminth
 helminthiasis
 helminthic
 helmsman
 helot
-help
 help
 helpdesk
 helper
@@ -20858,12 +19935,10 @@ hemostasis
 hemostat
 hemothorax
 hemp
-hemp
 hemp-vine
 hempweed
 hemstitch
 hemstitching
-hen
 hen
 hen-of-the-woods
 henbane
@@ -20935,7 +20010,6 @@ heroin
 heroine
 heroism
 heron
-heron
 heronry
 herpangia
 herpes
@@ -20944,7 +20018,6 @@ herpetologist
 herpetology
 herrerasaur
 herrerasaurus
-herring
 herring
 herringbone
 hertz
@@ -20995,7 +20068,6 @@ hex
 hexachlorophene
 hexad
 hexafluoride
-hexagon
 hexagon
 hexagonoptera
 hexagram
@@ -21081,7 +20153,6 @@ hiking
 hilarity
 hildebrandi
 hill
-hill
 hillbilly
 hilliness
 hillock
@@ -21109,7 +20180,6 @@ hinny
 hint
 hinterland
 hip
-hip
 hip-hop
 hipbone
 hipflask
@@ -21124,7 +20194,6 @@ hippocastanum
 hippocrepis
 hippodrome
 hippoglossus
-hippopotamus
 hippopotamus
 hippos
 hippurus
@@ -21171,7 +20240,6 @@ historicism
 historiographer
 historiography
 history
-history
 histrion
 histrionics
 hit
@@ -21217,14 +20285,12 @@ hoc
 hock
 hock-joint
 hockey
-hockey
 hocus-pocus
 hod
 hodgepodge
 hodman
 hodometer
 hodoscope
-hoe
 hoe
 hoecake
 hoffmanni
@@ -21252,10 +20318,8 @@ holdout
 holdover
 holdup
 hole
-hole
 hole-in-the-wall
 holibut
-holiday
 holiday
 holidaymaker
 holies
@@ -21303,7 +20367,6 @@ homage
 homalocephalum
 hombre
 homburg
-home
 home
 home-builder
 home-farm
@@ -21382,7 +20445,6 @@ hone
 honestness
 honesty
 honey
-honey
 honey-flower
 honeybee
 honeybells
@@ -21415,7 +20477,6 @@ hoo-ha
 hoo-hah
 hooch
 hood
-hood
 hoodlum
 hoodmold
 hoodmould
@@ -21427,7 +20488,6 @@ hoof-mark
 hoofer
 hoofing
 hoofprint
-hook
 hook
 hookah
 hooker
@@ -21457,7 +20517,6 @@ hop
 hop-picker
 hop-step-and-jump
 hope
-hope
 hopeful
 hopefulness
 hopelessness
@@ -21477,7 +20536,6 @@ horizontalis
 horizontality
 hormone
 hormones
-horn
 horn
 hornbeam
 hornbill
@@ -21507,7 +20565,6 @@ horridum
 horridus
 horripilation
 horror
-horse
 horse
 horse-brier
 horse-cart
@@ -21555,13 +20612,11 @@ hortorum
 hortulana
 hosanna
 hose
-hose
 hosepipe
 hosier
 hosiery
 hospice
 hospitableness
-hospital
 hospital
 hospitalisation
 hospitality
@@ -21576,7 +20631,6 @@ hostile
 hostilities
 hostility
 hostler
-hot
 hot
 hot-rod
 hotbed
@@ -21607,12 +20661,9 @@ hound
 hound's-tongue
 hounds
 hour
-hour
-hourglass
 hourglass
 houri
 hours
-house
 house
 house-builder
 house-raising
@@ -21654,7 +20705,6 @@ houstonianum
 hovea
 hovel
 hovercraft
-hovercraft
 how-d'ye-do
 how-do-you-do
 howdah
@@ -21673,13 +20723,11 @@ huamachil
 huarache
 huaraches
 hub
-hub
 hub-and-spoke
 hubble-bubble
 hubbly-bubbly
 hubbub
 hubby
-hubcap
 hubcap
 hubris
 huck
@@ -21741,7 +20789,6 @@ humectant
 humeri
 humerus
 humidity
-humidity
 humidness
 humification
 humifusum
@@ -21754,7 +20801,6 @@ humming
 hummingbird
 hummock
 hummus
-humor
 humor
 humoring
 humorist
@@ -21791,7 +20837,6 @@ hurler
 hurling
 hurrah
 hurricane
-hurricane
 hurriedness
 hurry
 hurrying
@@ -21818,7 +20863,6 @@ hutch
 hutment
 hutzpah
 hyacinth
-hyacinth
 hyaena
 hyalin
 hyaline
@@ -21844,7 +20888,6 @@ hydralazine
 hydramnios
 hydrangea
 hydrangeoides
-hydrant
 hydrant
 hydrargyrum
 hydrarthrosis
@@ -21873,9 +20916,7 @@ hydroelectricity
 hydroflumethiazide
 hydrofluorocarbon
 hydrofoil
-hydrofoil
 hydrogel
-hydrogen
 hydrogen
 hydrogenation
 hydrography
@@ -21916,7 +20957,6 @@ hydroxyzine
 hydrozoan
 hyemale
 hyemalis
-hyena
 hyena
 hygiene
 hygienic
@@ -22158,13 +21198,11 @@ ibolium
 ibuprofen
 icaco
 ice
-ice
 ice-skater
 ice-wagon
 iceberg
 iceboat
 icebox
-icebreaker
 icebreaker
 icecap
 icecream
@@ -22182,10 +21220,8 @@ ichthyosaur
 ichthyosaurus
 ichthyosis
 icicle
-icicle
 iciness
 icing
-icon
 icon
 iconoclasm
 iconoclast
@@ -22200,7 +21236,6 @@ ictus
 id
 idaeus
 idahoensis
-idea
 idea
 ideal
 idealisation
@@ -22520,13 +21555,11 @@ imprimatur
 imprint
 imprinting
 imprisonment
-imprisonment
 improbability
 improbableness
 impromptu
 improperness
 impropriety
-improvement
 improvement
 improver
 improvidence
@@ -22535,7 +21568,6 @@ imprudence
 impudence
 impudicus
 impuissance
-impulse
 impulse
 impulsion
 impulsiveness
@@ -22606,7 +21638,6 @@ incessancy
 incessantness
 incest
 inch
-inch
 inchoative
 inchworm
 incidence
@@ -22639,7 +21670,6 @@ incognita
 incognizance
 incoherence
 incoherency
-income
 income
 incoming
 incommodiousness
@@ -22676,7 +21706,6 @@ incorrectness
 incorruptibility
 incorruption
 incorruptness
-increase
 increase
 incredibility
 incredibleness
@@ -22731,7 +21760,6 @@ indestructibility
 indeterminacy
 indeterminateness
 indetermination
-index
 index
 indexation
 indexer
@@ -22810,7 +21838,6 @@ industrialism
 industrialist
 industrialization
 industriousness
-industry
 industry
 indweller
 inebriant
@@ -22996,7 +22023,6 @@ injuriousness
 injury
 injustice
 ink
-ink
 inkberry
 inkblot
 inkiness
@@ -23021,7 +22047,6 @@ innkeeper
 innocence
 innocency
 innocense
-innocent
 innocent
 innovation
 innovativeness
@@ -23048,7 +22073,6 @@ inpatient
 inpour
 inpouring
 input
-input
 inquest
 inquietude
 inquirer
@@ -23065,7 +22089,6 @@ insaneness
 insanity
 inscription
 inscrutability
-insect
 insect
 insecticide
 insectifera
@@ -23142,12 +22165,10 @@ institute
 institution
 instroke
 instruction
-instruction
 instructions
 instructor
 instructorship
 instructress
-instrument
 instrument
 instrumentalism
 instrumentalist
@@ -23161,12 +22182,10 @@ insulant
 insularism
 insularity
 insulation
-insulation
 insulator
 insulin
 insult
 insurability
-insurance
 insurance
 insured
 insurer
@@ -23239,7 +22258,6 @@ interdependency
 interdict
 interdiction
 interest
-interest
 interestedness
 interestingness
 interests
@@ -23286,7 +22304,6 @@ internationality
 internationalization
 interne
 internee
-internet
 internet
 internist
 internment
@@ -23336,10 +22353,8 @@ intervertebralis
 interview
 interviewee
 interviewer
-interviewer
 intestacy
 intestinalis
-intestine
 intestine
 inti
 intifada
@@ -23412,10 +22427,8 @@ invariant
 invasion
 invective
 invention
-invention
 inventiveness
 inventor
-inventory
 inventory
 inventorying
 inverse
@@ -23442,7 +22455,6 @@ invitation
 invite
 invitee
 invocation
-invoice
 invoice
 involucrata
 involucre
@@ -23495,9 +22507,7 @@ iridotomy
 irina
 irinum
 iris
-iris
 iritis
-iron
 iron
 iron-gray
 iron-grey
@@ -23563,7 +22573,6 @@ ischiadicus
 ischii
 ischium
 isinglass
-island
 island
 island-dweller
 islander
@@ -23674,7 +22683,6 @@ jackass
 jackboot
 jackdaw
 jacket
-jacket
 jackfruit
 jackhammer
 jackknife
@@ -23708,10 +22716,8 @@ jaggery
 jagghery
 jagua
 jaguar
-jaguar
 jaguarondi
 jaguarundi
-jail
 jail
 jailbird
 jailbreak
@@ -23724,7 +22730,6 @@ jalapa
 jalapeno
 jalopy
 jalousie
-jam
 jam
 jamaicensis
 jamb
@@ -23749,7 +22754,6 @@ janissary
 janitor
 january
 japan
-japan
 japanese
 jape
 japery
@@ -23757,12 +22761,10 @@ japonica
 japonicum
 japonicus
 jar
-jar
 jardinii
 jarful
 jargon
 jargoon
-jasmine
 jasmine
 jasminoides
 jasmoides
@@ -23779,7 +22781,6 @@ javelin
 javelina
 javonica
 jaw
-jaw
 jawan
 jawbone
 jawbreaker
@@ -23792,7 +22793,6 @@ jazzman
 jealousy
 jean
 jeans
-jeep
 jeep
 jeer
 jeerer
@@ -23809,8 +22809,6 @@ jejunum
 jellaba
 jello
 jelly
-jelly
-jellyfish
 jellyfish
 jellyleaf
 jellyroll
@@ -23836,11 +22834,9 @@ jessamine
 jest
 jester
 jet
-jet
 jetliner
 jetsam
 jetty
-jewel
 jewel
 jeweler
 jeweller
@@ -23909,14 +22905,11 @@ joewood
 jog
 jogger
 jogging
-jogging
 joggle
-john
 john
 johnnycake
 johns
 johnstoni
-join
 join
 joiner
 joinery
@@ -23926,7 +22919,6 @@ jointer
 jointure
 jointworm
 joist
-joke
 joke
 joker
 jokester
@@ -23958,7 +22950,6 @@ journalese
 journalism
 journalist
 journey
-journey
 journeyer
 journeying
 journeyman
@@ -23980,7 +22971,6 @@ jubilation
 jubilee
 judas
 judge
-judge
 judgement
 judgeship
 judging
@@ -23990,7 +22980,6 @@ judicatory
 judicature
 judiciary
 judiciousness
-judo
 judo
 jug
 jugale
@@ -24002,7 +22991,6 @@ jugglery
 juggling
 jugular
 jugularis
-juice
 juice
 juicer
 juiciness
@@ -24023,13 +23011,10 @@ july
 jumbal
 jumble
 jumbo
-jumbo
 jumbojet
 jument
 jump
-jump
 jump-start
-jumper
 jumper
 jumpiness
 jumping
@@ -24061,11 +23046,9 @@ jurisprudence
 jurist
 juror
 jury
-jury
 juryman
 jurywoman
 juste
-justice
 justice
 justiciar
 justiciary
@@ -24073,7 +23056,6 @@ justification
 justifier
 justness
 jut
-jute
 jute
 jutting
 juvenescence
@@ -24110,7 +23092,6 @@ kala-azar
 kalansuwa
 kalantas
 kale
-kale
 kaleidoscope
 kalemia
 kali
@@ -24124,12 +23105,10 @@ kalumpang
 kaluresis
 kameez
 kamikaze
-kamikaze
 kampong
 kanaf
 kanamycin
 kanchil
-kangaroo
 kangaroo
 kangaroo's-foot
 kanzu
@@ -24148,7 +23127,6 @@ karabiner
 karakul
 karaoke
 karat
-karate
 karate
 karen
 karma
@@ -24174,7 +23152,6 @@ kaury
 kava
 kavakava
 kawaka
-kayak
 kayak
 kayo
 kazoo
@@ -24263,7 +23240,6 @@ keta
 ketamine
 ketch
 ketchup
-ketchup
 keteleeria
 ketembilla
 ketmia
@@ -24279,15 +23255,11 @@ ketose
 ketosis
 ketosteroid
 kettle
-kettle
-kettledrum
 kettledrum
 kettleful
 keurboom
 kevin
 key
-key
-keyboard
 keyboard
 keyboarding
 keyboardist
@@ -24326,7 +23298,6 @@ kibibyte
 kibit
 kibitzer
 kick
-kick
 kickback
 kicker
 kicking
@@ -24339,7 +23310,6 @@ kiddy
 kidnaper
 kidnapper
 kidnapping
-kidney
 kidney
 kidskin
 kieselguhr
@@ -24361,12 +23331,10 @@ kilobyte
 kilocalorie
 kilocycle
 kilogram
-kilogram
 kilogram-meter
 kilohertz
 kiloliter
 kilolitre
-kilometer
 kilometer
 kilometre
 kiloton
@@ -24441,7 +23409,6 @@ kishke
 kismat
 kismet
 kiss
-kiss
 kiss-me-over-the-garden-gate
 kisser
 kissing
@@ -24450,10 +23417,8 @@ kit
 kitambilla
 kitbag
 kitchen
-kitchen
 kitchenette
 kitchenware
-kite
 kite
 kitembilla
 kith
@@ -24461,11 +23426,9 @@ kitsch
 kitt
 kittee
 kitten
-kitten
 kitten-tails
 kittiwake
 kittul
-kitty
 kitty
 kitty-cat
 kitul
@@ -24493,7 +23456,6 @@ knavery
 knawe
 knawel
 knee
-knee
 knee-hi
 knee-high
 kneecap
@@ -24504,14 +23466,11 @@ kneepan
 knell
 knickerbockers
 knickers
-knickers
 knickknack
 knickknackery
 knife
-knife
 knife-edge
 knife-handle
-knight
 knight
 knight-errant
 knighthood
@@ -24539,7 +23498,6 @@ knocks
 knockwurst
 knoll
 knot
-knot
 knotgrass
 knothole
 knottiness
@@ -24551,7 +23509,6 @@ know-it-all
 knower
 knowing
 knowingness
-knowledge
 knowledge
 knowledgeability
 knowledgeableness
@@ -24572,7 +23529,6 @@ kobo
 kochii
 kohl
 kohleria
-kohlrabi
 kohlrabi
 koine
 koinonia
@@ -24678,7 +23634,6 @@ lablab
 labor
 laboratory
 laborer
-laborer
 laboriousness
 labour
 labourer
@@ -24689,7 +23644,6 @@ labyrinth
 labyrinthitis
 labyrinthodont
 lac
-lace
 lace
 lacebark
 lacepod
@@ -24755,7 +23709,6 @@ lady-slipper
 ladybeetle
 ladybird
 ladybug
-ladybug
 ladyfinger
 ladyfish
 ladylikeness
@@ -24790,7 +23743,6 @@ laird
 lait
 laity
 lake
-lake
 lakefront
 lakeshore
 lakeside
@@ -24800,7 +23752,6 @@ lally
 lam
 lama
 lamasery
-lamb
 lamb
 lamb's-quarter
 lamb's-quarters
@@ -24835,7 +23786,6 @@ lamivudine
 lammergeier
 lammergeyer
 lamp
-lamp
 lampblack
 lamphouse
 lamplight
@@ -24863,7 +23813,6 @@ lancetfish
 lancewood
 lancifolia
 lancifolium
-land
 land
 landau
 lander
@@ -24901,7 +23850,6 @@ langoustine
 langsat
 langset
 langsyne
-language
 language
 languisher
 languor
@@ -24958,7 +23906,6 @@ larcenist
 larcenous
 larceny
 larch
-larch
 lard
 larder
 large
@@ -24991,7 +23938,6 @@ laryngostenosis
 laryngotracheobronchitis
 larynx
 lasagna
-lasagna
 lasagne
 lascar
 lascaris
@@ -25023,7 +23969,6 @@ latecomer
 lateen
 lateen-rig
 latency
-latency
 lateness
 lateral
 laterale
@@ -25036,10 +23981,8 @@ laterite
 lateritia
 latest
 latex
-latex
 lath
 lathami
-lathe
 lathe
 lathee
 lather
@@ -25069,7 +24012,6 @@ laudanum
 laudator
 lauder
 laugh
-laugh
 laugher
 laughingstock
 laughter
@@ -25082,7 +24024,6 @@ launchpad
 launderette
 laundering
 laundress
-laundry
 laundry
 laundryman
 laundrywoman
@@ -25110,7 +24051,6 @@ lavender
 laver
 lavishness
 law
-law
 law-breaking
 law-makers
 lawbreaker
@@ -25128,7 +24068,6 @@ laws
 lawsoniana
 lawsuit
 lawyer
-lawyer
 lawyerbush
 lawyers
 laxa
@@ -25142,7 +24081,6 @@ lay-by
 lay-up
 layabout
 layby
-layer
 layer
 layette
 laying
@@ -25167,7 +24105,6 @@ lea
 leach
 leaching
 lead
-lead
 lead-in
 leadbeateri
 leader
@@ -25176,7 +24113,6 @@ leadership
 leading
 leadplant
 leadwort
-leaf
 leaf
 leaf-book
 leaf-cutter
@@ -25205,14 +24141,12 @@ leaping
 learnedness
 learner
 learning
-learning
 lease
 lease-lend
 leasehold
 leaseholder
 leash
 least
-leather
 leather
 leatherback
 leatherette
@@ -25261,7 +24195,6 @@ lee
 leech
 leechee
 leek
-leek
 leer
 lees
 leeward
@@ -25278,7 +24211,6 @@ leftist
 leftover
 leftovers
 lefty
-leg
 leg
 leg-pull
 leg-pulling
@@ -25338,7 +24270,6 @@ lemniscus
 lemon
 lemon-wood
 lemonade
-lemonade
 lemongrass
 lemonwood
 lempira
@@ -25362,18 +24293,15 @@ lentiformis
 lentiginosus
 lentigo
 lentil
-lentil
 lentinus
 lentiscus
 lentisk
-leo
 leo
 leoncita
 leone
 leontopetaloides
 leontopodium
 leonurus
-leopard
 leopard
 leopard's-bane
 leopardbane
@@ -25435,7 +24363,6 @@ lethargica
 lethargy
 lethostigmus
 letter
-letter
 lettercard
 letterer
 letterhead
@@ -25445,7 +24372,6 @@ letterpress
 letters
 letting
 lettres
-lettuce
 lettuce
 letup
 leu
@@ -25499,7 +24425,6 @@ levallorphan
 levanter
 levator
 levee
-level
 level
 leveler
 leveling
@@ -25563,7 +24488,6 @@ libra
 librarian
 librarianship
 library
-library
 libration
 libre
 librettist
@@ -25571,7 +24495,6 @@ libretto
 libris
 lice
 licence
-license
 license
 licensee
 licenser
@@ -25618,7 +24541,6 @@ lifestyle
 lifetime
 lifework
 lift
-lift
 lifter
 lifting
 liftman
@@ -25629,7 +24551,6 @@ ligand
 ligation
 ligature
 liger
-light
 light
 light-mindedness
 light-o'-love
@@ -25646,7 +24567,6 @@ lighthouse
 lighting
 lightlessness
 lightness
-lightning
 lightning
 lights
 lights-out
@@ -25672,7 +24592,6 @@ liking
 likker
 likuta
 lilac
-lilac
 lilangeni
 liliaceae
 liliago
@@ -25682,7 +24601,6 @@ lilio-asphodelus
 liliopsid
 lilliputian
 lilt
-lily
 lily
 lilyturf
 liman
@@ -25705,7 +24623,6 @@ limestone
 limetta
 limewater
 limey
-limit
 limit
 limitation
 limitations
@@ -25747,7 +24664,6 @@ lindheimeri
 lindleyi
 lindy
 line
-line
 line-shooter
 line-shooting
 lineage
@@ -25762,7 +24678,6 @@ linebacker
 linecut
 lineman
 linemen
-linen
 linen
 linendraper
 lineolaris
@@ -25792,7 +24707,6 @@ liniment
 linin
 lining
 link
-link
 linkage
 linkboy
 linkman
@@ -25812,14 +24726,12 @@ lintel
 lintwhite
 linuron
 lion
-lion
 lion's-ear
 lion-hunter
 lioness
 lionet
 lionfish
 liothyronine
-lip
 lip
 lip-gloss
 lipaemia
@@ -25847,12 +24759,10 @@ liposome
 liposuction
 lipreading
 lipstick
-lipstick
 lipura
 liquefaction
 liquefier
 liqueur
-liquid
 liquid
 liquidambar
 liquidation
@@ -25861,7 +24771,6 @@ liquidiser
 liquidity
 liquidizer
 liquidness
-liquor
 liquor
 liquorice
 lira
@@ -25872,7 +24781,6 @@ lisp
 lisper
 lissomeness
 lissosperma
-list
 list
 liste
 listener
@@ -25894,7 +24802,6 @@ literalism
 literalness
 literate
 literati
-literature
 literature
 litheness
 lithiasis
@@ -25921,7 +24828,6 @@ litoral
 litotes
 litre
 litter
-litter
 litter-basket
 litter-bearer
 litterateur
@@ -25947,7 +24853,6 @@ liveliness
 livelong
 liveness
 liver
-liver
 liverleaf
 liverwort
 liverwurst
@@ -25963,10 +24868,8 @@ living
 living-room
 liza
 lizard
-lizard
 lizard's-tail
 lizardfish
-llama
 llama
 llano
 lm
@@ -25979,11 +24882,9 @@ loads
 loadstar
 loadstone
 loaf
-loaf
 loafer
 loafing
 loam
-loan
 loan
 loan-blend
 loanblend
@@ -26009,7 +24910,6 @@ lobotomy
 lobscouse
 lobscuse
 lobster
-lobster
 lobsterback
 lobsterman
 lobularity
@@ -26030,13 +24930,11 @@ loch
 lochia
 loci
 lock
-lock
 lock-gate
 lockage
 lockbox
 lockdown
 locker
-locket
 locket
 locking
 lockjaw
@@ -26059,7 +24957,6 @@ locule
 loculus
 locum
 locus
-locust
 locust
 locusta
 locution
@@ -26178,7 +25075,6 @@ loo
 loofa
 loofah
 look
-look
 look-alike
 look-over
 lookdown
@@ -26230,14 +25126,12 @@ lory
 loser
 losings
 loss
-loss
 losses
 lost
 lost-and-found
 lot
 lota
 loti
-lotion
 lotion
 lotor
 lots
@@ -26268,7 +25162,6 @@ louvre
 lovage
 lovastatin
 love
-love
 love-in-a-mist
 love-in-idleness
 love-in-winter
@@ -26287,7 +25180,6 @@ loveseat
 lovesickness
 loving-kindness
 lovingness
-low
 low
 low-down
 low-spiritedness
@@ -26359,7 +25251,6 @@ lulu
 lumbago
 lumbalis
 lumber
-lumber
 lumbering
 lumberjack
 lumberman
@@ -26392,18 +25283,14 @@ lunation
 lunatum
 lunatus
 lunch
-lunch
 luncheon
 luncher
 lunching
 lunchroom
-lunchroom
 lunchtime
 lunette
 lung
-lung
 lung-power
-lunge
 lunge
 lungen
 lunger
@@ -26443,7 +25330,6 @@ lustrelessness
 lustrum
 lutanist
 lutaria
-lute
 lute
 lutea
 lutecium
@@ -26520,7 +25406,6 @@ lymphuria
 lynching
 lynchpin
 lynx
-lynx
 lyocell
 lyonia
 lyonii
@@ -26530,11 +25415,9 @@ lypressin
 lyra
 lyrata
 lyre
-lyre
 lyre-flower
 lyrebird
 lyreflower
-lyric
 lyric
 lyricality
 lyricism
@@ -26570,7 +25453,6 @@ macao
 macaque
 macarellus
 macaroni
-macaroni
 macaroon
 macaw
 mace
@@ -26584,7 +25466,6 @@ machilid
 machina
 machination
 machinator
-machine
 machine
 machinery
 machinist
@@ -26600,7 +25481,6 @@ mackintosh
 mackle
 macon
 maconnais
-macrame
 macrame
 macranthum
 macrencephaly
@@ -26684,14 +25564,11 @@ mafia
 mafioso
 mag
 magazine
-magazine
 magdalen
 magellanicus
 magenta
 maggot
 magic
-magic
-magician
 magician
 magilp
 magister
@@ -26749,7 +25626,6 @@ mahogany
 mahout
 mahuang
 maid
-maid
 maiden
 maidenhair
 maidenhead
@@ -26763,17 +25639,14 @@ maiger
 maigre
 maikoa
 mail
-mail
 mailbag
 mailboat
-mailbox
 mailbox
 maildrop
 mailer
 mailing
 mailing-card
 maillot
-mailman
 mailman
 mailsorter
 maimed
@@ -26822,7 +25695,6 @@ maker
 makeready
 makeshift
 makeup
-makeup
 makeweight
 making
 mako
@@ -26855,7 +25727,6 @@ malarky
 malaysia
 malcontent
 male
-male
 maleate
 maleberry
 malediction
@@ -26885,11 +25756,9 @@ malingerer
 malingering
 malinois
 mall
-mall
 mallard
 malleability
 mallee
-mallet
 mallet
 malleus
 mallow
@@ -26938,7 +25807,6 @@ mammy
 mamo
 mamoncillo
 man
-man
 man-about-town
 man-at-arms
 man-child
@@ -26950,7 +25818,6 @@ manacle
 manageability
 manageableness
 management
-manager
 manager
 manageress
 managership
@@ -26971,7 +25838,6 @@ mandibula
 mandioc
 mandioca
 mandola
-mandolin
 mandolin
 mandrake
 mandrel
@@ -27011,7 +25877,6 @@ maniac
 manic-depressive
 manicotti
 maniculatus
-manicure
 manicure
 manicurist
 manifest
@@ -27087,10 +25952,8 @@ manuscript
 manx
 manzanita
 map
-map
 map-reader
 mapinguari
-maple
 maple
 maple-leaf
 mapmaking
@@ -27104,7 +25967,6 @@ mara
 marabou
 marabout
 maraca
-maraca
 marang
 maranta
 marasca
@@ -27115,7 +25977,6 @@ marathoner
 maraud
 marauder
 maravilla
-marble
 marble
 marble-wood
 marbleisation
@@ -27128,7 +25989,6 @@ marbling
 marc
 marcel
 marcescens
-march
 march
 marcher
 marching
@@ -27146,7 +26006,6 @@ margate
 margay
 marge
 margin
-margin
 marginalia
 marginalis
 marginalisation
@@ -27160,7 +26019,6 @@ margosa
 margrave
 marguerite
 maria
-maria
 mariachi
 mariana
 marianum
@@ -27170,7 +26028,6 @@ marihuana
 marijuana
 marila
 marilandica
-marimba
 marimba
 marina
 marinade
@@ -27187,9 +26044,7 @@ maritimus
 maritinum
 marjoram
 mark
-mark
 marker
-market
 market
 marketeer
 marketer
@@ -27230,7 +26085,6 @@ marri
 marriage
 marriageability
 married
-married
 marrow
 marrowbone
 marseille
@@ -27270,7 +26124,6 @@ marzipan
 marzuolus
 mas
 mascara
-mascara
 mascarpone
 mascot
 mascula
@@ -27286,7 +26139,6 @@ mashie
 mashing
 masjid
 mask
-mask
 masker
 masking
 masochism
@@ -27298,7 +26150,6 @@ masquer
 masquerade
 masquerader
 masquinongy
-mass
 mass
 massacre
 massage
@@ -27351,7 +26202,6 @@ mat
 matador
 matai
 match
-match
 match-up
 matchboard
 matchbook
@@ -27382,7 +26232,6 @@ materiel
 maternalism
 maternity
 mates
-math
 math
 mathematician
 mathematics
@@ -27416,7 +26265,6 @@ matte
 matter
 matters
 matting
-mattock
 mattock
 mattress
 maturation
@@ -27456,7 +26304,6 @@ maximum
 maximus
 maxwell
 may
-may
 mayapple
 maydis
 mayeng
@@ -27467,7 +26314,6 @@ mayhaw
 mayhem
 mayidism
 mayo
-mayonnaise
 mayonnaise
 mayor
 mayoralty
@@ -27491,7 +26337,6 @@ meadowlark
 meagerness
 meagreness
 meal
-meal
 mealberry
 mealie
 mealtime
@@ -27512,12 +26357,10 @@ mearstone
 measles
 measurability
 measure
-measure
 measurement
 measurer
 measures
 measuring
-meat
 meat
 meatball
 meatballs
@@ -27530,7 +26373,6 @@ mebibit
 mebibyte
 mecca
 meccanensis
-mechanic
 mechanic
 mechanics
 mechanisation
@@ -27569,7 +26411,6 @@ medicament
 medication
 medicinalis
 medicine
-medicine
 medick
 medico
 mediety
@@ -27598,7 +26439,6 @@ meerkat
 meerschaum
 meet
 meeter
-meeting
 meeting
 meetinghouse
 mefloquine
@@ -27700,7 +26540,6 @@ melodiousness
 melodrama
 melodus
 melody
-melody
 meloid
 melolontha
 melon
@@ -27735,9 +26574,7 @@ memoriser
 memorization
 memorizer
 memory
-memory
 memsahib
-men
 men
 men's
 menace
@@ -27787,7 +26624,6 @@ mentioner
 mentor
 mentum
 menu
-menu
 menziesii
 meow
 mepacrine
@@ -27814,7 +26650,6 @@ merchantability
 merchantman
 mercifulness
 mercilessness
-mercury
 mercury
 mercy
 mere
@@ -27888,7 +26723,6 @@ mesquite
 mess
 mess-up
 message
-message
 messaging
 messenger
 messiah
@@ -27911,7 +26745,6 @@ metacyesis
 metadata
 metagenesis
 metaknowledge
-metal
 metal
 metalanguage
 metalepsis
@@ -27952,9 +26785,7 @@ meteorite
 meteoroid
 meteorologist
 meteorology
-meteorology
 meteortropism
-meter
 meter
 meterstick
 metformin
@@ -27965,7 +26796,6 @@ methadon
 methadone
 methamphetamine
 methanal
-methane
 methane
 methanogen
 methanol
@@ -28128,7 +26958,6 @@ microtome
 microtubule
 microvolt
 microwave
-microwave
 micturition
 mid-April
 mid-August
@@ -28161,7 +26990,6 @@ midbrain
 midday
 midden
 middendorffi
-middle
 middle
 middlebreaker
 middlebrow
@@ -28222,7 +27050,6 @@ milcher
 mildew
 mildness
 mile
-mile
 mileage
 mileometer
 milepost
@@ -28248,14 +27075,12 @@ militia
 militiaman
 milium
 milk
-milk
 milk-vetch
 milkanioides
 milkcap
 milker
 milkmaid
 milkman
-milkshake
 milkshake
 milksop
 milkwagon
@@ -28272,7 +27097,6 @@ millenarianism
 millenarism
 millenarist
 millenary
-millennium
 millennium
 millenniumism
 millepede
@@ -28295,7 +27119,6 @@ milliliter
 millilitre
 millime
 millimeter
-millimeter
 millimetre
 millimicron
 milline
@@ -28309,7 +27132,6 @@ millionth
 milliped
 millipede
 milliradian
-millisecond
 millisecond
 millivolt
 millivoltmeter
@@ -28335,7 +27157,6 @@ mimic
 mimicker
 mimicry
 mimosa
-mimosa
 min
 mina
 minah
@@ -28343,7 +27164,6 @@ minaret
 mince
 mincemeat
 mincer
-mind
 mind
 mind-set
 mindedness
@@ -28353,7 +27173,6 @@ mindlessness
 mindorensis
 minds
 mindset
-mine
 mine
 minefield
 minelayer
@@ -28384,7 +27203,6 @@ miniatus
 minibar
 minibike
 minibus
-minibus
 minicab
 minicar
 minicomputer
@@ -28399,7 +27217,6 @@ minimus
 mining
 minion
 miniskirt
-minister
 minister
 ministrant
 ministration
@@ -28422,7 +27239,6 @@ minster
 minstrel
 minstrelsy
 mint
-mint
 mintage
 minter
 mintmark
@@ -28430,7 +27246,6 @@ minuend
 minuet
 minus
 minuscule
-minute
 minute
 minuteness
 minutes
@@ -28449,7 +27264,6 @@ mirasol
 mire
 mirid
 miro
-mirror
 mirror
 mirth
 mirthfulness
@@ -28537,7 +27351,6 @@ miss
 missal
 misshapenness
 missile
-missile
 mission
 missionary
 missioner
@@ -28551,9 +27364,7 @@ misstep
 missus
 missy
 mist
-mist
 mist-flower
-mistake
 mistake
 mistaking
 mistflower
@@ -28586,7 +27397,6 @@ mitsvah
 mitt
 mittelschmerz
 mitten
-mitten
 mitzvah
 mix
 mix-up
@@ -28612,7 +27422,6 @@ mo
 moa
 moan
 moaner
-moat
 moat
 mob
 mobcap
@@ -28642,7 +27451,6 @@ modeler
 modeling
 modeller
 modelling
-modem
 modem
 moderate
 moderateness
@@ -28698,7 +27506,6 @@ moldboard
 moldiness
 molding
 mole
-mole
 molecule
 molehill
 moleskin
@@ -28730,7 +27537,6 @@ molva
 molybdenite
 molybdenum
 molybdites
-mom
 mom
 mombin
 moment
@@ -28768,7 +27574,6 @@ monetarist
 monetisation
 monetization
 money
-money
 money-spinner
 moneybag
 moneyer
@@ -28795,7 +27600,6 @@ monitor
 monitoring
 monitrice
 monk
-monkey
 monkey
 monkey-wrench
 monkeypod
@@ -28889,7 +27693,6 @@ montanum
 montanus
 monte
 month
-month
 monthly
 montia
 monticola
@@ -28902,7 +27705,6 @@ moocher
 mood
 moodiness
 moolah
-moon
 moon
 moon-curser
 moon-ray
@@ -28981,9 +27783,7 @@ morinellus
 morion
 morn
 morning
-morning
 morning-glory
-morocco
 morocco
 moron
 moronity
@@ -29029,8 +27829,6 @@ moscheutos
 moschiferus
 moshav
 mosque
-mosque
-mosquito
 mosquito
 mosquitofish
 moss
@@ -29045,8 +27843,6 @@ motet
 moth
 mothball
 mother
-mother
-mother-in-law
 mother-in-law
 mother-of-pearl
 mother-of-thousands
@@ -29061,7 +27857,6 @@ motile
 motilin
 motility
 motion
-motion
 motionlessness
 motivating
 motivation
@@ -29074,12 +27869,10 @@ motoneuron
 motor
 motorbike
 motorboat
-motorboat
 motorbus
 motorcade
 motorcar
 motorcoach
-motorcycle
 motorcycle
 motorcycling
 motorcyclist
@@ -29110,7 +27903,6 @@ mound
 mound-bird
 mount
 mountain
-mountain
 mountaineer
 mountaineering
 mountains
@@ -29122,7 +27914,6 @@ mourner
 mournfulness
 mourning
 mouse
-mouse
 mouse-ear
 mousepad
 mouser
@@ -29130,9 +27921,7 @@ mousetrap
 moussaka
 mousse
 moustache
-moustache
 moustachio
-mouth
 mouth
 mouthbreeder
 mouthful
@@ -29143,7 +27932,6 @@ mouton
 movability
 movable
 movableness
-move
 move
 movement
 mover
@@ -29256,7 +28044,6 @@ multiflorum
 multiflorus
 multiforme
 multimedia
-multimedia
 multinomial
 multiple
 multiplex
@@ -29345,7 +28132,6 @@ muscifera
 muscipula
 muscitoxicum
 muscle
-muscle
 muscle-builder
 musclebuilder
 musclebuilding
@@ -29360,19 +28146,16 @@ muse
 muser
 musette
 museum
-museum
 mush
 musher
 mushiness
 mushroom
 mushrooms
 music
-music
 musical
 musicale
 musicality
 musicalness
-musician
 musician
 musicianship
 musicologist
@@ -29402,7 +28185,6 @@ must
 mustache
 mustachio
 mustang
-mustard
 mustard
 mustelid
 mustelina
@@ -29581,7 +28363,6 @@ nagi
 naiad
 naif
 nail
-nail
 nailbrush
 nailer
 nailfile
@@ -29600,7 +28381,6 @@ naloxone
 naltrexone
 namaycush
 namby-pamby
-name
 name
 name-dropping
 nameko
@@ -29645,7 +28425,6 @@ naphthalene
 naphthol
 naphthoquinone
 napkin
-napkin
 napobrassica
 napoleon
 nappy
@@ -29659,7 +28438,6 @@ narc
 narcism
 narcissism
 narcissist
-narcissus
 narcissus
 narcist
 narco-state
@@ -29712,7 +28490,6 @@ natation
 natator
 natatorium
 nates
-nation
 nation
 national
 nationalisation
@@ -29797,7 +28574,6 @@ necessary
 necessitarian
 necessity
 neck
-neck
 neckband
 neckcloth
 necker
@@ -29827,10 +28603,8 @@ nectarina
 nectarine
 nectary
 need
-need
 needer
 neediness
-needle
 needle
 needle-and-thread
 needle-bush
@@ -29912,7 +28686,6 @@ neology
 neomexicana
 neomycin
 neon
-neon
 neonate
 neonatology
 neonatorum
@@ -29936,7 +28709,6 @@ nepetoides
 nepheline
 nephelinite
 nephelite
-nephew
 nephew
 nephology
 nephoscope
@@ -29970,7 +28742,6 @@ neritid
 neritina
 nerka
 nerve
-nerve
 nervelessness
 nerveroot
 nerves
@@ -29982,11 +28753,9 @@ nervus
 nescience
 ness
 nest
-nest
 nester
 nestle
 nestling
-net
 net
 netball
 netherworld
@@ -29994,7 +28763,6 @@ netkeeper
 netminder
 netting
 nettle
-network
 network
 neuralgia
 neuralgy
@@ -30079,7 +28847,6 @@ newlywed
 newmarket
 newness
 news
-news
 newsagent
 newsboy
 newsbreak
@@ -30097,12 +28864,10 @@ newspaperwoman
 newspeak
 newsperson
 newsprint
-newsprint
 newsreader
 newsreel
 newsroom
 newssheet
-newsstand
 newsstand
 newsvendor
 newswoman
@@ -30127,7 +28892,6 @@ nicety
 niche
 nick
 nickel
-nickel
 nickelodeon
 nicker
 nicknack
@@ -30138,7 +28902,6 @@ nictation
 nictitation
 nidation
 nidus
-niece
 niece
 niente
 nierembergia
@@ -30153,7 +28916,6 @@ niggardliness
 niggardness
 nigger
 niggler
-night
 night
 night-light
 night-line
@@ -30261,7 +29023,6 @@ nitrocotton
 nitrofuran
 nitrofurantoin
 nitrogen
-nitrogen
 nitrogenase
 nitroglycerin
 nitroglycerine
@@ -30306,7 +29067,6 @@ nocturnus
 nod
 noddle
 node
-node
 nodes
 nodosa
 nodosum
@@ -30318,7 +29078,6 @@ noggin
 nogging
 noir
 noire
-noise
 noise
 noiselessness
 noisemaker
@@ -30431,7 +29190,6 @@ nonuniformity
 nonviolence
 nonworker
 noodle
-noodle
 nook
 nookie
 nooky
@@ -30464,7 +29222,6 @@ normalizer
 normothermia
 norrisi
 north
-north
 north america
 north korea
 northeast
@@ -30481,7 +29238,6 @@ northwestward
 nortriptyline
 norvegicus
 norwegian
-nose
 nose
 nosebag
 noseband
@@ -30512,8 +29268,6 @@ notation
 notatum
 notch
 note
-note
-notebook
 notebook
 notecase
 notepad
@@ -30550,7 +29304,6 @@ novaeangliae
 novaehollandiae
 novation
 noveboracensis
-novel
 novel
 novelette
 novelisation
@@ -30625,7 +29378,6 @@ nullipara
 nullity
 numbat
 number
-number
 numbering
 numberplate
 numbers
@@ -30655,7 +29407,6 @@ nunnery
 nupta
 nuptials
 nurse
-nurse
 nurse-midwife
 nurseling
 nursemaid
@@ -30666,7 +29417,6 @@ nursing
 nursling
 nurturance
 nurture
-nut
 nut
 nutans
 nutation
@@ -30700,7 +29450,6 @@ nycturia
 nylghai
 nylghau
 nylon
-nylon
 nylons
 nymph
 nymphalid
@@ -30717,7 +29466,6 @@ o
 o'clock
 oaf
 oak
-oak
 oakum
 oar
 oarfish
@@ -30730,7 +29478,6 @@ oast
 oat
 oatcake
 oath
-oatmeal
 oatmeal
 oats
 obassia
@@ -30755,7 +29502,6 @@ object
 objectification
 objection
 objectionableness
-objective
 objective
 objectiveness
 objectivity
@@ -30787,7 +29533,6 @@ oblongness
 obloquy
 obnoxiousness
 oboe
-oboe
 oboist
 obolus
 obovata
@@ -30802,7 +29547,6 @@ obscurum
 obscurus
 obsequiousness
 observance
-observation
 observation
 observatory
 observer
@@ -30866,11 +29610,9 @@ occultist
 occupancy
 occupant
 occupation
-occupation
 occupier
 occurrence
 occurrent
-ocean
 ocean
 oceanaut
 oceanfront
@@ -30881,7 +29623,6 @@ oceanology
 ocellata
 ocellatus
 ocellus
-ocelot
 ocelot
 ocher
 ochlocracy
@@ -30894,12 +29635,10 @@ ocreata
 octad
 octadecanoate
 octagon
-octagon
 octahedron
 octameter
 octane
 octant
-octave
 octave
 octavo
 octet
@@ -30910,7 +29649,6 @@ octogenarian
 octonary
 octopetala
 octopod
-octopus
 octopus
 octoroon
 octosyllable
@@ -30933,7 +29671,6 @@ ode
 odiousness
 odist
 odium
-odometer
 odometer
 odonate
 odontalgia
@@ -30980,18 +29717,15 @@ off-white
 offal
 offbeat
 offence
-offence
 offender
 offense
 offensive
 offensiveness
 offer
-offer
 offerer
 offering
 offeror
 offertory
-office
 office
 office-bearer
 officeholder
@@ -31026,7 +29760,6 @@ ohm
 ohmage
 ohmmeter
 oil
-oil
 oilbird
 oilcan
 oilcloth
@@ -31048,7 +29781,6 @@ okapi
 okay
 okeh
 okey
-okra
 okra
 ola
 old
@@ -31096,7 +29828,6 @@ olitoria
 olivacea
 olivaceous
 olivaris
-olive
 olive
 olive-green
 olivenite
@@ -31191,7 +29922,6 @@ oneiromancy
 oneness
 onerousness
 onion
-onion
 onionskin
 onitis
 onlooker
@@ -31236,7 +29966,6 @@ opal
 opalescence
 opaqueness
 open
-open
 openbill
 opener
 openhandedness
@@ -31245,11 +29974,9 @@ openness
 openwork
 opepe
 opera
-opera
 operagoer
 operand
 operandi
-operation
 operation
 operationalism
 operations
@@ -31271,14 +29998,12 @@ ophthalmia
 ophthalmica
 ophthalmitis
 ophthalmologist
-ophthalmologist
 ophthalmology
 ophthalmoplegia
 ophthalmoscope
 ophthalmoscopy
 opiate
 opilio
-opinion
 opinion
 opisthorchiasis
 opisthotonos
@@ -31316,7 +30041,6 @@ optimist
 optimization
 optimum
 option
-option
 optometrist
 optometry
 opulence
@@ -31327,7 +30051,6 @@ orache
 oracle
 oral
 orang
-orange
 orange
 orangeade
 orangeness
@@ -31349,10 +30072,8 @@ orbiter
 orca
 orchard
 orchestra
-orchestra
 orchestration
 orchestrator
-orchid
 orchid
 orchidalgia
 orchidectomy
@@ -31364,7 +30085,6 @@ orchitis
 orchotomy
 ordainer
 ordeal
-order
 order
 order-Chenopodiales
 orderer
@@ -31391,7 +30111,6 @@ oreide
 oreo
 oreopteris
 organ
-organ
 organ-grinder
 organdie
 organdy
@@ -31401,11 +30120,9 @@ organicism
 organification
 organifolia
 organisation
-organisation
 organiser
 organism
 organist
-organization
 organization
 organizer
 organon
@@ -31440,7 +30157,6 @@ orizabensis
 orlop
 ormer
 ormolu
-ornament
 ornament
 ornamental
 ornamentalism
@@ -31578,7 +30294,6 @@ ostracoderm
 ostreatus
 ostreum
 ostrich
-ostrich
 otalgia
 other
 otherness
@@ -31599,13 +30314,11 @@ otosclerosis
 otoscope
 ottar
 otter
-otter
 otterhound
 ottoman
 otus
 oubliette
 ouguiya
-ounce
 ounce
 ousel
 ouster
@@ -31659,12 +30372,10 @@ outport
 outpost
 outpouring
 output
-output
 outrage
 outrageousness
 outreach
 outrider
-outrigger
 outrigger
 outset
 outside
@@ -31684,7 +30395,6 @@ outwork
 ouzel
 ouzo
 oval
-oval
 ovalbumin
 ovalifolium
 ovalis
@@ -31695,7 +30405,6 @@ ovary
 ovata
 ovation
 ovatum
-oven
 oven
 ovenbird
 ovenware
@@ -31721,7 +30430,6 @@ overcast
 overcasting
 overcharge
 overclothes
-overcoat
 overcoat
 overcoating
 overcomer
@@ -31818,15 +30526,12 @@ ovule
 ovum
 oweni
 owl
-owl
 owlclaws
 owlet
-owner
 owner
 owner-driver
 owner-occupier
 ownership
-ox
 ox
 oxacillin
 oxalacetate
@@ -31866,7 +30571,6 @@ oxycantha
 oxycephaly
 oxycoccus
 oxygen
-oxygen
 oxygenase
 oxygenation
 oxyhaemoglobin
@@ -31881,7 +30585,6 @@ oxytocic
 oxytocin
 oxytone
 oyabun
-oyster
 oyster
 oyster-fish
 oystercatcher
@@ -31929,10 +30632,8 @@ pacifist
 pacing
 pack
 package
-package
 packaging
 packer
-packet
 packet
 packhorse
 packing
@@ -31976,7 +30677,6 @@ paeony
 pagan
 paganism
 page
-page
 pageant
 pageantry
 pageboy
@@ -31990,16 +30690,13 @@ pahautea
 pahoehoe
 paigle
 pail
-pail
 pailful
 paillasse
-pain
 pain
 painfulness
 painkiller
 pains
 painstakingness
-paint
 paint
 paintball
 paintbox
@@ -32007,11 +30704,9 @@ paintbrush
 painter
 painting
 pair
-pair
 pairing
 paisa
 paisley
-pajama
 pajama
 pakchoi
 pakistan
@@ -32111,7 +30806,6 @@ pallium
 pallone
 pallor
 palm
-palm
 palmata
 palmatum
 palmature
@@ -32146,9 +30840,7 @@ palustris
 pamperer
 pampering
 pamphlet
-pamphlet
 pamphleteer
-pan
 pan
 panacea
 panache
@@ -32156,11 +30848,9 @@ panamica
 panamiga
 panatela
 pancake
-pancake
 pancarditis
 panchayat
 panchayet
-pancreas
 pancreas
 pancreatectomy
 pancreatica
@@ -32168,7 +30858,6 @@ pancreatici
 pancreatin
 pancreatitis
 pancytopenia
-panda
 panda
 pandanifolia
 pandanus
@@ -32218,14 +30907,12 @@ panpipe
 pansexual
 pansinusitis
 pansy
-pansy
 pant
 pantaloon
 pantechnicon
 pantheism
 pantheist
 pantheon
-panther
 panther
 pantie
 panties
@@ -32238,14 +30925,10 @@ pantomimer
 pantomimist
 pantothen
 pantry
-pantry
 pantryman
-pants
 pants
 pantsuit
 panty
-panty
-pantyhose
 pantyhose
 pantywaist
 panurata
@@ -32261,10 +30944,8 @@ papaverine
 papaw
 papaya
 paper
-paper
 paper-mache
 paper-pusher
-paperback
 paperback
 paperboard
 paperboy
@@ -32312,7 +30993,6 @@ parachuting
 parachutist
 paracosm
 parade
-parade
 parader
 paradiddle
 paradigm
@@ -32345,7 +31025,6 @@ parallela
 parallelepiped
 parallelepipedon
 parallelism
-parallelogram
 parallelogram
 parallelopiped
 parallelopipedon
@@ -32406,7 +31085,6 @@ paratyphoid
 paraumbilicalis
 parazoan
 parcel
-parcel
 parceling
 parcellation
 parcelling
@@ -32424,7 +31102,6 @@ pardus
 paregmenon
 paregoric
 parenchyma
-parent
 parent
 parentage
 parentheses
@@ -32450,7 +31127,6 @@ parish
 parishioner
 parisology
 parity
-park
 park
 parka
 parking
@@ -32492,7 +31168,6 @@ parricide
 parroket
 parroquet
 parrot
-parrot
 parrotfish
 parry
 parryana
@@ -32503,10 +31178,8 @@ parsimoniousness
 parsimony
 parsley
 parsnip
-parsnip
 parson
 parsonage
-part
 part
 part-owner
 part-singing
@@ -32526,7 +31199,6 @@ participation
 participial
 participle
 particle
-particle
 particles
 particular
 particularisation
@@ -32544,16 +31216,13 @@ partitionist
 partitive
 partizan
 partner
-partner
 partnership
-partridge
 partridge
 partridgeberry
 parts
 partsong
 parturiency
 parturition
-party
 party
 partygoer
 parula
@@ -32581,11 +31250,9 @@ passage
 passageway
 passant
 passbook
-passbook
 passe-partout
 passel
 passementerie
-passenger
 passenger
 passer
 passer-by
@@ -32597,7 +31264,6 @@ passion
 passionateness
 passionflower
 passive
-passive
 passiveness
 passivism
 passivity
@@ -32606,8 +31272,6 @@ passport
 password
 past
 pasta
-pasta
-paste
 paste
 paste-up
 pasteboard
@@ -32624,13 +31288,11 @@ pastime
 pastis
 pastness
 pastor
-pastor
 pastoral
 pastorale
 pastorate
 pastorship
 pastrami
-pastry
 pastry
 pasturage
 pasture
@@ -32641,7 +31303,6 @@ pataca
 patagonica
 patagonum
 patas
-patch
 patch
 patchboard
 patchcord
@@ -32662,7 +31323,6 @@ paternalism
 paternity
 paternoster
 path
-path
 pathfinder
 pathogen
 pathogenesis
@@ -32672,9 +31332,7 @@ pathos
 pathway
 patience
 patient
-patient
 patina
-patio
 patio
 patisserie
 patka
@@ -32764,7 +31422,6 @@ paygrade
 payload
 paymaster
 payment
-payment
 payments
 paynim
 payoff
@@ -32778,10 +31435,8 @@ pdl
 pe
 pe-tsai
 pea
-pea
 pea-chick
 pea-souper
-peace
 peace
 peaceableness
 peacefulness
@@ -32801,14 +31456,11 @@ peafowl
 peag
 peahen
 peak
-peak
 peal
 pealing
 pean
 peanut
-peanut
 peanuts
-pear
 pear
 pearl
 pearl-fish
@@ -32870,8 +31522,6 @@ pederasty
 pedesis
 pedestal
 pedestrian
-pedestrian
-pediatrician
 pediatrician
 pediatrics
 pediatrist
@@ -32902,7 +31552,6 @@ peel
 peeler
 peeling
 peelings
-peen
 peen
 peep
 peeper
@@ -32935,7 +31584,6 @@ pelecypod
 pelegrina
 pelf
 pelican
-pelican
 peliosis
 pelisse
 pellagra
@@ -32965,18 +31613,15 @@ pemican
 pemmican
 pemphigus
 pen
-pen
 pen-and-ink
 pen-friend
 pen-tail
 penalisation
 penalization
 penalty
-penalty
 penance
 pence
 penchant
-pencil
 pencil
 pendant
 pendens
@@ -32985,7 +31630,6 @@ pendragon
 pendula
 penduliflora
 pendulina
-pendulum
 pendulum
 penelope
 peneplain
@@ -33049,7 +31693,6 @@ pentad
 pentadactylus
 pentaerythritol
 pentagon
-pentagon
 pentagonus
 pentagram
 pentahedron
@@ -33084,7 +31727,6 @@ penury
 peon
 peonage
 peony
-peony
 people
 peoples
 pep
@@ -33094,7 +31736,6 @@ peplos
 peplum
 peplus
 pepo
-pepper
 pepper
 pepper-and-salt
 pepperbush
@@ -33128,7 +31769,6 @@ perceptibility
 perception
 perceptiveness
 perceptivity
-perch
 perch
 percher
 perchlorate
@@ -33182,7 +31822,6 @@ performer
 performing
 perfringens
 perfume
-perfume
 perfumer
 perfumery
 perfusion
@@ -33222,8 +31861,6 @@ perineotomy
 perineum
 perineurium
 period
-period
-periodical
 periodical
 periodicity
 periodontia
@@ -33237,7 +31874,6 @@ peripatus
 peripeteia
 peripetia
 peripety
-peripheral
 peripheral
 periphericum
 periphery
@@ -33275,7 +31911,6 @@ permeableness
 permeation
 permissibility
 permission
-permission
 permissiveness
 permit
 permutability
@@ -33311,7 +31946,6 @@ persiflage
 persimmon
 persistence
 persistency
-person
 person
 persona
 personableness
@@ -33373,7 +32007,6 @@ pessimism
 pessimist
 pessundatum
 pest
-pest
 pesterer
 pesthole
 pesthouse
@@ -33382,7 +32015,6 @@ pestilence
 pestis
 pestle
 pesto
-pet
 pet
 pet-food
 petabit
@@ -33465,7 +32097,6 @@ pharmaceutic
 pharmaceutical
 pharmaceutics
 pharmacist
-pharmacist
 pharmacogenetics
 pharmacokinetics
 pharmacologist
@@ -33485,7 +32116,6 @@ phasianellus
 phasianid
 phasianinus
 phasmid
-pheasant
 pheasant
 pheasant's-eye
 phegopteris
@@ -33560,7 +32190,6 @@ philosophiser
 philosophizer
 philosophizing
 philosophy
-philosophy
 philoxeroides
 philter
 philtre
@@ -33594,7 +32223,6 @@ pholiota
 pholis
 phon
 phonation
-phone
 phone
 phone-in
 phonebook
@@ -33710,7 +32338,6 @@ physicalism
 physicality
 physicalness
 physician
-physician
 physicist
 physics
 physiognomy
@@ -33741,7 +32368,6 @@ pianism
 pianissimo
 pianist
 piano
-piano
 pianoforte
 piassava
 piaster
@@ -33756,7 +32382,6 @@ picador
 picaninny
 piccalilli
 piccaninny
-piccolo
 piccolo
 piceae
 pichi
@@ -33776,7 +32401,6 @@ picket
 picking
 pickings
 pickle
-pickle
 picklepuss
 picknicker
 pickpocket
@@ -33795,7 +32419,6 @@ pictograph
 pictorial
 pictum
 picture
-picture
 picturesqueness
 picturing
 pictus
@@ -33804,7 +32427,6 @@ piculet
 piddle
 piddock
 pidgin
-pie
 pie
 pie-dog
 piece
@@ -33821,9 +32443,7 @@ piezoelectricity
 piezometer
 piffle
 pig
-pig
 pigboat
-pigeon
 pigeon
 pigeonhole
 pigeonholing
@@ -33852,7 +32472,6 @@ pigtail
 pigwash
 pigweed
 pika
-pike
 pike
 pike-perch
 pikeblenny
@@ -33886,14 +32505,12 @@ pillion
 pillock
 pillory
 pillow
-pillow
 pillowcase
 pillwort
 pilocarpine
 pilocella
 pilosa
 pilosity
-pilot
 pilot
 pilotage
 pilotfish
@@ -33907,8 +32524,6 @@ pimozide
 pimp
 pimpernel
 pimple
-pimple
-pin
 pin
 pin-up
 pinafore
@@ -33925,7 +32540,6 @@ pinchgut
 pincushion
 pindolol
 pine
-pine
 pine-weed
 pinea
 pinealoma
@@ -33939,7 +32553,6 @@ pineweed
 pinfish
 pinfold
 ping
-ping
 pinger
 pinguecula
 pinhead
@@ -33948,7 +32561,6 @@ pinifoliae
 pining
 pinion
 pinite
-pink
 pink
 pinkeye
 pinkie
@@ -33979,7 +32591,6 @@ pinprick
 pinscher
 pinstripe
 pint
-pint
 pintado
 pintail
 pintle
@@ -33997,7 +32608,6 @@ pip-squeak
 pipa
 pipage
 pipal
-pipe
 pipe
 pipeclay
 pipefish
@@ -34098,7 +32708,6 @@ pixel
 pixie
 pixy
 pizza
-pizza
 pizzaz
 pizzazz
 pizzeria
@@ -34106,7 +32715,6 @@ pizzicato
 pj's
 placard
 placation
-place
 place
 place-kicker
 place-kicking
@@ -34139,7 +32747,6 @@ plague
 plaice
 plaid
 plain
-plain
 plainchant
 plainclothesman
 plainness
@@ -34159,10 +32766,8 @@ planchet
 planchette
 plancus
 plane
-plane
 planeness
 planer
-planet
 planet
 planetarium
 planetesimal
@@ -34178,11 +32783,9 @@ planner
 planning
 planography
 plant
-plant
 plantaginifolia
 plantago-aquatica
 plantain
-plantation
 plantation
 planter
 planthopper
@@ -34205,13 +32808,10 @@ plasmin
 plasminogen
 plasmodium
 plaster
-plaster
-plasterboard
 plasterboard
 plasterer
 plastering
 plasterwork
-plastic
 plastic
 plasticiser
 plasticity
@@ -34223,7 +32823,6 @@ plastron
 plat
 platan
 platanoides
-plate
 plate
 plateau
 plateful
@@ -34237,7 +32836,6 @@ platessa
 platessoides
 platform
 plating
-platinum
 platinum
 platitude
 platitudinarian
@@ -34258,7 +32856,6 @@ plaudits
 plausibility
 plausibleness
 play
-play
 play-actor
 play-box
 playacting
@@ -34275,7 +32872,6 @@ playfellow
 playfulness
 playgoer
 playground
-playground
 playhouse
 playing
 playlet
@@ -34284,7 +32880,6 @@ playmaker
 playmate
 playoff
 playpen
-playroom
 playroom
 playschool
 playscript
@@ -34303,7 +32898,6 @@ pleasantry
 pleaser
 pleasing
 pleasingness
-pleasure
 pleasure
 pleat
 pleating
@@ -34361,7 +32955,6 @@ plica
 plicata
 plication
 plier
-plier
 pliers
 plight
 plimsoll
@@ -34375,9 +32968,7 @@ plop
 plosion
 plosive
 plot
-plot
 plotter
-plough
 plough
 ploughboy
 ploughing
@@ -34386,7 +32977,6 @@ ploughman
 ploughshare
 ploughwright
 plover
-plow
 plow
 plowboy
 plower
@@ -34451,7 +33041,6 @@ plyboard
 plyer
 plyers
 plywood
-plywood
 pneumatics
 pneumatophore
 pneumococcus
@@ -34471,7 +33060,6 @@ poacher
 poaching
 pochard
 pock
-pocket
 pocket
 pocket-handkerchief
 pocketbook
@@ -34494,7 +33082,6 @@ poeciliid
 poem
 poenology
 poesy
-poet
 poet
 poet-singer
 poetess
@@ -34519,7 +33106,6 @@ poilu
 poinciana
 poinsettia
 point
-point
 pointed
 pointedness
 pointel
@@ -34531,7 +33117,6 @@ pointrel
 pointsman
 poiretii
 poise
-poison
 poison
 poison-berry
 poisonberry
@@ -34567,8 +33152,6 @@ polenta
 poler
 poli
 police
-police
-policeman
 policeman
 policewoman
 policy
@@ -34579,14 +33162,12 @@ poliomyelitis
 poliosis
 poliovirus
 polish
-polish
 polisher
 polishing
 politburo
 politeness
 politesse
 politic
-politician
 politician
 politico
 politics
@@ -34615,10 +33196,8 @@ pollucite
 pollutant
 polluter
 pollution
-pollution
 pollyfish
 pollywog
-polo
 polo
 polo-neck
 polonaise
@@ -34644,7 +33223,6 @@ polycythemia
 polydactyly
 polydipsia
 polyelectrolyte
-polyester
 polyester
 polyethylene
 polyfoam
@@ -34745,7 +33323,6 @@ pompousness
 ponce
 poncho
 pond
-pond
 pond-skater
 ponderer
 ponderosa
@@ -34789,7 +33366,6 @@ pop
 pop-fly
 pop-up
 popcorn
-popcorn
 pope
 popery
 popgun
@@ -34803,7 +33379,6 @@ popper
 poppet
 popping
 poppy
-poppy
 poppycock
 popsicle
 populace
@@ -34813,7 +33388,6 @@ popularism
 popularity
 popularization
 popularizer
-population
 population
 populi
 populifolia
@@ -34827,8 +33401,6 @@ porc
 porcelain
 porcellus
 porch
-porch
-porcupine
 porcupine
 porcupinefish
 porcupines
@@ -34863,7 +33435,6 @@ porrifolius
 porringer
 porrum
 port
-port
 porta
 portability
 portable
@@ -34873,7 +33444,6 @@ portal
 portcullis
 porte-cochere
 portent
-porter
 porter
 porterage
 porterhouse
@@ -34899,7 +33469,6 @@ poseuse
 posing
 posit
 position
-position
 positioner
 positioning
 positive
@@ -34918,7 +33487,6 @@ possessiveness
 possessor
 posset
 possibility
-possibility
 possible
 possibleness
 possum
@@ -34929,9 +33497,7 @@ post-maturity
 post-menopause
 post-mortem
 postage
-postage
 postbag
-postbox
 postbox
 postcard
 postcava
@@ -34976,7 +33542,6 @@ posturer
 posturing
 posy
 pot
-pot
 pot-au-feu
 potable
 potage
@@ -34984,7 +33549,6 @@ potamogale
 potash
 potassium
 potation
-potato
 potato
 potatoes
 potbelly
@@ -35035,10 +33599,8 @@ poulette
 poulterer
 poultice
 poultry
-poultry
 poultryman
 pounce
-pound
 pound
 poundage
 poundal
@@ -35050,12 +33612,10 @@ pout
 pouter
 poverty
 powder
-powder
 powderer
 powderiness
 powderpuff
 powders
-power
 power
 powerboat
 powerbroker
@@ -35148,7 +33708,6 @@ precipitant
 precipitate
 precipitateness
 precipitation
-precipitation
 precipitator
 precipitin
 precipitousness
@@ -35193,7 +33752,6 @@ preemptor
 preexistence
 prefab
 prefabrication
-preface
 preface
 prefect
 prefecture
@@ -35292,7 +33850,6 @@ pressman
 pressmark
 pressor
 pressure
-pressure
 pressures
 prestidigitation
 prestidigitator
@@ -35337,7 +33894,6 @@ prexy
 prey
 priapism
 price
-price
 price-fixing
 pricelessness
 prices
@@ -35356,7 +33912,6 @@ pride
 pride-of-India
 pridefulness
 prie-dieu
-priest
 priest
 priest-doctor
 priestcraft
@@ -35407,8 +33962,6 @@ principle
 principles
 prinoides
 print
-print
-printer
 printer
 printing
 printmaker
@@ -35425,7 +33978,6 @@ pris
 prism
 prismatoid
 prismoid
-prison
 prison
 prison-breaking
 prisonbreak
@@ -35455,7 +34007,6 @@ probability
 probable
 probate
 probation
-probation
 probationer
 probatocephalus
 probe
@@ -35475,9 +34026,7 @@ proceedings
 proceeds
 procera
 process
-process
 process-server
-processing
 processing
 procession
 processional
@@ -35520,11 +34069,8 @@ prodigy
 prodroma
 prodrome
 produce
-produce
 producer
 product
-product
-production
 production
 productiveness
 productivity
@@ -35541,13 +34087,11 @@ professionalisation
 professionalism
 professionalization
 professor
-professor
 professorship
 proffer
 proficiency
 profile
 profiling
-profit
 profit
 profitability
 profitableness
@@ -35629,7 +34173,6 @@ promisor
 promontory
 promoter
 promotion
-promotion
 prompt
 promptbook
 prompter
@@ -35663,7 +34206,6 @@ propagator
 propanal
 propanamide
 propane
-propane
 propanediol
 propanol
 propanolol
@@ -35679,7 +34221,6 @@ propenoate
 propenonitrile
 propensity
 properness
-property
 property
 prophase
 prophecy
@@ -35728,8 +34269,6 @@ proscenium
 prosciutto
 proscription
 prose
-prose
-prosecution
 prosecution
 prosecutor
 proselyte
@@ -35788,7 +34327,6 @@ proteomics
 proteosome
 proteron
 protest
-protest
 protestation
 protester
 prothalamion
@@ -35806,7 +34344,6 @@ protoarchaeology
 protoarcheology
 protoavis
 protoceratops
-protocol
 protocol
 protoctist
 protodice
@@ -35867,7 +34404,6 @@ prudery
 prudishness
 pruinosa
 prune
-pruner
 pruner
 prunifera
 prunifolia
@@ -35938,7 +34474,6 @@ psoriasis
 psyche
 psychedelia
 psychiatrist
-psychiatrist
 psychiatry
 psychic
 psycho
@@ -35952,7 +34487,6 @@ psychokinesis
 psycholinguist
 psycholinguistics
 psychologist
-psychology
 psychology
 psychometrics
 psychometrika
@@ -35984,7 +34518,6 @@ psyop
 ptarmica
 ptarmiciflorum
 ptarmicoides
-ptarmigan
 ptarmigan
 pteridioides
 pteridis
@@ -36055,7 +34588,6 @@ puffer
 pufferfish
 puffery
 puffin
-puffin
 puffiness
 puffing
 puffinus
@@ -36083,7 +34615,6 @@ pulcherrimus
 pulchritude
 pulegioides
 pulegium
-pull
 pull
 pull-in
 pull-off
@@ -36116,20 +34647,16 @@ pulverization
 pulverulentus
 pulvinaris
 puma
-puma
 pumice
 pumila
 pumilla
 pumilum
 pummelo
 pump
-pump
 pumpernickel
-pumpkin
 pumpkin
 pumpkinseed
 pun
-punch
 punch
 punch-up
 punchayet
@@ -36156,7 +34683,6 @@ puniceum
 puniceus
 puniness
 punishment
-punishment
 punk
 punkah
 punkey
@@ -36177,9 +34703,7 @@ puppet
 puppeteer
 puppetry
 puppy
-puppy
 purau
-purchase
 purchase
 purchaser
 purchasing
@@ -36204,11 +34728,9 @@ purl
 purlieu
 purloo
 purple
-purple
 purpleness
 purplish-red
 purport
-purpose
 purpose
 purposefulness
 purposelessness
@@ -36234,7 +34756,6 @@ purveyance
 purveyor
 purview
 pus
-push
 push
 push-bike
 pushball
@@ -36308,7 +34829,6 @@ pygmaeus
 pygmy
 pyinma
 pyjama
-pyjama
 pyknosis
 pylon
 pylori
@@ -36321,7 +34841,6 @@ pyorrhea
 pyorrhoea
 pyracanth
 pyralid
-pyramid
 pyramid
 pyramidalis
 pyramidata
@@ -36448,14 +34967,12 @@ quagmire
 quahaug
 quahog
 quail
-quail
 quaintness
 quake
 quaker
 qualification
 qualifier
 qualifying
-quality
 quality
 qualm
 quamash
@@ -36484,9 +35001,7 @@ quarry
 quarrying
 quarryman
 quart
-quart
 quartan
-quarter
 quarter
 quarter-century
 quarter-circle
@@ -36510,7 +35025,6 @@ quartic
 quartile
 quarto
 quartz
-quartz
 quartzite
 quasar
 quasi-NGO
@@ -36530,7 +35044,6 @@ quaver
 quay
 quayage
 queasiness
-queen
 queen
 queenfish
 queer
@@ -36552,7 +35065,6 @@ quesadilla
 quest
 quester
 question
-question
 questioner
 questioning
 questionnaire
@@ -36571,7 +35083,6 @@ quickie
 quicklime
 quickness
 quicksand
-quicksand
 quickset
 quicksilver
 quickstep
@@ -36582,7 +35093,6 @@ quidnunc
 quiescence
 quiescency
 quiet
-quiet
 quietism
 quietist
 quietness
@@ -36590,14 +35100,11 @@ quietude
 quietus
 quiff
 quill
-quill
 quillwort
-quilt
 quilt
 quilting
 quin
 quinacrine
-quince
 quince
 quincentenary
 quincentennial
@@ -36633,12 +35140,10 @@ quiscula
 quisling
 quislingism
 quit
-quit
 quitclaim
 quitoense
 quittance
 quitter
-quiver
 quiver
 quivering
 quixotism
@@ -36656,7 +35161,6 @@ quorum
 quota
 quotability
 quotation
-quotation
 quote
 quoter
 quotes
@@ -36667,9 +35171,7 @@ raab
 rabato
 rabbet
 rabbi
-rabbi
 rabbinate
-rabbit
 rabbit
 rabbit-weed
 rabbiteye
@@ -36703,7 +35205,6 @@ racialism
 racialist
 raciness
 racing
-racing
 racism
 racist
 rack
@@ -36721,7 +35222,6 @@ racquetball
 racquets
 rad
 radar
-radar
 raddle
 radial
 radialis
@@ -36731,7 +35231,6 @@ radiancy
 radiata
 radiation
 radiator
-radiator
 radiatus
 radical
 radicalism
@@ -36740,7 +35239,6 @@ radicata
 radicchio
 radicle
 radiculitis
-radio
 radio
 radio-gramophone
 radio-opacity
@@ -36784,7 +35282,6 @@ radiotherapist
 radiotherapy
 radiothorium
 radish
-radish
 radium
 radius
 radix
@@ -36794,7 +35291,6 @@ raetam
 raffia
 raffinose
 raffle
-raft
 raft
 rafter
 raftman
@@ -36819,7 +35315,6 @@ raid
 raider
 raii
 rail
-rail
 rail-splitter
 railbird
 railcar
@@ -36831,16 +35326,12 @@ railroader
 railroading
 rails
 railway
-railway
 railwayman
 railyard
 raiment
 rain
-rain
 rain-wash
 rainbow
-rainbow
-raincoat
 raincoat
 raindrop
 rainfall
@@ -36849,7 +35340,6 @@ rainforest
 raininess
 rainmaker
 rainmaking
-rainstorm
 rainstorm
 rainwater
 raise
@@ -36861,7 +35351,6 @@ raj
 raja
 rajah
 rajanya
-rake
 rake
 rake-off
 rakehell
@@ -36880,7 +35369,6 @@ ramekin
 ramentacea
 ramentaceus
 ramequin
-ramie
 ramie
 ramification
 ramipril
@@ -36908,7 +35396,6 @@ randomisation
 randomization
 randomness
 ranee
-range
 range
 rangefinder
 rangeland
@@ -36980,7 +35467,6 @@ rasping
 rassling
 raster
 rat
-rat
 rat-a-tat
 rat-a-tat-tat
 rat-catcher
@@ -36994,7 +35480,6 @@ rataplan
 ratatouille
 ratch
 ratchet
-rate
 rate
 rateability
 rateables
@@ -37047,7 +35532,6 @@ ravel
 raveling
 ravelling
 raven
-raven
 ravenala
 ravenelii
 ravennae
@@ -37058,15 +35542,12 @@ ravigotte
 ravine
 raving
 ravioli
-ravioli
 ravisher
 ravishment
 raw
 rawhide
 rawness
 ray
-ray
-rayon
 rayon
 rayons
 razbliuto
@@ -37102,7 +35583,6 @@ reaching
 reactance
 reactant
 reaction
-reaction
 reactionary
 reactionism
 reactivity
@@ -37113,7 +35593,6 @@ readability
 reader
 readership
 readiness
-reading
 reading
 readjustment
 readmission
@@ -37152,7 +35631,6 @@ rearing
 rearmament
 rearrangement
 rearward
-reason
 reason
 reasonableness
 reasoner
@@ -37196,7 +35674,6 @@ recco
 reccy
 receding
 receipt
-receipt
 receipts
 receivable
 receivables
@@ -37210,7 +35687,6 @@ receptionist
 receptiveness
 receptivity
 receptor
-recess
 recess
 recession
 recessional
@@ -37261,12 +35737,10 @@ reconnoitring
 reconsideration
 reconstruction
 record
-record
 record-breaker
 record-holder
 record-keeper
 recordable
-recorder
 recorder
 recording
 recount
@@ -37284,7 +35758,6 @@ recruiting-sergeant
 recruitment
 recta
 rectalis
-rectangle
 rectangle
 rectangularity
 rectification
@@ -37310,7 +35783,6 @@ recusant
 recusation
 recutita
 recycling
-red
 red
 red-berry
 red-blindness
@@ -37365,7 +35837,6 @@ reducing
 reductant
 reductase
 reductio
-reduction
 reduction
 reductionism
 reductivism
@@ -37446,14 +35917,12 @@ refreshment
 refrigerant
 refrigeration
 refrigerator
-refrigerator
 refritos
 refueling
 refuge
 refugee
 refulgence
 refulgency
-refund
 refund
 refurbishment
 refusal
@@ -37495,7 +35964,6 @@ regosol
 regress
 regression
 regret
-regret
 regrets
 regular
 regularisation
@@ -37524,7 +35992,6 @@ rein
 reincarnation
 reincarnationism
 reindeer
-reindeer
 reinforcement
 reinforcer
 reinstatement
@@ -37542,10 +36009,8 @@ relapse
 relapsing
 relatedness
 relation
-relation
 relations
 relationship
-relative
 relative
 relative-in-law
 relativism
@@ -37571,7 +36036,6 @@ relief
 reliever
 relievo
 religion
-religion
 religionism
 religionist
 religiosa
@@ -37583,7 +36047,6 @@ religiousness
 relinquishing
 relinquishment
 reliquary
-relish
 relish
 relishing
 relistening
@@ -37606,7 +36069,6 @@ remembering
 remembrance
 remilitarisation
 remilitarization
-reminder
 reminder
 reminiscence
 remise
@@ -37669,7 +36131,6 @@ reorientation
 reovirus
 rep
 repair
-repair
 repairer
 repairing
 repairman
@@ -37706,7 +36167,6 @@ replica
 replication
 reply
 report
-report
 reportage
 reporter
 reporting
@@ -37720,7 +36180,6 @@ repp
 reprehensibility
 reprehension
 representation
-representative
 representative
 represser
 repression
@@ -37757,7 +36216,6 @@ repurchase
 reputability
 reputation
 repute
-request
 request
 requester
 requiem
@@ -37813,7 +36271,6 @@ resistivity
 resistor
 resoluteness
 resolution
-resolution
 resolve
 resolvent
 resolving
@@ -37826,7 +36283,6 @@ resort
 resource
 resourcefulness
 resources
-respect
 respect
 respectability
 respecter
@@ -37843,16 +36299,13 @@ respondent
 responder
 response
 responsibility
-responsibility
 responsibleness
 responsiveness
-rest
 rest
 rest-cure
 rest-harrow
 restante
 restatement
-restaurant
 restaurant
 restauranter
 restaurateur
@@ -37871,7 +36324,6 @@ restriction
 restrictiveness
 restroom
 result
-result
 resultant
 resume
 resumption
@@ -37882,7 +36334,6 @@ resuscitation
 resuscitator
 resuspension
 retail
-retailer
 retailer
 retailing
 retainer
@@ -38015,11 +36466,9 @@ revolutionism
 revolutionist
 revolve
 revolver
-revolver
 revue
 revulsion
 rewa-rewa
-reward
 reward
 rewording
 rewrite
@@ -38057,7 +36506,6 @@ rhinestone
 rhinion
 rhinitis
 rhino
-rhinoceros
 rhinoceros
 rhinolaryngologist
 rhinolaryngology
@@ -38113,7 +36561,6 @@ rhymer
 rhymester
 rhyolite
 rhythm
-rhythm
 rhythmicity
 rhytidectomy
 rhytidoplasty
@@ -38139,7 +36586,6 @@ ribose
 ribosome
 ribs
 ribwort
-rice
 rice
 ricebird
 ricegrass
@@ -38170,7 +36616,6 @@ ricrac
 rictus
 riddance
 riddle
-riddle
 ride
 rider
 ridge
@@ -38192,7 +36637,6 @@ rifampin
 riff
 riffle
 riffraff
-rifle
 rifle
 riflebird
 rifleman
@@ -38241,7 +36685,6 @@ rimu
 rind
 rinderpest
 ring
-ring
 ring-a-rosy
 ring-around-a-rosy
 ring-around-the-rosy
@@ -38280,11 +36723,9 @@ rippling
 ripsaw
 riptide
 rise
-rise
 riser
 risibility
 rising
-risk
 risk
 riskiness
 risklessness
@@ -38302,9 +36743,7 @@ rival
 rivale
 rivalry
 river
-river
 riverbank
-riverbed
 riverbed
 riverside
 rivet
@@ -38320,7 +36759,6 @@ riyal
 riyal-omani
 roach
 road
-road
 roadbed
 roadblock
 roadbook
@@ -38335,14 +36773,12 @@ roadside
 roadstead
 roadster
 roadway
-roadway
 roadworthiness
 roamer
 roan
 roar
 roarer
 roaring
-roast
 roast
 roaster
 roasting
@@ -38352,10 +36788,8 @@ robbery
 robe
 robe-de-chambre
 robert
-robert
 robertianum
 roberts
-robin
 robin
 roble
 robot
@@ -38369,7 +36803,6 @@ roc
 rocambole
 roccella
 rock
-rock
 rock'n'roll
 rock-and-roll
 rockabilly
@@ -38378,7 +36811,6 @@ rockcress
 rocker
 rockers
 rockery
-rocket
 rocket
 rocketry
 rockfish
@@ -38389,7 +36821,6 @@ rocks
 rockslide
 rockweed
 rococo
-rod
 rod
 rodent
 rodeo
@@ -38410,7 +36841,6 @@ roguishness
 roisterer
 role
 roleplaying
-roll
 roll
 roll-off
 roll-on
@@ -38448,7 +36878,6 @@ rondo
 rood
 rood-tree
 roof
-roof
 roofer
 roofing
 rooftop
@@ -38458,7 +36887,6 @@ rooibos
 rook
 rookery
 rookie
-room
 room
 roomer
 roomette
@@ -38470,8 +36898,6 @@ rooms
 roomy
 roost
 rooster
-rooster
-root
 root
 rootage
 rooter
@@ -38502,7 +36928,6 @@ rosacea
 rosalia
 rosary
 rosburghii
-rose
 rose
 rose-root
 rosea
@@ -38590,9 +37015,7 @@ rousing
 roustabout
 rout
 route
-route
 routemarch
-router
 router
 routine
 roux
@@ -38601,7 +37024,6 @@ roving
 row
 rowan
 rowanberry
-rowboat
 rowboat
 rowdiness
 rowdy
@@ -38620,10 +37042,8 @@ royalty
 rozelle
 rpm
 rub
-rub
 rub-a-dub
 rubato
-rubber
 rubber
 rubber-necking
 rubberneck
@@ -38691,7 +37111,6 @@ rufus
 rug
 ruga
 rugby
-rugby
 rugelach
 rugelii
 ruggedisation
@@ -38707,7 +37126,6 @@ ruin
 ruination
 ruiner
 ruining
-rule
 rule
 ruler
 rulership
@@ -38732,7 +37150,6 @@ rumourmonger
 rump
 rumpus
 rumrunner
-run
 run
 run-in
 run-through
@@ -38797,8 +37214,6 @@ rustling
 rut
 ruta-muraria
 rutabaga
-rutabaga
-ruth
 ruth
 ruthenium
 rutherford
@@ -38853,7 +37268,6 @@ sacer
 sacerdotalism
 sachem
 sachet
-sack
 sack
 sackbut
 sackcloth
@@ -38927,15 +37341,12 @@ sahib
 sahuaro
 saiga
 sail
-sail
-sailboat
 sailboat
 sailcloth
 sailfish
 sailing
 sailing-race
 sailmaker
-sailor
 sailor
 sailor's-choice
 sailplane
@@ -38954,7 +37365,6 @@ salableness
 salaciousness
 salacity
 salad
-salad
 salade
 salah
 salai
@@ -38964,9 +37374,7 @@ salamandra
 salami
 salar
 salary
-salary
 salat
-sale
 sale
 saleratus
 saleroom
@@ -38974,7 +37382,6 @@ sales
 salesclerk
 salesgirl
 saleslady
-salesman
 salesman
 salesmanship
 salesperson
@@ -39003,7 +37410,6 @@ salmagundi
 salmi
 salmoides
 salmon
-salmon
 salmonberry
 salmonella
 salmonellosis
@@ -39022,7 +37428,6 @@ salpinx
 salsa
 salsify
 salsilla
-salt
 salt
 saltation
 saltatrix
@@ -39077,13 +37482,11 @@ samizdat
 samosa
 samovar
 sampan
-sampan
 samphire
 sample
 sampler
 sampling
 samsara
-samurai
 samurai
 sanatarium
 sanatorium
@@ -39096,7 +37499,6 @@ sanctity
 sanctorum
 sanctuary
 sanctum
-sand
 sand
 sandal
 sandalwood
@@ -39137,7 +37539,6 @@ sandstone
 sandstorm
 sandwicense
 sandwich
-sandwich
 sandwichman
 sandwort
 saneness
@@ -39169,7 +37570,6 @@ sannup
 sannyasi
 sannyasin
 sansevieria
-santa
 santa
 santalinus
 santims
@@ -39234,7 +37634,6 @@ sarcostyle
 sard
 sarda
 sardine
-sardine
 sardius
 sardonyx
 saree
@@ -39268,7 +37667,6 @@ satellite
 satiation
 satiety
 satin
-satin
 satinet
 satinette
 satinleaf
@@ -39294,7 +37692,6 @@ saturnism
 satyr
 satyriasis
 sauce
-sauce
 sauce-alone
 sauceboat
 saucepan
@@ -39316,7 +37713,6 @@ sauropod
 saurus
 saury
 sausage
-sausage
 saute
 sauteing
 savage
@@ -39326,7 +37722,6 @@ savanna
 savannah
 savant
 savarin
-save
 save
 save-all
 saveloy
@@ -39349,7 +37744,6 @@ savoury
 savoy
 savvy
 saw
-saw
 sawbill
 sawbones
 sawbuck
@@ -39369,7 +37763,6 @@ saxhorn
 saxifrage
 saxist
 saxitoxin
-saxophone
 saxophone
 saxophonist
 say
@@ -39396,12 +37789,10 @@ scalar
 scalawag
 scald
 scale
-scale
 scalenus
 scaler
 scaliness
 scaling
-scallion
 scallion
 scallop
 scallopine
@@ -39429,7 +37820,6 @@ scandalousness
 scandens
 scandium
 scanner
-scanner
 scanning
 scansion
 scantiness
@@ -39456,10 +37846,8 @@ scarceness
 scarcity
 scare
 scarecrow
-scarecrow
 scaremonger
 scarer
-scarf
 scarf
 scarfpin
 scariola
@@ -39482,17 +37870,14 @@ sceleratus
 scenario
 scenarist
 scene
-scene
 scene-stealer
 scenery
 sceneshifter
-scent
 scent
 scepter
 sceptic
 scepticism
 sceptre
-schedule
 schedule
 scheduler
 scheduling
@@ -39565,7 +37950,6 @@ scholia
 scholiast
 scholium
 school
-school
 schoolbag
 schoolbook
 schoolboy
@@ -39604,7 +37988,6 @@ sciara
 sciarid
 sciatica
 science
-science
 scientist
 scilla
 scilloides
@@ -39616,7 +37999,6 @@ sciolism
 sciolist
 scion
 scission
-scissors
 scissors
 scissortail
 scissure
@@ -39659,7 +38041,6 @@ scone
 scoop
 scoopful
 scooter
-scooter
 scoparia
 scoparium
 scoparius
@@ -39687,7 +38068,6 @@ scorpaenoid
 scorper
 scorpio
 scorpiodes
-scorpion
 scorpion
 scorpionfish
 scorpionweed
@@ -39719,7 +38099,6 @@ scrap
 scrapbook
 scrape
 scraper
-scraper
 scrapheap
 scrapie
 scraping
@@ -39744,18 +38123,15 @@ screecher
 screeching
 screed
 screen
-screen
 screener
 screening
 screenland
 screenplay
 screenwriter
 screw
-screw
 screwball
 screwballer
 screwbean
-screwdriver
 screwdriver
 screwing
 screwtop
@@ -39847,7 +38223,6 @@ scyphozoan
 scyphus
 scythe
 sea
-sea
 sea-coast
 sea-duty
 sea-ear
@@ -39869,9 +38244,7 @@ seafowl
 seafront
 seagrass
 seagull
-seagull
 seahorse
-seal
 seal
 sealant
 sealer
@@ -39886,10 +38259,8 @@ seamstress
 seance
 seaperch
 seaplane
-seaplane
 seaport
 seaquake
-search
 search
 searcher
 searchlight
@@ -39898,17 +38269,14 @@ seas
 seascape
 seashell
 seashore
-seashore
 seasickness
 seaside
 seasnail
-season
 season
 seasonableness
 seasonal
 seasoner
 seasoning
-seat
 seat
 seatbelt
 seating
@@ -39935,7 +38303,6 @@ seckel
 seclusion
 secobarbital
 second
-second
 second-in-command
 second-rater
 second-stringer
@@ -39949,7 +38316,6 @@ secret
 secretaire
 secretariat
 secretariate
-secretary
 secretary
 secretaryship
 secretase
@@ -39984,7 +38350,6 @@ secure
 secureness
 securer
 security
-security
 sedan
 sedateness
 sedation
@@ -40002,11 +38367,9 @@ sedulousness
 sedum
 see
 seed
-seed
 seedbed
 seedcake
 seedcase
-seeder
 seeder
 seediness
 seedling
@@ -40024,7 +38387,6 @@ seer
 seersucker
 seesaw
 segetum
-segment
 segment
 segmentation
 segno
@@ -40059,7 +38421,6 @@ selaginoides
 selago
 select
 selection
-selection
 selectivity
 selectman
 selectmen
@@ -40068,7 +38429,6 @@ selectwoman
 selenium
 selenolatry
 selenology
-self
 self
 self-abasement
 self-abnegation
@@ -40207,8 +38567,6 @@ semibreve
 semicentenary
 semicentennial
 semicircle
-semicircle
-semicolon
 semicolon
 semicoma
 semiconductor
@@ -40276,7 +38634,6 @@ sensation
 sensationalism
 sensationalist
 sense
-sense
 senselessness
 senses
 sensibilis
@@ -40303,7 +38660,6 @@ sensualness
 sensuousness
 sent
 sente
-sentence
 sentence
 sentience
 sentiency
@@ -40433,9 +38789,7 @@ sertularian
 serum
 serval
 servant
-servant
 serve
-server
 server
 service
 serviceability
@@ -40465,7 +38819,6 @@ sess
 sessile
 sessiliflora
 sessilifolia
-session
 session
 sessions
 sestet
@@ -40519,7 +38872,6 @@ sewer
 sewerage
 sewing
 sex
-sex
 sexagenarian
 sexcapade
 sexcinctus
@@ -40553,13 +38905,11 @@ shadblow
 shadbush
 shaddock
 shade
-shade
 shades
 shadflower
 shadfly
 shadiness
 shading
-shadow
 shadow
 shadowboxing
 shadower
@@ -40575,7 +38925,6 @@ shahadah
 shaheed
 shaitan
 shake
-shake
 shake-up
 shakedown
 shakeout
@@ -40588,7 +38937,6 @@ shale
 shall-flower
 shallon
 shallot
-shallot
 shallow
 shallowness
 shallu
@@ -40600,14 +38948,12 @@ shamble
 shambles
 shambling
 shame
-shame
 shamefacedness
 shamefulness
 shamelessness
 shamisen
 shammer
 shammy
-shampoo
 shampoo
 shamrock
 shamus
@@ -40620,14 +38966,12 @@ shantung
 shanty
 shantytown
 shape
-shape
 shape-up
 shapelessness
 shapeliness
 shaper
 shaping
 shard
-share
 share
 share-out
 sharecropper
@@ -40640,7 +38984,6 @@ shareware
 sharia
 shariah
 sharing
-shark
 shark
 sharkskin
 sharksucker
@@ -40672,7 +39015,6 @@ shear
 shearer
 shearing
 shears
-shears
 shearwater
 sheatfish
 sheath
@@ -40684,7 +39026,6 @@ shedder
 shedding
 sheen
 sheeny
-sheep
 sheep
 sheep-tick
 sheepcote
@@ -40701,7 +39042,6 @@ sheepskin
 sheepwalk
 sheesha
 sheet
-sheet
 sheeting
 shegetz
 sheik
@@ -40715,9 +39055,7 @@ shekels
 sheldrake
 shelduck
 shelf
-shelf
 shelfful
-shell
 shell
 shell-flower
 shellac
@@ -40743,7 +39081,6 @@ sherry
 shiatsu
 shibah
 shibboleth
-shield
 shield
 shielder
 shielding
@@ -40772,7 +39109,6 @@ shindy
 shine
 shiner
 shingle
-shingle
 shingler
 shingles
 shingling
@@ -40783,7 +39119,6 @@ shinney
 shinny
 shinpad
 shinplaster
-ship
 ship
 ship-breaker
 shipbuilder
@@ -40805,7 +39140,6 @@ shire
 shirker
 shirking
 shirring
-shirt
 shirt
 shirtdress
 shirtfront
@@ -40852,11 +39186,9 @@ shnorrer
 shoal
 shoat
 shock
-shock
 shocker
 shoddiness
 shoddy
-shoe
 shoe
 shoe-shop
 shoebill
@@ -40866,7 +39198,6 @@ shoebox
 shoeful
 shoehorn
 shoelace
-shoemaker
 shoemaker
 shoemaking
 shoes
@@ -40887,7 +39218,6 @@ shoot-down
 shooter
 shooting
 shootout
-shop
 shop
 shopaholic
 shopfront
@@ -40922,13 +39252,11 @@ shortii
 shortlist
 shortness
 shorts
-shorts
 shortsightedness
 shortstop
 shot
 shote
 shotgun
-shoulder
 shoulder
 shout
 shouter
@@ -40937,14 +39265,12 @@ shove
 shove-ha'penny
 shove-halfpenny
 shovel
-shovel
 shovelboard
 shoveler
 shovelful
 shovelhead
 shoveller
 shover
-show
 show
 show-off
 show-stopper
@@ -40978,11 +39304,9 @@ shrike
 shrilling
 shrillness
 shrimp
-shrimp
 shrimp-fish
 shrimper
 shrimpfish
-shrine
 shrine
 shrink
 shrink-wrap
@@ -41034,7 +39358,6 @@ sialadenitis
 sialolith
 siamang
 siamese
-siamese
 sib
 siberian
 siberica
@@ -41056,16 +39379,13 @@ sicklepod
 sickness
 sickroom
 side
-side
 side-glance
 side-look
 side-wheeler
 side-whiskers
 sidebar
 sideboard
-sideboard
 sideburn
-sidecar
 sidecar
 sidekick
 sidelight
@@ -41085,7 +39405,6 @@ sidestep
 sidestroke
 sideswipe
 sidetrack
-sidewalk
 sidewalk
 sidewall
 sidewinder
@@ -41116,7 +39435,6 @@ sigmoideus
 sigmoidoscope
 sigmoidoscopy
 sign
-sign
 signage
 signal
 signal-to-noise
@@ -41128,7 +39446,6 @@ signalization
 signaller
 signalman
 signatory
-signature
 signature
 signboard
 signer
@@ -41158,7 +39475,6 @@ silesia
 silex
 silhouette
 silica
-silica
 silicate
 silicicola
 silicide
@@ -41169,7 +39485,6 @@ silicosis
 siliqua
 siliquastrum
 silique
-silk
 silk
 silkgrass
 silkiness
@@ -41190,7 +39505,6 @@ siltstone
 silurid
 silva
 silvan
-silver
 silver
 silver-bush
 silver-lace
@@ -41268,9 +39582,7 @@ sing-kwa
 singalong
 singe
 singer
-singer
 singing
-single
 single
 single-foot
 single-leaf
@@ -41291,7 +39603,6 @@ sinistra
 sinistrality
 sinistri
 sinistrum
-sink
 sink
 sinker
 sinkhole
@@ -41342,8 +39653,6 @@ sissoo
 sissu
 sissy
 sister
-sister
-sister-in-law
 sister-in-law
 sisterhood
 sistership
@@ -41379,13 +39688,11 @@ sixty
 sixty-fourth
 sixty-nine
 size
-size
 sizeableness
 sizing
 sizzle
 skag
 skank
-skate
 skate
 skateboard
 skateboarder
@@ -41421,8 +39728,6 @@ skier
 skiff
 skiffle
 skiing
-skiing
-skill
 skill
 skillet
 skilletfish
@@ -41432,7 +39737,6 @@ skiltonianus
 skim
 skimmer
 skimming
-skin
 skin
 skin-dive
 skin-diver
@@ -41455,7 +39759,6 @@ skirmish
 skirmisher
 skirret
 skirt
-skirt
 skit
 skittishness
 skittle
@@ -41472,7 +39775,6 @@ skunk
 skunk-weed
 skunkbush
 skunkweed
-sky
 sky
 sky-blue
 skybox
@@ -41514,7 +39816,6 @@ slapper
 slapshot
 slapstick
 slash
-slash
 slasher
 slat
 slate
@@ -41525,7 +39826,6 @@ slatternliness
 slaughter
 slaughterer
 slaughterhouse
-slave
 slave
 slave-maker
 slaveholder
@@ -41539,13 +39839,11 @@ slaying
 sleaze
 sleaziness
 sled
-sled
 sledder
 sledding
 sledge
 sledgehammer
 sleekness
-sleep
 sleep
 sleep-learning
 sleeper
@@ -41558,7 +39856,6 @@ sleepwalking
 sleepwear
 sleepyhead
 sleet
-sleet
 sleeve
 sleigh
 sleight
@@ -41568,7 +39865,6 @@ sleuthhound
 sleuthing
 slew
 slews
-slice
 slice
 slicer
 slicing
@@ -41581,7 +39877,6 @@ slideway
 slight
 slightness
 slime
-slime
 sliminess
 slimness
 sling
@@ -41590,14 +39885,12 @@ slinger
 slinging
 slingshot
 slip
-slip
 slip-on
 slip-up
 slipcover
 slipknot
 slipover
 slippage
-slipper
 slipper
 slipperiness
 slippers
@@ -41619,7 +39912,6 @@ slogger
 sloop
 slop
 slop-seller
-slope
 slope
 sloppiness
 slops
@@ -41684,14 +39976,12 @@ smarting
 smartness
 smarts
 smash
-smash
 smash-up
 smasher
 smashing
 smattering
 smear
 smegma
-smell
 smell
 smelling
 smelt
@@ -41703,7 +39993,6 @@ smidgen
 smidgeon
 smidgin
 smilax
-smile
 smile
 smiler
 smiley
@@ -41720,7 +40009,6 @@ smock
 smocking
 smog
 smogginess
-smoke
 smoke
 smokehouse
 smoker
@@ -41755,11 +40043,9 @@ snaffle
 snafu
 snag
 snail
-snail
 snail-flower
 snailfish
 snailflower
-snake
 snake
 snake-fish
 snake-head
@@ -41790,7 +40076,6 @@ sneaker
 sneakiness
 sneer
 sneerer
-sneeze
 sneeze
 sneezer
 sneezeweed
@@ -41845,7 +40130,6 @@ snorting
 snot
 snout
 snow
-snow
 snow-blindness
 snow-in-summer
 snow-on-the-mountain
@@ -41859,22 +40143,17 @@ snowblindness
 snowboard
 snowboarder
 snowboarding
-snowboarding
 snowcap
 snowdrift
 snowdrop
 snowfall
 snowfield
 snowflake
-snowflake
-snowman
 snowman
 snowmobile
 snowplough
 snowplow
-snowplow
 snowshoe
-snowstorm
 snowstorm
 snowsuit
 snub
@@ -41898,7 +40177,6 @@ soakage
 soaker
 soaking
 soap
-soap
 soap-rock
 soap-weed
 soapberry
@@ -41921,7 +40199,6 @@ sobriety
 sobriquet
 socage
 soccer
-soccer
 sociability
 sociable
 sociableness
@@ -41937,24 +40214,20 @@ socialization
 socializer
 socializing
 society
-society
 sociobiologist
 sociobiology
 sociolinguist
 sociolinguistics
 sociologist
 sociology
-sociology
 sociometry
 sociopath
-sock
 sock
 socket
 sockeye
 socle
 socotrana
 sod
-soda
 soda
 sodalist
 sodalite
@@ -41968,12 +40241,10 @@ sodomist
 sodomite
 sodomy
 sofa
-sofa
 soffit
 soft-cover
 soft-shoe
 softback
-softball
 softball
 softdrink
 softener
@@ -41983,12 +40254,10 @@ softie
 softness
 softshell
 software
-software
 softwood
 softy
 sogginess
 soh
-soil
 soil
 soiling
 soilure
@@ -42012,7 +40281,6 @@ solarization
 solder
 solderer
 soldering
-soldier
 soldier
 soldier-fish
 soldierfish
@@ -42113,14 +40381,12 @@ somniloquist
 somniloquy
 somnolence
 son
-son
 son-in-law
 sonant
 sonar
 sonata
 sonatina
 sone
-song
 song
 songbird
 songbook
@@ -42154,7 +40420,6 @@ sophomore
 sopor
 soporific
 soprano
-soprano
 sops
 sorb
 sorbate
@@ -42181,7 +40446,6 @@ sorriness
 sorrow
 sorrower
 sorrowfulness
-sort
 sort
 sorter
 sortie
@@ -42210,7 +40474,6 @@ soul-searching
 soulangiana
 soulfulness
 sound
-sound
 soundboard
 soundbox
 sounder
@@ -42219,7 +40482,6 @@ soundlessness
 soundman
 soundness
 soundtrack
-soup
 soup
 soup-fin
 soup-strainer
@@ -42237,7 +40499,6 @@ sourness
 sourpuss
 soursop
 sourwood
-sousaphone
 sousaphone
 souse
 sousing
@@ -42275,13 +40536,10 @@ sowbelly
 sowbread
 sower
 soy
-soy
 soya
-soybean
 soybean
 soymilk
 spa
-space
 space
 space-time
 spacecraft
@@ -42295,14 +40553,12 @@ spacing
 spaciousness
 spackle
 spade
-spade
 spadefish
 spadefoot
 spadeful
 spades
 spadework
 spadix
-spaghetti
 spaghetti
 spaghettini
 spain
@@ -42311,7 +40567,6 @@ spallation
 spam
 spammer
 span
-spandex
 spandex
 spandrel
 spandril
@@ -42331,7 +40586,6 @@ spareribs
 sparge
 sparid
 spark
-spark
 sparker
 sparkle
 sparkleberry
@@ -42339,7 +40593,6 @@ sparkler
 sparkling
 sparling
 sparring
-sparrow
 sparrow
 sparseness
 sparsity
@@ -42375,7 +40628,6 @@ speakerphone
 speakership
 speaking
 spear
-spear
 spear-point
 spearfish
 spearhead
@@ -42387,7 +40639,6 @@ special
 specialisation
 specialiser
 specialism
-specialist
 specialist
 speciality
 specialization
@@ -42441,7 +40692,6 @@ speechwriter
 speed
 speed-reading
 speedboat
-speedboat
 speeder
 speediness
 speeding
@@ -42494,7 +40744,6 @@ sphenion
 sphenoid
 sphenoidale
 sphere
-sphere
 spheres
 sphericalness
 sphericity
@@ -42525,7 +40774,6 @@ spicule
 spiculifolia
 spiculum
 spider
-spider
 spiderflower
 spiderwort
 spiegel
@@ -42534,7 +40782,6 @@ spiel
 spiff
 spigot
 spik
-spike
 spike
 spikelet
 spikemoss
@@ -42550,7 +40797,6 @@ spillway
 spin
 spin-off
 spina-christi
-spinach
 spinach
 spinal
 spinalis
@@ -42638,7 +40884,6 @@ splattering
 splay
 splayfoot
 spleen
-spleen
 spleenwort
 splendens
 splendor
@@ -42687,7 +40932,6 @@ spondylarthritis
 spondylitis
 spondylolisthesis
 sponge
-sponge
 spongefly
 sponger
 spongia
@@ -42703,7 +40947,6 @@ spontaneousness
 spoof
 spook
 spool
-spoon
 spoon
 spoonbill
 spoondrift
@@ -42735,7 +40978,6 @@ sportswear
 sportswoman
 sportswriter
 sporulation
-spot
 spot
 spot-weld
 spot-welder
@@ -42772,7 +41014,6 @@ sprigger
 sprightliness
 sprigtail
 spring
-spring
 spring-cleaning
 springboard
 springbok
@@ -42797,10 +41038,8 @@ spritzer
 sprocket
 sprog
 sprout
-sprout
 sprouting
 sprouts
-spruce
 spruce
 spruceness
 sprue
@@ -42823,7 +41062,6 @@ sputter
 sputtering
 sputum
 spy
-spy
 spyglass
 spyhole
 spying
@@ -42845,7 +41083,6 @@ squanderer
 squandering
 squandermania
 square
-square
 square-bashing
 square-rigger
 squareness
@@ -42855,7 +41092,6 @@ squark
 squarrosa
 squarrosa-adiposa
 squarrosoides
-squash
 squash
 squat
 squatina
@@ -42884,7 +41120,6 @@ squelch
 squelcher
 squib
 squid
-squid
 squiggle
 squill
 squilla
@@ -42897,7 +41132,6 @@ squire
 squirearchy
 squirm
 squirmer
-squirrel
 squirrel
 squirrelfish
 squirt
@@ -42929,7 +41163,6 @@ staff
 staffer
 stag
 stage
-stage
 stagecoach
 stagecraft
 stagehand
@@ -42955,7 +41188,6 @@ stainless
 stair
 stair-carpet
 stair-rod
-staircase
 staircase
 stairhead
 stairs
@@ -42985,7 +41217,6 @@ stamineum
 stammel
 stammer
 stammerer
-stamp
 stamp
 stampede
 stamper
@@ -43025,7 +41256,6 @@ staple
 staplegun
 stapler
 star
-star
 star-duckweed
 star-glory
 star-of-Bethlehem
@@ -43049,9 +41279,7 @@ starling
 stars
 starship
 start
-start
 start-off
-starter
 starter
 starting
 startle
@@ -43064,10 +41292,8 @@ starwort
 stash
 stasis
 state
-state
 statecraft
 stateliness
-statement
 statement
 stater
 stateroom
@@ -43079,12 +41305,10 @@ statice
 statics
 statin
 station
-station
 stationariness
 stationer
 stationery
 stationmaster
-statistic
 statistic
 statistician
 statistics
@@ -43116,7 +41340,6 @@ stealing
 stealth
 stealthiness
 steam
-steam
 steamboat
 steamer
 steamfitter
@@ -43130,7 +41353,6 @@ steatocystoma
 steatopygia
 steatorrhea
 steed
-steel
 steel
 steelmaker
 steelman
@@ -43166,7 +41388,6 @@ stellatus
 stelleriana
 stellulata
 stem
-stem
 stem-winder
 stemma
 stemmatics
@@ -43184,7 +41405,6 @@ stenosis
 stent
 stentor
 step
-step
 step-aunt
 step-brother
 step-daughter
@@ -43201,13 +41421,11 @@ step-up
 stepbrother
 stepchild
 stepdaughter
-stepdaughter
 stepfather
 stephanion
 stephanotis
 stephead
 stepladder
-stepmother
 stepmother
 stepparent
 steppe
@@ -43215,7 +41433,6 @@ stepper
 steprelationship
 steps
 stepsister
-stepson
 stepson
 steradian
 stercobilinogen
@@ -43254,7 +41471,6 @@ steven
 stevensonii
 stevia
 stew
-stew
 steward
 stewardess
 stewardship
@@ -43262,7 +41478,6 @@ stewing
 stewpan
 sthene
 stibnite
-stick
 stick
 stick-in-the-mud
 stickball
@@ -43306,7 +41521,6 @@ stimulus
 sting
 stingaree-bush
 stinger
-stinger
 stinginess
 stinging
 stingray
@@ -43333,7 +41547,6 @@ stirrer
 stirring
 stirrup
 stitch
-stitch
 stitcher
 stitchery
 stitching
@@ -43341,7 +41554,6 @@ stitchwort
 stoat
 stob
 stochasticity
-stock
 stock
 stock-in-trade
 stock-take
@@ -43358,7 +41570,6 @@ stockholdings
 stockhorn
 stockinet
 stockinette
-stocking
 stocking
 stockist
 stockjobber
@@ -43394,7 +41605,6 @@ stolonifera
 stoloniferum
 stoma
 stomach
-stomach
 stomachache
 stomacher
 stomate
@@ -43402,7 +41612,6 @@ stomatitis
 stomatopod
 stomp
 stomper
-stone
 stone
 stone-face
 stone-root
@@ -43424,12 +41633,10 @@ stonewort
 stoning
 stooge
 stool
-stool
 stoolie
 stoolpigeon
 stoop
 stooper
-stop
 stop
 stopcock
 stopgap
@@ -43442,10 +41649,8 @@ stopple
 stops
 stopsign
 stopwatch
-stopwatch
 storage
 storax
-store
 store
 storefront
 storehouse
@@ -43456,9 +41661,7 @@ storey
 stork
 storksbill
 storm
-storm
 storminess
-story
 story
 storybook
 storyline
@@ -43468,7 +41671,6 @@ stoup
 stout
 stoutheartedness
 stoutness
-stove
 stove
 stovepipe
 stovepiping
@@ -43503,7 +41705,6 @@ stramonium
 strand
 strangeness
 stranger
-stranger
 stranglehold
 strangler
 strangles
@@ -43529,7 +41730,6 @@ stratosphere
 stratum
 stratus
 straw
-straw
 strawberry
 strawboard
 strawflower
@@ -43540,15 +41740,12 @@ strayer
 streak
 streaker
 stream
-stream
 streambed
 streamer
 streaming
 streamlet
 streamliner
 street
-street
-streetcar
 streetcar
 streetlight
 streetwalker
@@ -43571,7 +41768,6 @@ streptomycin
 streptothricin
 stress
 stressor
-stretch
 stretch
 stretchability
 stretcher
@@ -43607,7 +41803,6 @@ strikeout
 striker
 striking
 strikingness
-string
 string
 stringency
 stringer
@@ -43651,7 +41846,6 @@ strophanthus
 strophe
 structuralism
 structure
-structure
 strudel
 struggle
 struggler
@@ -43675,7 +41869,6 @@ studentship
 studhorse
 studio
 studiousness
-study
 study
 studying
 stuff
@@ -43701,7 +41894,6 @@ stupid
 stupidity
 stupor
 sturdiness
-sturgeon
 sturgeon
 sturnus
 stutter
@@ -43801,7 +41993,6 @@ sublimity
 sublingualis
 subluxation
 submarine
-submarine
 submariner
 submaxilla
 submediant
@@ -43856,7 +42047,6 @@ subspace
 subspecies
 subspinosus
 substance
-substance
 substantiality
 substantialness
 substantiation
@@ -43901,12 +42091,10 @@ subverticillata
 subvocaliser
 subvocalizer
 subway
-subway
 subwoofer
 succade
 succedaneum
 succeeder
-success
 success
 successfulness
 succession
@@ -43950,7 +42138,6 @@ sudorific
 sudra
 suds
 suede
-suede
 suer
 suet
 suey
@@ -43970,7 +42157,6 @@ suffrutex
 suffruticosa
 suffusion
 sugar
-sugar
 sugar-bush
 sugarberry
 sugarcane
@@ -43980,10 +42166,8 @@ sugarplum
 suggester
 suggestibility
 suggestion
-suggestion
 sugi
 suicide
-suit
 suit
 suitability
 suitableness
@@ -44034,7 +42218,6 @@ summarization
 summary
 summation
 summer
-summer
 summercater
 summercaters
 summerhouse
@@ -44051,7 +42234,6 @@ sumpter
 sumptuosity
 sumptuousness
 sun
-sun
 sun-ray
 sun-worship
 sunbather
@@ -44067,7 +42249,6 @@ sundae
 sunday
 sundew
 sundial
-sundial
 sundog
 sundown
 sundowner
@@ -44075,7 +42256,6 @@ sundress
 sundries
 sundrops
 sunfish
-sunflower
 sunflower
 sunglass
 sunglasses
@@ -44093,7 +42273,6 @@ sunrose
 sunscreen
 sunset
 sunshade
-sunshine
 sunshine
 sunshine-roof
 sunspot
@@ -44143,7 +42322,6 @@ superiority
 superlative
 superload
 superman
-supermarket
 supermarket
 supermarketeer
 supermarketer
@@ -44201,9 +42379,7 @@ supplicant
 supplication
 supplier
 supply
-supply
 supplying
-support
 support
 supporter
 supporting
@@ -44241,7 +42417,6 @@ surfacing
 surfactant
 surfbird
 surfboard
-surfboard
 surfboarder
 surfboarding
 surfboat
@@ -44252,7 +42427,6 @@ surfing
 surfperch
 surfriding
 surge
-surgeon
 surgeon
 surgeonfish
 surgery
@@ -44266,13 +42440,11 @@ surmounter
 surmuletus
 surmullet
 surname
-surname
 surplice
 surplus
 surplusage
 surprint
 surprisal
-surprise
 surprise
 surpriser
 surprisingness
@@ -44300,7 +42472,6 @@ survivor
 susan
 susceptibility
 susceptibleness
-sushi
 sushi
 suslik
 suspect
@@ -44344,15 +42515,12 @@ swagman
 swain
 swale
 swallow
-swallow
 swallowtail
 swallowwort
 swami
 swamp
-swamp
 swamphen
 swampland
-swan
 swan
 swan-flower
 swan-neck
@@ -44382,13 +42550,10 @@ sweat
 sweatband
 sweatbox
 sweater
-sweater
 sweating
 sweatpants
 sweats
 sweatshirt
-sweatshirt
-sweatshop
 sweatshop
 sweatsuit
 swede
@@ -44426,10 +42591,8 @@ swig
 swill
 swilling
 swim
-swim
 swimmer
 swimmeret
-swimming
 swimming
 swimsuit
 swimwear
@@ -44438,7 +42601,6 @@ swindler
 swine
 swineherd
 swing
-swing
 swinger
 swinging
 swingletree
@@ -44446,7 +42608,6 @@ swipe
 swirl
 swish
 swiss
-switch
 switch
 switch-hitter
 switch-ivy
@@ -44467,9 +42628,7 @@ swoop
 swoosh
 swop
 sword
-sword
 sword-cut
-swordfish
 swordfish
 swordplay
 swordsman
@@ -44477,7 +42636,6 @@ swordsmanship
 swordtail
 swot
 sybarite
-sycamore
 sycamore
 sycomorus
 syconium
@@ -44625,8 +42783,6 @@ syringa
 syringe
 syrinx
 syrup
-syrup
-system
 system
 systematics
 systematisation
@@ -44658,9 +42814,7 @@ tabi
 tabis
 tablature
 table
-table
 tableau
-tablecloth
 tablecloth
 tablefork
 tableland
@@ -44668,7 +42822,6 @@ tablemate
 tablespoon
 tablespoonful
 tablet
-tabletop
 tabletop
 tableware
 tabloid
@@ -44688,7 +42841,6 @@ tacheometer
 tachistoscope
 tachogram
 tachograph
-tachometer
 tachometer
 tachycardia
 tachygraphy
@@ -44713,7 +42865,6 @@ tactlessness
 tad
 tadalafil
 tadpole
-tadpole
 taeda
 taedigera
 taekwondo
@@ -44733,7 +42884,6 @@ tahini
 taichi
 taichichuan
 tail
-tail
 tail-flower
 tailback
 tailboard
@@ -44744,7 +42894,6 @@ tailgate
 tailgater
 tailing
 taillight
-tailor
 tailor
 tailor-made
 tailorbird
@@ -44791,7 +42940,6 @@ talinum
 talipes
 talipot
 talisman
-talk
 talk
 talkativeness
 talker
@@ -44869,11 +43017,9 @@ tangor
 tangram
 tangutica
 tank
-tank
 tanka
 tankage
 tankard
-tanker
 tanker
 tankful
 tanner
@@ -44935,7 +43081,6 @@ tardiness
 tare
 tarentula
 target
-target
 tariff
 tarmac
 tarmacadam
@@ -44972,7 +43117,6 @@ tassel
 tasses
 tasset
 taste
-taste
 taste-maker
 taste-tester
 tastebud
@@ -45002,7 +43146,6 @@ taupe
 taurine
 tauromachy
 taurus
-taurus
 tautness
 tautog
 tautology
@@ -45012,15 +43155,12 @@ tawdriness
 tawniness
 tawse
 tax
-tax
 tax-exempt
 tax-increase
 taxability
 taxation
 taxer
 taxi
-taxi
-taxicab
 taxicab
 taxicolor
 taxidermist
@@ -45048,16 +43188,13 @@ tchotchke
 tchotchkeleh
 te
 tea
-tea
 tea-strainer
 teaberry
 teacake
 teacart
 teach-in
 teacher
-teacher
 teachership
-teaching
 teaching
 teacup
 teacupful
@@ -45066,7 +43203,6 @@ teak
 teakettle
 teakwood
 teal
-team
 team
 teammate
 teamster
@@ -45101,7 +43237,6 @@ technetium
 technical
 technicality
 technician
-technician
 technicolor
 technicum
 technique
@@ -45134,7 +43269,6 @@ teeter
 teeter-totter
 teeterboard
 teetertotter
-teeth
 teeth
 teething
 teetotaler
@@ -45204,13 +43338,11 @@ teletypewriter
 televangelism
 televangelist
 television
-television
 teleworking
 telex
 telfer
 telferage
 teliospore
-teller
 teller
 telling
 telltale
@@ -45230,21 +43362,17 @@ temerity
 temmincki
 temp
 temper
-temper
 tempera
 temperament
 temperance
 temperateness
-temperature
 temperature
 tempering
 tempest
 tempestuousness
 template
 temple
-temple
 templet
-tempo
 tempo
 temporal
 temporale
@@ -45277,7 +43405,6 @@ tenantry
 tenax
 tench
 tendency
-tendency
 tendentiousness
 tender
 tenderfoot
@@ -45308,11 +43435,9 @@ tenia
 tenner
 tennesseensis
 tennis
-tennis
 tenno
 tenon
 tenonitis
-tenor
 tenor
 tenorist
 tenoroon
@@ -45329,7 +43454,6 @@ tensiometer
 tension
 tensity
 tensor
-tent
 tent
 tent-fly
 tentacle
@@ -45414,7 +43538,6 @@ territoriality
 territorialization
 territories
 territory
-territory
 terror
 terrorisation
 terrorism
@@ -45432,7 +43555,6 @@ tessellation
 tessellatus
 tessera
 tesseract
-test
 test
 test-cross
 testa
@@ -45520,14 +43642,11 @@ texana
 texanum
 texensis
 text
-text
 text-matching
-textbook
 textbook
 texte
 textile
 textilis
-texture
 texture
 teysmanniana
 thailand
@@ -45561,7 +43680,6 @@ thaumaturgy
 thaw
 thawing
 theanthropism
-theater
 theater
 theatergoer
 theatre
@@ -45601,7 +43719,6 @@ theorist
 theorization
 theorizer
 theory
-theory
 theosophism
 theosophist
 theosophy
@@ -45638,7 +43755,6 @@ thermogravimeter
 thermogravimetry
 thermohydrometer
 thermojunction
-thermometer
 thermometer
 thermometrograph
 thermometry
@@ -45686,7 +43802,6 @@ thimblerig
 thimbleweed
 thimerosal
 thing
-thing
 thing-in-itself
 thingamabob
 thingamajig
@@ -45728,7 +43843,6 @@ thirty
 thirty-second
 thirty-something
 thistle
-thistle
 thistledown
 thole
 tholepin
@@ -45756,7 +43870,6 @@ thoroughwort
 thortveitite
 thou
 thought
-thought
 thought-image
 thought-reader
 thoughtfulness
@@ -45769,7 +43882,6 @@ thralldom
 thrash
 thrasher
 thrashing
-thread
 thread
 thread-fish
 threader
@@ -45799,12 +43911,10 @@ thriftiness
 thriftlessness
 thriftshop
 thrill
-thrill
 thriller
 thrip
 thripid
 thrips
-throat
 throat
 throatwort
 throb
@@ -45826,7 +43936,6 @@ thrombophlebitis
 thromboplastin
 thrombosis
 thrombus
-throne
 throne
 throng
 throstle
@@ -45856,7 +43965,6 @@ thuggery
 thula
 thulium
 thumb
-thumb
 thumbhole
 thumbnail
 thumbnut
@@ -45868,7 +43976,6 @@ thump
 thumping
 thunbergii
 thunder
-thunder
 thunderbird
 thunderbolt
 thunderclap
@@ -45876,7 +43983,6 @@ thundercloud
 thunderer
 thunderhead
 thundershower
-thunderstorm
 thunderstorm
 thunk
 thurberi
@@ -45934,7 +44040,6 @@ tick-tack-toe
 tick-weed
 ticker
 ticket
-ticket
 ticket-of-leave
 ticking
 tickle
@@ -45960,7 +44065,6 @@ tidings
 tidy
 tidytips
 tie
-tie
 tie-in
 tie-up
 tieback
@@ -45972,12 +44076,10 @@ tiercel
 tiff
 tiffin
 tiger
-tiger
 tightening
 tightfistedness
 tightness
 tightrope
-tights
 tights
 tightwad
 tiglium
@@ -45989,7 +44091,6 @@ tigrinum
 tigris
 tike
 tilde
-tile
 tile
 tilefish
 tiler
@@ -46005,14 +44106,12 @@ tilth
 tilting
 tiltyard
 timbale
-timbale
 timber
 timberland
 timberline
 timberman
 timbre
 timbrel
-time
 time
 time-ball
 time-fuse
@@ -46026,7 +44125,6 @@ timeline
 timeliness
 timepiece
 timer
-timer
 times
 timeserver
 timetable
@@ -46039,10 +44137,8 @@ timolol
 timorousness
 timothy
 timpani
-timpani
 timpanist
 timucu
-tin
 tin
 tin-plating
 tinamou
@@ -46084,7 +44180,6 @@ tintinnabulation
 tintometer
 tinware
 tip
-tip
 tip-off
 tipi
 tipper
@@ -46102,7 +44197,6 @@ tipu
 tirade
 tiramisu
 tire
-tire
 tiredness
 tirelessness
 tiresomeness
@@ -46114,7 +44208,6 @@ tit
 tit-tat-toe
 titan
 titania
-titanium
 titanium
 titanosaur
 titanosaurian
@@ -46130,7 +44223,6 @@ titi
 titillation
 titivation
 titlark
-title
 title
 title-holder
 titmouse
@@ -46148,14 +44240,12 @@ tizzy
 to
 to-do
 toad
-toad
 toad-in-the-hole
 toadfish
 toadflax
 toadshade
 toadstool
 toady
-toast
 toast
 toaster
 toasting
@@ -46181,12 +44271,10 @@ toddler
 toddy
 tody
 toe
-toe
 toe-in
 toea
 toecap
 toehold
-toenail
 toenail
 toes
 toetoe
@@ -46201,7 +44289,6 @@ toggle
 togs
 toil
 toiler
-toilet
 toilet
 toiletry
 toilette
@@ -46233,11 +44320,9 @@ toluene
 toluiferum
 tom
 tom-tom
-tom-tom
 tomahawk
 tomalley
 tomatillo
-tomato
 tomato
 tomb
 tombac
@@ -46261,13 +44346,11 @@ tompion
 tomtate
 tomtit
 ton
-ton
 tonality
 tone
 tone-beginning
 toner
 tongs
-tongue
 tongue
 tongue-fish
 tongue-flower
@@ -46300,18 +44383,14 @@ toons
 tooshie
 toot
 tooth
-tooth
 toothache
 toothbrush
-toothbrush
-toothpaste
 toothpaste
 toothpick
 toothpowder
 toothsomeness
 toothwort
 tootle
-top
 top
 top-up
 topaz
@@ -46361,7 +44440,6 @@ tormenter
 tormentor
 torminalis
 tornado
-tornado
 tornillo
 toroid
 torosa
@@ -46384,12 +44462,10 @@ tort
 tort-feasor
 torte
 tortellini
-tortellini
 tortfeasor
 torticollis
 tortifoloia
 tortilla
-tortoise
 tortoise
 tortoiseshell
 tortoiseshell-cat
@@ -46431,7 +44507,6 @@ totterer
 toucan
 toucanet
 touch
-touch
 touch-me-not
 touch-typist
 touchback
@@ -46471,11 +44546,9 @@ towel
 toweling
 towelling
 tower
-tower
 towhead
 towhee
 towline
-town
 town
 townee
 towner
@@ -46499,7 +44572,6 @@ toxicology
 toxin
 toxoid
 toxoplasmosis
-toy
 toy
 toying
 toyon
@@ -46537,9 +44609,7 @@ tractability
 tractableness
 traction
 tractor
-tractor
 trad
-trade
 trade
 trade-in
 trade-last
@@ -46559,7 +44629,6 @@ traditionality
 traducement
 traducer
 traffic
-traffic
 trafficator
 trafficker
 trafficking
@@ -46572,12 +44641,10 @@ tragocamelus
 tragopan
 tragus
 trail
-trail
 trailblazer
 trailer
 trailhead
 trailing
-train
 train
 trainband
 trainbandsman
@@ -46601,7 +44668,6 @@ trammel
 tramontana
 tramontane
 tramp
-tramp
 tramper
 trample
 trampler
@@ -46617,7 +44683,6 @@ tranquilliser
 tranquillity
 tranquillizer
 transactinide
-transaction
 transaction
 transactions
 transactor
@@ -46672,7 +44737,6 @@ translucency
 transmigrante
 transmigration
 transmission
-transmission
 transmittal
 transmittance
 transmitter
@@ -46691,7 +44755,6 @@ transplantation
 transplanter
 transplanting
 transponder
-transport
 transport
 transportation
 transporter
@@ -46715,7 +44778,6 @@ trapeze
 trapezium
 trapezius
 trapezohedron
-trapezoid
 trapezoid
 trapezoideum
 trapper
@@ -46744,7 +44806,6 @@ travesty
 trawl
 trawler
 tray
-tray
 trazodone
 treachery
 treacle
@@ -46764,12 +44825,10 @@ treat
 treater
 treatise
 treatment
-treatment
 treaty
 treble
 trebuchet
 trebucket
-tree
 tree
 tree-frog
 tree-worship
@@ -46827,10 +44886,8 @@ triacetate
 triad
 triage
 trial
-trial
 triamcinolone
 triandra
-triangle
 triangle
 triangularis
 triangularity
@@ -46890,7 +44947,6 @@ trichromacy
 trichuriasis
 tricinctus
 trick
-trick
 tricker
 trickery
 trickiness
@@ -46937,7 +44993,6 @@ triglyceride
 trigon
 trigonometrician
 trigonometry
-trigonometry
 trigram
 triiodomethane
 triiodothyronine
@@ -46978,7 +45033,6 @@ triolein
 trionum
 triose
 trioxide
-trip
 trip
 trip-up
 tripalmitate
@@ -47061,7 +45115,6 @@ trombiculiasis
 trombiculid
 trombidiid
 trombone
-trombone
 trombonist
 tromethamine
 trompillo
@@ -47091,7 +45144,6 @@ trotter
 trou-de-loup
 troubadour
 trouble
-trouble
 troublemaker
 troubler
 troubleshooter
@@ -47103,18 +45155,14 @@ trouper
 trouser
 trousering
 trousers
-trousers
 trousseau
 trout
-trout
 trove
-trowel
 trowel
 troy
 truancy
 truant
 truce
-truck
 truck
 truckage
 trucker
@@ -47135,7 +45183,6 @@ truism
 trump
 trumpery
 trumpet
-trumpet
 trumpet-wood
 trumpeter
 trumpetfish
@@ -47147,7 +45194,6 @@ truncation
 truncatus
 truncheon
 trundle
-trunk
 trunk
 trunkfish
 trunks
@@ -47187,14 +45233,11 @@ tshawytscha
 tsine
 tsoris
 tsunami
-tsunami
 tsuris
 tuatara
 tub
-tub
 tub-cart
 tub-thumper
-tuba
 tuba
 tubbiness
 tube
@@ -47231,7 +45274,6 @@ tuft
 tug
 tug-of-war
 tugboat
-tugboat
 tugger
 tughrik
 tugrik
@@ -47240,7 +45282,6 @@ tuition
 tularaemia
 tularemia
 tularensis
-tulip
 tulip
 tulipifera
 tulipwood
@@ -47267,11 +45308,9 @@ tumultuousness
 tumulus
 tun
 tuna
-tuna
 tunaburger
 tundra
 tundrarum
-tune
 tune
 tune-up
 tunefulness
@@ -47318,11 +45357,9 @@ turgidness
 turgidum
 turgor
 turkey
-turkey
 turkish
 turmeric
 turmoil
-turn
 turn
 turn-on
 turnabout
@@ -47336,11 +45373,9 @@ turner
 turnery
 turning
 turnip
-turnip
 turnkey
 turnoff
 turnout
-turnover
 turnover
 turnpike
 turnround
@@ -47356,9 +45391,7 @@ turps
 turquoise
 turreae
 turret
-turret
 turrita
-turtle
 turtle
 turtledove
 turtlehead
@@ -47387,7 +45420,6 @@ tutti-frutti
 tutu
 tux
 tuxedo
-tv
 tv
 tv-antenna
 twaddle
@@ -47424,15 +45456,12 @@ twice-pinnate
 twiddle
 twiddler
 twig
-twig
-twilight
 twilight
 twill
 twin
 twin-prop
 twin-propeller-plane
 twinberry
-twine
 twine
 twiner
 twinflower
@@ -47445,7 +45474,6 @@ twins
 twirl
 twirler
 twirp
-twist
 twist
 twister
 twisting
@@ -47491,7 +45519,6 @@ typhimurium
 typhina
 typhlops
 typhoid
-typhoon
 typhoon
 typhosa
 typhus
@@ -47591,7 +45618,6 @@ umbra
 umbraculifera
 umbrage
 umbrella
-umbrella
 umbrellawort
 umlaut
 ump
@@ -47634,7 +45660,6 @@ uncheerfulness
 uncia
 uncial
 uncle
-uncle
 uncleanliness
 uncleanness
 unclearness
@@ -47673,7 +45698,6 @@ undercharge
 underclass
 underclassman
 underclothes
-underclothes
 underclothing
 undercoat
 undercurrent
@@ -47700,7 +45724,6 @@ underling
 underlip
 undernourishment
 underpants
-underpants
 underpart
 underpass
 underpayment
@@ -47712,7 +45735,6 @@ underscore
 underseal
 undersecretary
 underseller
-undershirt
 undershirt
 undershrub
 underside
@@ -47730,7 +45752,6 @@ undertide
 undertone
 undertow
 undervaluation
-underwear
 underwear
 underwing
 underwood
@@ -47819,7 +45840,6 @@ unionization
 unipuncta
 uniqueness
 unison
-unit
 unit
 unitard
 united kingdom
@@ -48074,7 +46094,6 @@ usableness
 usage
 usance
 use
-use
 useableness
 used-car
 usefulness
@@ -48095,7 +46114,6 @@ usury
 ut
 utahraptor
 utan
-utensil
 utensil
 uteri
 uterina
@@ -48134,7 +46152,6 @@ v
 vac
 vacancy
 vacation
-vacation
 vacationer
 vacationing
 vacationist
@@ -48157,7 +46174,6 @@ vacuole
 vacuolisation
 vacuolization
 vacuousness
-vacuum
 vacuum
 vagabond
 vagabondage
@@ -48203,7 +46219,6 @@ valisineria
 valium
 vallecula
 valley
-valley
 valor
 valorousness
 valour
@@ -48213,7 +46228,6 @@ valuable
 valuableness
 valuation
 valuator
-value
 value
 value-system
 valuelessness
@@ -48231,7 +46245,6 @@ vamp
 vamper
 vampire
 vampirism
-van
 van
 van-bruntiae
 vanadate
@@ -48318,7 +46331,6 @@ vascularity
 vascularization
 vasculitis
 vase
-vase
 vase-fine
 vasectomy
 vasoconstriction
@@ -48343,7 +46355,6 @@ vaticinator
 vaudeville
 vaudevillian
 vault
-vault
 vaulter
 vaulting
 vaunt
@@ -48357,8 +46368,6 @@ veery
 veg
 vegan
 vegetable
-vegetable
-vegetarian
 vegetarian
 vegetarianism
 vegetata
@@ -48369,9 +46378,7 @@ vehemence
 vehicle
 vehiculum
 veil
-veil
 veiling
-vein
 vein
 veins
 velar
@@ -48392,7 +46399,6 @@ velox
 velum
 velutina
 velutipes
-velvet
 velvet
 velvet-leaf
 velveteen
@@ -48477,7 +46483,6 @@ verbosity
 verdancy
 verde
 verdict
-verdict
 verdigris
 verdin
 verdolagas
@@ -48491,7 +46496,6 @@ veris
 verisimilitude
 verite
 verity
-vermicelli
 vermicelli
 vermicide
 vermicularis
@@ -48521,7 +46525,6 @@ verruca
 verrucosa
 versant
 versatility
-verse
 verse
 versicle
 versicolor
@@ -48575,10 +46578,8 @@ vespertilionid
 vespertina
 vespid
 vessel
-vessel
 vessels
 vessicle
-vest
 vest
 vestal
 vestibularis
@@ -48600,7 +46601,6 @@ vetchling
 vetchworm
 veteran
 veterinarian
-veterinarian
 veterinary
 veto
 vetula
@@ -48618,7 +46618,6 @@ vibes
 vibist
 vibraharp
 vibrancy
-vibraphone
 vibraphone
 vibraphonist
 vibration
@@ -48667,7 +46666,6 @@ videodisk
 videotape
 vie
 vietnam
-view
 view
 viewer
 viewers
@@ -48730,10 +46728,8 @@ vintage
 vintager
 vintner
 vinyl
-vinyl
 vinylbenzene
 viol
-viola
 viola
 violacea
 violaceae
@@ -48742,8 +46738,6 @@ violation
 violator
 violence
 violet
-violet
-violin
 violin
 violinist
 violist
@@ -48814,7 +46808,6 @@ viscometer
 viscometry
 viscosa
 viscose
-viscose
 viscosimeter
 viscosimetry
 viscosissimum
@@ -48827,17 +46820,14 @@ viscounty
 viscousness
 viscus
 vise
-vise
 visibility
 visibleness
-vision
 vision
 visionary
 visit
 visitant
 visitation
 visiting
-visitor
 visitor
 vison
 visor
@@ -48919,7 +46909,6 @@ vodka
 vodoun
 vogue
 voice
-voice
 voicelessness
 voicemail
 voiceprint
@@ -48938,14 +46927,12 @@ volatile
 volatility
 volcanism
 volcano
-volcano
 volcanology
 vole
 volitans
 volitantes
 volition
 volley
-volleyball
 volleyball
 volt
 volt-ampere
@@ -48996,7 +46983,6 @@ vowel
 vower
 vox
 voyage
-voyage
 voyager
 voyeur
 voyeurism
@@ -49024,7 +47010,6 @@ vulpecula
 vulpes
 vulpinus
 vult
-vulture
 vulture
 vulva
 vulvae
@@ -49082,9 +47067,7 @@ waistcoat
 waistline
 wait
 waiter
-waiter
 waiting
-waitress
 waitress
 waiver
 wake
@@ -49096,7 +47079,6 @@ waker
 waking
 waldmeister
 wale
-walk
 walk
 walk-in
 walk-on
@@ -49114,15 +47096,12 @@ walkover
 walkway
 walky-talky
 wall
-wall
 wall-paperer
-wallaby
 wallaby
 wallacei
 wallah
 wallboard
 walleri
-wallet
 wallet
 walleye
 wallflower
@@ -49135,7 +47114,6 @@ wallpaper
 wallpaperer
 wally
 walnut
-walrus
 walrus
 waltz
 waltzer
@@ -49162,7 +47140,6 @@ wanter
 wanton
 wantonness
 wapiti
-war
 war
 waratah
 warble
@@ -49223,7 +47200,6 @@ wartweed
 wartwort
 wasabi
 wash
-wash
 wash-and-wear
 washables
 washbasin
@@ -49231,7 +47207,6 @@ washboard
 washbowl
 washcloth
 washday
-washer
 washer
 washerman
 washerwoman
@@ -49246,11 +47221,9 @@ washtub
 washup
 washwoman
 wasp
-wasp
 wassail
 wassailer
 wastage
-waste
 waste
 waste-yard
 wastebasket
@@ -49264,19 +47237,16 @@ wasteyard
 wasting
 wastrel
 watch
-watch
 watchband
 watchdog
 watcher
 watchfulness
 watching
 watchmaker
-watchmaker
 watchman
 watchstrap
 watchtower
 watchword
-water
 water
 water-color
 water-colour
@@ -49298,7 +47268,6 @@ watercress
 waterdog
 watered-silk
 waterer
-waterfall
 waterfall
 waterfinder
 waterfowl
@@ -49332,7 +47301,6 @@ wattage
 wattle
 wattmeter
 wave
-wave
 wave-off
 waveband
 waveform
@@ -49347,7 +47315,6 @@ waviness
 waving
 waw
 wax
-wax
 wax-chandler
 waxberry
 waxflower
@@ -49357,7 +47324,6 @@ waxmallow
 waxwing
 waxwork
 waxycap
-way
 way
 waybill
 wayfarer
@@ -49372,10 +47338,8 @@ weakness
 weal
 weald
 wealth
-wealth
 wealthiness
 weaning
-weapon
 weapon
 weaponry
 wear
@@ -49384,8 +47348,6 @@ wearer
 weariness
 wearing
 weasel
-weasel
-weather
 weather
 weatherboard
 weatherboarding
@@ -49412,19 +47374,15 @@ website
 webworm
 wedding
 wedge
-wedge
 wedgie
 wedlock
 wednesday
 wee
 weed
-weed
 weed-whacker
-weeder
 weeder
 weedkiller
 weeds
-week
 week
 weekday
 weekend
@@ -49444,7 +47402,6 @@ weigela
 weighbridge
 weigher
 weighing
-weight
 weight
 weightiness
 weighting
@@ -49509,7 +47466,6 @@ whacker
 whacking
 whacko
 whale
-whale
 whaleboat
 whalebone
 whaler
@@ -49533,7 +47489,6 @@ wheatleyi
 wheatworm
 wheedler
 wheedling
-wheel
 wheel
 wheelbarrow
 wheelbase
@@ -49572,7 +47527,6 @@ whiner
 whinny
 whinstone
 whip
-whip
 whip-round
 whip-scorpion
 whip-snake
@@ -49606,20 +47560,17 @@ whisk
 whisker
 whiskers
 whiskey
-whiskey
 whisky
 whisper
 whisperer
 whispering
 whist
 whistle
-whistle
 whistle-blower
 whistleblower
 whistler
 whistling
 whit
-white
 white
 whitebait
 whitecap
@@ -49658,7 +47609,6 @@ wholeheartedness
 wholeness
 wholesale
 wholesaler
-wholesaler
 wholesomeness
 whoop
 whoopee
@@ -49672,7 +47622,6 @@ whorehouse
 whoremaster
 whoremonger
 whoreson
-whorl
 whorl
 whorlywort
 whortleberry
@@ -49719,7 +47668,6 @@ wildcat
 wildcatter
 wildebeest
 wilderness
-wilderness
 wildfire
 wildflower
 wildfowl
@@ -49741,7 +47689,6 @@ willies
 willing
 willingness
 willow
-willow
 willow-pattern
 willowherb
 willowware
@@ -49757,7 +47704,6 @@ wince
 wincey
 winceyette
 winch
-wind
 wind
 windage
 windbag
@@ -49779,21 +47725,17 @@ windlessness
 windmill
 windmills
 window
-window
 window-washing
 windowpane
 windowsill
 windpipe
 windscreen
-windscreen
-windshield
 windshield
 windsock
 windstorm
 windtalker
 windup
 windward
-wine
 wine
 wine-colored
 wine-coloured
@@ -49804,7 +47746,6 @@ winemaking
 winepress
 winery
 wineskin
-wing
 wing
 wing-nut
 wingback
@@ -49827,7 +47768,6 @@ winnowing
 wino
 winsomeness
 winter
-winter
 winterana
 winterberry
 wintergreen
@@ -49837,7 +47777,6 @@ wintertime
 wipe
 wipeout
 wiper
-wire
 wire
 wire-puller
 wirehair
@@ -49858,7 +47797,6 @@ wiseness
 wisenheimer
 wisent
 wish
-wish
 wish-wash
 wishbone
 wishfulness
@@ -49870,14 +47808,12 @@ wisteria
 wistfulness
 wit
 witch
-witch
 witch-hunt
 witch-hunter
 witchcraft
 witchery
 witchgrass
 witching
-withdrawal
 withdrawal
 withdrawer
 withdrawnness
@@ -49889,7 +47825,6 @@ withholding
 withstander
 withy
 witloof
-witness
 witness
 witnesser
 wits
@@ -49911,7 +47846,6 @@ wog
 wok
 wold
 wolf
-wolf
 wolfbane
 wolffia
 wolffish
@@ -49922,7 +47856,6 @@ wolframite
 wolfsbane
 wollastonite
 wolverine
-woman
 woman
 woman-worship
 womanhood
@@ -49945,7 +47878,6 @@ wonderment
 wonk
 wont
 wonton
-wood
 wood
 wood-creeper
 wood-fern
@@ -49993,15 +47925,12 @@ woof
 woofer
 wooing
 wool
-wool
-woolen
 woolen
 woolgatherer
 woolgathering
 woollen
 woolsorter
 wop
-word
 word
 word-painter
 word-painting
@@ -50016,7 +47945,6 @@ wordnet
 wordplay
 words
 wordsmith
-work
 work
 work-board
 work-clothes
@@ -50052,7 +47980,6 @@ workroom
 works
 worksheet
 workshop
-workshop
 workspace
 workstation
 worktable
@@ -50063,7 +47990,6 @@ world-beater
 world-weariness
 worldliness
 worldling
-worm
 worm
 wormcast
 wormhole
@@ -50089,7 +48015,6 @@ worthlessness
 worthwhileness
 worthy
 wound
-wound
 wounded
 wounding
 wow
@@ -50109,13 +48034,10 @@ wreath
 wreck
 wreckage
 wrecker
-wrecker
 wreckfish
 wrecking
 wren
-wren
 wren-tit
-wrench
 wrench
 wrester
 wrestle
@@ -50131,8 +48053,6 @@ wrightii
 wring
 wringer
 wrinkle
-wrinkle
-wrist
 wrist
 wristband
 wristlet
@@ -50142,7 +48062,6 @@ write-down
 write-in
 write-off
 write-once
-writer
 writer
 writing
 wrong
@@ -50200,7 +48119,6 @@ xylem
 xylene
 xylol
 xylophone
-xylophone
 xylophonist
 xylose
 xylosma
@@ -50208,7 +48126,6 @@ xylosteum
 y
 y-axis
 yacca
-yacht
 yacht
 yachting
 yachtsman
@@ -50218,16 +48135,13 @@ yagi
 yagouaroundi
 yahoo
 yak
-yak
 yakety-yak
 yakuza
-yam
 yam
 yang
 yanker
 yanquapin
 yap
-yard
 yard
 yardage
 yardarm
@@ -50242,7 +48156,6 @@ yardstick
 yarmelke
 yarmulka
 yarmulke
-yarn
 yarn
 yarrow
 yashmac
@@ -50259,7 +48172,6 @@ yaws
 yd
 yea
 year
-year
 year-end
 yearbook
 yearling
@@ -50271,7 +48183,6 @@ yeast
 yell
 yeller
 yelling
-yellow
 yellow
 yellow-blindness
 yellow-eye
@@ -50300,7 +48211,6 @@ yesterday
 yesteryear
 yeti
 yew
-yew
 yid
 yield
 yielder
@@ -50325,8 +48235,6 @@ yoghourt
 yoghurt
 yogi
 yogurt
-yogurt
-yoke
 yoke
 yokel
 yolk
@@ -50379,7 +48287,6 @@ zeaxanthin
 zebibit
 zebibyte
 zebra
-zebra
 zebrawood
 zebu
 zed
@@ -50388,7 +48295,6 @@ zelleri
 zenith
 zeolite
 zep
-zephyr
 zephyr
 zero
 zest
@@ -50415,7 +48321,6 @@ zilch
 zill
 zillion
 zinc
-zinc
 zinfandel
 zing
 zinger
@@ -50423,7 +48328,6 @@ zinkenite
 zinnia
 zinnwaldite
 zip
-zipper
 zipper
 zippo
 zircon
@@ -50442,11 +48346,9 @@ zombie
 zona
 zonata
 zone
-zone
 zoning
 zonula
 zonule
-zoo
 zoo
 zooerastia
 zooerasty

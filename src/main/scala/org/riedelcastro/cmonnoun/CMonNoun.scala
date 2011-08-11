@@ -59,7 +59,7 @@ object CMonNoun extends HasLogger {
 
   def queryCount(queryRaw: String, appID: String): Option[Double] = {
     val queryTemplate = "http://api.bing.net/json.aspx?AppId=%s&Version=2.2" +
-      "&Market=en-US&Query=%s&Sources=web+spell&Web.Count=1&JsonType=raw"
+      "&Market=en-US&Query=%s&Sources=web&Web.Count=1&JsonType=raw"
     val query = queryRaw.replaceAll(" ", "+")
     val httpQuery = queryTemplate.format(appID, query)
     val (_, stream) = Http.request(httpQuery)
@@ -80,12 +80,13 @@ object CMonNoun extends HasLogger {
   def writeoutPatternStats(nouns: String, pattern: Pattern, dest: File, appID: String) {
     val out = new PrintStream(dest)
     out.println(pattern.text)
-    val nounFile = Source.fromInputStream(Util.getStreamFromClassPathOrFile(nouns)).getLines()
+    val source = Source.fromInputStream(Util.getStreamFromClassPathOrFile(nouns))
+    val nounFile = source.getLines().map(_.split("\t").head)
     val counter = new Counting(20, count => logger.info("Processed %d nouns".format(count)))
     for (noun <- counter(nounFile)) {
       val query = heIs.inject(noun)
-      for (total <- queryCount(noun, appID); count <- queryCount(query, appID))
-        out.println("%-15s %f %f".format(noun, count, total))
+      for (count <- queryCount(query, appID))
+        out.println("%s\t%f".format(noun, count))
     }
     out.close()
   }
@@ -153,6 +154,6 @@ object FilterWordNetEntity {
     val out = new PrintStream(new File(args(0)))
     for (noun <- nouns.toSeq.sorted) out.println(noun)
     out.close()
-
   }
 }
+
