@@ -207,3 +207,9 @@ class GaussianDistributionDiagonal(dim: Int) {
   }
 
 }
+
+object Test {
+  def main(args: Array[String]) {
+    println("test yo brother")
+  }
+}

@@ -4,8 +4,8 @@ import java.net.URL
 import io.Source
 import util.parsing.json.JSON
 import collection.mutable.HashSet
-import java.io.{PrintStream, File, InputStream}
 import org.riedelcastro.nurupo.{HasLogger, Counting, Util}
+import java.io._
 
 /**
  * @author sriedel
@@ -94,12 +94,16 @@ object CMonNoun extends HasLogger {
 object GetBingPriors extends HasLogger {
   def main(args: Array[String]) {
     val appID = args(0)
-    val out = new PrintStream("data/stats/bing_priors.txt")
+    val dest = "data/stats/bing_priors.txt"
+    val out = new PrintStream(new FileOutputStream(dest, true))
     val nounFile = Source.fromInputStream(Util.getStreamFromClassPathOrFile("data/combined.txt")).getLines()
     val counter = new Counting(100, count => logger.info("Processed %d nouns".format(count)))
+    val processed = Source.fromFile(dest).getLines().map(_.split("\t").head).toSet
     for (noun <- counter(nounFile)) {
-      val total = CMonNoun.queryCount(noun, appID).getOrElse(-1.0)
-      out.println("%s\t%f".format(noun, total))
+      if (!processed(noun)) {
+        val total = CMonNoun.queryCount(noun, appID).getOrElse(-1.0)
+        out.println("%s\t%f".format(noun, total))
+      }
     }
     out.close()
   }
@@ -127,7 +131,7 @@ object FilterByPrior {
     val out = new PrintStream(args(1))
     val thresh = args(2).toDouble
     for (line <- lines) {
-      val Array(noun, prior) = line.split("\t")
+      val Array(_, prior) = line.split("\t")
       if (prior.toDouble >= thresh) {
         out.println(line)
       }
