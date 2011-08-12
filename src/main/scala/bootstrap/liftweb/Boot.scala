@@ -19,11 +19,11 @@ import _root_.org.riedelcastro.cmonnoun.model._
 class Boot {
   def boot {
     if (!DB.jndiJdbcConnAvailable_?) {
-      val vendor = 
-	new StandardDBVendor(Props.get("db.driver") openOr "org.h2.Driver",
-			     Props.get("db.url") openOr 
-			     "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
-			     Props.get("db.user"), Props.get("db.password"))
+      val vendor =
+        new StandardDBVendor(Props.get("db.driver") openOr "org.h2.Driver",
+          Props.get("db.url") openOr
+            "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
+          Props.get("db.user"), Props.get("db.password"))
 
       LiftRules.unloadHooks.append(vendor.closeAllConnections_! _)
 
@@ -34,12 +34,17 @@ class Boot {
     LiftRules.addToPackages("org.riedelcastro.cmonnoun")
     Schemifier.schemify(true, Schemifier.infoF _, User)
 
+    val menu = Menu.param[String]("Problem", "Problem",
+      s => Full(s),
+      pi => pi) / "problem"
+
     // Build SiteMap
     def sitemap() = SiteMap(
+      menu,
       Menu("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
       // Menu with special Link
-      Menu(Loc("Static", Link(List("static"), true, "/static/index"), 
-	       "Static Content")))
+      Menu(Loc("Static", Link(List("static"), true, "/static/index"),
+        "Static Content")))
 
     LiftRules.setSiteMapFunc(() => User.sitemapMutator(sitemap()))
 
