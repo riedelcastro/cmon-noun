@@ -32,13 +32,18 @@ class Boot {
     LiftRules.addToPackages("org.riedelcastro.cmonnoun")
     Schemifier.schemify(true, Schemifier.infoF _, User)
 
-    val menu = Menu.param[String]("Problem", "Problem",
+    val menu = Menu.param[String]("Instances", "Instances",
       s => Full(s),
       pi => pi) / "problem"
 
+    val test = Menu.param[String]("Test", "Test",
+      s => Full(s),
+      pi => pi) / "test"
+
+
     // Build SiteMap
     def sitemap() = SiteMap(
-      menu,
+      menu, test,
       Menu("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
       // Menu with special Link
       Menu(Loc("Static", Link(List("static"), true, "/static/index"),

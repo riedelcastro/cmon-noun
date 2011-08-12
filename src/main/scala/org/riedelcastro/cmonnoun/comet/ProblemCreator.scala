@@ -1,7 +1,7 @@
 package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.http.{SHtml, CometActor}
-import org.riedelcastro.cmonnoun.clusterhub.CreateProblem
+import org.riedelcastro.cmonnoun.clusterhub.CreateTask
 
 /**
  * @author sriedel
@@ -19,6 +19,6 @@ class ProblemCreator extends CometActor with WithBridge {
   }
 
   def addProblem(name:String) {
-    Controller.problemManager ! CreateProblem(name)
+    Controller.problemManager ! CreateTask(name)
   }
 }
