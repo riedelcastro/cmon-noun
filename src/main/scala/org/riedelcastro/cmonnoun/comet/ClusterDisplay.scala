@@ -4,7 +4,7 @@ import net.liftweb.http.{SessionVar, CometActor}
 import akka.actor.{Actor, Actors}
 import org.riedelcastro.cmonnoun.{StopClustering, StartClustering, Result, ClusterEngine}
 import net.liftweb.common.{Full, Box}
-import org.riedelcastro.cmonnoun.clusterhub.ClusterTaskManager
+import org.riedelcastro.cmonnoun.clusterhub.ClusterHub
 
 case class ClientState(words: Seq[String])
 
@@ -55,7 +55,7 @@ class ClusterDisplay extends CometActor with WithBridge {
 
 object Controller {
   val engine = Actors.actorOf(classOf[ClusterEngine]).start()
-  val problemManager = Actors.actorOf(classOf[ClusterTaskManager]).start()
+  val problemManager = Actors.actorOf(classOf[ClusterHub]).start()
 }
 
 class BridgeActor extends Actor {

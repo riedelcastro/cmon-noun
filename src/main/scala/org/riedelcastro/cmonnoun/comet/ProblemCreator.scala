@@ -1,7 +1,7 @@
 package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.http.{SHtml, CometActor}
-import org.riedelcastro.cmonnoun.clusterhub.CreateTask
+import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.CreateTask
 
 /**
  * @author sriedel

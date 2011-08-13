@@ -45,7 +45,7 @@ case class RegExFieldSpec(name:String, regex:String) extends FieldSpec {
 /**
  * @author sriedel
  */
-class ClusterTaskManager extends Actor {
+class ClusterHub extends Actor {
 
   private val taskListeners = new HashSet[ActorRef]
 

@@ -3,6 +3,7 @@ package org.riedelcastro.cmonnoun.comet
 import net.liftweb.http._
 import org.riedelcastro.cmonnoun.clusterhub._
 import net.liftweb.common.{Empty, Full, Box}
+import org.riedelcastro.cmonnoun.clusterhub.ClusterHub._
 
 case class ProblemListDisplayState(names: Seq[String])
 
@@ -29,7 +30,7 @@ class TaskListViewer extends CometActor with WithBridge {
 
 
   override def mediumPriority = {
-    case TaskListChanged => {
+    case TaskAdded(name,_) => {
       Controller.problemManager ! GetTaskNames
     }
     case TaskNames(names) => {
