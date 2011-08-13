@@ -19,6 +19,6 @@ class TaskCreator extends CometActor with WithBridge {
   }
 
   def addProblem(name:String) {
-    Controller.problemManager ! CreateTask(name)
+    Controller.clusterHub ! CreateTask(name)
   }
 }
