@@ -24,9 +24,10 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
     debugLazy("Rendering now with " + instances.mkString(","))
     val instancesPart = manager match {
       case Full(m) =>
-        "#instances *" #> instances.map(i => {
-//          ".instance *" #> { ".content *" #> i.content }
-           <tr><td>{i.content}</td></tr>
+
+        "#instancesBody *" #> instances.map(i => {
+          ".content *" #> i.content
+//           <tr><td>{i.content}</td></tr>
         })
       case _ =>
         "#instances" #> Text("No Instances")

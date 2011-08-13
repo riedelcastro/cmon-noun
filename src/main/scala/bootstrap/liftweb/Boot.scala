@@ -28,6 +28,9 @@ class Boot {
       DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
     }
 
+//    StatelessJson.init()
+    //LiftRules.dispatch.append(AsyncRest)
+
     //LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
 
     // where to search snippet
