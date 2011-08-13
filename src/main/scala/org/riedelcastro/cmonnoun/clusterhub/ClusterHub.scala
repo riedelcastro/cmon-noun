@@ -1,39 +1,29 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
-import akka.actor.{ActorRef, Actor}
 import com.novus.salat.annotations
 import annotations.raw.Salat
 import com.mongodb.casbah.Imports._
-import collection.mutable.{HashSet, ArrayBuffer}
-
-case class CreateTask(name: String)
-case class TaskNames(names: Seq[String])
-case class RegisterTaskListener(consumer: ActorRef)
-case class DeregisterTaskListener(consumer: ActorRef)
-case class GetInstances(name: String)
-case object GetTaskNames
-case object TaskListChanged
-case class AddInstance(problemName: String, instance: String)
-case class AddField(problemName:String, field:FieldSpec)
-case class Instances(instances: Seq[Instance])
-case class InstanceAdded(taskName:String, instance:Instance)
+import net.liftweb.common.{Full, Empty, Box}
+import Box._
+import collection.mutable.{HashMap, HashSet, ArrayBuffer}
+import akka.actor.{Actors, ActorRef, Actor}
 
 
-class MutableClusterTask(var name:String) {
+class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
   val fieldSpecs = new ArrayBuffer[FieldSpec]
 }
 
-case class Instance(content:String, fields:Map[String,Any])
+case class Instance(content: String, fields: Map[String, Any])
 
 @Salat
 trait FieldSpec {
   type T
-  def name:String
-  def extract(instance:String):T
+  def name: String
+  def extract(instance: String): T
 }
 
-case class RegExFieldSpec(name:String, regex:String) extends FieldSpec {
+case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   val r = regex.r
   type T = Boolean
 
@@ -42,57 +32,125 @@ case class RegExFieldSpec(name:String, regex:String) extends FieldSpec {
   }
 }
 
-/**
- * @author sriedel
- */
-class ClusterHub extends Actor {
+trait MongoSupport {
+  def dbName: String = "clusterhub"
+  val mongoConn = MongoConnection("locahost", 27017)
+  val mongoDB = mongoConn(dbName)
+  def collFor(name: String, param: String): MongoCollection = {
+    mongoDB(name + "_" + param)
+  }
+}
 
+trait HasListeners {
   private val taskListeners = new HashSet[ActorRef]
 
-  private val mongoConn = MongoConnection("locahost", 27017)
-  private val mongoDB = mongoConn("clusterhub")
-  private val taskDefColl = mongoDB("tasks")
-
-  def collForTask(name: String): MongoCollection = {
-    mongoDB("task_" + name)
-  }
-
-  def informListeners(msg:Any) {
+  def informListeners(msg: Any) {
     for (l <- taskListeners) l ! msg
 
   }
 
+  def addListener(l:ActorRef) {
+    taskListeners += l
+  }
+
+  def removeLister(l:ActorRef) {
+    taskListeners -= l
+  }
+
+}
+
+object ClusterHub {
+  case class CreateTask(name: String)
+  case class TaskNames(names: Seq[String])
+  case class RegisterTaskListener(consumer: ActorRef)
+  case class DeregisterTaskListener(consumer: ActorRef)
+  case object GetTaskNames
+  case class TaskAdded(taskName: String, manager: ActorRef)
+  case class GetTaskManager(taskName:String)
+  case class AssignedTaskManager(manager:Box[ActorRef])
+}
+
+
+/**
+ * @author sriedel
+ */
+class ClusterHub extends Actor with MongoSupport with HasListeners {
+
+  import ClusterHub._
+
+  private val taskManagers = new HashMap[String, ActorRef]
+
+  private val taskDefColl = mongoDB("tasks")
+
   protected def receive = {
     case RegisterTaskListener(c) =>
-      taskListeners += c
+      addListener(c)
 
     case DeregisterTaskListener(c) =>
-      taskListeners -= c
+      removeLister(c)
 
     case CreateTask(name) => {
       taskDefColl += MongoDBObject("_id" -> name)
-      informListeners(TaskListChanged)
+      val manager = Actors.actorOf(classOf[TaskManager]).start()
+      taskManagers(name) = manager
+      informListeners(TaskAdded(name, manager))
+    }
+
+    case GetTaskManager(name) => {
+      self.reply(AssignedTaskManager(taskManagers.get(name)))
     }
 
     case GetTaskNames => {
-      val names = taskDefColl.find(MongoDBObject.empty,MongoDBObject("_id" -> 1)).map(_.as[String]("_id")).toSeq
+      val names = taskDefColl.find().map(_.as[String]("_id")).toSeq
       self.reply(TaskNames(names))
     }
 
-    case GetInstances(name) => {
-      val coll = collForTask(name)
-      val instances = coll.find().map(dbo => {
-        val content = dbo.as[String]("field")
-        Instance(content,Map.empty)
-      })
-      self.reply(Instances(instances.toSeq))
-    }
-
-    case AddInstance(name: String, instance: String) => {
-      val coll = collForTask(name)
-      coll += MongoDBObject("content" -> instance)
-      informListeners(InstanceAdded(name,Instance(instance,Map.empty)))
-    }
   }
 
+}
+
+object TaskManager {
+  case class SetTask(taskName: String, hub: ActorRef)
+  case object GetInstances
+  case class Instances(instances: Seq[Instance])
+  case class AddInstance(instance: String)
+  case class AddField(field: FieldSpec)
+  case class InstanceAdded(taskName: String, instance: Instance)
+
+}
+
+class TaskManager extends Actor with MongoSupport with HasListeners {
+
+  import TaskManager._
+
+  private var taskName: Box[String] = Empty
+  private var hub: Box[ActorRef] = Empty
+
+  private def getInstances(task: String): MongoCollection = {
+    collFor("instances", task)
+  }
+  protected def receive = {
+    case SetTask(n, h) =>
+      taskName = Full(n)
+      hub = Full(h)
+
+    case GetInstances =>
+      for (n <- taskName) {
+        val coll = getInstances(n)
+        val instances = coll.find().map(dbo => {
+          val content = dbo.as[String]("field")
+          Instance(content, Map.empty)
+        })
+        self.reply(Instances(instances.toSeq))
+      }
+
+    case AddInstance(instance: String) => {
+      for (n <- taskName) {
+        val coll = getInstances(n)
+        coll += MongoDBObject("content" -> instance)
+        informListeners(InstanceAdded(n, Instance(instance, Map.empty)))
+      }
+    }
+
+  }
 }
