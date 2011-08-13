@@ -12,6 +12,9 @@ import org.riedelcastro.nurupo.HasLogger
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{DeregisterTaskListener, RegisterTaskListener}
 
+import com.novus.salat._
+import com.novus.salat.global._
+
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
   val fieldSpecs = new ArrayBuffer[FieldSpec]
@@ -25,6 +28,8 @@ trait FieldSpec {
   def name: String
   def extract(instance: String): T
 }
+
+case class SpecHolder(spec:FieldSpec)
 
 case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   val r = regex.r
@@ -170,6 +175,16 @@ class TaskManager extends Actor with MongoSupport with HasListeners with HasLogg
         val coll = getInstances(n)
         coll += MongoDBObject("content" -> instance)
         informListeners(InstanceAdded(n, Instance(instance, Map.empty)))
+      }
+    }
+
+    case AddField(field) => {
+      for (n <- taskName){
+        val coll = collFor("fieldSpecs",n)
+        field match {
+          case RegExFieldSpec(name,regex)=>
+            coll += MongoDBObject("type" -> "regex", "name" -> name, "regex" -> regex)
+        }
       }
     }
 

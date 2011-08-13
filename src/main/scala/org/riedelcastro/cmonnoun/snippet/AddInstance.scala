@@ -6,10 +6,10 @@ import net.liftweb.util._
 import Helpers._
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{AssignedTaskManager, GetTaskManager, CreateTask}
 import akka.actor.ActorRef
-import org.riedelcastro.cmonnoun.clusterhub.TaskManager
 import org.riedelcastro.nurupo.HasLogger
-import org.riedelcastro.cmonnoun.clusterhub.TaskManager.{Instances, GetInstances}
 import net.liftweb.common.{Box, Full, Empty}
+import org.riedelcastro.cmonnoun.clusterhub.TaskManager.{AddField, Instances, GetInstances}
+import org.riedelcastro.cmonnoun.clusterhub.{RegExFieldSpec, TaskManager}
 
 /**
  * @author sriedel
@@ -31,6 +31,25 @@ class AddInstance(taskName: String) extends HasLogger {
   }
 
 }
+
+class AddFieldSpec(taskName: String) extends HasLogger {
+  lazy val taskManager = Helper.taskManager(taskName)
+
+  def render = {
+    var name: String = "field"
+    var regex: String = "*"
+
+    def process() {
+      for (m <- taskManager) m ! AddField(RegExFieldSpec(name, regex))
+    }
+    "name=fieldName" #> SHtml.onSubmit(name = _) & // set the name
+      "name=fieldRegex" #> SHtml.onSubmit(regex = _) & // set the name
+      "type=submit" #> SHtml.onSubmitUnit(process)
+
+
+  }
+}
+
 
 class ShowInstances(taskName: String) {
   lazy val taskManager = Helper.taskManager(taskName)
