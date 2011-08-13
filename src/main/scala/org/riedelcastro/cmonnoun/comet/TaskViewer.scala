@@ -1,6 +1,5 @@
 package org.riedelcastro.cmonnoun.comet
 
-import net.liftweb.http.CometActor
 import org.riedelcastro.cmonnoun.clusterhub._
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager._
 import akka.actor.ActorRef
@@ -9,36 +8,62 @@ import xml.Text
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{DeregisterTaskListener, RegisterTaskListener, AssignedTaskManager, GetTaskManager}
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox.NoSuchMessage
 import org.riedelcastro.nurupo.HasLogger
+import net.liftweb.http.{SHtml, CometActor}
 
 /**
  * @author sriedel
  */
 class TaskViewer extends CometActor with WithBridge with HasLogger {
 
-  private var manager:Box[ActorRef] = Empty
-  private var taskName:Box[String] = Empty
+  private var manager: Box[ActorRef] = Empty
+  private var taskName: Box[String] = Empty
+  private var instances: Seq[Instance] = Seq.empty
 
   def render = {
     val namePart = taskName match {
       case Full(n) => "#name *" #> n
-      case _ =>  "#name" #> Text("No Name given")
+      case _ => "#name" #> Text("No Name given")
     }
-    namePart
+    val instancesPart = manager match {
+      case Full(m) =>
+        "#instances *" #> instances.map(i => {
+//          ".instance *" #> { ".content *" #> i.content }
+           <tr><td>{i}</td></tr>
+        })
+      case _ =>
+        "#instances" #> Text("No Instances")
+    }
+    namePart & instancesPart
   }
 
 
   override def mediumPriority = {
-    case SetTask(n,hub) =>
+    case SetTask(n, hub) =>
       taskName = Full(n)
       Controller.clusterHub ak_! GetTaskManager(n)
 
     case AssignedTaskManager(taskManager) =>
       manager = taskManager
-      for (m <- manager) m ak_! RegisterTaskListener(bridge)
-      reRender(false)
+      for (m <- manager) {
+        m ak_! RegisterTaskListener(bridge)
+      }
+      reRender()
+
+    case InstanceAdded(_, instance) =>
+      logger.debug(lazyString("Instance added: " + instance))
+      for (m <- manager) {
+        m ak_! GetInstances
+      }
+
+    case Instances(i) =>
+      this.instances = i
+      logger.debug(lazyString("Current instances: " + instances.mkString(",")))
+      reRender()
 
     case NoSuchMessage(r) =>
       logger.info("No message for ".format(r))
+
+
 
   }
 

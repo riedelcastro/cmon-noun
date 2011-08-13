@@ -28,6 +28,8 @@ class Boot {
       DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
     }
 
+    LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
+
     // where to search snippet
     LiftRules.addToPackages("org.riedelcastro.cmonnoun")
     Schemifier.schemify(true, Schemifier.infoF _, User)

@@ -9,6 +9,8 @@ import collection.mutable.{HashMap, HashSet, ArrayBuffer}
 import akka.actor.{Actors, ActorRef, Actor}
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox.{NoSuchMessage, RetrieveMessage, LeaveMessage}
 import org.riedelcastro.nurupo.HasLogger
+import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
+import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{DeregisterTaskListener, RegisterTaskListener}
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
@@ -54,7 +56,7 @@ trait HasListeners {
     taskListeners += l
   }
 
-  def removeLister(l: ActorRef) {
+  def removeListener(l: ActorRef) {
     taskListeners -= l
   }
 
@@ -75,7 +77,7 @@ object ClusterHub {
 /**
  * @author sriedel
  */
-class ClusterHub extends Actor with MongoSupport with HasListeners {
+class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogger {
 
   import ClusterHub._
 
@@ -83,26 +85,43 @@ class ClusterHub extends Actor with MongoSupport with HasListeners {
 
   private val taskDefColl = mongoDB("tasks")
 
+  for (taskName <- taskNames()) createManager(taskName)
+
+  def taskNames(): Seq[String] = {
+    taskDefColl.find().map(_.as[String]("_id")).toSeq
+  }
+
+  def createManager(name: String): ActorRef = {
+    val manager = Actors.actorOf(classOf[TaskManager]).start()
+    taskManagers(name) = manager
+    manager ! SetTask(name,this.self)
+    manager
+  }
+
   protected def receive = {
     case RegisterTaskListener(c) =>
       addListener(c)
 
     case DeregisterTaskListener(c) =>
-      removeLister(c)
+      removeListener(c)
 
     case CreateTask(name) => {
       taskDefColl += MongoDBObject("_id" -> name)
-      val manager = Actors.actorOf(classOf[TaskManager]).start()
-      taskManagers(name) = manager
+      val manager: ActorRef = createManager(name)
       informListeners(TaskAdded(name, manager))
     }
 
     case GetTaskManager(name) => {
-      self.reply(AssignedTaskManager(taskManagers.get(name)))
+      val manager = taskManagers.get(name)
+      self.reply(AssignedTaskManager(manager))
+      manager match {
+        case None => logger.warn("No Manager for " + name)
+        case _ =>
+      }
     }
 
     case GetTaskNames => {
-      val names = taskDefColl.find().map(_.as[String]("_id")).toSeq
+      val names = taskNames
       self.reply(TaskNames(names))
     }
 
@@ -120,7 +139,7 @@ object TaskManager {
 
 }
 
-class TaskManager extends Actor with MongoSupport with HasListeners {
+class TaskManager extends Actor with MongoSupport with HasListeners with HasLogger {
 
   import TaskManager._
 
@@ -139,19 +158,26 @@ class TaskManager extends Actor with MongoSupport with HasListeners {
       for (n <- taskName) {
         val coll = getInstances(n)
         val instances = coll.find().map(dbo => {
-          val content = dbo.as[String]("field")
+          val content = dbo.as[String]("content")
           Instance(content, Map.empty)
         })
         self.reply(Instances(instances.toSeq))
       }
 
     case AddInstance(instance: String) => {
+      logger.debug("Received instance " + instance)
       for (n <- taskName) {
         val coll = getInstances(n)
         coll += MongoDBObject("content" -> instance)
         informListeners(InstanceAdded(n, Instance(instance, Map.empty)))
       }
     }
+
+    case RegisterTaskListener(c) =>
+      addListener(c)
+
+    case DeregisterTaskListener(c) =>
+      removeListener(c)
 
   }
 }
