@@ -28,7 +28,7 @@ class Boot {
       DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
     }
 
-    LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
+    //LiftRules.htmlProperties.default.set((r: Req) => new Html5Properties(r.userAgent))
 
     // where to search snippet
     LiftRules.addToPackages("org.riedelcastro.cmonnoun")

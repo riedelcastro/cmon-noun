@@ -2,31 +2,29 @@
 <div class="lift:surround?with=default;at=content">
     <h2>Task View</h2>
 
-    <div class="lift:comet?type=TaskCreator">Blah</div>
-
     <form class="lift:AddInstance?form=post">
-        Content: <input name="content">
-        <input type="submit" value="Submit">
+        Content: <input name="content"/>
+        <input type="submit" value="Add"/>
     </form>
+
+    <!--<div class="lift:ShowInstances">-->
+        <!--<div id="instances2"></div>-->
+    <!--</div>-->
 
     <div class="lift:TaskSnippet">
 
         <lift:comet id="task" type="TaskViewer" name="replaceme">
-            <h3>
-                <div id="name"></div>
-            </h3>
 
-            <table>
-                <div id="instances">
-                    <tr class="instance">
-                        <td class="content">Content</td>
-                    </tr>
-                </div>
+            <table id="instances">
+                <tr class="instance">
+                    <td class="content">Content</td>
+                </tr>
             </table>
 
         </lift:comet>
 
     </div>
+
 
 
 </div>

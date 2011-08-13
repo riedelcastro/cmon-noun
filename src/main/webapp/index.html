@@ -2,19 +2,23 @@
     <h2>ClusterHub</h2>
     <h3>Collaborative Cluster Development</h3>
 
-    <div class="lift:helloWorld.howdy">
-        Welcome to cmonnoun at <span id="time">The current time</span>
-    </div>
-    <div class="lift:comet?type=TaskCreator">Blah</div>
+
+    <!--<div class="lift:comet?type=TaskCreator">Blah</div>-->
 
     <div>
-        <form class="lift:AddTask?form=post">
-            Task Name: <input name="taskName"><br>
-            <input type="submit" value="Submit">
+        <form class="lift:AddTask?form=get">
+            Task Name: <input name="taskName"/>
+            <input type="submit" value="Create Task"/>
         </form>
+        <!--<form class="lift:AddTask?form=get">-->
+            <!--Task Name: <input name="taskName">-->
+            <!--<input type="submit" value="Create Task">-->
+        <!--</form>-->
+
     </div>
 
     <div class="lift:comet?type=TaskListViewer">
+        Count:<div id="count">Lala</div>
         <div id="tasks">
             <ul>
                 <li class="task"><a class="link" href=""></a></li>

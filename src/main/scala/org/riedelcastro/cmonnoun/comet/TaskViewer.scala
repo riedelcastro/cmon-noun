@@ -9,6 +9,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{DeregisterTaskListener, 
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox.NoSuchMessage
 import org.riedelcastro.nurupo.HasLogger
 import net.liftweb.http.{SHtml, CometActor}
+import net.liftweb.http.js.JsCmds.SetHtml
 
 /**
  * @author sriedel
@@ -20,24 +21,21 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
   private var instances: Seq[Instance] = Seq.empty
 
   def render = {
-    val namePart = taskName match {
-      case Full(n) => "#name *" #> n
-      case _ => "#name" #> Text("No Name given")
-    }
+    debugLazy("Rendering now with " + instances.mkString(","))
     val instancesPart = manager match {
       case Full(m) =>
         "#instances *" #> instances.map(i => {
 //          ".instance *" #> { ".content *" #> i.content }
-           <tr><td>{i}</td></tr>
+           <tr><td>{i.content}</td></tr>
         })
       case _ =>
         "#instances" #> Text("No Instances")
     }
-    namePart & instancesPart
+    instancesPart
   }
 
 
-  override def mediumPriority = {
+  override def highPriority = {
     case SetTask(n, hub) =>
       taskName = Full(n)
       Controller.clusterHub ak_! GetTaskManager(n)
