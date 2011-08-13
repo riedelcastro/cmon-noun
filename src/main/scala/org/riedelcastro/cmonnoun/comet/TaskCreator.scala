@@ -6,7 +6,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.CreateTask
 /**
  * @author sriedel
  */
-class ProblemCreator extends CometActor with WithBridge {
+class TaskCreator extends CometActor with WithBridge {
   def render = {
     SHtml.ajaxForm(
       <span>What's your name?</span> ++

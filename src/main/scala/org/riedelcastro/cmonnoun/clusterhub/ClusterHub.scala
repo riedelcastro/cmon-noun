@@ -7,7 +7,8 @@ import net.liftweb.common.{Full, Empty, Box}
 import Box._
 import collection.mutable.{HashMap, HashSet, ArrayBuffer}
 import akka.actor.{Actors, ActorRef, Actor}
-
+import org.riedelcastro.cmonnoun.clusterhub.Mailbox.{NoSuchMessage, RetrieveMessage, LeaveMessage}
+import org.riedelcastro.nurupo.HasLogger
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
@@ -34,7 +35,7 @@ case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
 
 trait MongoSupport {
   def dbName: String = "clusterhub"
-  val mongoConn = MongoConnection("locahost", 27017)
+  val mongoConn = MongoConnection("localhost", 27017)
   val mongoDB = mongoConn(dbName)
   def collFor(name: String, param: String): MongoCollection = {
     mongoDB(name + "_" + param)
@@ -49,11 +50,11 @@ trait HasListeners {
 
   }
 
-  def addListener(l:ActorRef) {
+  def addListener(l: ActorRef) {
     taskListeners += l
   }
 
-  def removeLister(l:ActorRef) {
+  def removeLister(l: ActorRef) {
     taskListeners -= l
   }
 
@@ -66,8 +67,8 @@ object ClusterHub {
   case class DeregisterTaskListener(consumer: ActorRef)
   case object GetTaskNames
   case class TaskAdded(taskName: String, manager: ActorRef)
-  case class GetTaskManager(taskName:String)
-  case class AssignedTaskManager(manager:Box[ActorRef])
+  case class GetTaskManager(taskName: String)
+  case class AssignedTaskManager(manager: Box[ActorRef])
 }
 
 
@@ -151,6 +152,31 @@ class TaskManager extends Actor with MongoSupport with HasListeners {
         informListeners(InstanceAdded(n, Instance(instance, Map.empty)))
       }
     }
+
+  }
+}
+
+object Mailbox {
+  case class LeaveMessage(recipient: String, msg: Any)
+  case class RetrieveMessage(recipient: String)
+  case class NoSuchMessage(recipient: String)
+}
+
+class Mailbox extends Actor with HasLogger {
+
+  private val messages = new HashMap[String, Any]
+
+  protected def receive = {
+    case LeaveMessage(r, m) =>
+      messages(r) = m
+      logger.info("Left Message %s for %s".format(m,r))
+    case RetrieveMessage(r) =>
+      messages.get(r) match {
+        case Some(msg) =>
+          messages.remove(r)
+          self.reply(msg)
+        case None => self.reply(NoSuchMessage(r))
+      }
 
   }
 }

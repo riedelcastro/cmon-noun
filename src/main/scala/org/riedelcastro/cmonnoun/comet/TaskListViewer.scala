@@ -17,13 +17,13 @@ class TaskListViewer extends CometActor with WithBridge {
   def render = {
     taskNames match {
       case Full(names) => {
-        ".problem *" #> names.map(name => {
+        ".task *" #> names.map(name => {
           ".link *" #> name &
-            ".link [href]" #> "problem/%s".format(name)
+            ".link [href]" #> "task/%s".format(name)
         })
       }
       case _ => {
-        ".problem" #> "Empty"
+        ".task" #> "Empty"
       }
     }
   }
@@ -31,7 +31,7 @@ class TaskListViewer extends CometActor with WithBridge {
 
   override def mediumPriority = {
     case TaskAdded(name,_) => {
-      Controller.problemManager ! GetTaskNames
+      Controller.clusterHub ak_! GetTaskNames
     }
     case TaskNames(names) => {
       taskNames = Full(names)
@@ -40,11 +40,13 @@ class TaskListViewer extends CometActor with WithBridge {
   }
 
   override protected def localSetup() {
-    Controller.problemManager ! RegisterTaskListener(bridge)
+    Controller.clusterHub ak_! RegisterTaskListener(bridge)
+    val answer = Controller.clusterHub ak_!! GetTaskNames
+    for (a <- answer) mediumPriority(a)
   }
 
   override protected def localShutdown() {
-    Controller.problemManager ! DeregisterTaskListener(bridge)
+    Controller.clusterHub ak_! DeregisterTaskListener(bridge)
     bridge.stop()
   }
 }

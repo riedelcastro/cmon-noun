@@ -1,20 +1,28 @@
+<!--suppress XmlUnboundNsPrefix -->
 <div class="lift:surround?with=default;at=content">
-    <h2>Collaborative Cmon Noun Clustering</h2>
+    <h2>Task View</h2>
 
-    <div class="lift:ProblemPage">
-        <div id="problem">
-            <div id="problemName">Blah</div>
-            <form class="lift:InstanceAdder?form=post">
-                Word: <input name="word"/><br/>
-                <input type="submit" value="Submit"/>
-            </form>
-            <div id="instances">
-                <ul>
-                    <li class="instance"></li>
-                </ul>
-            </div>
-        </div>
+    <div class="lift:TaskSnippet">
+
+        <lift:comet id="task" type="TaskViewer" name="replaceme">
+            <div id="name"></div>
+        </lift:comet>
+
     </div>
+    <!--<div class="lift:ProblemPage">-->
+        <!--<div id="problem">-->
+            <!--<div id="problemName">Blah</div>-->
+            <!--<form class="lift:InstanceAdder?form=post">-->
+                <!--Word: <input name="word"/><br/>-->
+                <!--<input type="submit" value="Submit"/>-->
+            <!--</form>-->
+            <!--<div id="instances">-->
+                <!--<ul>-->
+                    <!--<li class="instance"></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
 </div>
 

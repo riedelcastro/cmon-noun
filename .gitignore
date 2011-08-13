@@ -3,3 +3,4 @@
 .idea
 target
 lift*.db
+*.log

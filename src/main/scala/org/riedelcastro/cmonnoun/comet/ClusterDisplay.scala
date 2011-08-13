@@ -1,16 +1,32 @@
 package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.http.{SessionVar, CometActor}
-import akka.actor.{Actor, Actors}
 import org.riedelcastro.cmonnoun.{StopClustering, StartClustering, Result, ClusterEngine}
 import net.liftweb.common.{Full, Box}
-import org.riedelcastro.cmonnoun.clusterhub.ClusterHub
+import org.riedelcastro.cmonnoun.clusterhub.{Mailbox, ClusterHub}
+import akka.actor.{ActorRef, Actor, Actors}
 
 case class ClientState(words: Seq[String])
 
 trait WithBridge {
+
   protected val bridge = Actors.actorOf(classOf[BridgeActor]).start()
   bridge ! this
+
+  implicit def asAkkaRecipient(to:ActorRef) = new AnyRef {
+    def ak_!(msg:Any) {
+      to.!(msg)(Some(bridge))
+    }
+    def ak_!!(msg:Any) = {
+      to.!!(msg)(Some(bridge))
+    }
+
+  }
+
+  def sendAsAkka(to:ActorRef, msg:Any) {
+    to.!(msg)(Some(bridge))
+  }
+
 
 }
 
@@ -55,8 +71,10 @@ class ClusterDisplay extends CometActor with WithBridge {
 
 object Controller {
   val engine = Actors.actorOf(classOf[ClusterEngine]).start()
-  val problemManager = Actors.actorOf(classOf[ClusterHub]).start()
+  val clusterHub = Actors.actorOf(classOf[ClusterHub]).start()
+  val mailbox = Actors.actorOf(classOf[Mailbox]).start()
 }
+
 
 class BridgeActor extends Actor {
   private var target: Option[CometActor] = None
@@ -65,4 +83,6 @@ class BridgeActor extends Actor {
     case comet: CometActor => target = Some(comet)
     case msg => target.foreach(_ ! msg)
   }
+
+
 }
