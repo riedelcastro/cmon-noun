@@ -17,17 +17,17 @@ import org.riedelcastro.cmonnoun.snippet.ClusterParam
  */
 class Boot {
   def boot {
-    if (!DB.jndiJdbcConnAvailable_?) {
-      val vendor =
-        new StandardDBVendor(Props.get("db.driver") openOr "org.h2.Driver",
-          Props.get("db.url") openOr
-            "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
-          Props.get("db.user"), Props.get("db.password"))
-
-      LiftRules.unloadHooks.append(vendor.closeAllConnections_! _)
-
-      DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
-    }
+//    if (!DB.jndiJdbcConnAvailable_?) {
+//      val vendor =
+//        new StandardDBVendor(Props.get("db.driver") openOr "org.h2.Driver",
+//          Props.get("db.url") openOr
+//            "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
+//          Props.get("db.user"), Props.get("db.password"))
+//
+//      LiftRules.unloadHooks.append(vendor.closeAllConnections_! _)
+//
+//      DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
+//    }
 
 //    StatelessJson.init()
     //LiftRules.dispatch.append(AsyncRest)
@@ -36,7 +36,7 @@ class Boot {
 
     // where to search snippet
     LiftRules.addToPackages("org.riedelcastro.cmonnoun")
-    Schemifier.schemify(true, Schemifier.infoF _, User)
+//    Schemifier.schemify(true, Schemifier.infoF _, User)
 
     val menu = Menu.param[String]("Tasks", "Tasks",
       s => Full(s),
@@ -73,7 +73,7 @@ class Boot {
 
     LiftRules.loggedInTest = Full(() => User.loggedIn_?)
 
-    S.addAround(DB.buildLoanWrapper)
+//    S.addAround(DB.buildLoanWrapper)
   }
 
   /**
