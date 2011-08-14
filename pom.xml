@@ -131,6 +131,13 @@
             <version>0.0.8-SNAPSHOT</version>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<artifactId>solr-solrj</artifactId>-->
+            <!--<groupId>org.apache.solr</groupId>-->
+            <!--<version>1.4.0</version>-->
+            <!--<type>jar</type>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
         <!--FROM LIFT -->
         <dependency>

@@ -42,9 +42,9 @@ class Boot {
       s => Full(s),
       pi => pi) / "task"
 
-    val cluster = Menu.param[ClusterParam]("Clusters", "Clusters",
-      s => Full(ClusterParam(s.split("\\.")(0),s.split("\\.")(1))),
-      param => param.taskName + "." + param.clusterId) / "cluster"
+    val cluster = Menu.param[String]("Clusters", "Clusters",
+      s => Full(s),
+      pi => pi) / "cluster"
 
 
     // Build SiteMap

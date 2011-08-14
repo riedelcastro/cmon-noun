@@ -26,10 +26,9 @@ class ClusterListSnippet(val taskName: String)
 
 case class ClusterParam(taskName: String, clusterId: String)
 case object Noop
-class ClusterSnippet(val param: ClusterParam) extends CometInitializer(
+class ClusterSnippet(val param: String) extends CometInitializer(
   "cluster",
-  param.taskName + "." + param.clusterId, Helper.taskManager(param.taskName).map(
-  SetCluster(param.clusterId,param.taskName, _)).getOrElse(Noop))
+  param, SetCluster(param))
 
 class ClusterSnippet2(val param: ClusterParam) {
   def render = "#blah" #> param.toString

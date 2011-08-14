@@ -1,8 +1,29 @@
 <!--suppress XmlUnboundNsPrefix -->
 <div class="lift:surround?with=default;at=content">
-    <h2>Cluster View</h2>
-    <div class="lift:ClusterSnippet2">
-        <div id="blah"></div>
+    <div class="lift:ClusterSnippet">
+
+        <lift:comet id="cluster" type="ClusterViewer" name="replaceme">
+            <h2>Cluster <div class="clusterName"></div></h2>
+            <div id="blah"></div>
+            <div id="addRow"></div>
+
+            <!--<div class="clusterName"></div>-->
+            <!--<table>-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<td>Content</td>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr id="instancesBody">-->
+                    <!--<td class="content">Content</td>-->
+                    <!--<td class="field">Content</td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+
+        </lift:comet>
+
     </div>
 
     <!--<form class="lift:AddInstanceSnippet?form=get">-->

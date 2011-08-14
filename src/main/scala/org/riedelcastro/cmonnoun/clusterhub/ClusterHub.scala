@@ -6,7 +6,6 @@ import com.mongodb.casbah.Imports._
 import net.liftweb.common.{Full, Empty, Box}
 import Box._
 import collection.mutable.{HashMap, HashSet, ArrayBuffer}
-import akka.actor.{Actors, ActorRef, Actor}
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox.{NoSuchMessage, RetrieveMessage, LeaveMessage}
 import org.riedelcastro.nurupo.HasLogger
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
@@ -16,13 +15,14 @@ import com.novus.salat._
 import com.novus.salat.global._
 import org.bson.types.ObjectId
 import com.mongodb.casbah.commons.MongoDBObject
+import akka.actor.{Actor, Actors, ActorRef}
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
   val fieldSpecs = new ArrayBuffer[FieldSpec]
 }
 
-case class Instance(content: String, fields: Map[String, AnyRef],id:ObjectId = new ObjectId()) {
+case class Instance(content: String, fields: Map[String, AnyRef], id: ObjectId = new ObjectId()) {
 }
 
 @Salat
@@ -50,6 +50,10 @@ trait MongoSupport {
   }
 }
 
+case class RegisterListener(l: ActorRef)
+case class DeregisterListener(l: ActorRef)
+
+
 trait HasListeners {
   private val taskListeners = new HashSet[ActorRef]
 
@@ -64,6 +68,14 @@ trait HasListeners {
 
   def removeListener(l: ActorRef) {
     taskListeners -= l
+  }
+
+  def receiveListeners:PartialFunction[Any,Unit] = {
+    case RegisterTaskListener(c) =>
+      addListener(c)
+
+    case DeregisterTaskListener(c) =>
+      removeListener(c)
   }
 
 }
@@ -134,7 +146,6 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
   }
 
 }
-
 
 
 object Mailbox {
