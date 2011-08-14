@@ -25,12 +25,16 @@ object TaskManager {
   trait TaskChanged
 
   case class SetTask(taskName: String, hub: ActorRef)
+
   case object GetInstances
   case class Instances(instances: Seq[Instance])
-  case class AddInstance(content: String)
-  case class AddField(field: FieldSpec)
+
   case class InstanceAdded(taskName: String, instance: Instance) extends TaskChanged
   case class FieldSpecAdded(spec: FieldSpec) extends TaskChanged
+
+  case class AddCluster(clusterId:String)
+  case class AddInstance(content: String)
+  case class AddField(field: FieldSpec)
 
 }
 

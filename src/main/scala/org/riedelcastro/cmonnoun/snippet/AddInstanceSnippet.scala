@@ -32,6 +32,28 @@ class AddInstanceSnippet(taskName: String) extends HasLogger {
 
 }
 
+class AddClusterSnippet(taskName: String) extends HasLogger {
+
+  lazy val taskManager = Helper.taskManager(taskName)
+
+  def render = {
+    var clusterId: String = "Cluster"
+
+    def process() {
+      for (m <- taskManager) m ! TaskManager.AddCluster(clusterId)
+    }
+    "name=clusterId" #> SHtml.onSubmit(clusterId = _) & // set the name
+      "type=submit" #> SHtml.onSubmitUnit(process)
+
+  }
+
+}
+
+
+
+
+
+
 class AddFieldSpec(taskName: String) extends HasLogger {
   lazy val taskManager = Helper.taskManager(taskName)
 
@@ -61,6 +83,7 @@ class ShowInstances(taskName: String) {
   }
 
 }
+
 
 object Helper extends HasLogger {
 

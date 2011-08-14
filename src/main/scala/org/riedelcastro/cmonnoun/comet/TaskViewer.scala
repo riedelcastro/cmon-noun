@@ -10,26 +10,25 @@ import org.riedelcastro.cmonnoun.clusterhub.Mailbox.NoSuchMessage
 import org.riedelcastro.nurupo.HasLogger
 import net.liftweb.http.{SHtml, CometActor}
 import net.liftweb.http.js.JsCmds.SetHtml
+import org.riedelcastro.cmonnoun.snippet.CometInitializer
+import org.riedelcastro.nurupo.HasLogger
 
 /**
  * @author sriedel
  */
-class TaskViewer extends CometActor with WithBridge with HasLogger {
+class TaskViewer extends KnowsTask with CallMailboxFirst {
 
-  private var manager: Box[ActorRef] = Empty
-  private var taskName: Box[String] = Empty
   private var instances: Seq[Instance] = Seq.empty
+
+  def cometType = "task"
 
   def render = {
     debugLazy("Rendering now with " + instances.mkString(","))
     val instancesPart = manager match {
       case Full(m) =>
-
         "#instancesBody *" #> instances.map(i => {
           ".content *" #> i.content &
-          ".field *" #> i.fields.map(_._2.toString)
-
-//           <tr><td>{i.content}</td></tr>
+            ".field *" #> i.fields.map(_._2.toString)
         })
       case _ =>
         "#instances" #> Text("No Instances")
@@ -37,32 +36,19 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
     instancesPart
   }
 
+  override protected def assignTaskManager(m: ActorRef) {
+    m ak_! RegisterTaskListener(bridge)
+    m ak_! GetInstances
 
-  override def highPriority = {
-    case SetTask(n, hub) =>
-      taskName = Full(n)
-      Controller.clusterHub ak_! GetTaskManager(n)
+  }
 
-    case AssignedTaskManager(taskManager) =>
-      manager = taskManager
-      for (m <- manager) {
-        m ak_! RegisterTaskListener(bridge)
-        m ak_! GetInstances
-      }
-      reRender()
+  override protected def taskChanged() {
+    for (m <- manager) {
+      m ak_! GetInstances
+    }
+  }
 
-//    case InstanceAdded(_, instance) =>
-//      logger.debug(lazyString("Instance added: " + instance))
-//      for (m <- manager) {
-//        m ak_! GetInstances
-//      }
-
-    case change:TaskChanged =>
-      logger.debug(lazyString("Task Changed"))
-      for (m <- manager) {
-        m ak_! GetInstances
-      }
-
+  override def lowPriority = super.lowPriority orElse {
 
     case Instances(i) =>
       this.instances = i
@@ -73,20 +59,68 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
       logger.info("No message for ".format(r))
 
 
-
   }
 
+  override protected def localShutdown() {
+    super.localShutdown()
+    for (m <- manager) m ak_! DeregisterTaskListener(bridge)
+  }
+
+}
+
+trait CallMailboxFirst extends CometActor with WithBridge {
+
+  def cometType: String
+
   override protected def localSetup() {
-    (Controller.mailbox ak_!! Mailbox.RetrieveMessage(name.getOrElse("NoName"))) match {
-      case Some(msg) => messageHandler(msg)
-      case _ =>
+    for (n <- name) {
+      (Controller.mailbox ak_!! Mailbox.RetrieveMessage(n)) match {
+        case Some(msg) => messageHandler(msg)
+        case _ =>
+      }
+
     }
   }
 
   override protected def localShutdown() {
-    for (m <- manager) m ak_! DeregisterTaskListener(bridge)
     bridge.stop()
   }
+}
+
+trait KnowsTask extends CometActor with WithBridge with HasLogger {
+
+  protected var manager: Box[ActorRef] = Empty
+  protected var taskName: Box[String] = Empty
+
+  protected def assignTaskManager(m: ActorRef) {
+    m ak_! RegisterTaskListener(bridge)
+    m ak_! GetInstances
+
+  }
+
+  protected def taskChanged() {}
+
+  override def lowPriority = {
+      case SetTask(n, hub) =>
+      taskName = Full(n)
+      Controller.clusterHub ak_! GetTaskManager(n)
+
+    case AssignedTaskManager(taskManager) =>
+      manager = taskManager
+      for (m <- manager) assignTaskManager(m)
+      reRender()
+
+    case change: TaskChanged =>
+      logger.debug(lazyString("Task Changed"))
+      taskChanged()
 
 
+  }
+}
+
+class ClusterListViewer extends CallMailboxFirst with KnowsTask {
+  def cometType = "clusterList"
+  def render = {
+    "#cluster *" #> Seq(".name" #> "A", ".name" #> "B")
+  }
 }

@@ -8,6 +8,7 @@ import _root_.net.liftweb.sitemap._
 import _root_.net.liftweb.sitemap.Loc._
 import _root_.net.liftweb.mapper.{DB, Schemifier, DefaultConnectionIdentifier, StandardDBVendor}
 import _root_.org.riedelcastro.cmonnoun.model._
+import org.riedelcastro.cmonnoun.snippet.ClusterParam
 
 
 /**
@@ -41,14 +42,14 @@ class Boot {
       s => Full(s),
       pi => pi) / "task"
 
-    val test = Menu.param[String]("Test", "Test",
-      s => Full(s),
-      pi => pi) / "test"
+    val cluster = Menu.param[ClusterParam]("Clusters", "Clusters",
+      s => Full(ClusterParam(s.split("\\.")(0),s.split("\\.")(1))),
+      param => param.taskName + "." + param.clusterId) / "cluster"
 
 
     // Build SiteMap
     def sitemap() = SiteMap(
-      menu, test,
+      menu, cluster,
       Menu("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
       // Menu with special Link
       Menu(Loc("Static", Link(List("static"), true, "/static/index"),

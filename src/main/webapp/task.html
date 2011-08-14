@@ -3,14 +3,19 @@
     <h2>Task View</h2>
 
     <form class="lift:AddInstanceSnippet?form=get">
-        Content: <input name="content"/>
+        Add Content: <input name="content"/>
         <input type="submit" value="Add"/>
     </form>
 
     <form class="lift:AddFieldSpec?form=get">
-        Field Name: <input name="fieldName"/>
+        Add Field: <input name="fieldName"/>
         Regex: <input name="fieldRegex"/>
         <input type="submit" value="Add Field"/>
+    </form>
+
+    <form class="lift:AddClusterSnippet?form=get">
+        Add Cluster : <input name="clusterId"/>
+        <input type="submit" value="Add"/>
     </form>
 
     <!--<div class="lift:ShowInstances">-->
@@ -39,6 +44,15 @@
 
     </div>
 
+    <div class="lift:ClusterListSnippet">
+        <lift:comet id="clusterList" type="TaskViewer" name="replaceme">
+            <ul>
+                <li id="cluster">
+                    <div class="name">name</div>
+                </li>
+            </ul>
+        </lift:comet>
+    </div>
 
 </div>
 
