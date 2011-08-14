@@ -16,6 +16,7 @@ import com.novus.salat.global._
 import org.bson.types.ObjectId
 import com.mongodb.casbah.commons.MongoDBObject
 import akka.actor.{Actor, Actors, ActorRef}
+import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
@@ -70,17 +71,23 @@ trait HasListeners {
     taskListeners -= l
   }
 
-  def receiveListeners:PartialFunction[Any,Unit] = {
-    case RegisterTaskListener(c) =>
+  def receiveListeners: PartialFunction[Any, Unit] = {
+    case RegisterListener(c) =>
       addListener(c)
 
-    case DeregisterTaskListener(c) =>
+    case DeregisterListener(c) =>
       removeListener(c)
   }
 
 }
 
 object ClusterHub {
+  case class CreateCluster(name: String)
+  case class ClusterAdded(clusterId: String, manager: ActorRef)
+  case object GetClusterNames
+  case class ClusterNames(names: Seq[String])
+  case class AssignedClusterManager(manager: ActorRef, clusterId: String)
+
   case class CreateTask(name: String)
   case class TaskNames(names: Seq[String])
   case class RegisterTaskListener(consumer: ActorRef)
@@ -88,6 +95,7 @@ object ClusterHub {
   case object GetTaskNames
   case class TaskAdded(taskName: String, manager: ActorRef)
   case class GetTaskManager(taskName: String)
+  case class GetClusterManager(clusterId: String)
   case class AssignedTaskManager(manager: Box[ActorRef])
 }
 
@@ -100,14 +108,32 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
   import ClusterHub._
 
   private val taskManagers = new HashMap[String, ActorRef]
+  private val clusterManagers = new HashMap[String, ActorRef]
+
 
   private val taskDefColl = mongoDB("tasks")
+  private val clusterDefColl = mongoDB("clusters")
+
 
   for (taskName <- taskNames()) createManager(taskName)
+  for (clusterName <- clusterNames()) initializeCluster(clusterName)
+
 
   def taskNames(): Seq[String] = {
     taskDefColl.find().map(_.as[String]("_id")).toSeq
   }
+
+  def clusterNames(): Seq[String] = {
+    clusterDefColl.find().map(_.as[String]("_id")).toSeq
+  }
+
+  private def initializeCluster(name: String): ActorRef = {
+    val manager = Actors.actorOf(classOf[ClusterManager]).start()
+    clusterManagers(name) = manager
+    manager ! SetCluster(name, this.self)
+    manager
+  }
+
 
   def createManager(name: String): ActorRef = {
     val manager = Actors.actorOf(classOf[TaskManager]).start()
@@ -117,32 +143,58 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
   }
 
   protected def receive = {
-    case RegisterTaskListener(c) =>
-      addListener(c)
+    receiveListeners orElse {
+      case RegisterTaskListener(c) =>
+        addListener(c)
 
-    case DeregisterTaskListener(c) =>
-      removeListener(c)
+      case DeregisterTaskListener(c) =>
+        removeListener(c)
 
-    case CreateTask(name) => {
-      taskDefColl += MongoDBObject("_id" -> name)
-      val manager: ActorRef = createManager(name)
-      informListeners(TaskAdded(name, manager))
-    }
-
-    case GetTaskManager(name) => {
-      val manager = taskManagers.get(name)
-      self.reply(AssignedTaskManager(manager))
-      manager match {
-        case None => logger.warn("No Manager for " + name)
-        case _ =>
+      case CreateTask(name) => {
+        taskDefColl += MongoDBObject("_id" -> name)
+        val manager: ActorRef = createManager(name)
+        informListeners(TaskAdded(name, manager))
       }
-    }
 
-    case GetTaskNames => {
-      val names = taskNames
-      self.reply(TaskNames(names))
-    }
+      case CreateCluster(name) => {
+        clusterDefColl += MongoDBObject("_id" -> name)
+        val manager: ActorRef = initializeCluster(name)
+        informListeners(ClusterAdded(name, manager))
+      }
 
+
+      case GetTaskManager(name) => {
+        val manager = taskManagers.get(name)
+        self.reply(AssignedTaskManager(manager))
+        manager match {
+          case None => logger.warn("No Manager for " + name)
+          case _ =>
+        }
+      }
+
+      case GetClusterManager(name) => {
+        val manager = clusterManagers.get(name)
+        manager match {
+          case None =>
+            logger.warn("No Manager for " + name)
+          case Some(m) =>
+            self.reply(AssignedClusterManager(m, name))
+
+        }
+      }
+
+      case GetClusterNames => {
+        val names = clusterNames()
+        self.reply(ClusterNames(names))
+      }
+
+
+      case GetTaskNames => {
+        val names = taskNames()
+        self.reply(TaskNames(names))
+      }
+
+    }
   }
 
 }

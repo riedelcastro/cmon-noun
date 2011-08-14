@@ -4,23 +4,35 @@
 
         <lift:comet id="cluster" type="ClusterViewer" name="replaceme">
             <h2>Cluster <div class="clusterName"></div></h2>
-            <div id="blah"></div>
-            <div id="addRow"></div>
+            <form method="get">
+                <div id="new_content"></div>
+                <div id="new_content_submit"></div>
+            </form>
+            <form method="get">
+                <div id="new_spec_name"></div>
+                <div id="new_spec"></div>
+                <div id="new_spec_submit"></div>
+            </form>
 
             <!--<div class="clusterName"></div>-->
-            <!--<table>-->
-                <!--<thead>-->
-                <!--<tr>-->
-                    <!--<td>Content</td>-->
-                <!--</tr>-->
-                <!--</thead>-->
-                <!--<tbody>-->
-                <!--<tr id="instancesBody">-->
-                    <!--<td class="content">Content</td>-->
-                    <!--<td class="field">Content</td>-->
-                <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
+            <table>
+                <thead>
+                <tr>
+                    <td>Content</td>
+                    <td id="row_field_name"></td>
+                    <td>Probability</td>
+                    <td>Edit</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="row_body">
+                    <td class="content">Content Value</td>
+                    <td class="field">Field Value</td>
+                    <td class="prob">Prob Value</td>
+                    <td class="edit">Edit Value</td>
+                </tr>
+                </tbody>
+            </table>
 
         </lift:comet>
 
