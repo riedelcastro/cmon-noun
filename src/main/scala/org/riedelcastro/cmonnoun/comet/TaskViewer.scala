@@ -26,7 +26,9 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
       case Full(m) =>
 
         "#instancesBody *" #> instances.map(i => {
-          ".content *" #> i.content
+          ".content *" #> i.content &
+          ".field *" #> i.fields.map(_._2.toString)
+
 //           <tr><td>{i.content}</td></tr>
         })
       case _ =>
@@ -45,14 +47,22 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
       manager = taskManager
       for (m <- manager) {
         m ak_! RegisterTaskListener(bridge)
+        m ak_! GetInstances
       }
       reRender()
 
-    case InstanceAdded(_, instance) =>
-      logger.debug(lazyString("Instance added: " + instance))
+//    case InstanceAdded(_, instance) =>
+//      logger.debug(lazyString("Instance added: " + instance))
+//      for (m <- manager) {
+//        m ak_! GetInstances
+//      }
+
+    case change:TaskChanged =>
+      logger.debug(lazyString("Task Changed"))
       for (m <- manager) {
         m ak_! GetInstances
       }
+
 
     case Instances(i) =>
       this.instances = i
@@ -67,7 +77,10 @@ class TaskViewer extends CometActor with WithBridge with HasLogger {
   }
 
   override protected def localSetup() {
-    Controller.mailbox ak_! Mailbox.RetrieveMessage(name.getOrElse("NoName"))
+    (Controller.mailbox ak_!! Mailbox.RetrieveMessage(name.getOrElse("NoName"))) match {
+      case Some(msg) => messageHandler(msg)
+      case _ =>
+    }
   }
 
   override protected def localShutdown() {

@@ -14,26 +14,27 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{DeregisterTaskListener, 
 
 import com.novus.salat._
 import com.novus.salat.global._
+import org.bson.types.ObjectId
+import com.mongodb.casbah.commons.MongoDBObject
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
   val fieldSpecs = new ArrayBuffer[FieldSpec]
 }
 
-case class Instance(content: String, fields: Map[String, Any])
+case class Instance(content: String, fields: Map[String, AnyRef],id:ObjectId = new ObjectId()) {
+}
 
 @Salat
 trait FieldSpec {
-  type T
   def name: String
-  def extract(instance: String): T
+  def extract(instance: String): Any
 }
 
-case class SpecHolder(spec:FieldSpec)
+case class SpecHolder(spec: FieldSpec)
 
 case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   val r = regex.r
-  type T = Boolean
 
   def extract(instance: String) = {
     r.findFirstIn(instance).isDefined
@@ -99,7 +100,7 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
   def createManager(name: String): ActorRef = {
     val manager = Actors.actorOf(classOf[TaskManager]).start()
     taskManagers(name) = manager
-    manager ! SetTask(name,this.self)
+    manager ! SetTask(name, this.self)
     manager
   }
 
@@ -134,68 +135,7 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
 
 }
 
-object TaskManager {
-  case class SetTask(taskName: String, hub: ActorRef)
-  case object GetInstances
-  case class Instances(instances: Seq[Instance])
-  case class AddInstance(instance: String)
-  case class AddField(field: FieldSpec)
-  case class InstanceAdded(taskName: String, instance: Instance)
 
-}
-
-class TaskManager extends Actor with MongoSupport with HasListeners with HasLogger {
-
-  import TaskManager._
-
-  private var taskName: Box[String] = Empty
-  private var hub: Box[ActorRef] = Empty
-
-  private def getInstances(task: String): MongoCollection = {
-    collFor("instances", task)
-  }
-  protected def receive = {
-    case SetTask(n, h) =>
-      taskName = Full(n)
-      hub = Full(h)
-
-    case GetInstances =>
-      for (n <- taskName) {
-        val coll = getInstances(n)
-        val instances = coll.find().map(dbo => {
-          val content = dbo.as[String]("content")
-          Instance(content, Map.empty)
-        })
-        self.reply(Instances(instances.toSeq))
-      }
-
-    case AddInstance(instance: String) => {
-      logger.debug("Received instance " + instance)
-      for (n <- taskName) {
-        val coll = getInstances(n)
-        coll += MongoDBObject("content" -> instance)
-        informListeners(InstanceAdded(n, Instance(instance, Map.empty)))
-      }
-    }
-
-    case AddField(field) => {
-      for (n <- taskName){
-        val coll = collFor("fieldSpecs",n)
-        field match {
-          case RegExFieldSpec(name,regex)=>
-            coll += MongoDBObject("type" -> "regex", "name" -> name, "regex" -> regex)
-        }
-      }
-    }
-
-    case RegisterTaskListener(c) =>
-      addListener(c)
-
-    case DeregisterTaskListener(c) =>
-      removeListener(c)
-
-  }
-}
 
 object Mailbox {
   case class LeaveMessage(recipient: String, msg: Any)
@@ -210,7 +150,7 @@ class Mailbox extends Actor with HasLogger {
   protected def receive = {
     case LeaveMessage(r, m) =>
       messages(r) = m
-      logger.info("Left Message %s for %s".format(m,r))
+      logger.info("Left Message %s for %s".format(m, r))
     case RetrieveMessage(r) =>
       messages.get(r) match {
         case Some(msg) =>

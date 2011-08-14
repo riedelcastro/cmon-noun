@@ -9,12 +9,12 @@ import akka.actor.ActorRef
 import org.riedelcastro.nurupo.HasLogger
 import net.liftweb.common.{Box, Full, Empty}
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.{AddField, Instances, GetInstances}
-import org.riedelcastro.cmonnoun.clusterhub.{RegExFieldSpec, TaskManager}
+import org.riedelcastro.cmonnoun.clusterhub.{Instance, RegExFieldSpec, TaskManager}
 
 /**
  * @author sriedel
  */
-class AddInstance(taskName: String) extends HasLogger {
+class AddInstanceSnippet(taskName: String) extends HasLogger {
 
   lazy val taskManager = Helper.taskManager(taskName)
 
