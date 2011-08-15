@@ -56,8 +56,6 @@ object Resolvers {
     "Novus Releases" at "http://repo.novus.com/releases/",
     "Novus Snapshots" at "http://repo.novus.com/snapshots/",
     "Akka releases" at "http://akka.io/repository"
-    //    "Web plugin repo" at "http://siasia.github.com/maven2",
-    //    "Web plugin repo2" at "http://mpeltonen.github.com/maven/"
   )
 }
 
@@ -81,13 +79,7 @@ object Dependencies {
   val others = Seq(
     "org.riedelcastro.nurupo" % "nurupo" % "0.1-SNAPSHOT",
     "se.scalablesolutions.akka" % "akka-actor" % "1.0",
-    //    "net.liftweb" %% "lift-mapper" % liftVersion,
     "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT"
-    //    "net.liftweb" % "lift-mapper_" % BuildSettings.buildScalaVersion % liftVersion),
-    //    "junit" % "junit" % "4.8" % "test"
-    //    "org.mortbay.jetty" % "jetty" % "6.1.22" % "jetty",
-    //    "net.databinder" %% "dispatch-google" % "0.7.8",
-    //    "net.databinder" %% "dispatch-meetup" % "0.7.8"
   )
 
   val allDeps = lift ++ liftDeps ++ others
