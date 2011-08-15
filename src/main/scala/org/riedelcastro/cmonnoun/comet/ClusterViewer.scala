@@ -2,7 +2,6 @@ package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.common._
 import xml.Text
-import net.liftweb.http.js.JsCmds.SetHtml
 import net.liftweb.http.{SHtml, CometActor}
 import akka.actor.ActorRef
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{GetClusterManager, AssignedClusterManager}
@@ -10,6 +9,7 @@ import net.liftweb.http.js.JE.JsRaw
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager._
 import org.riedelcastro.cmonnoun.clusterhub._
 import org.riedelcastro.nurupo.HasLogger
+import net.liftweb.http.js.JsCmds.{_Noop, SetHtml}
 
 class ClusterViewer extends CallMailboxFirst with HasLogger {
 
@@ -22,6 +22,8 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
   private var selection: Seq[Row] = Seq.empty
 
   private var specs: Seq[FieldSpec] = Seq.empty
+
+  private var model: Box[ModelSummary] = Empty
 
   private var query: Box[Any] = Empty
 
@@ -36,6 +38,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     case AssignedClusterManager(manager, clusterId) =>
       assignment = Full(Assignment(clusterId, manager))
       manager ak_! ClusterManager.GetAllRows
+      manager ak_! ClusterManager.GetModelSummary
       manager ak_! RegisterListener(bridge)
       reRender()
 
@@ -44,10 +47,19 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
       selection = r.toSeq
       reRender()
 
-    case ClusterChanged =>
+    case RowsChanged =>
       for (s <- assignment) {
         s.manager ak_! ClusterManager.GetAllRows
       }
+
+    case ModelChanged =>
+      for (s <- assignment) {
+        s.manager ak_! ClusterManager.GetModelSummary
+      }
+    case m: ModelSummary =>
+      model = Full(m)
+      reRender()
+
   }
 
   def addContentBinding(a: Assignment) = {
@@ -79,17 +91,34 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
           addFieldSpecBinding(a),
           addContentBinding(a),
 
-          ".clusterName" #> a.clusterId,
+          ".clusterName"
+            #> a.clusterId,
 
-          "#row_field_name *" #> specs.map(s => s.name),
-          "#row_body *" #> selection.map(r => Seq(
+          "#trigger_estep"
+            #> SHtml.ajaxButton("E-Step", () => {a.manager ak_! DoEStep; _Noop}),
+
+          "#trigger_mstep"
+            #> SHtml.ajaxButton("M-Step", () => {a.manager ak_! DoMStep; _Noop}),
+
+          "#row_field_name *"
+            #> specs.map(s => s.name),
+
+          "#sigma_true *"
+            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s,0.5).toString).getOrElse("N/A")),
+
+          "#prior *"
+            #> model.map(m => m.prior.toString).getOrElse("N/A"),
+
+          "#row_body *"
+            #> selection.map(r => Seq(
             ".content *" #> r.instance.content,
+            ".field *" #> specs.map(s => r.instance.fields(s.name).toString),
             ".prob *" #> r.label.prob.toString,
+            ".edit *" #> SHtml.ajaxText(r.label.edit.toString, t => {
+              a.manager ak_! Edit(r.id, t.toDouble);
+              logger.debug("Set to " + t)
+            })
             //            ".edit *" #> r.label.edit.toString,
-            ".edit *" #> SHtml.ajaxText(
-              r.label.edit.toString,
-              t => {a.manager ak_! Edit(r.id, t.toDouble); logger.debug("Set to " + t)}),
-            ".field *" #> specs.map(s => r.instance.fields(s.name).toString)
           ).reduce(_ & _))
 
         ).reduce(_ & _)
@@ -99,47 +128,3 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
   }
 }
 
-//
-///**
-// * @author sriedel
-// */
-//class ClusterViewer extends CallMailboxFirst {
-//
-
-//
-//  def render = {
-//    assignment match {
-//      case Full(s) =>
-//      "#a" #> "b"
-//
-////      {
-////        {
-////          var newContentName: String = "x"
-////          def setNewContentName(name: String) = {
-////            newContentName = name
-////            JsRaw("alert(�Button2 clicked�)")
-////          }
-////
-////          "#newContentName" #> SHtml.ajaxText("What?", setNewContentName) &
-////            "#addRow" #> SHtml.ajaxButton(Text("Add"), () => {
-////              s.manager ! AddRow("Test")
-////              SetHtml("blah", Text("pubp"))
-////            }) &
-////            ".clusterName" #> s.clusterId
-////        }.&
-////
-////        {
-////          "#rowBody *" #> selection.map(i => {
-////            ".content *" #> i.content &
-////              ".field *" #> i.fields.map(_._2.toString)
-////          })
-////        }
-////      }
-//
-//
-//      case _ =>
-//        "#cluster" #> "Nothing here"
-//    }
-//
-//  }
-//}
