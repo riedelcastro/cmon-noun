@@ -2,7 +2,6 @@ package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.common._
 import xml.Text
-import net.liftweb.http.{SHtml, CometActor}
 import akka.actor.ActorRef
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{GetClusterManager, AssignedClusterManager}
 import net.liftweb.http.js.JE.JsRaw
@@ -10,6 +9,8 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterManager._
 import org.riedelcastro.cmonnoun.clusterhub._
 import org.riedelcastro.nurupo.HasLogger
 import net.liftweb.http.js.JsCmds.{_Noop, SetHtml}
+import net.liftweb.http.{FileParamHolder, SHtml, CometActor}
+import io.Source
 
 class ClusterViewer extends CallMailboxFirst with HasLogger {
 
@@ -84,12 +85,33 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     ).reduce(_ & _)
   }
 
+  def fileUploadBinding() = {
+    var fileHolder: Box[FileParamHolder] = Empty
+
+    def upload() {
+      for (paramHolder <- fileHolder;
+           a <- assignment) {
+        val bytes = paramHolder.file
+        val lines = Source.fromBytes(bytes).getLines()
+        a.manager ak_! ClusterManager.AddRowBatch(lines)
+      }
+    }
+
+    Seq(
+      "#file_upload" #> SHtml.fileUpload(fh=>fileHolder = Full(fh)),
+      "#file_upload_submit" #> SHtml.submit("Upload rows",
+        () => upload())
+    ).reduce(_ & _)
+
+  }
+
   def render = {
     assignment match {
       case Full(a) =>
         Seq(
           addFieldSpecBinding(a),
           addContentBinding(a),
+          fileUploadBinding(),
 
           ".clusterName"
             #> a.clusterId,
@@ -104,7 +126,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             #> specs.map(s => s.name),
 
           "#sigma_true *"
-            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s,0.5).toString).getOrElse("N/A")),
+            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s, 0.5).toString).getOrElse("N/A")),
 
           "#prior *"
             #> model.map(m => m.prior.toString).getOrElse("N/A"),

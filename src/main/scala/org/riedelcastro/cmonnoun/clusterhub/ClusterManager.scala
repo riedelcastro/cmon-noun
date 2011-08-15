@@ -18,6 +18,7 @@ object ClusterManager {
   case class Rows(specs: Seq[FieldSpec], rows: TraversableOnce[Row])
   case object Train
   case class AddRow(content: String)
+  case class AddRowBatch(rows:TraversableOnce[String])
   case class AddFieldSpec(spec: FieldSpec)
   case object RowsChanged
   case object ModelChanged
@@ -177,6 +178,20 @@ trait ClusterPersistence extends MongoSupport {
     }
   }
 
+  def loadSpecs() {
+    for (s <- state) {
+      for (dbo <- collFor(s.clusterId, "specs").find()){
+        dbo.as[String]("type") match {
+          case "regex" =>
+            val name = dbo.as[String]("name")
+            val regex = dbo.as[String]("regex")
+            specs += RegExFieldSpec(name,regex)
+        }
+      }
+    }
+  }
+
+
   def editLabel(id: ObjectId, value: Double) {
     setRowField(id, "edit", value)
   }
@@ -196,9 +211,6 @@ trait ClusterPersistence extends MongoSupport {
   }
 
 
-  def loadSpecs(): Iterable[FieldSpec] = {
-    null
-  }
 
 
 }
@@ -212,22 +224,33 @@ class ClusterManager
 
   protected var state: Option[State] = None
 
+  def createRowFromContent(content: String): Row = {
+    val fields = specs.map(s => s.name -> s.extract(content)).toMap
+    val instance = RowInstance(content, fields)
+    val row = Row(instance)
+    row
+  }
   protected def receive = {
 
     receiveListeners.orElse {
 
       case SetCluster(id, _) =>
         state = Some(State(id))
+        loadSpecs()
 
       case GetAllRows =>
         val rows = loadRows()
         self.reply(Rows(specs, rows))
 
       case AddRow(content) =>
-        val fields = specs.map(s => s.name -> s.extract(content)).toMap
-        val instance = RowInstance(content, fields)
-        val row = Row(instance)
+        val row: Row = createRowFromContent(content)
         addRow(row)
+        informListeners(RowsChanged)
+
+      case AddRowBatch(rows) =>
+        for (r <- rows) {
+          addRow(createRowFromContent(r))
+        }
         informListeners(RowsChanged)
 
       case AddFieldSpec(spec) =>
