@@ -4,4 +4,4 @@
 target
 lift*.db
 *.log
-project/
+project/boot

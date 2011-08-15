@@ -86,6 +86,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
   }
 
   def fileUploadBinding() = {
+
     var fileHolder: Box[FileParamHolder] = Empty
 
     def upload() {
