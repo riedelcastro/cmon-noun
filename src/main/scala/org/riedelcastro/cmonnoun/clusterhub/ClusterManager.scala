@@ -3,9 +3,7 @@ package org.riedelcastro.cmonnoun.clusterhub
 import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
-import com.mongodb.casbah.commons.MongoDBObject
-import com.mongodb.casbah.Imports._
-import collection.mutable.{HashMap, ArrayBuffer}
+import collection.mutable.HashMap
 
 
 /**
@@ -27,7 +25,33 @@ object ClusterManager {
   case object DoEStep
   case object DoMStep
 
+  case object GetDictNames
+  case class DictNames(names:Seq[String])
+  case class StoreDictionary(name:String, entries:TraversableOnce[DictEntry])
+
+  case class DictEntry(key:String, score:Double = 1.0)
+  case class Dict(name:String, map:Map[String,Double])
+
 }
+
+trait FieldExtractor {
+  def spec:FieldSpec
+  def extract(content:String):Any
+}
+
+class RegexExtractor(val spec:RegExFieldSpec) extends FieldExtractor {
+  def extract(content: String) = {
+    spec.r.findFirstIn(content).isDefined
+  }
+}
+
+class DictExtractor(val spec:DictFieldSpec, val dict:Map[String,Double]) extends FieldExtractor {
+  def extract(content: String) = {
+    val score = dict.getOrElse(content,0.0)
+    score >= 1.0
+  }
+}
+
 
 case class RowInstance(content: String,
                        fields: Map[String, Any] = Map.empty)
@@ -82,10 +106,10 @@ trait ProbabilisticModel {
       val prob = row.label.prob
       val probUse = if (row.label.edit != 0.5) row.label.edit else prob
       totalTrue += probUse
-      for (spec <- specs) {
-        if (true == row.instance.fields(spec.name)) {
-          countsTrue(spec) = countsTrue(spec) + probUse
-          countsFalse(spec) = countsFalse(spec) + 1.0 - probUse
+      for (spec <- extractors) {
+        if (true == row.instance.fields(spec.spec.name)) {
+          countsTrue(spec.spec) = countsTrue(spec.spec) + probUse
+          countsFalse(spec.spec) = countsFalse(spec.spec) + 1.0 - probUse
         }
       }
       count += 1
@@ -104,116 +128,7 @@ trait ProbabilisticModel {
   def prob(row: Row): Double = 1.0
 }
 
-trait ClusterPersistence extends MongoSupport {
 
-  this: ClusterManager =>
-
-  protected val specs = new ArrayBuffer[FieldSpec]
-
-  private val reserved = Set("_id", "content", "prob", "edit")
-
-  def toMongoFieldName(name: String): String = "_" + name
-  def fromMongoFieldName(fieldName: String): String = fieldName.drop(1)
-
-  def addRow(row: Row) {
-    for (s <- state) {
-      val coll = collFor(s.clusterId, "rows")
-      val basic = List(
-        "_id" -> row.id,
-        "content" -> row.instance.content
-      )
-      val fields = row.instance.fields.toList.map({case (k, v) => toMongoFieldName(k) -> v})
-      val dbo = MongoDBObject(basic ++ fields)
-      if (row.label.edit != 0.5) {
-        dbo.put("edit", row.label.edit)
-      }
-      if (row.label.prob != 0.5) {
-        dbo.put("prob", row.label.prob)
-      }
-      coll += dbo
-    }
-  }
-
-  def loadRows(): TraversableOnce[Row] = {
-    val opt = for (s <- state) yield {
-      val coll = collFor(s.clusterId, "rows")
-      for (dbo <- coll.find()) yield {
-        val id = dbo._id.get
-        val content = dbo.as[String]("content")
-        val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
-        val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
-        val fields = dbo.filterKeys(!reserved(_))
-        val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
-        val label = RowLabel(prob, edit)
-        val instance = RowInstance(content, renamed.toMap)
-        Row(instance, label, id)
-      }
-    }
-    opt.getOrElse(Seq.empty)
-  }
-
-  def evaluateSpecOnRows(spec: FieldSpec) {
-    for (s <- state) {
-      val coll = collFor(s.clusterId, "rows")
-      for (row <- loadRows()) {
-        val q = MongoDBObject("_id" -> row.id)
-        val set = MongoDBObject("$set" -> MongoDBObject(
-          toMongoFieldName(spec.name) -> spec.extract(row.instance.content)
-        ))
-        coll.update(q, set)
-      }
-
-    }
-  }
-
-  def addSpec(spec: FieldSpec) {
-    for (s <- state) {
-      specs += spec
-      val coll = collFor(s.clusterId, "specs")
-      spec match {
-        case RegExFieldSpec(name, regex) =>
-          coll += MongoDBObject("type" -> "regex", "name" -> name, "regex" -> regex)
-      }
-      evaluateSpecOnRows(spec)
-    }
-  }
-
-  def loadSpecs() {
-    for (s <- state) {
-      for (dbo <- collFor(s.clusterId, "specs").find()){
-        dbo.as[String]("type") match {
-          case "regex" =>
-            val name = dbo.as[String]("name")
-            val regex = dbo.as[String]("regex")
-            specs += RegExFieldSpec(name,regex)
-        }
-      }
-    }
-  }
-
-
-  def editLabel(id: ObjectId, value: Double) {
-    setRowField(id, "edit", value)
-  }
-
-  def setProb(id: ObjectId, value: Double) {
-    setRowField(id, "prob", value)
-  }
-
-  def setRowField(id: ObjectId, name: String, value: Any) {
-    for (s <- state) {
-      val coll = collFor(s.clusterId, "rows")
-      val q = MongoDBObject("_id" -> id)
-      val set = MongoDBObject("$set" -> MongoDBObject(name -> value))
-      coll.update(q, set)
-    }
-
-  }
-
-
-
-
-}
 
 class ClusterManager
   extends Actor with HasLogger with ClusterPersistence with HasListeners with ProbabilisticModel {
@@ -225,7 +140,7 @@ class ClusterManager
   protected var state: Option[State] = None
 
   def createRowFromContent(content: String): Row = {
-    val fields = specs.map(s => s.name -> s.extract(content)).toMap
+    val fields = extractors.map(s => s.spec.name -> s.extract(content)).toMap
     val instance = RowInstance(content, fields)
     val row = Row(instance)
     row
@@ -236,11 +151,12 @@ class ClusterManager
 
       case SetCluster(id, _) =>
         state = Some(State(id))
+        loadDicts()
         loadSpecs()
 
       case GetAllRows =>
         val rows = loadRows()
-        self.reply(Rows(specs, rows))
+        self.reply(Rows(extractors.map(_.spec), rows))
 
       case AddRow(content) =>
         val row: Row = createRowFromContent(content)
@@ -271,6 +187,12 @@ class ClusterManager
       case GetModelSummary =>
         val summary = ModelSummary(prior, sigmaTrue.toMap, sigmaFalse.toMap)
         self.reply(summary)
+
+      case StoreDictionary(name,entries) =>
+        storeDict(name,entries)
+
+      case GetDictNames =>
+        self.reply(DictNames(dicts.map(_.name)))
 
     }
 

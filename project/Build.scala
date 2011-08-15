@@ -5,7 +5,7 @@ import com.github.siasia._
 
 object BuildSettings {
   val buildOrganization = "org.riedelcastro"
-  val buildVersion = "0.1"
+  val buildVersion = "0.1-SNAPSHOT"
   val buildScalaVersion = "2.9.0-1"
 
   val buildSettings = Defaults.defaultSettings ++ Seq(

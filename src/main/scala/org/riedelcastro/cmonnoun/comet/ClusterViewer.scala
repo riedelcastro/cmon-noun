@@ -24,6 +24,8 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
 
   private var specs: Seq[FieldSpec] = Seq.empty
 
+  private var dicts: Seq[String] = Seq.empty
+
   private var model: Box[ModelSummary] = Empty
 
   private var query: Box[Any] = Empty
@@ -57,9 +59,14 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
       for (s <- assignment) {
         s.manager ak_! ClusterManager.GetModelSummary
       }
+
     case m: ModelSummary =>
       model = Full(m)
       reRender()
+
+    case DictNames(names) =>
+      dicts = names
+
 
   }
 
@@ -85,6 +92,18 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     ).reduce(_ & _)
   }
 
+  def addDictFieldSpecBinding(a: Assignment) = {
+    var dictName: String = "dict"
+    var name: String = "Field" + (specs.size + 1)
+    Seq(
+      "#new_dict_spec_name" #> SHtml.text(name, name = _),
+      "#new_dict_spec_dict" #> SHtml.text(dictName, dictName = _),
+      "#new_dict_spec_submit" #> SHtml.submit("Add Dict Spec",
+        () => a.manager ! AddFieldSpec(DictFieldSpec(name, dictName)))
+    ).reduce(_ & _)
+  }
+
+
   def fileUploadBinding() = {
 
     var fileHolder: Box[FileParamHolder] = Empty
@@ -99,20 +118,53 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     }
 
     Seq(
-      "#file_upload" #> SHtml.fileUpload(fh=>fileHolder = Full(fh)),
+      "#file_upload" #> SHtml.fileUpload(fh => fileHolder = Full(fh)),
       "#file_upload_submit" #> SHtml.submit("Upload rows",
         () => upload())
     ).reduce(_ & _)
 
   }
 
+  def dictUploadBinding() = {
+
+    var fileHolder: Box[FileParamHolder] = Empty
+    var dictName: String = "dict"
+
+    def upload() {
+      for (paramHolder <- fileHolder;
+           a <- assignment) {
+        val bytes = paramHolder.file
+        val lines = Source.fromBytes(bytes).getLines()
+        def toEntry(line: String) = {
+          val split = line.trim().split("\t")
+          if (split.length == 2)
+            ClusterManager.DictEntry(split(0), split(1).toDouble)
+          else
+            ClusterManager.DictEntry(split(0), 1.0)
+        }
+        a.manager ak_! ClusterManager.StoreDictionary(dictName, lines.map(toEntry(_)))
+      }
+    }
+
+    Seq(
+      "#dict_upload_name" #> SHtml.text(dictName, dictName = _),
+      "#dict_upload" #> SHtml.fileUpload(fh => fileHolder = Full(fh)),
+      "#dict_upload_submit" #> SHtml.submit("Upload Dict",
+        () => upload())
+    ).reduce(_ & _)
+
+  }
+
+
   def render = {
     assignment match {
       case Full(a) =>
         Seq(
           addFieldSpecBinding(a),
+          addDictFieldSpecBinding(a),
           addContentBinding(a),
           fileUploadBinding(),
+          dictUploadBinding(),
 
           ".clusterName"
             #> a.clusterId,

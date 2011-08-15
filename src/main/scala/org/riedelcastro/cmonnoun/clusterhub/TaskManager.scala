@@ -71,7 +71,7 @@ class TaskManager extends Actor with MongoSupport with HasListeners with HasLogg
       coll.find().foreach(dbo => {
         for (id <- dbo._id) {
           val content = dbo.as[String]("content")
-          val result = spec.extract(content)
+          val result = true //spec.extract(content)
           val wr = coll.update(
             MongoDBObject("_id" -> id),
             MongoDBObject("$set" -> MongoDBObject(spec.name -> result)),false,true)
@@ -112,7 +112,7 @@ class TaskManager extends Actor with MongoSupport with HasListeners with HasLogg
       logger.debug("Received instance " + content)
       for (n <- taskName) {
         val coll = getInstancesColl(n)
-        val fields = fieldSpecs.map(s => s.name -> s.extract(content).asInstanceOf[AnyRef])
+        val fields = fieldSpecs.map(s => s.name -> "a")//s.extract(content).asInstanceOf[AnyRef])
         val instance = Instance(content,fields.toMap)
         coll += MongoDBObject(List("_id" -> instance.id, "content" -> instance.content) ++ fields.toList)
         informListeners(InstanceAdded(n, instance))

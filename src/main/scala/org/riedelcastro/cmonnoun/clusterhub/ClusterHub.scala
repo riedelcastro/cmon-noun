@@ -29,7 +29,6 @@ case class Instance(content: String, fields: Map[String, AnyRef], id: ObjectId =
 @Salat
 trait FieldSpec {
   def name: String
-  def extract(instance: String): Any
 }
 
 case class SpecHolder(spec: FieldSpec)
@@ -37,10 +36,13 @@ case class SpecHolder(spec: FieldSpec)
 case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   val r = regex.r
 
-  def extract(instance: String) = {
-    r.findFirstIn(instance).isDefined
-  }
 }
+
+case class DictFieldSpec(name: String, dictName: String) extends FieldSpec {
+
+}
+
+
 
 trait MongoSupport {
   def dbName: String = "clusterhub"
