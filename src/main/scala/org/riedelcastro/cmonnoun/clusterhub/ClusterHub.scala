@@ -29,17 +29,18 @@ case class Instance(content: String, fields: Map[String, AnyRef], id: ObjectId =
 @Salat
 trait FieldSpec {
   def name: String
+  def realValued:Boolean
 }
 
 case class SpecHolder(spec: FieldSpec)
 
 case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   val r = regex.r
-
+  def realValued = false
 }
 
 case class DictFieldSpec(name: String, dictName: String, gaussian:Boolean =false) extends FieldSpec {
-
+  def realValued = gaussian
 }
 
 

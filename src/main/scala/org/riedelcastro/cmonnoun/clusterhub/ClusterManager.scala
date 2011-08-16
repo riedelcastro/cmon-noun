@@ -74,9 +74,13 @@ case class RowLabel(prob: Double = 0.5,
                     edit: Double = 0.5,
                     penalty: Double = 0.0)
 
-case class ModelSummary(prior:Double, sigmaTrue:Map[FieldSpec,Double], sigmaFalse:Map[FieldSpec,Double])
+case class ModelSummary(prior:Double,
+                        sigmaTrue:Map[FieldSpec,Double],
+                        sigmaFalse:Map[FieldSpec,Double],
+                        gaussTrue:Map[FieldSpec,Double] = Map.empty,
+                        gaussFalse:Map[FieldSpec,Double] = Map.empty)
 
-
+//todo: make this ModelSummary(params:Map[FieldSpec,Param]) and have case class Gaussian2D, and case class Binomial2D
 
 
 
