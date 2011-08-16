@@ -21,7 +21,9 @@ object BuildSettings {
 object ShellPrompt {
   object devnull extends ProcessLogger {
     def info(s: => String) {}
+
     def error(s: => String) {}
+
     def buffer[T](f: => T): T = f
   }
   def currBranch = {
@@ -48,14 +50,15 @@ object ShellPrompt {
 object Resolvers {
   val allResolvers = Seq(
     DefaultMavenRepository,
-    //    "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository",
     "IESL third party" at "http://iesl.cs.umass.edu:8081/nexus/content/repositories/thirdparty/",
     "IESL snapshots" at "http://iesl.cs.umass.edu:8081/nexus/content/repositories/snapshots",
     "IESL releases" at "http://iesl.cs.umass.edu:8081/nexus/content/repositories/releases",
     "EBI" at "http://www.ebi.ac.uk/~maven/m2repo",
     "Novus Releases" at "http://repo.novus.com/releases/",
     "Novus Snapshots" at "http://repo.novus.com/snapshots/",
-    "Akka releases" at "http://akka.io/repository"
+    "Akka releases" at "http://akka.io/repository",
+    "Local Ivy Repository" at "file://" + Path.userHome.absolutePath + "/.ivy/local/default",
+    "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository"
   )
 }
 
@@ -77,7 +80,7 @@ object Dependencies {
   )
 
   val others = Seq(
-    "org.riedelcastro.nurupo" % "nurupo" % "0.1-SNAPSHOT",
+    "org.riedelcastro.nurupo" %% "nurupo" % "0.1-SNAPSHOT",
     "se.scalablesolutions.akka" % "akka-actor" % "1.0",
     "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT"
   )
