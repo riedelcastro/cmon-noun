@@ -121,8 +121,12 @@ trait ClusterPersistence extends MongoSupport {
         case regexSpec@RegExFieldSpec(name, regex) =>
           coll += MongoDBObject("type" -> "regex", "name" -> name, "regex" -> regex)
           new RegexExtractor(regexSpec)
-        case dictSpec@DictFieldSpec(name, dictName) =>
-          coll += MongoDBObject("type" -> "dict", "name" -> name, "dictName" -> dictName)
+        case dictSpec@DictFieldSpec(name, dictName,gaussian) =>
+          coll += MongoDBObject(
+            "type" -> "dict",
+            "name" -> name,
+            "dictName" -> dictName,
+            "gaussian" -> gaussian)
           val map = dicts.find(_.name == dictName).get.map
           new DictExtractor(dictSpec,map)
 

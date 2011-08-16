@@ -42,6 +42,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
       assignment = Full(Assignment(clusterId, manager))
       manager ak_! ClusterManager.GetAllRows
       manager ak_! ClusterManager.GetModelSummary
+      manager ak_! ClusterManager.GetDictNames
       manager ak_! RegisterListener(bridge)
       reRender()
 
@@ -64,8 +65,14 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
       model = Full(m)
       reRender()
 
+    case DictsChanged =>
+      for (s <- assignment) {
+        s.manager ak_! ClusterManager.GetDictNames
+      }
+
     case DictNames(names) =>
       dicts = names
+      reRender()
 
 
   }
@@ -93,13 +100,15 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
   }
 
   def addDictFieldSpecBinding(a: Assignment) = {
-    var dictName: String = "dict"
+    var gaussian = false
     var name: String = "Field" + (specs.size + 1)
+    var dict: String = "dict"
     Seq(
+      "#new_dict_spec_gaussian" #> SHtml.checkbox(gaussian, gaussian = _),
+      "#new_dict_spec_dicts" #> SHtml.select(dicts.map(m => m -> m), dicts.headOption, dict = _),
       "#new_dict_spec_name" #> SHtml.text(name, name = _),
-      "#new_dict_spec_dict" #> SHtml.text(dictName, dictName = _),
       "#new_dict_spec_submit" #> SHtml.submit("Add Dict Spec",
-        () => a.manager ! AddFieldSpec(DictFieldSpec(name, dictName)))
+        () => a.manager ! AddFieldSpec(DictFieldSpec(name, dict, gaussian)))
     ).reduce(_ & _)
   }
 

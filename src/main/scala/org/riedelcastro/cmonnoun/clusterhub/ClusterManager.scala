@@ -26,6 +26,7 @@ object ClusterManager {
   case object DoMStep
 
   case object GetDictNames
+  case object DictsChanged
   case class DictNames(names:Seq[String])
   case class StoreDictionary(name:String, entries:TraversableOnce[DictEntry])
 
@@ -51,6 +52,14 @@ class DictExtractor(val spec:DictFieldSpec, val dict:Map[String,Double]) extends
     score >= 1.0
   }
 }
+
+class DictScoreExtractor(val spec:DictFieldSpec, val dict:Map[String,Double]) extends FieldExtractor {
+  def extract(content: String) = {
+    val score = dict.getOrElse(content,0.0)
+    score
+  }
+}
+
 
 
 case class RowInstance(content: String,
@@ -190,6 +199,7 @@ class ClusterManager
 
       case StoreDictionary(name,entries) =>
         storeDict(name,entries)
+        informListeners(DictsChanged)
 
       case GetDictNames =>
         self.reply(DictNames(dicts.map(_.name)))

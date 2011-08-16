@@ -38,7 +38,7 @@ case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
 
 }
 
-case class DictFieldSpec(name: String, dictName: String) extends FieldSpec {
+case class DictFieldSpec(name: String, dictName: String, gaussian:Boolean =false) extends FieldSpec {
 
 }
 
