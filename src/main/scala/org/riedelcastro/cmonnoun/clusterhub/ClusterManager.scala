@@ -76,66 +76,7 @@ case class RowLabel(prob: Double = 0.5,
 
 case class ModelSummary(prior:Double, sigmaTrue:Map[FieldSpec,Double], sigmaFalse:Map[FieldSpec,Double])
 
-trait ProbabilisticModel {
 
-  this: ClusterManager =>
-
-  var prior = 0.5
-
-  class Sigma(init: Double = 0.5) extends HashMap[FieldSpec, Double]() {
-    override def default(key: FieldSpec) = init
-  }
-
-
-  val sigmaTrue = new Sigma(0.5)
-  val sigmaFalse = new Sigma(0.5)
-
-  def eStep() {
-    for (row <- loadRows()) {
-      var likelihoodTrue = prior
-      var likelihoodFalse = 1.0 - prior
-      for ((spec, p) <- sigmaTrue) {
-        val value = true == row.instance.fields(spec.name)
-        likelihoodTrue *= (if (value) p else 1.0 - p)
-        likelihoodFalse *= (if (value) 1.0 - p else p)
-      }
-      val normalizer = likelihoodTrue + likelihoodFalse
-      val prob = likelihoodTrue / normalizer
-      setProb(row.id, prob)
-    }
-  }
-
-  def mStep() {
-
-    val countsTrue = new Sigma(0.0)
-    val countsFalse = new Sigma(0.0)
-    var count = 0
-    var totalTrue = 0.0
-    for (row <- loadRows()) {
-      val prob = row.label.prob
-      val probUse = if (row.label.edit != 0.5) row.label.edit else prob
-      totalTrue += probUse
-      for (spec <- extractors) {
-        if (true == row.instance.fields(spec.spec.name)) {
-          countsTrue(spec.spec) = countsTrue(spec.spec) + probUse
-          countsFalse(spec.spec) = countsFalse(spec.spec) + 1.0 - probUse
-        }
-      }
-      count += 1
-    }
-    prior = totalTrue / count
-    for ((k,v) <- countsTrue) {
-      sigmaTrue(k) = v / totalTrue
-    }
-    for ((k,v) <- countsFalse) {
-      sigmaFalse(k) = v / (1.0 - totalTrue)
-    }
-
-
-  }
-
-  def prob(row: Row): Double = 1.0
-}
 
 
 
