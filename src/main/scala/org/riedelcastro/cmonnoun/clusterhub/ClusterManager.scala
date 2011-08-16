@@ -72,7 +72,11 @@ case class Row(instance: RowInstance,
 
 case class RowLabel(prob: Double = 0.5,
                     edit: Double = 0.5,
-                    penalty: Double = 0.0)
+                    penalty: Double = 0.0) {
+  def target:Double = {
+    if (edit != 0.5) edit else prob
+  }
+}
 
 case class ModelSummary(prior:Double,
                         sigmaTrue:Map[FieldSpec,Double],

@@ -65,6 +65,18 @@ trait ProbabilisticModel {
     }
   }
 
+  def evaluateLogLikelihood():Double = {
+    var result = 0.0
+    for (row <- loadRows()){
+      val target = row.label.target
+      for (extractor <- extractors) {
+        val value = row.instance.fields(extractor.spec.name)
+        result += 1.0
+      }
+    }
+    result
+  }
+
   def mStep() {
 
     val countsTrue = new Sigma(0.0)
