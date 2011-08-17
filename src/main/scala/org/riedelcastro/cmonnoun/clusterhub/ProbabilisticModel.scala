@@ -40,6 +40,14 @@ trait ProbabilisticModel {
   val sigmaTrue = new Sigma(0.5)
   val sigmaFalse = new Sigma(0.5)
 
+  def resetModel() {
+    gaussiansTrue.clear()
+    gaussiansFalse.clear()
+    sigmaTrue.clear()
+    sigmaFalse.clear()
+    prior = 0.5
+  }
+
   def eStep() {
     for (row <- loadRows()) {
       var likelihoodTrue = prior
@@ -130,7 +138,7 @@ trait ProbabilisticModel {
       sigmaTrue(k) = v / totalTrue
     }
     for ((k, v) <- countsFalse) {
-      sigmaFalse(k) = v / (1.0 - totalTrue)
+      sigmaFalse(k) = v / (count - totalTrue)
     }
 
 

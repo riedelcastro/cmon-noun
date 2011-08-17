@@ -33,6 +33,8 @@ object ClusterManager {
   case class DictEntry(key:String, score:Double = 1.0)
   case class Dict(name:String, map:Map[String,Double])
 
+  case object ResetModel
+
 }
 
 trait FieldExtractor {
@@ -152,6 +154,10 @@ class ClusterManager
 
       case GetDictNames =>
         self.reply(DictNames(dicts.map(_.name)))
+
+      case ResetModel =>
+        resetModel()
+        informListeners(ModelChanged)
 
     }
 

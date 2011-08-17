@@ -184,14 +184,23 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
           "#trigger_mstep"
             #> SHtml.ajaxButton("M-Step", () => {a.manager ak_! DoMStep; _Noop}),
 
+          "#reset_model"
+            #> SHtml.ajaxButton("Reset", () => {a.manager ak_! ResetModel; _Noop}),
+
           "#row_field_name *"
             #> specs.map(s => s.name),
 
           "#sigma_true *"
             #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s, 0.5).toString).getOrElse("N/A")),
 
-          "#prior *"
+          "#sigma_false *"
+            #> specs.map(s => model.map(m => m.sigmaFalse.getOrElse(s, 0.5).toString).getOrElse("N/A")),
+
+          "#prior_true *"
             #> model.map(m => m.prior.toString).getOrElse("N/A"),
+
+          "#prior_false *"
+            #> model.map(m => (1.0 - m.prior).toString).getOrElse("N/A"),
 
           "#row_body *"
             #> selection.map(r => Seq(
