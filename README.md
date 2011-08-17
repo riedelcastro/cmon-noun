@@ -4,7 +4,7 @@ Social and Collaborative Clustering.
 
 # Build
 
-Download sbt, run
+Install [sbt](https://github.com/harrah/xsbt/wiki), run
 
     sbt update compile
 
