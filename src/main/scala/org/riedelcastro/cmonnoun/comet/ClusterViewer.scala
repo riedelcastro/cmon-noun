@@ -40,7 +40,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
 
     case AssignedClusterManager(manager, clusterId) =>
       assignment = Full(Assignment(clusterId, manager))
-      manager ak_! ClusterManager.GetAllRows
+      manager ak_! ClusterManager.DoQuery(query)
       manager ak_! ClusterManager.GetModelSummary
       manager ak_! ClusterManager.GetDictNames
       manager ak_! RegisterListener(bridge)
@@ -53,7 +53,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
 
     case RowsChanged =>
       for (s <- assignment) {
-        s.manager ak_! ClusterManager.GetAllRows
+        s.manager ak_! ClusterManager.DoQuery(query)
       }
 
     case ModelChanged =>
