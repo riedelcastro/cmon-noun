@@ -18,6 +18,8 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     def s = "%1.3f".format(v)
   }
 
+  implicit def toString(v: Boolean) = v.toString()
+
   def cometType = "cluster"
 
   case class Assignment(clusterId: String, manager: ActorRef)
@@ -204,7 +206,8 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             #> SHtml.a(() => {
             query = query.copy(from = query.from - 10)
             a.manager ak_! DoQuery(query)
-          }, Text("prev")),
+            _Noop
+          }, Text("prev"), SHtml.BasicElemAttr("disabled", query.from <= 0)),
 
           "#next"
             #> SHtml.a(() => {
