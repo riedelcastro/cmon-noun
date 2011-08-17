@@ -35,7 +35,16 @@ object ClusterManager {
 
   case object ResetModel
 
+  case class DoQuery(query:Query)
+
+  sealed trait Sorting
+  case object SortByProb extends Sorting
+  case object SortByContent extends Sorting
+  case class Query(content:String,sorting:Sorting,from:Int, batchSize:Int,ascending:Boolean = false)
+
 }
+
+
 
 trait FieldExtractor {
   def spec:FieldSpec
@@ -158,6 +167,11 @@ class ClusterManager
       case ResetModel =>
         resetModel()
         informListeners(ModelChanged)
+
+      case DoQuery(query) =>
+        val rows = this.query(query)
+        self.reply(Rows(extractors.map(_.spec),rows))
+
 
     }
 

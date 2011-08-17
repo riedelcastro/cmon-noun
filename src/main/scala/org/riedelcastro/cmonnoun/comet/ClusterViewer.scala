@@ -28,7 +28,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
 
   private var model: Box[ModelSummary] = Empty
 
-  private var query: Box[Any] = Empty
+  private var query: Query = Query("", SortByProb, 0, 10, false)
 
 
   override def lowPriority = {
@@ -168,6 +168,9 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
   def render = {
     assignment match {
       case Full(a) =>
+
+        def queryFor(text: String) = ClusterManager.Query(text, SortByProb, 0, 10, false)
+
         Seq(
           addFieldSpecBinding(a),
           addDictFieldSpecBinding(a),
@@ -186,6 +189,12 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
 
           "#reset_model"
             #> SHtml.ajaxButton("Reset", () => {a.manager ak_! ResetModel; _Noop}),
+
+          "#row_search"
+            #> SHtml.ajaxText(query.content, t => {
+            query = queryFor(t)
+            a.manager ak_! DoQuery(query)
+          }),
 
           "#row_field_name *"
             #> specs.map(s => s.name),

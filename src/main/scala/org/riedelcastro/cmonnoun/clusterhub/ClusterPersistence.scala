@@ -3,10 +3,10 @@ package org.riedelcastro.cmonnoun.clusterhub
 import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
-import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
 import collection.mutable.{HashMap, ArrayBuffer}
-import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{Dict, DictEntry}
+import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{SortByContent, SortByProb, Dict, DictEntry}
+import com.mongodb.casbah.commons.MongoDBObject
 
 /**
  * @author sriedel
@@ -63,9 +63,15 @@ trait ClusterPersistence extends MongoSupport {
     }
   }
 
+  def collForRowsOfCluster(name: String): MongoCollection = {
+    val coll = collFor(name, "rows")
+    coll.ensureIndex(MongoDBObject("content" -> 1))
+    coll
+  }
   def addRow(row: Row) {
     for (s <- state) {
-      val coll = collFor(s.clusterId, "rows")
+      val name = s.clusterId
+      val coll = collForRowsOfCluster(name)
       val basic = List(
         "_id" -> row.id,
         "content" -> row.instance.content
@@ -84,8 +90,34 @@ trait ClusterPersistence extends MongoSupport {
 
   def loadRows(): TraversableOnce[Row] = {
     val opt = for (s <- state) yield {
-      val coll = collFor(s.clusterId, "rows")
+      val coll = collForRowsOfCluster(s.clusterId)
       for (dbo <- coll.find()) yield {
+        val id = dbo._id.get
+        val content = dbo.as[String]("content")
+        val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
+        val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
+        val fields = dbo.filterKeys(!reserved(_))
+        val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
+        val label = RowLabel(prob, edit)
+        val instance = RowInstance(content, renamed.toMap)
+        Row(instance, label, id)
+      }
+    }
+    opt.getOrElse(Seq.empty)
+  }
+
+  def query(query:ClusterManager.Query):TraversableOnce[Row] = {
+    val opt = for (s <- state) yield {
+      val coll = collForRowsOfCluster(s.clusterId)
+      val asc = if (query.ascending) 1 else -1
+      val sortOn = query.sorting match {
+        case SortByProb => "prob"
+        case SortByContent => "content"
+      }
+      val q = MongoDBObject("content" -> MongoDBObject("$regex" -> query.content))
+//      val q = MongoDBObject("content" -> ("^" + query.content))
+      val sort = MongoDBObject(sortOn -> asc)
+      for (dbo <- coll.find(q,null).sort(sort).skip(query.from).limit(query.batchSize)) yield {
         val id = dbo._id.get
         val content = dbo.as[String]("content")
         val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
@@ -135,6 +167,8 @@ trait ClusterPersistence extends MongoSupport {
       evaluateSpecOnRows(extractor)
     }
   }
+
+
 
   def loadSpecs() {
     for (s <- state) {
