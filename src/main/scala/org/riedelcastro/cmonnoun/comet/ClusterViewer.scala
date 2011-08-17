@@ -14,9 +14,9 @@ import io.Source
 
 class ClusterViewer extends CallMailboxFirst with HasLogger {
 
-  implicit def toStringable(v:Double) = new AnyRef {
-     def s = "%1.3f".format(v)
- }
+  implicit def toStringable(v: Double) = new AnyRef {
+    def s = "%1.3f".format(v)
+  }
 
   def cometType = "cluster"
 
@@ -199,6 +199,18 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             query = queryFor(t)
             a.manager ak_! DoQuery(query)
           }),
+
+          "#prev"
+            #> SHtml.a(() => {
+            query = query.copy(from = query.from - 10)
+            a.manager ak_! DoQuery(query)
+          }, Text("prev")),
+
+          "#next"
+            #> SHtml.a(() => {
+            query = query.copy(from = query.from + 10)
+            a.manager ak_! DoQuery(query)
+          }, Text("next")),
 
           "#row_field_name *"
             #> specs.map(s => s.name),
