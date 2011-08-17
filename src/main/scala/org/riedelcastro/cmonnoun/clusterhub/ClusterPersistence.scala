@@ -160,7 +160,11 @@ trait ClusterPersistence extends MongoSupport {
             "dictName" -> dictName,
             "gaussian" -> gaussian)
           val map = dicts.find(_.name == dictName).get.map
-          new DictExtractor(dictSpec,map)
+          gaussian match {
+            case true => new DictScoreExtractor(dictSpec,map)
+            case false => new DictExtractor(dictSpec,map)
+          }
+
 
       }
       extractors += extractor

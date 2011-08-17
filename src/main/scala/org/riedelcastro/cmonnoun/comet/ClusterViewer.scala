@@ -14,6 +14,10 @@ import io.Source
 
 class ClusterViewer extends CallMailboxFirst with HasLogger {
 
+  implicit def toStringable(v:Double) = new AnyRef {
+     def s = "%1.3f".format(v)
+ }
+
   def cometType = "cluster"
 
   case class Assignment(clusterId: String, manager: ActorRef)
@@ -200,23 +204,23 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             #> specs.map(s => s.name),
 
           "#sigma_true *"
-            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s, 0.5).toString).getOrElse("N/A")),
+            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s, 0.5).s).getOrElse("N/A")),
 
           "#sigma_false *"
-            #> specs.map(s => model.map(m => m.sigmaFalse.getOrElse(s, 0.5).toString).getOrElse("N/A")),
+            #> specs.map(s => model.map(m => m.sigmaFalse.getOrElse(s, 0.5).s).getOrElse("N/A")),
 
           "#prior_true *"
-            #> model.map(m => m.prior.toString).getOrElse("N/A"),
+            #> model.map(m => m.prior.s).getOrElse("N/A"),
 
           "#prior_false *"
-            #> model.map(m => (1.0 - m.prior).toString).getOrElse("N/A"),
+            #> model.map(m => (1.0 - m.prior).s).getOrElse("N/A"),
 
           "#row_body *"
             #> selection.map(r => Seq(
             ".content *" #> r.instance.content,
             ".field *" #> specs.map(s => r.instance.fields(s.name).toString),
-            ".prob *" #> r.label.prob.toString,
-            ".edit *" #> SHtml.ajaxText(r.label.edit.toString, t => {
+            ".prob *" #> r.label.prob.s,
+            ".edit *" #> SHtml.ajaxText(r.label.edit.s, t => {
               a.manager ak_! Edit(r.id, t.toDouble);
               logger.debug("Set to " + t)
             })
