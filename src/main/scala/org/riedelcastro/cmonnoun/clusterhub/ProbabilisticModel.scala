@@ -116,7 +116,7 @@ trait ProbabilisticModel {
     //normalize means
     for (extractor <- extractors; if (extractor.spec.realValued)) {
       gaussiansTrue(extractor.spec) = new Gaussian(gaussStatsTrue(extractor.spec).mean / totalTrue, 0.0)
-      gaussiansFalse(extractor.spec) = new Gaussian(gaussStatsFalse(extractor.spec).mean / (1.0 - totalTrue), 0.0)
+      gaussiansFalse(extractor.spec) = new Gaussian(gaussStatsFalse(extractor.spec).mean / (count - totalTrue), 0.0)
     }
 
     //now calculate variances
@@ -128,7 +128,7 @@ trait ProbabilisticModel {
         val diffTrue = gaussiansTrue(extractor.spec).mean - score
         val diffFalse = gaussiansFalse(extractor.spec).mean - score
         gaussiansTrue(extractor.spec).variance += diffTrue * diffTrue * probUse / totalTrue
-        gaussiansFalse(extractor.spec).variance += diffFalse * diffFalse * probUse / (1.0 - totalTrue)
+        gaussiansFalse(extractor.spec).variance += diffFalse * diffFalse * (1.0 - probUse) / (count - totalTrue)
       }
     }
 
