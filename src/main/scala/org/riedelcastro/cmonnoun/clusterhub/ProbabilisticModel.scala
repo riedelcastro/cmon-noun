@@ -14,6 +14,7 @@ trait ProbabilisticModel {
   this: ClusterManager =>
 
   var prior = 0.5
+  var logLikelihood = 0.0
 
   trait Distribution {
     def prob(value: Any): Double
@@ -59,7 +60,7 @@ trait ProbabilisticModel {
     prior = 0.5
   }
 
-  def probForLabel(row: Row): Double = {
+  def getLikelihoods(row: Row): (Double, Double) = {
     var likelihoodTrue = prior
     var likelihoodFalse = 1.0 - prior
     for ((spec, _) <- distributionsTrue) {
@@ -69,6 +70,12 @@ trait ProbabilisticModel {
       likelihoodTrue *= pTrue
       likelihoodFalse *= pFalse
     }
+    (likelihoodFalse, likelihoodTrue)
+  }
+  def probForLabel(row: Row): Double = {
+    val r = getLikelihoods(row)
+    var likelihoodFalse: Double = r._1
+    var likelihoodTrue: Double = r._2
 
     val normalizer = likelihoodTrue + likelihoodFalse
     val prob = likelihoodTrue / normalizer
@@ -85,11 +92,8 @@ trait ProbabilisticModel {
   def evaluateLogLikelihood(): Double = {
     var result = 0.0
     for (row <- loadRows()) {
-      val target = row.label.target
-      for (extractor <- extractors) {
-        val value = row.instance.fields(extractor.spec.name)
-        result += 1.0
-      }
+      val (lTrue, lFalse) = getLikelihoods(row)
+      result += math.log(row.label.prob * lTrue + (1.0 - row.label.prob) * lFalse)
     }
     result
   }
@@ -150,7 +154,6 @@ trait ProbabilisticModel {
     for ((k, _) <- statsFalse; if (!k.realValued)) {
       distributionsFalse.binomial(k).prob = statsFalse.binomial(k).prob / (count - totalTrue)
     }
-
 
   }
 

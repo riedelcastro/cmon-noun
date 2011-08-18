@@ -52,6 +52,10 @@ trait MongoSupport {
   def collFor(name: String, param: String): MongoCollection = {
     mongoDB(name + "_" + param)
   }
+  def collFor(prefix:String, name: String, param: String): MongoCollection = {
+    mongoDB(prefix + "_" + name + "_" + param)
+  }
+
 }
 
 case class RegisterListener(l: ActorRef)
@@ -100,6 +104,10 @@ object ClusterHub {
   case class GetTaskManager(taskName: String)
   case class GetClusterManager(clusterId: String)
   case class AssignedTaskManager(manager: Box[ActorRef])
+
+  case class GetCorpusManager(corpusId: String)
+  case class AssignedCorpusManager(manager: ActorRef, corpusId: String)
+
 }
 
 
@@ -112,6 +120,7 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
 
   private val taskManagers = new HashMap[String, ActorRef]
   private val clusterManagers = new HashMap[String, ActorRef]
+  private val corpusManagers = new HashMap[String, ActorRef]
 
 
   private val taskDefColl = mongoDB("tasks")
@@ -158,6 +167,10 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
         val manager: ActorRef = createManager(name)
         informListeners(TaskAdded(name, manager))
       }
+
+      case GetCorpusManager(id:String) =>
+        val manager = corpusManagers.getOrElseUpdate(id,Actors.actorOf(classOf[CorpusManager]).start())
+        self.reply(AssignedCorpusManager(manager,id))
 
       case CreateCluster(name) => {
         clusterDefColl += MongoDBObject("_id" -> name)

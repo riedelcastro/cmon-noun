@@ -6,6 +6,7 @@ import org.riedelcastro.cmonnoun.comet.Controller
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SetCorpus
 
 /**
  * @author sriedel
@@ -28,22 +29,25 @@ case class ClusterParam(taskName: String, clusterId: String)
 case object Noop
 class ClusterSnippet(val param: String) extends CometInitializer(
   "cluster",
-  param, SetCluster(param,Controller.clusterHub))
+  param, SetCluster(param, Controller.clusterHub))
+
+class CorpusSnippet(val param: String) extends CometInitializer("corpus", param, SetCorpus(param))
+
 
 class ClusterSnippet2(val param: ClusterParam) {
   def render = "#blah" #> param.toString
 }
 
 object CometInitializer {
-  def name(cometType:String,cometName:String) = cometType + "." + cometName
+  def name(cometType: String, cometName: String) = cometType + "." + cometName
 }
 
 abstract class CometInitializer[Param](cometId: String, cometName: String, msg: Any) {
 
-  Controller.mailbox ! Mailbox.LeaveMessage(CometInitializer.name(cometId,cometName), msg)
+  Controller.mailbox ! Mailbox.LeaveMessage(CometInitializer.name(cometId, cometName), msg)
 
   def render = {
-    "#%s [name]".format(cometId) #> CometInitializer.name(cometId,cometName)
+    "#%s [name]".format(cometId) #> CometInitializer.name(cometId, cometName)
   }
 
 }

@@ -46,10 +46,14 @@ class Boot {
       s => Full(s),
       pi => pi) / "cluster"
 
+    val corpus = Menu.param[String]("Corpora", "Corpora",
+      s => Full(s),
+      pi => pi) / "corpus"
+
 
     // Build SiteMap
     def sitemap() = SiteMap(
-      menu, cluster,
+      menu, cluster, corpus,
       Menu("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
       // Menu with special Link
       Menu(Loc("Static", Link(List("static"), true, "/static/index"),
