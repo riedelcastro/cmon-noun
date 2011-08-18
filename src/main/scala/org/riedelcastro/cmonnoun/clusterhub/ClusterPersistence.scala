@@ -4,9 +4,10 @@ import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
 import com.mongodb.casbah.Imports._
-import collection.mutable.{HashMap, ArrayBuffer}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{SortByContent, SortByProb, Dict, DictEntry}
 import com.mongodb.casbah.commons.MongoDBObject
+import collection.mutable.{HashSet, HashMap, ArrayBuffer}
+import java.util.Random
 
 /**
  * @author sriedel
@@ -105,6 +106,47 @@ trait ClusterPersistence extends MongoSupport {
     }
     opt.getOrElse(Seq.empty)
   }
+
+  def loadRow(dbo: DBObject): Row = {
+    val id = dbo._id.get
+    val content = dbo.as[String]("content")
+    val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
+    val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
+    val fields = dbo.filterKeys(!reserved(_))
+    val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
+    val label = RowLabel(prob, edit)
+    val instance = RowInstance(content, renamed.toMap)
+    Row(instance, label, id)
+  }
+  def randomRows(): TraversableOnce[Row] = {
+    val opt = for (s <- state) yield {
+      val coll = collForRowsOfCluster(s.clusterId)
+      val size = coll.size
+      val taken = new HashSet[ObjectId]
+      val takenRows = new ArrayBuffer[Row]
+      while (taken.size <= 10 && taken.size < size) {
+        val randomIndex = scala.util.Random.nextInt(size)
+        var dbo:DBObject = coll.find().skip(randomIndex).next()
+        var j = randomIndex + 1
+        //search forward until something is found
+        while (taken(dbo._id.get) && j < size) {
+          dbo = coll.find().skip(j).next()
+          j += 1
+        }
+        //search backward if nothing can be found
+        var i = randomIndex - 1
+        while (taken(dbo._id.get) && i >= 0) {
+          dbo = coll.find().skip(i).next()
+          i -= 1
+        }
+        taken += dbo._id.get
+        takenRows += loadRow(dbo)
+      }
+      takenRows
+    }
+    opt.getOrElse(Seq.empty)
+  }
+
 
   def query(query:ClusterManager.Query):TraversableOnce[Row] = {
     val opt = for (s <- state) yield {

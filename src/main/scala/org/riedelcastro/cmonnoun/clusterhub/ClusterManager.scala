@@ -36,6 +36,7 @@ object ClusterManager {
   case object ResetModel
 
   case class DoQuery(query:Query)
+  case object DoRandomQuery
 
   sealed trait Sorting
   case object SortByProb extends Sorting
@@ -92,8 +93,20 @@ case class RowLabel(prob: Double = 0.5,
 case class ModelSummary(prior:Double,
                         sigmaTrue:Map[FieldSpec,Double],
                         sigmaFalse:Map[FieldSpec,Double],
-                        gaussTrue:Map[FieldSpec,Double] = Map.empty,
-                        gaussFalse:Map[FieldSpec,Double] = Map.empty)
+                        gaussTrue:Map[FieldSpec,(Double,Double)] = Map.empty,
+                        gaussFalse:Map[FieldSpec,(Double,Double)] = Map.empty) {
+
+  def forTrue(spec:FieldSpec) = {
+    sigmaTrue.get(spec).map("%1.3f".format(_)).getOrElse(gaussTrue.get(spec).map(p => "%1.3f %1.3f".format(p._1,p._2)).getOrElse("N/A"))
+  }
+
+  def forFalse(spec:FieldSpec) = {
+    sigmaFalse.get(spec).map("%1.3f".format(_)).getOrElse(gaussFalse.get(spec).map(p => "%1.3f %1.3f".format(p._1,p._2)).getOrElse("N/A"))
+  }
+
+
+
+}
 
 //todo: make this ModelSummary(params:Map[FieldSpec,Param]) and have case class Gaussian2D, and case class Binomial2D
 
@@ -154,7 +167,9 @@ class ClusterManager
         informListeners(ModelChanged)
 
       case GetModelSummary =>
-        val summary = ModelSummary(prior, sigmaTrue.toMap, sigmaFalse.toMap)
+        val summary = ModelSummary(prior, sigmaTrue.toMap, sigmaFalse.toMap,
+          gaussiansTrue.map({case (s,g) => s -> (g.mean, g.variance)}).toMap,
+          gaussiansFalse.map({case (s,g) => s -> (g.mean, g.variance)}).toMap)
         self.reply(summary)
 
       case StoreDictionary(name,entries) =>
@@ -172,6 +187,9 @@ class ClusterManager
         val rows = this.query(query)
         self.reply(Rows(extractors.map(_.spec),rows))
 
+      case DoRandomQuery =>
+        val rows = randomRows()
+        self.reply(Rows(extractors.map(_.spec),rows))
 
     }
 

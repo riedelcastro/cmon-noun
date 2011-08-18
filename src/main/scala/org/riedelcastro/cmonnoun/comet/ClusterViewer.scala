@@ -202,6 +202,9 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             a.manager ak_! DoQuery(query)
           }),
 
+          "#random_search"
+            #> SHtml.ajaxButton("Random", () => {a.manager ak_! DoRandomQuery; _Noop}),
+
           "#prev"
             #> SHtml.a(() => {
             query = query.copy(from = query.from - 10)
@@ -219,10 +222,10 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
             #> specs.map(s => s.name),
 
           "#sigma_true *"
-            #> specs.map(s => model.map(m => m.sigmaTrue.getOrElse(s, 0.5).s).getOrElse("N/A")),
+            #> specs.map(s => model.map(m => m.forTrue(s)).getOrElse("N/A")),
 
           "#sigma_false *"
-            #> specs.map(s => model.map(m => m.sigmaFalse.getOrElse(s, 0.5).s).getOrElse("N/A")),
+            #> specs.map(s => model.map(m => m.forFalse(s)).getOrElse("N/A")),
 
           "#prior_true *"
             #> model.map(m => m.prior.s).getOrElse("N/A"),
