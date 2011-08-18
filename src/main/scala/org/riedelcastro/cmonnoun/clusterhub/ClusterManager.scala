@@ -167,9 +167,9 @@ class ClusterManager
         informListeners(ModelChanged)
 
       case GetModelSummary =>
-        val summary = ModelSummary(prior, sigmaTrue.toMap, sigmaFalse.toMap,
-          gaussiansTrue.map({case (s,g) => s -> (g.mean, g.variance)}).toMap,
-          gaussiansFalse.map({case (s,g) => s -> (g.mean, g.variance)}).toMap)
+        val summary = ModelSummary(prior,
+          distributionsTrue.binomialMap(), distributionsFalse.binomialMap(),
+          distributionsTrue.gaussianMap(), distributionsFalse.gaussianMap())
         self.reply(summary)
 
       case StoreDictionary(name,entries) =>

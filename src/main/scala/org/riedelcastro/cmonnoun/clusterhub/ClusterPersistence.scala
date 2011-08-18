@@ -227,7 +227,7 @@ trait ClusterPersistence extends MongoSupport {
           case "dict" =>
             val dictName = dbo.as[String]("dictName")
             val map = dicts.find(_.name == dictName).get.map
-            extractors += new DictExtractor(DictFieldSpec(name,dictName),map)
+            extractors += new DictExtractor(DictFieldSpec(name,dictName, dbo.as[Boolean]("gaussian")),map)
         }
       }
     }
