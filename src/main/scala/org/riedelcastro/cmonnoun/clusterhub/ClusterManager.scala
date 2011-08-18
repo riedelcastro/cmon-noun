@@ -24,6 +24,7 @@ object ClusterManager {
 
   case object DoEStep
   case object DoMStep
+  case class DoEM(iterations:Int)
 
   case object GetDictNames
   case object DictsChanged
@@ -165,6 +166,15 @@ class ClusterManager
       case DoMStep =>
         mStep()
         informListeners(ModelChanged)
+
+      case DoEM(iterations) =>
+        for (i <- 0 until iterations) {
+          mStep()
+          eStep()
+        }
+        informListeners(RowsChanged)
+        informListeners(ModelChanged)
+
 
       case GetModelSummary =>
         val summary = ModelSummary(prior,

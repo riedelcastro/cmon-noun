@@ -193,6 +193,9 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
           "#trigger_mstep"
             #> SHtml.ajaxButton("M-Step", () => {a.manager ak_! DoMStep; _Noop}),
 
+          "#do_em"
+            #> SHtml.ajaxButton("EM", () => {a.manager ak_! DoEM(5); _Noop}),
+
           "#reset_model"
             #> SHtml.ajaxButton("Reset", () => {a.manager ak_! ResetModel; _Noop}),
 
