@@ -8,6 +8,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{SortByContent, SortB
 import com.mongodb.casbah.commons.MongoDBObject
 import collection.mutable.{HashSet, HashMap, ArrayBuffer}
 import java.util.Random
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.TokenSpec
 
 /**
  * @author sriedel
@@ -66,6 +67,7 @@ trait ClusterPersistence extends MongoSupport {
 
   def collForRowsOfCluster(name: String): MongoCollection = {
     val coll = collFor(name, "rows")
+    coll.ensureIndex(MongoDBObject("doc" -> 1, "sentence" -> 1))
     coll.ensureIndex(MongoDBObject("content" -> 1))
     coll
   }
@@ -93,15 +95,7 @@ trait ClusterPersistence extends MongoSupport {
     val opt = for (s <- state) yield {
       val coll = collForRowsOfCluster(s.clusterId)
       for (dbo <- coll.find()) yield {
-        val id = dbo._id.get
-        val content = dbo.as[String]("content")
-        val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
-        val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
-        val fields = dbo.filterKeys(!reserved(_))
-        val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
-        val label = RowLabel(prob, edit)
-        val instance = RowInstance(content, renamed.toMap)
-        Row(instance, label, id)
+        loadRow(dbo)
       }
     }
     opt.getOrElse(Seq.empty)
@@ -113,10 +107,14 @@ trait ClusterPersistence extends MongoSupport {
     val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
     val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
     val fields = dbo.filterKeys(!reserved(_))
+    val docId = dbo.getAs[String]("doc").getOrElse("_own")
+    val sentenceIndex = dbo.getAs[Int]("sentence").getOrElse(0)
+    val tokenIndex = dbo.getAs[Int]("token").getOrElse(0)
     val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
     val label = RowLabel(prob, edit)
     val instance = RowInstance(content, renamed.toMap)
-    Row(instance, label, id)
+    val spec = TokenSpec(docId, sentenceIndex, tokenIndex)
+    Row(instance, label, id, spec)
   }
   def randomRows(): TraversableOnce[Row] = {
     val opt = for (s <- state) yield {
@@ -157,18 +155,9 @@ trait ClusterPersistence extends MongoSupport {
         case SortByContent => "content"
       }
       val q = MongoDBObject("content" -> MongoDBObject("$regex" -> query.content))
-//      val q = MongoDBObject("content" -> ("^" + query.content))
       val sort = MongoDBObject(sortOn -> asc)
       for (dbo <- coll.find(q,null).sort(sort).skip(query.from).limit(query.batchSize)) yield {
-        val id = dbo._id.get
-        val content = dbo.as[String]("content")
-        val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
-        val edit = dbo.getAs[Double]("edit").getOrElse(0.5)
-        val fields = dbo.filterKeys(!reserved(_))
-        val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
-        val label = RowLabel(prob, edit)
-        val instance = RowInstance(content, renamed.toMap)
-        Row(instance, label, id)
+        loadRow(dbo)
       }
     }
     opt.getOrElse(Seq.empty)

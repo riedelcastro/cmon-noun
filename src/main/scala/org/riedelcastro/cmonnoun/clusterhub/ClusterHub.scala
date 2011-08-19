@@ -17,6 +17,7 @@ import org.bson.types.ObjectId
 import com.mongodb.casbah.commons.MongoDBObject
 import akka.actor.{Actor, Actors, ActorRef}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SetCorpus
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
@@ -169,7 +170,11 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
       }
 
       case GetCorpusManager(id:String) =>
-        val manager = corpusManagers.getOrElseUpdate(id,Actors.actorOf(classOf[CorpusManager]).start())
+        val manager = corpusManagers.getOrElseUpdate(id,{
+          val actor = Actors.actorOf(classOf[CorpusManager]).start()
+          actor ! SetCorpus(id)
+          actor
+        })
         self.reply(AssignedCorpusManager(manager,id))
 
       case CreateCluster(name) => {

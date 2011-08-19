@@ -19,9 +19,7 @@ object CorpusManager {
   }
   trait Context
 
-  case class TokenSpec(index: Int) extends InstanceSpec[Sentence, Token] {
-    def instance(context: Sentence) = context.tokens.lift(index)
-  }
+  case class TokenSpec(docId:String, sentenceIndex: Int, tokenIndex:Int)
 
   case class TokenPairSpec(i: Int, j: Int) extends InstanceSpec[Sentence, TokenPair] {
     def instance(context: Sentence) = {
@@ -72,7 +70,7 @@ class CorpusManager extends Actor with MongoSupport with HasListeners {
       for (dbo <- coll.find().skip(q.from).limit(q.batchSize)) yield {
         val docId = dbo.as[String]("doc")
         val sentenceIndex = dbo.as[Int]("index")
-        val words = dbo.as[Seq[String]]("tokens")
+        val words = dbo.as[BasicDBList]("tokens").toSeq.map(_.toString)
         val tokens = words.zipWithIndex.map({case (w, i) => Token(i, w)})
         Sentence(docId, sentenceIndex, tokens)
       }

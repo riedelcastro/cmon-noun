@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
 import collection.mutable.HashMap
-
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{TokenSpec, InstanceSpec}
 
 /**
  * @author sriedel
@@ -44,6 +44,11 @@ object ClusterManager {
   case object SortByContent extends Sorting
   case class Query(content:String,sorting:Sorting,from:Int, batchSize:Int,ascending:Boolean = false)
 
+  /**
+   * Get the rows that label the given instances.
+   */
+  case class GetRowsForInstances(instances:Seq[String])
+
 }
 
 
@@ -81,7 +86,8 @@ case class RowInstance(content: String,
 
 case class Row(instance: RowInstance,
                label: RowLabel = RowLabel(),
-               id: ObjectId = new ObjectId())
+               id: ObjectId = new ObjectId(),
+               spec:TokenSpec = TokenSpec("blah", 0, 0))
 
 case class RowLabel(prob: Double = 0.5,
                     edit: Double = 0.5,
