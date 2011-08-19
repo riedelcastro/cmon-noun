@@ -19,7 +19,8 @@ object CorpusManager {
   }
   trait Context
 
-  case class TokenSpec(docId:String, sentenceIndex: Int, tokenIndex:Int)
+  case class TokenSpec(sentence:SentenceSpec, tokenIndex:Int)
+  case class SentenceSpec(docId:String, sentenceIndex:Int)
 
   case class TokenPairSpec(i: Int, j: Int) extends InstanceSpec[Sentence, TokenPair] {
     def instance(context: Sentence) = {

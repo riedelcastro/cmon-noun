@@ -8,7 +8,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{SortByContent, SortB
 import com.mongodb.casbah.commons.MongoDBObject
 import collection.mutable.{HashSet, HashMap, ArrayBuffer}
 import java.util.Random
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.TokenSpec
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{SentenceSpec, TokenSpec}
 
 /**
  * @author sriedel
@@ -101,6 +101,14 @@ trait ClusterPersistence extends MongoSupport {
     opt.getOrElse(Seq.empty)
   }
 
+  def loadRowsForSentence(docId:String, sentenceIndex:Int) = {
+    for (s <- state) yield {
+      val q = MongoDBObject("doc" -> docId, "sentence" -> sentenceIndex)
+      val coll = collForRowsOfCluster(s.clusterId)
+      for (dbo <- coll.find(q)) yield loadRow(dbo)
+    }
+  }
+
   def loadRow(dbo: DBObject): Row = {
     val id = dbo._id.get
     val content = dbo.as[String]("content")
@@ -113,7 +121,7 @@ trait ClusterPersistence extends MongoSupport {
     val renamed = fields.map({case (k, v) => fromMongoFieldName(k) -> v})
     val label = RowLabel(prob, edit)
     val instance = RowInstance(content, renamed.toMap)
-    val spec = TokenSpec(docId, sentenceIndex, tokenIndex)
+    val spec = TokenSpec(SentenceSpec(docId, sentenceIndex), tokenIndex)
     Row(instance, label, id, spec)
   }
   def randomRows(): TraversableOnce[Row] = {

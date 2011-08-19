@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
 import collection.mutable.HashMap
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{TokenSpec, InstanceSpec}
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{SentenceSpec, TokenSpec, InstanceSpec}
 
 /**
  * @author sriedel
@@ -16,7 +16,7 @@ object ClusterManager {
   case class Rows(specs: Seq[FieldSpec], rows: TraversableOnce[Row])
   case object Train
   case class AddRow(content: String)
-  case class AddRowBatch(rows:TraversableOnce[String])
+  case class AddRowBatch(rows: TraversableOnce[String])
   case class AddFieldSpec(spec: FieldSpec)
   case object RowsChanged
   case object ModelChanged
@@ -24,60 +24,58 @@ object ClusterManager {
 
   case object DoEStep
   case object DoMStep
-  case class DoEM(iterations:Int)
+  case class DoEM(iterations: Int)
 
   case object GetDictNames
   case object DictsChanged
-  case class DictNames(names:Seq[String])
-  case class StoreDictionary(name:String, entries:TraversableOnce[DictEntry])
+  case class DictNames(names: Seq[String])
+  case class StoreDictionary(name: String, entries: TraversableOnce[DictEntry])
 
-  case class DictEntry(key:String, score:Double = 1.0)
-  case class Dict(name:String, map:Map[String,Double])
+  case class DictEntry(key: String, score: Double = 1.0)
+  case class Dict(name: String, map: Map[String, Double])
 
   case object ResetModel
 
-  case class DoQuery(query:Query)
+  case class DoQuery(query: Query)
   case object DoRandomQuery
 
   sealed trait Sorting
   case object SortByProb extends Sorting
   case object SortByContent extends Sorting
-  case class Query(content:String,sorting:Sorting,from:Int, batchSize:Int,ascending:Boolean = false)
+  case class Query(content: String, sorting: Sorting, from: Int, batchSize: Int, ascending: Boolean = false)
 
   /**
    * Get the rows that label the given instances.
    */
-  case class GetRowsForInstances(instances:Seq[String])
+  case class GetRowsForSentences(instances: Seq[SentenceSpec])
 
 }
-
 
 
 trait FieldExtractor {
-  def spec:FieldSpec
-  def extract(content:String):Any
+  def spec: FieldSpec
+  def extract(content: String): Any
 }
 
-class RegexExtractor(val spec:RegExFieldSpec) extends FieldExtractor {
+class RegexExtractor(val spec: RegExFieldSpec) extends FieldExtractor {
   def extract(content: String) = {
     spec.r.findFirstIn(content).isDefined
   }
 }
 
-class DictExtractor(val spec:DictFieldSpec, val dict:Map[String,Double]) extends FieldExtractor {
+class DictExtractor(val spec: DictFieldSpec, val dict: Map[String, Double]) extends FieldExtractor {
   def extract(content: String) = {
-    val score = dict.getOrElse(content,0.0)
+    val score = dict.getOrElse(content, 0.0)
     score >= 1.0
   }
 }
 
-class DictScoreExtractor(val spec:DictFieldSpec, val dict:Map[String,Double]) extends FieldExtractor {
+class DictScoreExtractor(val spec: DictFieldSpec, val dict: Map[String, Double]) extends FieldExtractor {
   def extract(content: String) = {
-    val score = dict.getOrElse(content,0.0)
+    val score = dict.getOrElse(content, 0.0)
     score
   }
 }
-
 
 
 case class RowInstance(content: String,
@@ -87,36 +85,34 @@ case class RowInstance(content: String,
 case class Row(instance: RowInstance,
                label: RowLabel = RowLabel(),
                id: ObjectId = new ObjectId(),
-               spec:TokenSpec = TokenSpec("blah", 0, 0))
+               spec: TokenSpec = TokenSpec(SentenceSpec("blah", 0), 0))
 
 case class RowLabel(prob: Double = 0.5,
                     edit: Double = 0.5,
                     penalty: Double = 0.0) {
-  def target:Double = {
+  def target: Double = {
     if (edit != 0.5) edit else prob
   }
 }
 
-case class ModelSummary(prior:Double,
-                        sigmaTrue:Map[FieldSpec,Double],
-                        sigmaFalse:Map[FieldSpec,Double],
-                        gaussTrue:Map[FieldSpec,(Double,Double)] = Map.empty,
-                        gaussFalse:Map[FieldSpec,(Double,Double)] = Map.empty) {
+case class ModelSummary(prior: Double,
+                        sigmaTrue: Map[FieldSpec, Double],
+                        sigmaFalse: Map[FieldSpec, Double],
+                        gaussTrue: Map[FieldSpec, (Double, Double)] = Map.empty,
+                        gaussFalse: Map[FieldSpec, (Double, Double)] = Map.empty) {
 
-  def forTrue(spec:FieldSpec) = {
-    sigmaTrue.get(spec).map("%1.3f".format(_)).getOrElse(gaussTrue.get(spec).map(p => "%1.3f %1.3f".format(p._1,p._2)).getOrElse("N/A"))
+  def forTrue(spec: FieldSpec) = {
+    sigmaTrue.get(spec).map("%1.3f".format(_)).getOrElse(gaussTrue.get(spec).map(p => "%1.3f %1.3f".format(p._1, p._2)).getOrElse("N/A"))
   }
 
-  def forFalse(spec:FieldSpec) = {
-    sigmaFalse.get(spec).map("%1.3f".format(_)).getOrElse(gaussFalse.get(spec).map(p => "%1.3f %1.3f".format(p._1,p._2)).getOrElse("N/A"))
+  def forFalse(spec: FieldSpec) = {
+    sigmaFalse.get(spec).map("%1.3f".format(_)).getOrElse(gaussFalse.get(spec).map(p => "%1.3f %1.3f".format(p._1, p._2)).getOrElse("N/A"))
   }
-
 
 
 }
 
 //todo: make this ModelSummary(params:Map[FieldSpec,Param]) and have case class Gaussian2D, and case class Binomial2D
-
 
 
 class ClusterManager
@@ -188,8 +184,8 @@ class ClusterManager
           distributionsTrue.gaussianMap(), distributionsFalse.gaussianMap())
         self.reply(summary)
 
-      case StoreDictionary(name,entries) =>
-        storeDict(name,entries)
+      case StoreDictionary(name, entries) =>
+        storeDict(name, entries)
         informListeners(DictsChanged)
 
       case GetDictNames =>
@@ -201,12 +197,17 @@ class ClusterManager
 
       case DoQuery(query) =>
         val rows = this.query(query)
-        self.reply(Rows(extractors.map(_.spec),rows))
+        self.reply(Rows(extractors.map(_.spec), rows))
 
       case DoRandomQuery =>
         val rows = randomRows()
-        self.reply(Rows(extractors.map(_.spec),rows))
+        self.reply(Rows(extractors.map(_.spec), rows))
 
+      case GetRowsForSentences(sentences) =>
+        val result = for (s <- sentences;
+                          rows <- loadRowsForSentence(s.docId, s.sentenceIndex).toSeq;
+                          row <- rows) yield row
+        self.reply(Rows(extractors.map(_.spec), result))
     }
 
   }
