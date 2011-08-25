@@ -202,7 +202,9 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
         val created = manager match {
           case None =>
             createCluster(name)
-            initializeCluster(name)
+            val m = initializeCluster(name)
+            informListeners(ClusterAdded(name, m))
+            m
           case Some(m) =>
             m
         }

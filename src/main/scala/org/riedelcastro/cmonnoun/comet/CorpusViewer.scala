@@ -83,7 +83,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
       }
     }
     val addLabelText = "#add_label_text" #> SHtml.text(clusterName, clusterName = _)
-    val addLabelSubmit = "#add_label_submit" #> SHtml.submit("Add", () => labelToken())
+    val addLabelSubmit = "#add_label_submit" #> SHtml.submit("Add Cluster", () => labelToken())
     val sentenceAdd = corpusManager match {
       case None => "#sentence_field" #> ""
       case Some(m) => Seq(

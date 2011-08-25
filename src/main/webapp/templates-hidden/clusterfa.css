@@ -1,0 +1,29 @@
+.stdtable {
+    border-top:1px solid #d8d8d8;
+    border-left:1px solid #d8d8d8;
+    border-right:1px solid #d8d8d8;
+    width:920px;
+    font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+    font-size:90%;
+    margin:0;
+    margin-bottom:1em;
+}
+
+.stdtable th{
+    text-align:left;font-weight:normal;background-color:#eaeaea;color:#999;padding:.5em .3em;border-bottom:1px solid #d8d8d8;}
+.stdtable .history{
+    float:right;padding-right:5px;}
+.stdtable td{
+    background:#f8f8f8 url('row_bg.png') 0 100% repeat-x;padding:.5em .3em;color:#484848;border-bottom:1px solid #e1e1e1;}
+.stdtable tr.current td{
+    background:none;background-color:#fffeeb;}
+.stdtable td.icon{
+    width:1.3em;}
+.stdtable td a.message{
+    color:#484848;}
+.stdtable td span.ref{
+    color:#aaa;}
+.stdtable.downloads td{
+    vertical-align:top;}
+.stdtable.downloads td p{
+    margin:0;padding:0;}

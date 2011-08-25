@@ -3,7 +3,9 @@
     <div class="lift:ClusterSnippet">
 
         <lift:comet id="cluster" type="ClusterViewer" name="replaceme">
-            <h2>Cluster <div class="clusterName"></div></h2>
+            <h2>Cluster
+                <div class="clusterName"></div>
+            </h2>
             <form method="get">
                 <div id="new_content"></div>
                 <div id="new_content_submit"></div>
@@ -16,7 +18,8 @@
             <form method="get">
                 <div id="new_dict_spec_name"></div>
                 <div id="new_dict_spec_dicts"></div>
-                Gaussian?<div id="new_dict_spec_gaussian"></div>
+                Gaussian?
+                <div id="new_dict_spec_gaussian"></div>
                 <div id="new_dict_spec_submit"></div>
             </form>
 
@@ -41,43 +44,45 @@
             </div>
 
             <!--<div class="clusterName"></div>-->
-            <table>
-                <thead>
-                <tr>
-                    <td></td>
-                    <td id="row_field_name"></td>
-                    <td>Probability</td>
-                    <td>Edit</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td id="sigma_true"></td>
-                    <td id="prior_true"></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td id="sigma_false"></td>
-                    <td id="prior_false"></td>
-                    <td></td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr id="row_body">
-                    <td class="content">Content Value</td>
-                    <td class="field">Field Value</td>
-                    <td class="prob">Prob Value</td>
-                    <td class="edit">Edit Value</td>
-                </tr>
-                </tbody>
-            </table>
+            <div>
+                <table class="stdtable" cellpadding="0" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <td></td>
+                        <td id="sigma_true"></td>
+                        <td id="prior_true"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td id="sigma_false"></td>
+                        <td id="prior_false"></td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="header">
+                        <th></th>
+                        <th id="row_field_name"></th>
+                        <th>Probability</th>
+                        <th>Edit</th>
+                    </tr>
+                    <tr id="row_body">
+                        <td class="content">Content Value</td>
+                        <td class="field">Field Value</td>
+                        <td class="prob">Prob Value</td>
+                        <td class="edit">Edit Value</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <div id="prev"></div> <div id="next"></div>
+            <div id="prev"></div>
+            <div id="next"></div>
 
         </lift:comet>
 
     </div>
-
 
 
 </div>
