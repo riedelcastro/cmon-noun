@@ -13,10 +13,10 @@ object ClusterManager {
   case class SetCluster(id: String, hub: ActorRef)
   case object GetAllRows
   case object GetModelSummary
-  case class Rows(specs: Seq[FieldSpec], rows: TraversableOnce[Row])
+  case class Rows(specs: Seq[FieldSpec], rows: TraversableOnce[Row], cluster: String = null)
   case object Train
   case class AddRow(content: String)
-  case class AddToken(spec: TokenSpec, sentence:Sentence)
+  case class AddToken(spec: TokenSpec, sentence: Sentence)
   case class AddRowBatch(rows: TraversableOnce[String])
   case class AddFieldSpec(spec: FieldSpec)
   case object RowsChanged
@@ -55,6 +55,7 @@ object ClusterManager {
 
 trait FieldExtractor {
   def spec: FieldSpec
+
   def extract(content: String): Any
 }
 
@@ -125,12 +126,13 @@ class ClusterManager
 
   protected var state: Option[State] = None
 
-  def createRowFromContent(content: String, spec:TokenSpec=null): Row = {
+  def createRowFromContent(content: String, spec: TokenSpec = null): Row = {
     val fields = extractors.map(s => s.spec.name -> s.extract(content)).toMap
     val instance = RowInstance(content, fields)
-    val row = Row(instance, spec=spec)
+    val row = Row(instance, spec = spec)
     row
   }
+
   protected def receive = {
 
     receiveListeners.orElse {
@@ -141,16 +143,18 @@ class ClusterManager
         loadSpecs()
 
       case GetAllRows =>
-        val rows = loadRows()
-        self.reply(Rows(extractors.map(_.spec), rows))
+        for (s <- state) {
+          val rows = loadRows()
+          self.reply(Rows(extractors.map(_.spec), rows, s.clusterId))
+        }
 
       case AddRow(content) =>
         val row: Row = createRowFromContent(content)
         addRow(row)
         informListeners(RowsChanged)
 
-      case AddToken(spec,sent) =>
-        for (token <- sent.token(spec)){
+      case AddToken(spec, sent) =>
+        for (token <- sent.token(spec)) {
           val content = token.word
           val row = createRowFromContent(content, spec)
           addRow(row)
@@ -206,19 +210,26 @@ class ClusterManager
         informListeners(ModelChanged)
 
       case DoQuery(query) =>
-        val rows = this.query(query)
-        self.reply(Rows(extractors.map(_.spec), rows))
+        for (s <- state) {
+          val rows = this.query(query)
+          self.reply(Rows(extractors.map(_.spec), rows, s.clusterId))
+        }
 
       case DoRandomQuery =>
-        val rows = randomRows()
-        self.reply(Rows(extractors.map(_.spec), rows))
+        for (s <- state) {
+          val rows = randomRows()
+          self.reply(Rows(extractors.map(_.spec), rows, s.clusterId))
+        }
 
       case GetRowsForSentences(sentences) =>
-        val result = for (s <- sentences;
-                          rows <- loadRowsForSentence(s.docId, s.sentenceIndex).toSeq;
-                          row <- rows) yield row
-        self.reply(Rows(extractors.map(_.spec), result))
+        for (s <- state) {
+          val result = for (s <- sentences;
+                            rows <- loadRowsForSentence(s.docId, s.sentenceIndex).toSeq;
+                            row <- rows) yield row
+          self.reply(Rows(extractors.map(_.spec), result, s.clusterId))
+        }
     }
+
 
   }
 }

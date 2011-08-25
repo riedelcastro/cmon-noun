@@ -52,7 +52,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
       manager ak_! RegisterListener(bridge)
       reRender()
 
-    case Rows(s, r) =>
+    case Rows(s, r, _) =>
       specs = s
       selection = r.toSeq
       reRender()

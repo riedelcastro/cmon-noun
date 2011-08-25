@@ -16,8 +16,8 @@ import com.novus.salat.global._
 import org.bson.types.ObjectId
 import com.mongodb.casbah.commons.MongoDBObject
 import akka.actor.{Actor, Actors, ActorRef}
-import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
 import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SetCorpus
+import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{GetRowsForSentences, SetCluster}
 
 class MutableClusterTask(var name: String) {
   val instances = new ArrayBuffer[Instance]
@@ -220,6 +220,13 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
       case GetTaskNames => {
         val names = taskNames()
         self.reply(TaskNames(names))
+      }
+
+      case g@GetRowsForSentences(sentences) => {
+        //todo: be more clever here, ask only subsets of clusters registered to serve the sentences
+        for (manager <- clusterManagers.values){
+          manager.forward(g)
+        }
       }
 
     }

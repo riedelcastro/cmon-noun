@@ -7,9 +7,10 @@ import org.riedelcastro.cmonnoun.clusterhub.CorpusManager._
 import net.liftweb.util.CssSel
 import net.liftweb.http.js.JsCmds.{Replace, SetHtml, _Noop}
 import xml.{Elem, Text}
-import collection.mutable.HashMap
-import org.riedelcastro.cmonnoun.clusterhub.{ClusterManager, ClusterHub, RegisterListener}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{AssignedClusterManager, GetCorpusManager, AssignedCorpusManager}
+import org.riedelcastro.cmonnoun.clusterhub.{Row, ClusterManager, ClusterHub, RegisterListener}
+import collection.mutable.{MultiMap, HashMap}
+import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{GetRowsForSentences, Rows}
 
 /**
  * @author sriedel
@@ -26,6 +27,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
   var tokenSelection: Option[TokenSelection] = None
   var selectedTokenSpec: Option[TokenSpec] = None
   var selectedToken: Option[Token] = None
+  val token2rows = new HashMap[TokenSpec,scala.collection.mutable.Set[Row]] with MultiMap[TokenSpec,Row]
 
   var added = 0
 
@@ -106,6 +108,12 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
 
   }
 
+  def orderAnnotationsForSentences() {
+    for (sents <- sentences){
+      //call cluster managers or hub to get all annotations for the given sentences
+    }
+  }
+
   override def lowPriority = {
 
     case SetCorpus(id) =>
@@ -121,13 +129,20 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
       reRender()
 
     case Sentences(s) =>
-      sentences = Some(s.toSeq)
+      val sents = s.toSeq
+      sentences = Some(sents)
+      Controller.clusterHub ak_! GetRowsForSentences(sents.map(_.sentenceSpec))
       reRender()
 
     case SentenceAdded(s) =>
       for (m <- corpusManager)
         m ak_! SentenceQuery("", 0, 10)
 
+    case Rows(specs,rows, clusterId) =>
+      for (row <- rows) {
+        token2rows.addBinding(row.spec,row)
+      }
+      //create
 
   }
 }

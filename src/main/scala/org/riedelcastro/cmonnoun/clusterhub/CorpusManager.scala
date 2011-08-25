@@ -3,6 +3,7 @@ package org.riedelcastro.cmonnoun.clusterhub
 import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SentenceSpec
 
 
 /**
@@ -13,6 +14,7 @@ object CorpusManager {
   case class Token(index: Int, word: String)
   case class TokenPair(i: Token, j: Token)
   case class Sentence(docId: String, indexInDoc: Int, tokens: Seq[Token]) extends Context {
+    lazy val sentenceSpec = SentenceSpec(docId,indexInDoc)
     def token(spec:TokenSpec):Option[Token] = {
       if (spec.sentence.docId == docId && spec.sentence.sentenceIndex == indexInDoc)
         tokens.lift(spec.tokenIndex)
