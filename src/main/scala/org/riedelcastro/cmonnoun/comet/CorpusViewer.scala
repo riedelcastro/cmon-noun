@@ -2,12 +2,14 @@ package org.riedelcastro.cmonnoun.comet
 
 import org.riedelcastro.nurupo.HasLogger
 import akka.actor.ActorRef
-import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{GetCorpusManager, AssignedCorpusManager}
 import net.liftweb.http.SHtml
 import org.riedelcastro.cmonnoun.clusterhub.CorpusManager._
-import net.liftweb.http.js.JsCmds.{SetHtml, _Noop}
 import net.liftweb.util.CssSel
-import org.riedelcastro.cmonnoun.clusterhub.RegisterListener
+import net.liftweb.http.js.JsCmds.{Replace, SetHtml, _Noop}
+import xml.{Elem, Text}
+import collection.mutable.HashMap
+import org.riedelcastro.cmonnoun.clusterhub.{ClusterManager, ClusterHub, RegisterListener}
+import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{AssignedClusterManager, GetCorpusManager, AssignedCorpusManager}
 
 /**
  * @author sriedel
@@ -19,18 +21,69 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
   var corpusId: Option[String] = None
   var query: Option[SentenceQuery] = None
   var sentences: Option[Seq[Sentence]] = None
-  var clusters:Option[Seq[ActorRef]] = None
+  var clusters: Option[Seq[ActorRef]] = None
+  case class TokenSelection(spec: TokenSpec, token: Token, localSentenceIndex: Int)
+  var tokenSelection: Option[TokenSelection] = None
+  var selectedTokenSpec: Option[TokenSpec] = None
+  var selectedToken: Option[Token] = None
+
+  var added = 0
+
+  def toId(tokenSpec: TokenSpec) = {
+    "%s_%d_%d".format(tokenSpec.sentence.docId, tokenSpec.sentence.sentenceIndex, tokenSpec.tokenIndex)
+  }
+
+
+  def tokenLink(localSentence: Int, token: Token, spec: TokenSpec, selected: Boolean, default: Elem = null): Elem = {
+    val id = toId(spec)
+    val clazz = if (selected) "selected" else "normal"
+    var result: Elem = null
+    result = SHtml.a(() => {
+      if (!selected) {
+        val undo = tokenSelection match {
+          case Some(TokenSelection(s, t, i)) => Replace(toId(s), tokenLink(i, t, s, false, result))
+          case None => _Noop
+        }
+        tokenSelection = Some(TokenSelection(spec, token, localSentence))
+        undo & Replace(id, tokenLink(localSentence, token, spec, true, result))
+      } else {
+        tokenSelection = None
+        Replace(id, default)
+      }
+    }, Text(token.word), SHtml.BasicElemAttr("id", id), SHtml.BasicElemAttr("class", clazz))
+    result
+  }
 
   def perSentenceBinding(sents: scala.Seq[Sentence]): Seq[CssSel] = {
-    sents.map(s => Seq(
-      ".sentence_id *" #> s.docId,
-      ".sentence_tokens *" #> s.tokens.map(_.word).mkString(" ")
-    ).reduce(_ & _)
-    )
+    sents.zipWithIndex.map({
+      case (s, index) => Seq(
+        ".sentence_id *" #> s.docId,
+        ".sentence_token *" #> s.tokens.map(t => {
+          val spec = TokenSpec(SentenceSpec(s.docId, s.indexInDoc), t.index)
+          tokenLink(index, t, spec, false)
+        })
+        //      ".sentence_tokens *" #> s.tokens.map(_.word).mkString(" ")
+      ).reduce(_ & _)
+    })
   }
+
   def render = {
     var sentenceToAdd = "Enter sentence here"
     val corpusName = ".corpus_name" #> corpusId.getOrElse("No Name")
+    var clusterName: String = ""
+    def labelToken() {
+      //need to get cluster manager
+      for (TokenSelection(spec, token, localSentence) <- tokenSelection;
+           sents <- sentences) {
+        val manager = Controller.clusterHub ak_!! ClusterHub.GetOrCreateClusterManager(clusterName)
+        for (AssignedClusterManager(m, c) <- manager) {
+          val sentence = sents(localSentence)
+          m ak_!! ClusterManager.AddToken(spec, sentence)
+        }
+      }
+    }
+    val addLabelText = "#add_label_text" #> SHtml.text(clusterName, clusterName = _)
+    val addLabelSubmit = "#add_label_submit" #> SHtml.submit("Add", () => labelToken())
     val sentenceAdd = corpusManager match {
       case None => "#sentence_field" #> ""
       case Some(m) => Seq(
@@ -38,7 +91,8 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
         "#sentence_submit" #> SHtml.ajaxButton("Add Sentence", () => {
           val tokenized = sentenceToAdd.split(" ")
           val tokens = tokenized.zipWithIndex.map({case (w, i) => Token(i, w)})
-          val sentence = Sentence("web", 0, tokens)
+          val sentence = Sentence("web", added, tokens)
+          added += 1
           m ak_! StoreSentence(sentence)
           _Noop
         })
@@ -48,7 +102,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
       case None => "#sentences" #> "No sentences available"
       case Some(sents) => ".sentence" #> perSentenceBinding(sents)
     }
-    Seq(corpusName, sentenceAdd, sentencesBinding).reduce(_ & _)
+    Seq(addLabelText, addLabelSubmit, corpusName, sentenceAdd, sentencesBinding).reduce(_ & _)
 
   }
 

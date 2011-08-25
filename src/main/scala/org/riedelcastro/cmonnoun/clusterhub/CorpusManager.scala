@@ -12,7 +12,14 @@ import com.mongodb.casbah.Imports._
 object CorpusManager {
   case class Token(index: Int, word: String)
   case class TokenPair(i: Token, j: Token)
-  case class Sentence(docId: String, indexInDoc: Int, tokens: Seq[Token]) extends Context
+  case class Sentence(docId: String, indexInDoc: Int, tokens: Seq[Token]) extends Context {
+    def token(spec:TokenSpec):Option[Token] = {
+      if (spec.sentence.docId == docId && spec.sentence.sentenceIndex == indexInDoc)
+        tokens.lift(spec.tokenIndex)
+      else
+        None
+    }
+  }
 
   trait InstanceSpec[C <: Context, T] {
     def instance(context: C): Option[T]

@@ -33,7 +33,40 @@
 	padding:0;
 	border-bottom:1px solid #ccc;
 }
-	 
+
+.alt {
+    height: 41px;
+}
+
+.token_list {
+    margin:0;
+}
+
+.sentence_token {
+    padding:2px;
+    display: inline;
+}
+
+.sentence_token a {
+    padding:2px;
+}
+
+.sentence_token a:link, .sentence_token a:visited {
+    color:#000;
+    text-decoration: none;
+}
+
+.sentence_token a.selected {
+    border-style:solid;
+    border-width:1px;
+    //text-decoration: underline
+}
+
+.sentence_token a:hover {
+    color:#000;
+    background-color: #C0C0C0;
+    text-decoration: none;
+}
 
 .sidebar ul li {
 	margin:0;
@@ -68,7 +101,9 @@
   <body>
     <div class="container">
       <div class="column span-19 last" style="text-align: left">
-        <h1 class="alt"><a href="/index">clusterhub</a>: Collaborative Cluster Development<img alt="" id="ajax-loader" style="display:none; margin-bottom: 0px; margin-left: 5px" src="/images/ajax-loader.gif"/></h1>
+        <h1 class="alt"><a href="/index">clusterhub</a>: Collaborative Cluster Development
+            <img alt="" id="ajax-loader" style="display:none; margin-bottom: 0px; margin-left: 5px" src="/images/ajax-loader.gif"/>
+        </h1>
       </div>
 
       <hr/>

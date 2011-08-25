@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
 import collection.mutable.HashMap
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{SentenceSpec, TokenSpec, InstanceSpec}
+import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{Sentence, SentenceSpec, TokenSpec, InstanceSpec}
 
 /**
  * @author sriedel
@@ -16,6 +16,7 @@ object ClusterManager {
   case class Rows(specs: Seq[FieldSpec], rows: TraversableOnce[Row])
   case object Train
   case class AddRow(content: String)
+  case class AddToken(spec: TokenSpec, sentence:Sentence)
   case class AddRowBatch(rows: TraversableOnce[String])
   case class AddFieldSpec(spec: FieldSpec)
   case object RowsChanged
@@ -124,10 +125,10 @@ class ClusterManager
 
   protected var state: Option[State] = None
 
-  def createRowFromContent(content: String): Row = {
+  def createRowFromContent(content: String, spec:TokenSpec=null): Row = {
     val fields = extractors.map(s => s.spec.name -> s.extract(content)).toMap
     val instance = RowInstance(content, fields)
-    val row = Row(instance)
+    val row = Row(instance, spec=spec)
     row
   }
   protected def receive = {
@@ -147,6 +148,15 @@ class ClusterManager
         val row: Row = createRowFromContent(content)
         addRow(row)
         informListeners(RowsChanged)
+
+      case AddToken(spec,sent) =>
+        for (token <- sent.token(spec)){
+          val content = token.word
+          val row = createRowFromContent(content, spec)
+          addRow(row)
+          informListeners(RowsChanged)
+        }
+
 
       case AddRowBatch(rows) =>
         for (r <- rows) {

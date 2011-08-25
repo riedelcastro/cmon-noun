@@ -30,7 +30,7 @@ case class Instance(content: String, fields: Map[String, AnyRef], id: ObjectId =
 @Salat
 trait FieldSpec {
   def name: String
-  def realValued:Boolean
+  def realValued: Boolean
 }
 
 case class SpecHolder(spec: FieldSpec)
@@ -40,10 +40,9 @@ case class RegExFieldSpec(name: String, regex: String) extends FieldSpec {
   def realValued = false
 }
 
-case class DictFieldSpec(name: String, dictName: String, gaussian:Boolean =false) extends FieldSpec {
+case class DictFieldSpec(name: String, dictName: String, gaussian: Boolean = false) extends FieldSpec {
   def realValued = gaussian
 }
-
 
 
 trait MongoSupport {
@@ -53,7 +52,7 @@ trait MongoSupport {
   def collFor(name: String, param: String): MongoCollection = {
     mongoDB(name + "_" + param)
   }
-  def collFor(prefix:String, name: String, param: String): MongoCollection = {
+  def collFor(prefix: String, name: String, param: String): MongoCollection = {
     mongoDB(prefix + "_" + name + "_" + param)
   }
 
@@ -94,6 +93,8 @@ object ClusterHub {
   case class ClusterAdded(clusterId: String, manager: ActorRef)
   case object GetClusterNames
   case class ClusterNames(names: Seq[String])
+  case class GetClusterManager(clusterId: String)
+  case class GetOrCreateClusterManager(clusterId: String)
   case class AssignedClusterManager(manager: ActorRef, clusterId: String)
 
   case class CreateTask(name: String)
@@ -103,7 +104,6 @@ object ClusterHub {
   case object GetTaskNames
   case class TaskAdded(taskName: String, manager: ActorRef)
   case class GetTaskManager(taskName: String)
-  case class GetClusterManager(clusterId: String)
   case class AssignedTaskManager(manager: Box[ActorRef])
 
   case class GetCorpusManager(corpusId: String)
@@ -155,6 +155,9 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
     manager
   }
 
+  def createCluster(name: String) {
+    clusterDefColl += MongoDBObject("_id" -> name)
+  }
   protected def receive = {
     receiveListeners orElse {
       case RegisterTaskListener(c) =>
@@ -169,28 +172,18 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
         informListeners(TaskAdded(name, manager))
       }
 
-      case GetCorpusManager(id:String) =>
-        val manager = corpusManagers.getOrElseUpdate(id,{
+      case GetCorpusManager(id: String) =>
+        val manager = corpusManagers.getOrElseUpdate(id, {
           val actor = Actors.actorOf(classOf[CorpusManager]).start()
           actor ! SetCorpus(id)
           actor
         })
-        self.reply(AssignedCorpusManager(manager,id))
+        self.reply(AssignedCorpusManager(manager, id))
 
       case CreateCluster(name) => {
-        clusterDefColl += MongoDBObject("_id" -> name)
+        createCluster(name)
         val manager: ActorRef = initializeCluster(name)
         informListeners(ClusterAdded(name, manager))
-      }
-
-
-      case GetTaskManager(name) => {
-        val manager = taskManagers.get(name)
-        self.reply(AssignedTaskManager(manager))
-        manager match {
-          case None => logger.warn("No Manager for " + name)
-          case _ =>
-        }
       }
 
       case GetClusterManager(name) => {
@@ -202,6 +195,18 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
             self.reply(AssignedClusterManager(m, name))
 
         }
+      }
+
+      case GetOrCreateClusterManager(name) => {
+        val manager = clusterManagers.get(name)
+        val created = manager match {
+          case None =>
+            createCluster(name)
+            initializeCluster(name)
+          case Some(m) =>
+            m
+        }
+        self.reply(AssignedClusterManager(created, name))
       }
 
       case GetClusterNames => {

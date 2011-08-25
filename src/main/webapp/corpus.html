@@ -3,14 +3,26 @@
     <div class="lift:CorpusSnippet">
 
         <lift:comet id="corpus" type="CorpusViewer" name="replaceme">
-            <h2>Corpus <div class="corpus_name"></div></h2>
+            <h2>Corpus
+                <div class="corpus_name"></div>
+            </h2>
             <div id="sentence_field"></div>
             <div id="sentence_submit"></div>
+            <div id="label_token">
+                <form method="get">
+                    <div id="add_label_text"></div>
+                    <div id="add_label_submit"></div>
+                </form>
+            </div>
             <table id="sentences">
                 <tbody>
                 <tr class="sentence">
                     <td class="sentence_id"></td>
-                    <td class="sentence_tokens"></td>
+                    <td class="sentence_tokens">
+                        <ul class="token_list">
+                            <li class="sentence_token"></li>
+                        </ul>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -18,7 +30,6 @@
         </lift:comet>
 
     </div>
-
 
 
 </div>
