@@ -11,6 +11,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{AssignedClusterManager, 
 import org.riedelcastro.cmonnoun.clusterhub.{Row, ClusterManager, ClusterHub, RegisterListener}
 import collection.mutable.{MultiMap, HashMap}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{GetRowsForSentences, Rows}
+import net.liftweb.http.js.JsCmd
 
 /**
  * @author sriedel
@@ -25,9 +26,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
   var clusters: Option[Seq[ActorRef]] = None
   case class TokenSelection(spec: TokenSpec, token: Token, localSentenceIndex: Int)
   var tokenSelection: Option[TokenSelection] = None
-  var selectedTokenSpec: Option[TokenSpec] = None
-  var selectedToken: Option[Token] = None
-  val token2rows = new HashMap[TokenSpec,scala.collection.mutable.Set[Row]] with MultiMap[TokenSpec,Row]
+  val token2rows = new HashMap[TokenSpec, scala.collection.mutable.Set[Row]] with MultiMap[TokenSpec, Row]
 
   var added = 0
 
@@ -56,13 +55,67 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
     result
   }
 
+
+  case class TokenState(selected: Boolean, labels: Seq[String]) {
+    def asClass = if (selected) "selected" else "normal"
+  }
+
+  def deselectCmd() = {
+    tokenSelection match {
+      case Some(sel) => tokenSwitches(sel.spec).deselect()
+      case None => _Noop
+    }
+  }
+
+  class TokenElemSwitch(val spec: TokenSpec, val token: Token, val localSentenceIndex: Int) extends HashMap[TokenState, Elem] {
+
+    import SHtml._
+
+    lazy val id = toId(spec)
+
+    var state: TokenState = TokenState(false, Seq.empty)
+
+    def setState(newState: TokenState): JsCmd = {
+      state = newState
+      if (state.selected) {
+        tokenSelection = Some(TokenSelection(spec, token, localSentenceIndex))
+      }
+      Replace(id, elem(state))
+    }
+
+    def toggleSelection() = setState(state.copy(selected = !state.selected))
+
+    def deselect() = setState(state.copy(selected = false))
+
+
+    def elem(state: TokenState = this.state): Elem = {
+      getOrElseUpdate(state, {
+        state match {
+          case s@TokenState(true, _) =>
+            SHtml.a(() => {
+              Replace(id, elem(s.copy(selected = false)))
+            }, Text(token.word), BasicElemAttr("class", s.asClass), BasicElemAttr("id", id))
+          case s@TokenState(false, _) =>
+            SHtml.a(() => {
+              deselectCmd() & Replace(id, elem(s.copy(selected = true)))
+            }, Text(token.word), BasicElemAttr("class", s.asClass), BasicElemAttr("id", id))
+        }
+      })
+    }
+
+  }
+
+  val tokenSwitches = new HashMap[TokenSpec, TokenElemSwitch]
+
+
   def perSentenceBinding(sents: scala.Seq[Sentence]): Seq[CssSel] = {
     sents.zipWithIndex.map({
       case (s, index) => Seq(
         ".sentence_id *" #> s.docId,
         ".sentence_token *" #> s.tokens.map(t => {
           val spec = TokenSpec(SentenceSpec(s.docId, s.indexInDoc), t.index)
-          tokenLink(index, t, spec, false)
+          val switch = tokenSwitches.getOrElseUpdate(spec, new TokenElemSwitch(spec, t, index))
+          switch.elem(TokenState(false, Seq.empty))
         })
         //      ".sentence_tokens *" #> s.tokens.map(_.word).mkString(" ")
       ).reduce(_ & _)
@@ -109,7 +162,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
   }
 
   def orderAnnotationsForSentences() {
-    for (sents <- sentences){
+    for (sents <- sentences) {
       //call cluster managers or hub to get all annotations for the given sentences
     }
   }
@@ -138,11 +191,11 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
       for (m <- corpusManager)
         m ak_! SentenceQuery("", 0, 10)
 
-    case Rows(specs,rows, clusterId) =>
+    case Rows(specs, rows, clusterId) =>
       for (row <- rows) {
-        token2rows.addBinding(row.spec,row)
+        token2rows.addBinding(row.spec, row)
       }
-      //create
+    //create
 
   }
 }
