@@ -93,11 +93,12 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
         state match {
           case s@TokenState(true, _) =>
             SHtml.a(() => {
-              Replace(id, elem(s.copy(selected = false)))
+              toggleSelection()
+//              Replace(id, elem(s.copy(selected = false)))
             }, Text(token.word), BasicElemAttr("class", s.asClass), BasicElemAttr("id", id))
           case s@TokenState(false, _) =>
             SHtml.a(() => {
-              deselectCmd() & Replace(id, elem(s.copy(selected = true)))
+              deselectCmd() & toggleSelection() //Replace(id, elem(s.copy(selected = true)))
             }, Text(token.word), BasicElemAttr("class", s.asClass), BasicElemAttr("id", id))
         }
       })
