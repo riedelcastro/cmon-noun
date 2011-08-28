@@ -12,6 +12,7 @@ object BuildSettings {
     organization := buildOrganization,
     version := buildVersion,
     scalaVersion := buildScalaVersion,
+    scalacOptions ++= Seq("-unchecked", "-deprecation"),
     shellPrompt := ShellPrompt.buildShellPrompt
   ) ++ WebPlugin.webSettings
 }
@@ -82,7 +83,10 @@ object Dependencies {
   val others = Seq(
     "org.riedelcastro.nurupo" %% "nurupo" % "0.1-SNAPSHOT",
     "se.scalablesolutions.akka" % "akka-actor" % "1.0",
-    "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT"
+    "cc.refectorie.proj.factorieie" % "factorieie" % "1.3.1-SNAPSHOT",
+    "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT",
+    "edu.stanford" % "stanford-corenlp-faust" % "2011-07-22",
+    "edu.stanford" % "stanford-corenlp-faust-models" % "2011-06-19"
   )
 
   val allDeps = lift ++ liftDeps ++ others

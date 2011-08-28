@@ -3,27 +3,28 @@ package org.riedelcastro.cmonnoun.clusterhub
 import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.MongoCollection
-import org.riedelcastro.cmonnoun.clusterhub.EntityCollectionManager._
+import org.riedelcastro.cmonnoun.clusterhub.EntityManager._
 import com.mongodb.casbah.Imports._
 
 
 /**
  * @author sriedel
  */
-object EntityCollectionManager {
+object EntityManager {
 
   case class Entity(id:String, name:String, features:Seq[String])
   case class Entities(entities:TraversableOnce[Entity])
   case class AddEntity(entity:Entity)
   case class SetCollection(id:String)
   case class Query(predicate:Predicate, skip:Int, batchSize:Int)
-  trait Predicate
+  sealed trait Predicate
   case class ById(id:String) extends Predicate
+  case object All extends Predicate
 
 }
 
 trait EntityCollectionPersistence extends MongoSupport {
-  this: EntityCollectionManager =>
+  this: EntityManager =>
 
   def entityColl(id: String): MongoCollection = {
     collFor(id, "entities")
@@ -45,7 +46,7 @@ trait EntityCollectionPersistence extends MongoSupport {
       val coll = entityColl(id)
       val q = query.predicate match {
         case ById(entityId) => MongoDBObject("_id" -> entityId)
-        case _ => MongoDBObject()
+        case All => MongoDBObject()
       }
       val result = for (dbo <- coll.find(q).skip(query.skip).limit(query.batchSize)) yield {
         val id = dbo.as[String]("_id")
@@ -60,7 +61,7 @@ trait EntityCollectionPersistence extends MongoSupport {
 
 }
 
-class EntityCollectionManager extends Actor with HasListeners with EntityCollectionPersistence {
+class EntityManager extends Actor with HasListeners with EntityCollectionPersistence {
 
   var collectionId:Option[String] = None
 
