@@ -59,7 +59,8 @@ object Resolvers {
     "Novus Snapshots" at "http://repo.novus.com/snapshots/",
     "Akka releases" at "http://akka.io/repository",
     "Local Ivy Repository" at "file://" + Path.userHome.absolutePath + "/.ivy/local/default",
-    "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository"
+    "Local Maven Repository" at "file://" + Path.userHome.absolutePath + "/.m2/repository",
+    "OpenNLP Maven Repo" at "http://opennlp.sourceforge.net/maven2"
   )
 }
 
@@ -82,11 +83,15 @@ object Dependencies {
 
   val others = Seq(
     "org.riedelcastro.nurupo" %% "nurupo" % "0.1-SNAPSHOT",
-    "se.scalablesolutions.akka" % "akka-actor" % "1.0",
+    "se.scalablesolutions.akka" % "akka-actor" % "1.1.3",
     "cc.refectorie.proj.factorieie" % "factorieie" % "1.3.1-SNAPSHOT",
     "com.novus" %% "salat-core" % "0.0.8-SNAPSHOT",
     "edu.stanford" % "stanford-corenlp-faust" % "2011-07-22",
-    "edu.stanford" % "stanford-corenlp-faust-models" % "2011-06-19"
+    "edu.stanford" % "stanford-corenlp-faust-models" % "2011-06-19",
+    "xom" % "xom" % "1.2.5",
+    "org.apache.opennlp" % "opennlp-tools" % "1.5.1-incubating",
+    "org.apache.opennlp" % "opennlp-tools-models" % "1.5"
+
   )
 
   val allDeps = lift ++ liftDeps ++ others

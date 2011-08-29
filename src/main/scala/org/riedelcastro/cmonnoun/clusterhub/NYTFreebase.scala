@@ -5,6 +5,7 @@ import akka.actor.Actor._
 import java.io.File
 import akka.routing.{CyclicIterator, Routing}
 import java.io._
+import nlp.{SentenceDetector, Tokenizer}
 import org.xml.sax.SAXException
 import javax.xml.parsers.{ParserConfigurationException, DocumentBuilderFactory}
 import org.w3c.dom.{Document => XMLDoc}
@@ -90,18 +91,20 @@ object NYTFreebase {
 
   val kb = new KnowledgeBase()
 
+  lazy val tokenizer = new Tokenizer
+  lazy val sentenceDetector = new SentenceDetector
+
   class NYTDocLoader(val corpus: ActorRef) extends Actor {
     protected def receive = {
       case DocTask(file) =>
         val parsed = parseNYTCorpusDocumentFromFile(file)
         val docId = file.getName
-        val doc = kb.createDocument(docId, parsed.getBody)
-        CoreNLPTokenizer.annotate(doc)
-        CoreNLPSentenceSplitter.annotate(doc)
-//        CoreNLPTagger.annotate(doc)
-        for (sent <- doc.sentences) {
-          val tokens = sent.tokens.map(t => CorpusManager.Token(t.indexInSentence, t.word))
-          val sentence = CorpusManager.Sentence(docId, sent.indexInDocument, tokens)
+        val sents = sentenceDetector.sentenceDetect(parsed.getBody)
+        for ((sent,sentIndex) <- sents.zipWithIndex) {
+          val tokens = for ((t,i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
+            CorpusManager.Token(i, t.word)
+          }
+          val sentence = CorpusManager.Sentence(docId, sentIndex, tokens)
           corpus ! StoreSentence(sentence)
         }
         self.reply(Done)
@@ -115,28 +118,47 @@ object NYTFreebase {
 
     cm ! CorpusManager.SetCorpus("nyt")
     val files = Seq(new File("/Users/riedelcastro/corpora/nyt/data/2007/01/01/1815718.xml"))
+    var count = 0
+
 
     protected def receive = {
       case Start =>
         for (file <- files) {
           router ! DocTask(file)
         }
-        self.reply(Done)
+      case Done =>
+        count += 1
+        if (count == files.size) {
+          router ! akka.routing.Routing.Broadcast(PoisonPill)
+          router.stop()
+          self.stop()
+          cm.stop()
+        }
     }
   }
 
   def main(args: Array[String]) {
-    //load nyt documents and add these to a corpus
+//    load nyt documents and add these to a corpus
+    println("Beginning")
     val docLoader = actorOf[DocLoaderMaster].start()
-    docLoader !! Start
+    docLoader ! Start
 
-    //load freebase entities and add them to an entity collection
+//    load freebase entities and add them to an entity collection
 //    val ec = Actor.actorOf[EntityCollectionManager].start()
 //    ec ! EntityCollectionManager.SetCollection("freebase")
-    //how to save mentions?
-    //  (a) as token clusters?
-    //  (b) as mention objects?
+//    how to save mentions?
+//      (a) as token clusters?
+//      (b) as mention objects?
+//    Actor.registry.shutdownAll()
+    println("End")
+
 
   }
 
+}
+
+object Blah {
+  def main(args: Array[String]) {
+    println("Test")
+  }
 }
