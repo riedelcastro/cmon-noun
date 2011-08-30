@@ -25,7 +25,7 @@ class EntityMentionExtractionService(entityMentionService: ActorRef)
   def numberOfWorkers = 10
 
   def divide(bigJob: CorpusService.Sentences) = {
-    for (group <- bigJob.sentences.toIterator.grouped(100)) yield CorpusService.Sentences(group)
+    for (group <- bigJob.sentences.toIterator.grouped(20)) yield CorpusService.Sentences(group)
   }
 
   def newWorker() = new PerDocExtractor
