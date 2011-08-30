@@ -106,7 +106,7 @@ object BinaryClusterService {
   case class Label(id: Any, label: Double)
   case class Probability(id: Any, prob: Double)
   case class Penalty(id: Any, penalty: Double)
-  case class Features(id: Any, features: Set[Int])
+  type Features = FeatureService.Features
 
   def defaultInstance(id:Any) = Instance(id,0.5,0.0,None,Set.empty)
 
