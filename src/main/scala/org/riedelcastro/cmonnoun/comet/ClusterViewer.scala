@@ -6,6 +6,7 @@ import akka.actor.ActorRef
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{GetClusterManager, AssignedClusterManager}
 import net.liftweb.http.js.JE.JsRaw
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager._
+import org.riedelcastro.cmonnoun.clusterhub.HasListeners._
 import org.riedelcastro.cmonnoun.clusterhub._
 import org.riedelcastro.nurupo.HasLogger
 import net.liftweb.http.js.JsCmds.{_Noop, SetHtml}
@@ -18,7 +19,7 @@ class ClusterViewer extends CallMailboxFirst with HasLogger {
     def s = "%1.3f".format(v)
   }
 
-  implicit def toString(v: Boolean) = v.toString()
+  implicit def toString(v: Boolean) = v.toString
 
   def cometType = "cluster"
 

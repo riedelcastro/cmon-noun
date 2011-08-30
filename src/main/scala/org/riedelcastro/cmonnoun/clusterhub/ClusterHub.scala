@@ -58,11 +58,13 @@ trait MongoSupport {
 
 }
 
-case class RegisterListener(l: ActorRef)
-case class DeregisterListener(l: ActorRef)
-
+object HasListeners {
+  case class RegisterListener(l: ActorRef)
+  case class DeregisterListener(l: ActorRef)
+}
 
 trait HasListeners {
+  import HasListeners._
   private val taskListeners = new HashSet[ActorRef]
 
   def informListeners(msg: Any) {
@@ -224,7 +226,7 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
 
       case g@GetRowsForSentences(sentences) => {
         //todo: be more clever here, ask only subsets of clusters registered to serve the sentences
-        for (manager <- clusterManagers.values){
+        for (manager <- clusterManagers.values) {
           manager.forward(g)
         }
       }

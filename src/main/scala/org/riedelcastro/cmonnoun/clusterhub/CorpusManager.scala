@@ -64,6 +64,11 @@ class CorpusManager extends Actor with MongoSupport with HasListeners {
 
   private var corpus: Option[String] = None
 
+  def this(corpusId:String) {
+    this()
+    corpus = Some(corpusId)
+  }
+
   def storeSentence(sentence: Sentence) {
     for (c <- corpus) {
       val coll = collFor("data", c, "sentences")

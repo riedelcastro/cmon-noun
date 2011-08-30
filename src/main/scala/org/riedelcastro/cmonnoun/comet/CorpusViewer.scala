@@ -8,7 +8,8 @@ import net.liftweb.util.CssSel
 import net.liftweb.http.js.JsCmds.{Replace, SetHtml, _Noop}
 import xml.{Elem, Text}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub.{AssignedClusterManager, GetCorpusManager, AssignedCorpusManager}
-import org.riedelcastro.cmonnoun.clusterhub.{Row, ClusterManager, ClusterHub, RegisterListener}
+import org.riedelcastro.cmonnoun.clusterhub.HasListeners.RegisterListener
+import org.riedelcastro.cmonnoun.clusterhub.{Row, ClusterManager, ClusterHub}
 import collection.mutable.{MultiMap, HashMap}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{GetRowsForSentences, Rows}
 import net.liftweb.http.js.JsCmd

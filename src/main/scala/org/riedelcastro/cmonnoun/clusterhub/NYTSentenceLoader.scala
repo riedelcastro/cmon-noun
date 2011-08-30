@@ -17,7 +17,7 @@ import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.StoreSentence
 /**
  * @author sriedel
  */
-object NYTLoader {
+object NYTSentenceLoader {
 
 
   def parseNYTCorpusDocumentFromFile(file: File) = {

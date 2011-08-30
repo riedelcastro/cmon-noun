@@ -4,7 +4,7 @@ import net.liftweb.http._
 import net.liftweb.common.{Empty, Full, Box}
 import org.riedelcastro.cmonnoun.clusterhub.ClusterHub._
 import org.riedelcastro.nurupo.HasLogger
-import org.riedelcastro.cmonnoun.clusterhub.RegisterListener
+import org.riedelcastro.cmonnoun.clusterhub.HasListeners.RegisterListener
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.AddCluster
 
 
