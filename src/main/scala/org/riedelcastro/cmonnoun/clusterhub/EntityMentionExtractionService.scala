@@ -12,7 +12,7 @@ import akka.actor.{Actor, ActorRef}
 class EntityMentionExtractionService(entityMentionService: ActorRef)
   extends DivideAndConquerActor {
 
-  val models = new EntityMentionModels
+  lazy val models = new EntityMentionModels
 
   type BigJob = CorpusService.Sentences
   type SmallJob = CorpusService.Sentences
@@ -95,11 +95,10 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
     def doYourJob(job: EntityMentions) {
       for (mention <- job.mentions) {
         //todo: avoid blocking
-        entityService !! EntityService.Query(ByName(mention.phrase)) match {
-          case Some(EntityService.Entities(entities)) =>
-            for (entity <- entities.toStream.headOption)
-              alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
-          case _ =>
+        for (EntityService.Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))){
+          for (entity <- entities.toStream.headOption)
+            alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
+
         }
       }
     }
