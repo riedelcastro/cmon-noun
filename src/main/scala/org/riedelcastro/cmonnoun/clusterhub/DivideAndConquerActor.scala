@@ -21,6 +21,7 @@ trait DivideAndConquerActor extends Actor with HasListeners with HasLogger {
 
   trait Worker extends Actor {
     def doYourJob(job: SmallJob)
+
     protected def receive = {
       case job =>
         doYourJob(job.asInstanceOf[SmallJob])
@@ -39,12 +40,14 @@ trait DivideAndConquerActor extends Actor with HasListeners with HasLogger {
         for (smallJob <- divide(job)) {
           count += 1
           router ! smallJob
-          infoLazy("Started %d sub-tasks".format(count))
+          if (count % 100 == 0)
+            infoLazy("Started %d sub-tasks".format(count))
         }
     } orElse receiveListeners orElse {
       case Done =>
         count -= 1
-        infoLazy("%d sub-tasks remaining".format(count))
+        if (count % 100 == 0)
+          infoLazy("%d sub-tasks remaining".format(count))
         if (count == 0) {
           informListeners(BigJobDone(bigJobName))
         }
@@ -72,7 +75,7 @@ trait DivideAndConquerActor extends Actor with HasListeners with HasLogger {
 
 trait SimpleDivideAndConquerActor extends DivideAndConquerActor {
 
-  def smallJob(job:SmallJob)
+  def smallJob(job: SmallJob)
 
   def newWorker() = new Worker {
     def doYourJob(job: SmallJob) {
@@ -86,7 +89,7 @@ trait SimpleDivideAndConquerActor extends DivideAndConquerActor {
 object DivideAndConquerActor {
   case class BigJobDone(id: String)
 
-  class BigJobDoneHook(val hook:()=>Unit) extends Actor with HasLogger {
+  class BigJobDoneHook(val hook: () => Unit) extends Actor with HasLogger {
     protected def receive = {
       case BigJobDone(_) =>
         hook()
@@ -94,7 +97,7 @@ object DivideAndConquerActor {
         self.stop()
     }
   }
-  def bigJobDoneHook(divideAndConquerActor:ActorRef)(hook:()=>Unit) {
+  def bigJobDoneHook(divideAndConquerActor: ActorRef)(hook: () => Unit) {
     val actor = actorOf(new BigJobDoneHook(hook)).start()
     divideAndConquerActor ! HasListeners.RegisterListener(actor)
   }
@@ -104,7 +107,7 @@ object DivideAndConquerActor {
 trait StopWhenMailboxEmpty {
   this: Actor =>
 
-  def stopWhenMailboxEmpty:Receive = {
+  def stopWhenMailboxEmpty: Receive = {
     case StopWhenMailboxEmpty =>
       if (self.mailboxSize == 0)
         self ! PoisonPill

@@ -9,6 +9,10 @@ import javax.xml.parsers.{ParserConfigurationException, DocumentBuilderFactory}
 import org.w3c.dom.{Document => XMLDoc}
 import com.nytlabs.corpus.NYTCorpusDocumentParser
 import org.riedelcastro.cmonnoun.clusterhub.CorpusService.StoreSentence
+import java.util.concurrent.TimeUnit
+import org.riedelcastro.nurupo.Util
+import opennlp.tools.sentdetect.{SentenceDetectorME, SentenceModel}
+import opennlp.tools.tokenize.TokenizerModel
 
 /**
  * @author sriedel
@@ -81,27 +85,47 @@ object NYTSentenceLoader {
     null
   }
 
-  lazy val tokenizer = new Tokenizer
-  lazy val sentenceDetector = new SentenceDetector
-
-  class DocLoaderMaster2(cm:ActorRef) extends SimpleDivideAndConquerActor {
+  class DocLoaderMaster(cm: ActorRef) extends DivideAndConquerActor {
     type BigJob = Files
     type SmallJob = File
+
     def numberOfWorkers = 10
+
     def unwrapJob = {case f: Files => f}
+
     def divide(bigJob: Files) = for (file <- bigJob.files.toIterator) yield file
 
-    def smallJob(file: File) {
-      val parsed = parseNYTCorpusDocumentFromFile(file)
-      val docId = file.getName
-      val sents = sentenceDetector.sentenceDetect(parsed.getBody)
-      for ((sent, sentIndex) <- sents.zipWithIndex) {
-        val tokens = for ((t, i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
-          CorpusService.Token(i, t.word)
+    def newWorker() = new DocSlave
+
+    lazy val modelIn = Util.getStreamFromFileOrClassPath("en-sent.bin")
+    lazy val model = OpenNLPUtil.unsafe(() => new SentenceModel(modelIn))
+
+    lazy val tokModelIn = Util.getStreamFromFileOrClassPath("en-token.bin")
+    lazy val tokModel: TokenizerModel = OpenNLPUtil.unsafe(() => new TokenizerModel(tokModelIn))
+
+    class DocSlave extends Worker {
+      val detector = new SentenceDetector(model)
+      val tokenizer = new Tokenizer(tokModel)
+
+      def doYourJob(file: File) {
+        try {
+          val parsed = parseNYTCorpusDocumentFromFile(file)
+          val docId = file.getName
+          if (parsed.getBody != null) {
+            val sents = detector.sentenceDetect(parsed.getBody)
+            for ((sent, sentIndex) <- sents.zipWithIndex) {
+              val tokens = for ((t, i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
+                CorpusService.Token(i, t.word)
+              }
+              val sentence = CorpusService.Sentence(docId, sentIndex, tokens)
+              cm ! StoreSentence(sentence)
+            }
+          }
+        } catch {
+          case e => warnLazy(e.getMessage)
         }
-        val sentence = CorpusService.Sentence(docId, sentIndex, tokens)
-        cm ! StoreSentence(sentence)
       }
+
     }
 
 
@@ -111,33 +135,24 @@ object NYTSentenceLoader {
 
   def main(args: Array[String]) {
     //    load nyt documents and add these to a corpus
-    println("Beginning")
-    val cm = actorOf(new CorpusService("nyt")).start()
-    val docLoader = actorOf(new DocLoaderMaster2(cm)).start()
-    DivideAndConquerActor.bigJobDoneHook(docLoader){
+    val corpusId = NeoConf.get("nyt-mongo", "nyt")
+    val cm = actorOf(new CorpusService(corpusId)).start()
+    val docLoader = actorOf(new DocLoaderMaster(cm)).start()
+    DivideAndConquerActor.bigJobDoneHook(docLoader) {
       () =>
         docLoader.stop()
-        cm.stop()
+        Scheduler.schedule(cm, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
     }
-    val files = Seq(new File("/Users/riedelcastro/corpora/nyt/data/2007/01/01/1815718.xml"))
+    val nytPrefix = NeoConf.get[File]("nyt-prefix")
+    val files = if (nytPrefix.isDirectory) Util.files(nytPrefix)
+    else {
+      val dir = nytPrefix.getParentFile
+      val prefix = nytPrefix.getName
+      Util.files(dir).filter(_.getName.startsWith(prefix))
+    }
     docLoader ! Files(files)
 
-    //    load freebase entities and add them to an entity collection
-    //    val ec = Actor.actorOf[EntityCollectionManager].start()
-    //    ec ! EntityCollectionManager.SetCollection("freebase")
-    //    how to save mentions?
-    //      (a) as token clusters?
-    //      (b) as mention objects?
-    //    Actor.registry.shutdownAll()
-    println("End")
-
-
   }
 
 }
 
-object Blah {
-  def main(args: Array[String]) {
-    println("Test")
-  }
-}

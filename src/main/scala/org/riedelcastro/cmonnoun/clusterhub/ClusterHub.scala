@@ -46,8 +46,10 @@ case class DictFieldSpec(name: String, dictName: String, gaussian: Boolean = fal
 
 
 trait MongoSupport {
-  def dbName: String = "clusterhub"
-  val mongoConn = MongoConnection("localhost", 27017)
+  def dbName = NeoConf.get("mongo-db","clusterhub")
+  def dbHost = NeoConf.get("mongo-host","localhost")
+  def dbPort = NeoConf.get("mongo-port",27017)
+  val mongoConn = MongoConnection(dbHost, dbPort)
   val mongoDB = mongoConn(dbName)
   def collFor(name: String, param: String): MongoCollection = {
     mongoDB(name + "_" + param)

@@ -58,7 +58,7 @@ object CorpusService {
   case class SentenceAdded(sentence:Sentence) extends SentencesChangedEvent
 }
 
-class CorpusService extends Actor with MongoSupport with HasListeners {
+class CorpusService extends Actor with MongoSupport with HasListeners with StopWhenMailboxEmpty {
 
   import CorpusService._
 
@@ -94,7 +94,7 @@ class CorpusService extends Actor with MongoSupport with HasListeners {
 
   protected def receive = {
 
-    receiveListeners.orElse {
+    receiveListeners orElse stopWhenMailboxEmpty orElse  {
 
       case SetCorpus(id) =>
         corpus = Some(id)
