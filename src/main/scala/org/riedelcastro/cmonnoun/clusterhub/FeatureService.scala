@@ -10,7 +10,8 @@ import com.mongodb.casbah.Imports._
 /**
  * @author sriedel
  */
-trait FeatureService extends Actor with FeatureStorage {
+trait FeatureService extends Actor {
+  this:FeatureStorage =>
   protected def receive = {
     case StoreFeatures(feats) =>
       store(feats)
@@ -43,7 +44,7 @@ trait MongoFeatureStorage extends FeatureStorage with MongoSupport {
       Features(id, feats)
     }).toStream
   }
-  def store(feats: Stream[Features]) = {
+  def store(feats: Stream[Features]) {
     for (feat <- feats) {
       val dbo = MongoDBObject(
         "_id" -> feat.id,
@@ -52,6 +53,9 @@ trait MongoFeatureStorage extends FeatureStorage with MongoSupport {
       coll += dbo
     }
   }
+}
+
+class BasicFeatureService(val name:String) extends FeatureService with MongoFeatureStorage {
 }
 
 object FeatureService {

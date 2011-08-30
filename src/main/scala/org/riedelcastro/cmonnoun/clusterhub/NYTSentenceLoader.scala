@@ -8,7 +8,7 @@ import org.xml.sax.SAXException
 import javax.xml.parsers.{ParserConfigurationException, DocumentBuilderFactory}
 import org.w3c.dom.{Document => XMLDoc}
 import com.nytlabs.corpus.NYTCorpusDocumentParser
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.StoreSentence
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.StoreSentence
 
 /**
  * @author sriedel
@@ -97,9 +97,9 @@ object NYTSentenceLoader {
       val sents = sentenceDetector.sentenceDetect(parsed.getBody)
       for ((sent, sentIndex) <- sents.zipWithIndex) {
         val tokens = for ((t, i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
-          CorpusManager.Token(i, t.word)
+          CorpusService.Token(i, t.word)
         }
-        val sentence = CorpusManager.Sentence(docId, sentIndex, tokens)
+        val sentence = CorpusService.Sentence(docId, sentIndex, tokens)
         cm ! StoreSentence(sentence)
       }
     }
@@ -112,7 +112,7 @@ object NYTSentenceLoader {
   def main(args: Array[String]) {
     //    load nyt documents and add these to a corpus
     println("Beginning")
-    val cm = actorOf(new CorpusManager("nyt")).start()
+    val cm = actorOf(new CorpusService("nyt")).start()
     val docLoader = actorOf(new DocLoaderMaster2(cm)).start()
     DivideAndConquerActor.bigJobDoneHook(docLoader){
       () =>

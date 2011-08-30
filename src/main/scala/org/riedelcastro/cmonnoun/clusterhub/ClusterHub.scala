@@ -16,7 +16,7 @@ import com.novus.salat.global._
 import org.bson.types.ObjectId
 import com.mongodb.casbah.commons.MongoDBObject
 import akka.actor.{Actor, Actors, ActorRef}
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SetCorpus
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SetCorpus
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{GetRowsForSentences, SetCluster}
 
 class MutableClusterTask(var name: String) {
@@ -176,7 +176,7 @@ class ClusterHub extends Actor with MongoSupport with HasListeners with HasLogge
 
       case GetCorpusManager(id: String) =>
         val manager = corpusManagers.getOrElseUpdate(id, {
-          val actor = Actors.actorOf(classOf[CorpusManager]).start()
+          val actor = Actors.actorOf(classOf[CorpusService]).start()
           actor ! SetCorpus(id)
           actor
         })

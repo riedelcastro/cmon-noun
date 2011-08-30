@@ -3,14 +3,14 @@ package org.riedelcastro.cmonnoun.clusterhub
 import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SentenceSpec
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SentenceSpec
 
 
 /**
  * @author sriedel
  */
 
-object CorpusManager {
+object CorpusService {
   case class Token(index: Int, word: String)
   case class TokenPair(i: Token, j: Token)
   case class Sentence(docId: String, indexInDoc: Int, tokens: Seq[Token]) extends Context {
@@ -58,9 +58,9 @@ object CorpusManager {
   case class SentenceAdded(sentence:Sentence) extends SentencesChangedEvent
 }
 
-class CorpusManager extends Actor with MongoSupport with HasListeners {
+class CorpusService extends Actor with MongoSupport with HasListeners {
 
-  import CorpusManager._
+  import CorpusService._
 
   private var corpus: Option[String] = None
 

@@ -8,7 +8,7 @@ import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.{SortByContent, SortB
 import com.mongodb.casbah.commons.MongoDBObject
 import collection.mutable.{HashSet, HashMap, ArrayBuffer}
 import java.util.Random
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{SentenceSpec, TokenSpec}
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.{SentenceSpec, TokenSpec}
 
 /**
  * @author sriedel

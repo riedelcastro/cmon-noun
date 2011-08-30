@@ -14,18 +14,18 @@ class EntityMentionExtractionService(entityMentionService: ActorRef)
 
   val models = new EntityMentionModels
 
-  type BigJob = CorpusManager.Sentences
-  type SmallJob = CorpusManager.Sentences
+  type BigJob = CorpusService.Sentences
+  type SmallJob = CorpusService.Sentences
 
 
   def unwrapJob = {
-    case job: CorpusManager.Sentences => job
+    case job: CorpusService.Sentences => job
   }
 
   def numberOfWorkers = 10
 
-  def divide(bigJob: CorpusManager.Sentences) = {
-    for (group <- bigJob.sentences.toIterator.grouped(100)) yield CorpusManager.Sentences(group)
+  def divide(bigJob: CorpusService.Sentences) = {
+    for (group <- bigJob.sentences.toIterator.grouped(100)) yield CorpusService.Sentences(group)
   }
 
   def newWorker() = new PerDocExtractor
@@ -53,7 +53,7 @@ object EntityMentionExtractionService {
   case object SentencesProcessed
 
   def main(args: Array[String]) {
-    val corpus = actorOf(new CorpusManager("nyt")).start()
+    val corpus = actorOf(new CorpusService("nyt")).start()
     val mentionService = actorOf(new EntityMentionService("nyt")).start()
     val extractor = actorOf(new EntityMentionExtractionService(mentionService)).start()
     //make sure we stop everything after we are done with extraction
@@ -65,8 +65,8 @@ object EntityMentionExtractionService {
     }
 
     //get sentences to extractor
-    corpus !! CorpusManager.SentenceQuery("") match {
-      case Some(s: CorpusManager.Sentences) => extractor ! s
+    corpus !! CorpusService.SentenceQuery("") match {
+      case Some(s: CorpusService.Sentences) => extractor ! s
       case None => {}
     }
 

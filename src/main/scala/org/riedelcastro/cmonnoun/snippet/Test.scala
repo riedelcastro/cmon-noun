@@ -6,7 +6,7 @@ import org.riedelcastro.cmonnoun.comet.Controller
 import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SetCorpus
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SetCorpus
 
 /**
  * @author sriedel

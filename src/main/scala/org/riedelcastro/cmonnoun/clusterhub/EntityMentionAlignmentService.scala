@@ -48,5 +48,7 @@ object EntityMentionAlignmentService {
   case class StoreAlignment(mentionId:ObjectId,entityId:String)
   case class GetEntityIds(mentionId:ObjectId)
   case class GetEntities(entityService:ScalaActorRef, mentionId:ObjectId)
+  case class GetMentionIds(entityIds:Stream[Any])
+
   case class EntityIds(entityId:TraversableOnce[String])
 }

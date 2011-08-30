@@ -1,6 +1,6 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.SentenceSpec
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SentenceSpec
 import org.bson.types.ObjectId
 import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
@@ -53,7 +53,7 @@ object EntityMentionService {
                            ner: Option[String] = None,
                            id: ObjectId = new ObjectId)
   case class StoreEntityMention(entityMention: EntityMention)
-  case class GetMentions(entityId: ObjectId)
+  case class GetEntityMentions(ids:Stream[Any])
   case class EntityMentions(mentions: TraversableOnce[EntityMention])
 }
 

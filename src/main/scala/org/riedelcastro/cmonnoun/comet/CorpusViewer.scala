@@ -3,7 +3,7 @@ package org.riedelcastro.cmonnoun.comet
 import org.riedelcastro.nurupo.HasLogger
 import akka.actor.ActorRef
 import net.liftweb.http.SHtml
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager._
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService._
 import net.liftweb.util.CssSel
 import net.liftweb.http.js.JsCmds.{Replace, SetHtml, _Noop}
 import xml.{Elem, Text}

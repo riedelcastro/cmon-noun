@@ -3,7 +3,7 @@ package org.riedelcastro.cmonnoun.clusterhub
 import org.riedelcastro.nurupo.Util
 import opennlp.tools.namefind.{NameFinderME, TokenNameFinderModel}
 import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.EntityMention
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{SentenceSpec, Sentence}
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.{SentenceSpec, Sentence}
 
 class EntityMentionModels {
 

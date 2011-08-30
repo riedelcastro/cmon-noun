@@ -4,7 +4,7 @@ import akka.actor.{Actor, ActorRef}
 import org.riedelcastro.nurupo.HasLogger
 import org.bson.types.ObjectId
 import collection.mutable.HashMap
-import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.{Sentence, SentenceSpec, TokenSpec, InstanceSpec}
+import org.riedelcastro.cmonnoun.clusterhub.CorpusService.{Sentence, SentenceSpec, TokenSpec, InstanceSpec}
 
 /**
  * @author sriedel
