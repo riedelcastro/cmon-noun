@@ -19,6 +19,7 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
     val coll = collFor("entityMentions", collection)
     val dbo = MongoDBObject(
       "_id" -> entityMention.id,
+      "phrase" -> entityMention.phrase,
       "docId" -> entityMention.sentence.docId,
       "sent" -> entityMention.sentence.sentenceIndex,
       "from" -> entityMention.from,
@@ -34,7 +35,8 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
     val from = dbo.as[Int]("from")
     val to = dbo.as[Int]("to")
     val ner = dbo.getAs[String]("ner")
-    EntityMention(SentenceSpec(docId, sent), from, to, id = id, ner = ner)
+    val phrase = dbo.as[String]("phrase")
+    EntityMention(SentenceSpec(docId, sent), from, to, id = id, ner = ner, phrase=phrase)
   }
 
 
@@ -47,6 +49,7 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
 
 object EntityMentionService {
   case class EntityMention(sentence: SentenceSpec, from: Int, to: Int,
+                           phrase:String,
                            ner: Option[String] = None,
                            id: ObjectId = new ObjectId)
   case class StoreEntityMention(entityMention: EntityMention)

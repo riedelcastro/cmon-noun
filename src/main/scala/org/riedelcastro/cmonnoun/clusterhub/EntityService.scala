@@ -17,11 +17,13 @@ object EntityService {
                     freebaseTypes:Seq[String] = Seq.empty)
   case class Entities(entities: TraversableOnce[Entity])
   case class AddEntity(entity: Entity)
+  case class EntityAdded(entity:Entity)
   case class SetCollection(id: String)
-  case class Query(predicate: Predicate, skip: Int, batchSize: Int)
+  case class Query(predicate: Predicate, skip: Int = 0, batchSize: Int = Int.MaxValue)
   sealed trait Predicate
   case class ById(id: String) extends Predicate
   case class ByIds(ids: Seq[String]) extends Predicate
+  case class ByName(name:String) extends Predicate
 
   case object All extends Predicate
 
@@ -49,7 +51,8 @@ trait EntityCollectionPersistence extends MongoSupport {
     val coll = entityColl(collectionId)
     val q = query.predicate match {
       case ById(entityId) => MongoDBObject("_id" -> entityId)
-      case ByIds(ids) => MongoDBObject("_id" -> MongoDBObject("$in", ids))
+      case ByIds(ids) => MongoDBObject("_id" -> MongoDBObject("$in" -> ids))
+      case ByName(name) => MongoDBObject("name" -> name)
       case All => MongoDBObject()
     }
     val result = for (dbo <- coll.find(q).skip(query.skip).limit(query.batchSize)) yield {
@@ -64,7 +67,8 @@ trait EntityCollectionPersistence extends MongoSupport {
 
 }
 
-class EntityService(val collectionId: String) extends Actor with HasListeners with EntityCollectionPersistence {
+class EntityService(val collectionId: String)
+  extends Actor with HasListeners with EntityCollectionPersistence with StopWhenMailboxEmpty {
 
 
   protected def receive = {
@@ -72,6 +76,7 @@ class EntityService(val collectionId: String) extends Actor with HasListeners wi
 
       case AddEntity(entity) =>
         addEntity(entity)
+        informListeners(EntityAdded(entity))
 
       case q: Query =>
         self.channel ! Entities(query(q))

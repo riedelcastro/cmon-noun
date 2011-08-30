@@ -2,16 +2,12 @@ package org.riedelcastro.cmonnoun.clusterhub
 
 import akka.actor._
 import akka.actor.Actor._
-import java.io.File
-import akka.routing.{CyclicIterator, Routing}
 import java.io._
 import nlp.{SentenceDetector, Tokenizer}
 import org.xml.sax.SAXException
 import javax.xml.parsers.{ParserConfigurationException, DocumentBuilderFactory}
 import org.w3c.dom.{Document => XMLDoc}
 import com.nytlabs.corpus.NYTCorpusDocumentParser
-import cc.refectorie.proj.factorieie.data.KnowledgeBase
-import cc.refectorie.proj.factorieie.annotator.{CoreNLPTagger, CoreNLPSentenceSplitter, CoreNLPTokenizer}
 import org.riedelcastro.cmonnoun.clusterhub.CorpusManager.StoreSentence
 
 /**
@@ -22,11 +18,11 @@ object NYTSentenceLoader {
 
   def parseNYTCorpusDocumentFromFile(file: File) = {
     parser.parseNYTCorpusDocumentFromFile(file, false)
-//    parser.parseNYTCorpusDocumentFromDOMDocument(file, loadNonValidating(file))
+    //    parser.parseNYTCorpusDocumentFromDOMDocument(file, loadNonValidating(file))
   }
 
   private val parser = new NYTCorpusDocumentParser
-//
+  //
   private def parseStringToDOM(s: String, encoding: String, file: File): XMLDoc = {
     try {
       val factory = DocumentBuilderFactory.newInstance()
@@ -85,71 +81,54 @@ object NYTSentenceLoader {
     null
   }
 
-  case class DocTask(file: File)
-  case object Done
-  case object Start
-
-  val kb = new KnowledgeBase()
-
   lazy val tokenizer = new Tokenizer
   lazy val sentenceDetector = new SentenceDetector
 
-  class NYTDocLoader(val corpus: ActorRef) extends Actor {
-    protected def receive = {
-      case DocTask(file) =>
-        val parsed = parseNYTCorpusDocumentFromFile(file)
-        val docId = file.getName
-        val sents = sentenceDetector.sentenceDetect(parsed.getBody)
-        for ((sent,sentIndex) <- sents.zipWithIndex) {
-          val tokens = for ((t,i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
-            CorpusManager.Token(i, t.word)
-          }
-          val sentence = CorpusManager.Sentence(docId, sentIndex, tokens)
-          corpus ! StoreSentence(sentence)
+  class DocLoaderMaster2(cm:ActorRef) extends SimpleDivideAndConquerActor {
+    type BigJob = Files
+    type SmallJob = File
+    def numberOfWorkers = 10
+    def unwrapJob = {case f: Files => f}
+    def divide(bigJob: Files) = for (file <- bigJob.files.toIterator) yield file
+
+    def smallJob(file: File) {
+      val parsed = parseNYTCorpusDocumentFromFile(file)
+      val docId = file.getName
+      val sents = sentenceDetector.sentenceDetect(parsed.getBody)
+      for ((sent, sentIndex) <- sents.zipWithIndex) {
+        val tokens = for ((t, i) <- tokenizer.tokenize(sent.txt).zipWithIndex) yield {
+          CorpusManager.Token(i, t.word)
         }
-        self.reply(Done)
+        val sentence = CorpusManager.Sentence(docId, sentIndex, tokens)
+        cm ! StoreSentence(sentence)
+      }
     }
+
+
   }
 
-  class DocLoaderMaster extends Actor {
-    val cm = actorOf[CorpusManager].start()
-    val docLoaders = List.fill(10)(actorOf(new NYTDocLoader(cm)).start())
-    val router = Routing.loadBalancerActor(new CyclicIterator(docLoaders)).start()
-
-    cm ! CorpusManager.SetCorpus("nyt")
-    val files = Seq(new File("/Users/riedelcastro/corpora/nyt/data/2007/01/01/1815718.xml"))
-    var count = 0
-
-
-    protected def receive = {
-      case Start =>
-        for (file <- files) {
-          router ! DocTask(file)
-        }
-      case Done =>
-        count += 1
-        if (count == files.size) {
-          router ! akka.routing.Routing.Broadcast(PoisonPill)
-          router.stop()
-          self.stop()
-          cm.stop()
-        }
-    }
-  }
+  case class Files(files: Seq[File])
 
   def main(args: Array[String]) {
-//    load nyt documents and add these to a corpus
+    //    load nyt documents and add these to a corpus
     println("Beginning")
-    val docLoader = actorOf[DocLoaderMaster].start()
-    docLoader ! Start
+    val cm = actorOf(new CorpusManager("nyt")).start()
+    val docLoader = actorOf(new DocLoaderMaster2(cm)).start()
+    DivideAndConquerActor.bigJobDoneHook(docLoader){
+      () =>
+        docLoader.stop()
+        cm.stop()
+    }
+    val files = Seq(new File("/Users/riedelcastro/corpora/nyt/data/2007/01/01/1815718.xml"))
+    docLoader ! Files(files)
 
-//    load freebase entities and add them to an entity collection
-//    val ec = Actor.actorOf[EntityCollectionManager].start()
-//    ec ! EntityCollectionManager.SetCollection("freebase")
-//    how to save mentions?
-//      (a) as token clusters?
-//      (b) as mention objects?
-//    Actor.registry.shutdownAll()
+    //    load freebase entities and add them to an entity collection
+    //    val ec = Actor.actorOf[EntityCollectionManager].start()
+    //    ec ! EntityCollectionManager.SetCollection("freebase")
+    //    how to save mentions?
+    //      (a) as token clusters?
+    //      (b) as mention objects?
+    //    Actor.registry.shutdownAll()
     println("End")
 
 
