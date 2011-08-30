@@ -31,7 +31,7 @@ trait BinaryClusterService
         val instances = loadInstances(ids)
         val probs = estimate(instances)
         storeProbabilities(probs)
-        informListeners(ProbabilitiesChanged(ids))
+        informListeners(ProbabilitiesChanged(probs))
 
       case Maximize(ids) =>
         val instances = loadInstances(ids)
@@ -53,7 +53,7 @@ trait BinaryClusterStorage {
 
   def loadInstances(ids: Stream[Any]): Stream[Instance]
   case object ModelChanged
-  case class ProbabilitiesChanged(ids:Stream[Any])
+  case class ProbabilitiesChanged(ids:Stream[Probability])
 
 }
 
