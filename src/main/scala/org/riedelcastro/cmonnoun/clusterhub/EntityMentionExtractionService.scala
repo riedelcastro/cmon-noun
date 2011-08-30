@@ -34,11 +34,9 @@ class EntityMentionExtractionService(entityMentionService: ActorRef)
     val extractor = new EntityMentionExtractor(models)
 
     def doYourJob(job: SmallJob) {
-      for (sent <- job.sentences) {
-        val mentions = extractor.extractMentions(sent)
-        for (mention <- mentions) {
-          entityMentionService ! EntityMentionService.StoreEntityMention(mention)
-        }
+      val mentions = extractor.extractMentions(job.sentences)
+      for (mention <- mentions) {
+        entityMentionService ! EntityMentionService.StoreEntityMention(mention)
       }
     }
   }
@@ -83,11 +81,15 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
   import EntityMentionService._
 
   override def bigJobName = "alignmentExtractionService"
+
   type BigJob = EntityMentions
   type SmallJob = EntityMentions
+
   def unwrapJob = {case job: EntityMentions => job}
+
   def divide(bigJob: EntityMentions) = for (group <- bigJob.mentions.toIterator.grouped(100)) yield
     EntityMentions(group)
+
   def numberOfWorkers = 10
 
 
@@ -95,7 +97,7 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
     def doYourJob(job: EntityMentions) {
       for (mention <- job.mentions) {
         //todo: avoid blocking
-        for (EntityService.Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))){
+        for (EntityService.Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))) {
           for (entity <- entities.toStream.headOption)
             alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
 
