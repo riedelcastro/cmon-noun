@@ -1,8 +1,8 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
-import akka.actor.Actor
 import org.riedelcastro.cmonnoun.clusterhub.BinaryClusterService._
 import collection.mutable.HashMap
+import akka.actor.{ActorRef, Actor}
 
 /**
  * @author sriedel
@@ -31,12 +31,12 @@ trait BinaryClusterService
         val instances = loadInstances(ids)
         val probs = estimate(instances)
         storeProbabilities(probs)
-        informListeners(ProbabilitiesChanged(probs))
+        informListeners(ProbabilitiesChanged(self,probs))
 
       case Maximize(ids) =>
         val instances = loadInstances(ids)
         maximize(instances)
-        informListeners(ModelChanged)
+        informListeners(ModelChanged(self))
 
     }
   }
@@ -52,8 +52,8 @@ trait BinaryClusterStorage {
   def storeFeatures(features: Stream[Features])
 
   def loadInstances(ids: Stream[Any]): Stream[Instance]
-  case object ModelChanged
-  case class ProbabilitiesChanged(ids:Stream[Probability])
+  case class ModelChanged(cluster:ActorRef)
+  case class ProbabilitiesChanged(cluster:ActorRef, ids:Stream[Probability])
 
 }
 
