@@ -20,12 +20,12 @@ import opennlp.tools.tokenize.TokenizerModel
 object NYTSentenceLoader {
 
 
-  def parseNYTCorpusDocumentFromFile(file: File) = {
-    parser.parseNYTCorpusDocumentFromFile(file, false)
-    //    parser.parseNYTCorpusDocumentFromDOMDocument(file, loadNonValidating(file))
+  def parseNYTCorpusDocumentFromFile(file: File, parser:NYTCorpusDocumentParser) = {
+//    parser.parseNYTCorpusDocumentFromFile(file, false)
+    val doc = loadNonValidating(file)
+    parser.parseNYTCorpusDocumentFromDOMDocument(file, doc)
   }
 
-  private val parser = new NYTCorpusDocumentParser
   //
   private def parseStringToDOM(s: String, encoding: String, file: File): XMLDoc = {
     try {
@@ -69,20 +69,11 @@ object NYTSentenceLoader {
       in.close()
       document
     } catch {
-      case e: UnsupportedEncodingException => {
+      case e => {
         e.printStackTrace()
-        System.out.println("Error loading file " + file + ".")
-      }
-      case e: FileNotFoundException => {
-        e.printStackTrace()
-        System.out.println("Error loading file " + file + ".")
-      }
-      case e: IOException => {
-        e.printStackTrace()
-        System.out.println("Error loading file " + file + ".")
+        sys.error("Error loading file " + file + ".")
       }
     }
-    null
   }
 
   class DocLoaderMaster(cm: ActorRef) extends DivideAndConquerActor {
@@ -102,6 +93,8 @@ object NYTSentenceLoader {
 
     lazy val tokModelIn = Util.getStreamFromFileOrClassPath("en-token.bin")
     lazy val tokModel: TokenizerModel = OpenNLPUtil.unsafe(() => new TokenizerModel(tokModelIn))
+    lazy val nytParser = new NYTCorpusDocumentParser
+
 
     class DocSlave extends Worker {
       val detector = new SentenceDetector(model)
@@ -109,7 +102,7 @@ object NYTSentenceLoader {
 
       def doYourJob(file: File) {
         try {
-          val parsed = parseNYTCorpusDocumentFromFile(file)
+          val parsed = parseNYTCorpusDocumentFromFile(file,nytParser)
           val docId = file.getName
           if (parsed.getBody != null) {
             val sents = detector.sentenceDetect(parsed.getBody)
@@ -122,7 +115,9 @@ object NYTSentenceLoader {
             }
           }
         } catch {
-          case e => warnLazy(e.getMessage)
+          case e =>
+            e.printStackTrace()
+            warnLazy(e.getMessage)
         }
       }
 
