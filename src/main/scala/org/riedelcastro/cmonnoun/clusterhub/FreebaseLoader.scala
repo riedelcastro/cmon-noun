@@ -4,8 +4,7 @@ import akka.actor.Actor._
 import java.io.File
 import io.Source
 import org.riedelcastro.nurupo.{Counting, HasLogger}
-import org.riedelcastro.cmonnoun.clusterhub.DivideAndConquerActor.BigJobDone
-import org.riedelcastro.cmonnoun.clusterhub.EntityService.{EntityAdded, AddEntity, Entity}
+import org.riedelcastro.cmonnoun.clusterhub.EntityService.{AddEntity, Entity}
 import akka.actor.{Scheduler, ActorRef, Actor}
 import java.util.concurrent.TimeUnit
 
