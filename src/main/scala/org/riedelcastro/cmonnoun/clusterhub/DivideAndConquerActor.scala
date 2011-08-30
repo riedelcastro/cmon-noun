@@ -104,13 +104,10 @@ object DivideAndConquerActor {
 trait StopWhenMailboxEmpty {
   this: Actor =>
 
-  private var shouldStop = false
-
   def stopWhenMailboxEmpty:Receive = {
-    case StopWhenMailboxEmpty => shouldStop = true
-    case x =>
-      if (shouldStop && self.mailboxSize == 0) self ! PoisonPill
-      x
+    case StopWhenMailboxEmpty =>
+      if (self.mailboxSize == 0)
+        self ! PoisonPill
   }
 
 }

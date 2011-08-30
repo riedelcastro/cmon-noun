@@ -4,22 +4,23 @@ import akka.actor.Actor._
 import java.io.File
 import io.Source
 import org.riedelcastro.nurupo.{Counting, HasLogger}
-import akka.actor.{ActorRef, Actor}
 import org.riedelcastro.cmonnoun.clusterhub.DivideAndConquerActor.BigJobDone
 import org.riedelcastro.cmonnoun.clusterhub.EntityService.{EntityAdded, AddEntity, Entity}
+import akka.actor.{Scheduler, ActorRef, Actor}
+import java.util.concurrent.TimeUnit
 
 /**
  * @author sriedel
  */
 object FreebaseLoader extends HasLogger {
 
-  case class LoadEntities(lines:TraversableOnce[String])
+  case class LoadEntities(lines: TraversableOnce[String])
 
-  class EntityLoaderMaster2(val em:ActorRef) extends SimpleDivideAndConquerActor {
+  class EntityLoaderMaster2(val em: ActorRef) extends SimpleDivideAndConquerActor {
     type BigJob = LoadEntities
     type SmallJob = LoadEntities
     def numberOfWorkers = 10
-    def unwrapJob = {case l:LoadEntities => l}
+    def unwrapJob = {case l: LoadEntities => l}
     def divide(bigJob: LoadEntities) = for (group <- bigJob.lines.toIterator.grouped(10000)) yield
       LoadEntities(group)
 
@@ -31,7 +32,7 @@ object FreebaseLoader extends HasLogger {
         val id = split(0)
         val name = split(1)
         val types = split(2).split(",")
-        val ent = Entity(id,name,freebaseTypes = types)
+        val ent = Entity(id, name, freebaseTypes = types)
         em ! AddEntity(ent)
         counting.perform()
       }
@@ -41,29 +42,17 @@ object FreebaseLoader extends HasLogger {
 
   def main(args: Array[String]) {
     val entityFile = NeoConf.get[File]("freebase-entities")
-    val lines = LoadEntities(Source.fromFile(entityFile).getLines().take(100))
+    val lines = LoadEntities(Source.fromFile(entityFile).getLines())
     val em = Actor.actorOf(new EntityService("freebase")).start()
+    em.mailboxSize
     val entityLoader = actorOf(new EntityLoaderMaster2(em)).start()
-    class Cleaner extends Actor {
-      var count = 100
-      protected def receive = {
-        case BigJobDone(_) =>
-          entityLoader.stop()
-        case EntityAdded(_) =>
-          count -= 1
-          if (count == 0) {
-            self.stop()
-            em.stop()
-          }
-      }
+    DivideAndConquerActor.bigJobDoneHook(entityLoader) {
+      () =>
+        entityLoader.stop()
+        Scheduler.schedule(em, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
     }
 
-    val cleaner = actorOf(new Cleaner).start()
-
-    em ! HasListeners.RegisterListener(cleaner)
-    entityLoader ! HasListeners.RegisterListener(cleaner)
     entityLoader ! lines
-
 
 
   }

@@ -72,7 +72,7 @@ class EntityService(val collectionId: String)
 
 
   protected def receive = {
-    receiveListeners orElse {
+    receiveListeners orElse stopWhenMailboxEmpty orElse {
 
       case AddEntity(entity) =>
         addEntity(entity)
