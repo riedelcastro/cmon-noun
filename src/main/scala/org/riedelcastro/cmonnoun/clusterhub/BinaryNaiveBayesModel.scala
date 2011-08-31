@@ -78,27 +78,13 @@ trait BinaryNaiveBayesModel extends BinaryClusterEstimation with BinaryClusterMa
     prior.inc(true, 0)
     prior.inc(false, 99)
     instances.foreach(instance => {
-      if (instance.label.isDefined) {
-        if (instance.label.get == 1) {
-          prior.inc(true, 1)
-          instance.feats.foreach(f => {
-            emissions1.inc(f, 1)
-            emissions0.inc(f, 0)
-          })
-        } else {
-          prior.inc(false, 1)
-          instance.feats.foreach(f => {
-            emissions1.inc(f, 0)
-            emissions0.inc(f, 1)
-          })
-        }
-      } else {
-        // needed to ensure we don't ignore unlabeled features
-        instance.feats.foreach(f => {
-          emissions1.inc(f, 0)
-          emissions0.inc(f, 0)
-        })
-      }
+      val prob = instance.label.getOrElse(instance.prob)
+      prior.inc(true, prob)
+      prior.inc(false, 1 - prob)
+      instance.feats.foreach(f => {
+        emissions1.inc(f, prob)
+        emissions0.inc(f, 1 - prob)
+      })
     })
   }
 
@@ -120,11 +106,7 @@ trait BinaryNaiveBayesModel extends BinaryClusterEstimation with BinaryClusterMa
     emissions0 = new DirichletMultinomial()
     emissions1 = new DirichletMultinomial()
     instances.foreach(instance => {
-      val prob = {
-        if (instance.label.isDefined) {
-          if (instance.label.get == 1) 1.0 else 0.0
-        } else instance.prob
-      }
+      val prob = instance.label.getOrElse(instance.prob)
       prior.inc(true, prob)
       prior.inc(false, 1 - prob)
       instance.feats.foreach(f => {
