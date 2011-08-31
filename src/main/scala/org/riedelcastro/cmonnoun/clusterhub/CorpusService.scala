@@ -4,6 +4,7 @@ import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
 import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SentenceSpec
+import com.mongodb.DBObject
 
 
 /**
@@ -46,19 +47,19 @@ object CorpusService {
 
   case class FeatureSpec(navigator: Navigator, extractor: Extractor)
 
-  case class SentenceQuery(contains: String, from: Int = 0, batchSize: Int = Int.MaxValue)
-
+  sealed trait Predicate
+  case object All extends Predicate
+  case class BySpecs(specs:Stream[SentenceSpec]) extends Predicate
+  case class Query(predicate:Predicate = All, skip:Int = 0, limit:Int = Int.MaxValue)
   case class StoreSentence(sentence: Sentence)
-
   case class SetCorpus(corpusId: String)
-
   case class Sentences(sentences: TraversableOnce[Sentence])
 
   trait SentencesChangedEvent
   case class SentenceAdded(sentence:Sentence) extends SentencesChangedEvent
 }
 
-class CorpusService extends Actor with MongoSupport with HasListeners {
+class CorpusService extends Actor with MongoSupport with HasListeners with StopWhenMailboxEmpty {
 
   import CorpusService._
 
@@ -69,32 +70,48 @@ class CorpusService extends Actor with MongoSupport with HasListeners {
     corpus = Some(corpusId)
   }
 
+  private def spec2Key(spec:SentenceSpec):Any = {
+    spec.docId + "#" + spec.sentenceIndex
+  }
+  private def key2Spec(key:Any):SentenceSpec = {
+    val string = key.toString
+    val index = string.lastIndexOf("#")
+    val docId = string.slice(0,index)
+    val sentenceId = string.drop(index).toInt
+    SentenceSpec(docId,sentenceId)
+  }
+
   def storeSentence(sentence: Sentence) {
     for (c <- corpus) {
       val coll = collFor("data", c, "sentences")
       val dbo = MongoDBObject("doc" -> sentence.docId, "index" -> sentence.indexInDoc)
       val words = sentence.tokens.map(_.word).toArray
       dbo.put("tokens", words)
+      dbo.put("_id", spec2Key(sentence.sentenceSpec))
       coll += dbo
     }
   }
 
-  def querySentences(q: SentenceQuery): Option[TraversableOnce[Sentence]] = {
+  def querySentences(q: Query): Option[TraversableOnce[Sentence]] = {
     for (c <- corpus) yield {
       val coll = collFor("data", c, "sentences")
-      for (dbo <- coll.find().skip(q.from).limit(q.batchSize)) yield {
-        val docId = dbo.as[String]("doc")
-        val sentenceIndex = dbo.as[Int]("index")
+      val dboQ = q.predicate match {
+        case All => MongoDBObject()
+        case BySpecs(specs) => MongoDBObject(
+          "_id" -> MongoDBObject("$in" -> specs.map(spec2Key(_))))
+      }
+      for (dbo <- coll.find(dboQ).skip(q.skip).limit(q.limit)) yield {
+        val spec = key2Spec(dbo("_id"))
         val words = dbo.as[BasicDBList]("tokens").toSeq.map(_.toString)
         val tokens = words.zipWithIndex.map({case (w, i) => Token(i, w)})
-        Sentence(docId, sentenceIndex, tokens)
+        Sentence(spec.docId, spec.sentenceIndex, tokens)
       }
     }
   }
 
   protected def receive = {
 
-    receiveListeners.orElse {
+    receiveListeners orElse stopWhenMailboxEmpty orElse  {
 
       case SetCorpus(id) =>
         corpus = Some(id)
@@ -103,7 +120,7 @@ class CorpusService extends Actor with MongoSupport with HasListeners {
         storeSentence(s)
         informListeners(SentenceAdded(s))
 
-      case q@SentenceQuery(w, f, t) =>
+      case q:Query =>
         for (result <- querySentences(q)) {
           self.reply(Sentences(result))
         }

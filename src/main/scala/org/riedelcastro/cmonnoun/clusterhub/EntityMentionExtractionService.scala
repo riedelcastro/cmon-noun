@@ -1,7 +1,10 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
 import org.riedelcastro.cmonnoun.clusterhub.EntityService.ByName
-import akka.actor.{Actor, ActorRef}
+import akka.actor.Actor._
+import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.EntityMentions
+import akka.actor.{Scheduler, Actor, ActorRef}
+import java.util.concurrent.TimeUnit
 
 /**
  * Loads sentences from corpus, extracts mentions, and sends
@@ -12,7 +15,7 @@ import akka.actor.{Actor, ActorRef}
 class EntityMentionExtractionService(entityMentionService: ActorRef)
   extends DivideAndConquerActor {
 
-  val models = new EntityMentionModels
+  lazy val models = new EntityMentionModels
 
   type BigJob = CorpusService.Sentences
   type SmallJob = CorpusService.Sentences
@@ -25,7 +28,7 @@ class EntityMentionExtractionService(entityMentionService: ActorRef)
   def numberOfWorkers = 10
 
   def divide(bigJob: CorpusService.Sentences) = {
-    for (group <- bigJob.sentences.toIterator.grouped(100)) yield CorpusService.Sentences(group)
+    for (group <- bigJob.sentences.toIterator.grouped(20)) yield CorpusService.Sentences(group)
   }
 
   def newWorker() = new PerDocExtractor
@@ -34,11 +37,9 @@ class EntityMentionExtractionService(entityMentionService: ActorRef)
     val extractor = new EntityMentionExtractor(models)
 
     def doYourJob(job: SmallJob) {
-      for (sent <- job.sentences) {
-        val mentions = extractor.extractMentions(sent)
-        for (mention <- mentions) {
-          entityMentionService ! EntityMentionService.StoreEntityMention(mention)
-        }
+      val mentions = extractor.extractMentions(job.sentences)
+      for (mention <- mentions) {
+        entityMentionService ! EntityMentionService.StoreEntityMention(mention)
       }
     }
   }
@@ -65,7 +66,7 @@ object EntityMentionExtractionService {
     }
 
     //get sentences to extractor
-    corpus !! CorpusService.SentenceQuery("") match {
+    corpus !! CorpusService.Query() match {
       case Some(s: CorpusService.Sentences) => extractor ! s
       case None => {}
     }
@@ -77,29 +78,33 @@ object EntityMentionExtractionService {
 /**
  * Receives mentions, finds entities that match, stores these to the given alignment service.
  */
-abstract class EntityMentionAlignmentExtractionService(val entityService: ActorRef, val alignmentService: ActorRef)
+class EntityMentionAlignerService(val entityService: ActorRef, val alignmentService: ActorRef)
   extends DivideAndConquerActor {
 
   import EntityMentionService._
+  import EntityService._
 
   override def bigJobName = "alignmentExtractionService"
+
   type BigJob = EntityMentions
   type SmallJob = EntityMentions
+
   def unwrapJob = {case job: EntityMentions => job}
+
   def divide(bigJob: EntityMentions) = for (group <- bigJob.mentions.toIterator.grouped(100)) yield
     EntityMentions(group)
-  def numberOfWorkers = 10
 
+  def numberOfWorkers = 10
+  def newWorker() = new ExtractionWorker
 
   class ExtractionWorker extends Worker {
     def doYourJob(job: EntityMentions) {
       for (mention <- job.mentions) {
         //todo: avoid blocking
-        entityService !! EntityService.Query(ByName(mention.phrase)) match {
-          case Some(EntityService.Entities(entities)) =>
-            for (entity <- entities.toStream.headOption)
-              alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
-          case _ =>
+        for (Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))) {
+          for (entity <- entities.toStream.headOption) {
+            alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
+          }
         }
       }
     }
@@ -107,6 +112,26 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
 
 }
 
-object EntityMentionAlignmentExtractionService {
+object EntityMentionAlignerService {
+
+  def main(args: Array[String]) {
+    val entityService = actorOf(new EntityService("freebase")).start()
+    val alignmentService = actorOf(new EntityMentionAlignmentService("freebasenyt")).start()
+    val entityMentionService = actorOf(new EntityMentionService("nyt")).start()
+    val aligner = actorOf(new EntityMentionAlignerService(entityService,alignmentService)).start()
+
+    DivideAndConquerActor.bigJobDoneHook(aligner) {
+      () =>
+        aligner.stop()
+        Scheduler.schedule(entityService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+        Scheduler.schedule(alignmentService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+        Scheduler.schedule(entityMentionService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+    }
+
+    for (EntityMentions(mentions) <- entityMentionService !! EntityMentionService.Query()) {
+      aligner ! EntityMentions(mentions)
+    }
+
+  }
 
 }

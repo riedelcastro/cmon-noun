@@ -2,18 +2,13 @@ package org.riedelcastro.cmonnoun.clusterhub.nlp
 
 import org.riedelcastro.nurupo.Util
 import opennlp.tools.sentdetect.{SentenceDetectorME, SentenceModel}
+import org.riedelcastro.cmonnoun.clusterhub.OpenNLPUtil
 
 /**
  * @author sriedel
  */
-class SentenceDetector {
+class SentenceDetector(val model:SentenceModel) {
 
-  val modelIn = Util.getStreamFromFileOrClassPath("en-sent.bin")
-  val model = try {
-    new SentenceModel(modelIn)
-  } catch {
-    case e => e.printStackTrace(); sys.error("Can't load model")
-  }
   val detector = new SentenceDetectorME(model)
 
   def sentenceDetect(text:String) = {

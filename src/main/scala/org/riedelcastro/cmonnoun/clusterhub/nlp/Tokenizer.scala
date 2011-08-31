@@ -2,18 +2,14 @@ package org.riedelcastro.cmonnoun.clusterhub.nlp
 
 import org.riedelcastro.nurupo.Util
 import opennlp.tools.tokenize.{TokenizerME, TokenizerModel}
+import org.riedelcastro.cmonnoun.clusterhub.OpenNLPUtil
 
 /**
  * @author sriedel
  */
-class Tokenizer {
+class Tokenizer(val model:TokenizerModel) {
 
   val modelIn = Util.getStreamFromFileOrClassPath("en-token.bin")
-  val model:TokenizerModel = try {
-    new TokenizerModel(modelIn)
-  } catch {
-    case e => e.printStackTrace(); sys.error("Couldn't load model")
-  }
   val tokenizer = new TokenizerME(model)
 
   def tokenize(text: String): Seq[Token] = {

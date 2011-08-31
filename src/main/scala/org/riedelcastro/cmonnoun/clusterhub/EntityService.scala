@@ -21,8 +21,8 @@ object EntityService {
   case class SetCollection(id: String)
   case class Query(predicate: Predicate, skip: Int = 0, batchSize: Int = Int.MaxValue)
   sealed trait Predicate
-  case class ById(id: String) extends Predicate
-  case class ByIds(ids: Seq[String]) extends Predicate
+  case class ById(id: Any) extends Predicate
+  case class ByIds(ids: Seq[Any]) extends Predicate
   case class ByName(name:String) extends Predicate
 
   case object All extends Predicate
@@ -33,7 +33,9 @@ trait EntityCollectionPersistence extends MongoSupport {
   this: EntityService =>
 
   def entityColl(id: String): MongoCollection = {
-    collFor(id, "entities")
+    val coll = collFor(id, "entities")
+    coll.ensureIndex("name")
+    coll
   }
 
   def addEntity(entity: Entity) {
