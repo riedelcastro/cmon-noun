@@ -110,7 +110,7 @@ trait BinaryNaiveBayesModel extends BinaryClusterEstimation with BinaryClusterMa
         logprob0 += emissions0.logprob(f)
         logprob1 += emissions1.logprob(f)
       })
-      val prob = 1.0 / (1 + math.exp(logprob0 - logprob1))
+      val prob = 1.0 / (1.0 + math.exp(logprob0 - logprob1))
       Probability(instance.id, prob)
     })
   }
@@ -122,7 +122,7 @@ trait BinaryNaiveBayesModel extends BinaryClusterEstimation with BinaryClusterMa
     instances.foreach(instance => {
       val prob = {
         if (instance.label.isDefined) {
-          if (instance.label.get == 1) 1 else 0
+          if (instance.label.get == 1) 1.0 else 0.0
         } else instance.prob
       }
       prior.inc(true, prob)
