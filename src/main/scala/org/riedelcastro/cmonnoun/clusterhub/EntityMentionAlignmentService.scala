@@ -2,10 +2,9 @@ package org.riedelcastro.cmonnoun.clusterhub
 
 import org.bson.types.ObjectId
 import org.riedelcastro.cmonnoun.clusterhub.EntityService.ByIds
-import org.riedelcastro.cmonnoun.clusterhub.EntityMentionAlignmentService.{EntityIds, GetEntityIds, GetEntities, StoreAlignment}
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.Imports._
-import akka.actor.{ScalaActorRef, ActorRef, Actor}
+import akka.actor.{ScalaActorRef, Actor}
 
 
 /**
@@ -13,15 +12,34 @@ import akka.actor.{ScalaActorRef, ActorRef, Actor}
  */
 class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport with StopWhenMailboxEmpty {
 
-  val coll = collFor("entityMentionAlign", id)
+  import EntityMentionAlignmentService._
 
-  def entityIdsFor(mentionId: ObjectId): TraversableOnce[String] = {
+  lazy val coll = collFor("entityMentionAlign", id)
+  coll.ensureIndex("entity")
+  coll.ensureIndex("mention")
+
+
+  def entityIdsFor(mentionId: Any): TraversableOnce[Any] = {
     for (dbo <- coll.find(MongoDBObject("mention" -> mentionId))) yield {
       dbo.as[String]("entity")
     }
   }
 
-  def storeAlignment(mentionId: ObjectId, entityId: String) {
+  def mentionIdsFor(entityId: Any): TraversableOnce[Any] = {
+    for (dbo <- coll.find(MongoDBObject("entity" -> entityId))) yield {
+      dbo.as[Any]("mention")
+    }
+  }
+
+  def mentionsIdsFor(entityIds: Stream[Any]): TraversableOnce[Any] = {
+    for (dbo <- coll.find(MongoDBObject("entity" -> MongoDBObject("$in" -> entityIds)))) yield {
+      dbo.as[Any]("mention")
+    }
+  }
+
+
+
+  def storeAlignment(mentionId: Any, entityId: Any) {
     val dbo = MongoDBObject(
       "mention" -> mentionId,
       "entity" -> entityId)
@@ -40,16 +58,26 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
 
       case GetEntityIds(mentionId) =>
         self.channel ! EntityIds(entityIdsFor(mentionId))
+
+      case GetMentionIds(entityIds) =>
+        self.channel ! MentionIds(mentionsIdsFor(entityIds))
+
+      case GetMentions(m,entityIds) =>
+        val mentionIds = mentionsIdsFor(entityIds)
+        m.forward(EntityMentionService.Query(EntityMentionService.ByIds(mentionIds.toStream)))
     }
 
   }
 }
 
 object EntityMentionAlignmentService {
-  case class StoreAlignment(mentionId: ObjectId, entityId: String)
-  case class GetEntityIds(mentionId: ObjectId)
-  case class GetEntities(entityService: ScalaActorRef, mentionId: ObjectId)
+  case class StoreAlignment(mentionId: Any, entityId: Any)
+  case class GetEntityIds(mentionId: Any)
+  case class GetEntities(entityService: ScalaActorRef, mentionId: Any)
   case class GetMentionIds(entityIds: Stream[Any])
+  case class GetMentions(mentionService: ScalaActorRef, entityIds: Stream[Any])
 
-  case class EntityIds(entityId: TraversableOnce[String])
+
+  case class EntityIds(entityIds: TraversableOnce[Any])
+  case class MentionIds(mentionIds:TraversableOnce[Any])
 }

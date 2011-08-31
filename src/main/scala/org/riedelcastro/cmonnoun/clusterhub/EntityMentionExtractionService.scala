@@ -66,7 +66,7 @@ object EntityMentionExtractionService {
     }
 
     //get sentences to extractor
-    corpus !! CorpusService.SentenceQuery("") match {
+    corpus !! CorpusService.Query() match {
       case Some(s: CorpusService.Sentences) => extractor ! s
       case None => {}
     }
@@ -101,7 +101,7 @@ class EntityMentionAlignerService(val entityService: ActorRef, val alignmentServ
     def doYourJob(job: EntityMentions) {
       for (mention <- job.mentions) {
         //todo: avoid blocking
-        for (Entities(entities) <- entityService !! Query(ByName(mention.phrase))) {
+        for (Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))) {
           for (entity <- entities.toStream.headOption) {
             alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
           }

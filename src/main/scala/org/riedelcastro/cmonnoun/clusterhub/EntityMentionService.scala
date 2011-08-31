@@ -46,6 +46,7 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
     val coll = mentionColl()
     val dboQ = q.predicate match {
       case All => MongoDBObject()
+      case ByIds(ids) => MongoDBObject("_id" -> MongoDBObject("$in" -> ids))
     }
     for (dbo <- coll.find(dboQ).skip(q.skip).limit(q.batchSize)) yield
       toEntityMention(dbo)
@@ -76,6 +77,7 @@ object EntityMentionService {
   case class EntityMentions(mentions: TraversableOnce[EntityMention])
   sealed trait Predicate
   case object All extends Predicate
+  case class ByIds(ids:Stream[Any]) extends Predicate
   case class Query(predicate: Predicate = All, skip: Int = 0, batchSize: Int = Int.MaxValue)
 }
 

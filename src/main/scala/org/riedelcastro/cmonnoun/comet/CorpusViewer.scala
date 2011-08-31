@@ -22,7 +22,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
 
   var corpusManager: Option[ActorRef] = None
   var corpusId: Option[String] = None
-  var query: Option[SentenceQuery] = None
+  var query: Option[Query] = None
   var sentences: Option[Seq[Sentence]] = None
   var clusters: Option[Seq[ActorRef]] = None
   case class TokenSelection(spec: TokenSpec, token: Token, localSentenceIndex: Int)
@@ -180,7 +180,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
       corpusManager = Some(manager)
       corpusId = Some(id)
       manager ak_! RegisterListener(bridge)
-      manager ak_! SentenceQuery("", 0, 10)
+      manager ak_! Query(limit = 10)
       reRender()
 
     case Sentences(s) =>
@@ -191,7 +191,7 @@ class CorpusViewer extends CallMailboxFirst with HasLogger {
 
     case SentenceAdded(s) =>
       for (m <- corpusManager)
-        m ak_! SentenceQuery("", 0, 10)
+        m ak_! Query(limit = 10)
 
     case Rows(specs, rows, clusterId) =>
       for (row <- rows) {
