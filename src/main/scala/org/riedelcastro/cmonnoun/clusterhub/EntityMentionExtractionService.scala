@@ -82,6 +82,7 @@ class EntityMentionAlignerService(val entityService: ActorRef, val alignmentServ
   extends DivideAndConquerActor {
 
   import EntityMentionService._
+  import EntityService._
 
   override def bigJobName = "alignmentExtractionService"
 
@@ -100,10 +101,10 @@ class EntityMentionAlignerService(val entityService: ActorRef, val alignmentServ
     def doYourJob(job: EntityMentions) {
       for (mention <- job.mentions) {
         //todo: avoid blocking
-        for (EntityService.Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))) {
-          for (entity <- entities.toStream.headOption)
+        for (Entities(entities) <- entityService !! Query(ByName(mention.phrase))) {
+          for (entity <- entities.toStream.headOption) {
             alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
-
+          }
         }
       }
     }
@@ -115,7 +116,7 @@ object EntityMentionAlignerService {
 
   def main(args: Array[String]) {
     val entityService = actorOf(new EntityService("freebase")).start()
-    val alignmentService = actorOf(new EntityMentionAlignmentService("freebase-nyt")).start()
+    val alignmentService = actorOf(new EntityMentionAlignmentService("freebasenyt")).start()
     val entityMentionService = actorOf(new EntityMentionService("nyt")).start()
     val aligner = actorOf(new EntityMentionAlignerService(entityService,alignmentService)).start()
 

@@ -37,12 +37,16 @@ trait DivideAndConquerActor extends Actor with HasListeners with HasLogger {
   protected def receive = {
     unwrapJob.andThen {
       job =>
-        for (smallJob <- divide(job)) {
-          count += 1
-          router ! smallJob
-          if (count % 100 == 0)
-            infoLazy("Started %d sub-tasks".format(count))
-        }
+        val smallJobs = divide(job)
+        if (smallJobs.isEmpty)
+          informListeners(BigJobDone(bigJobName))
+        else
+          for (smallJob <- smallJobs) {
+            count += 1
+            router ! smallJob
+            if (count % 100 == 0)
+              infoLazy("Started %d sub-tasks".format(count))
+          }
     } orElse receiveListeners orElse {
       case Done =>
         count -= 1
@@ -118,8 +122,8 @@ trait StopWhenMailboxEmpty {
 case object StopWhenMailboxEmpty
 
 trait PrioritizedActor extends Actor {
-  def lowPriority:Receive
-  def highPriority:Receive
+  def lowPriority: Receive
+  def highPriority: Receive
 
   protected def receive = {
     highPriority orElse lowPriority
