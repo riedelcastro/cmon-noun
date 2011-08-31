@@ -116,3 +116,12 @@ trait StopWhenMailboxEmpty {
 }
 
 case object StopWhenMailboxEmpty
+
+trait PrioritizedActor extends Actor {
+  def lowPriority:Receive
+  def highPriority:Receive
+
+  protected def receive = {
+    highPriority orElse lowPriority
+  }
+}

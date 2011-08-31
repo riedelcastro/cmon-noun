@@ -13,10 +13,20 @@ import java.util.concurrent.TimeUnit
 import org.riedelcastro.nurupo.Util
 import opennlp.tools.sentdetect.{SentenceDetectorME, SentenceModel}
 import opennlp.tools.tokenize.TokenizerModel
+import xsbti.AppConfiguration
 
 /**
  * @author sriedel
  */
+class NYTSentenceLoaderLauncher extends xsbti.AppMain {
+
+  def run(app: AppConfiguration) = {
+    NYTSentenceLoader.main(app.arguments())
+    new xsbti.Exit {val code = 0}
+  }
+
+}
+
 object NYTSentenceLoader {
 
 

@@ -1,7 +1,10 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
 import org.riedelcastro.cmonnoun.clusterhub.EntityService.ByName
-import akka.actor.{Actor, ActorRef}
+import akka.actor.Actor._
+import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.EntityMentions
+import akka.actor.{Scheduler, Actor, ActorRef}
+import java.util.concurrent.TimeUnit
 
 /**
  * Loads sentences from corpus, extracts mentions, and sends
@@ -75,7 +78,7 @@ object EntityMentionExtractionService {
 /**
  * Receives mentions, finds entities that match, stores these to the given alignment service.
  */
-abstract class EntityMentionAlignmentExtractionService(val entityService: ActorRef, val alignmentService: ActorRef)
+class EntityMentionAlignerService(val entityService: ActorRef, val alignmentService: ActorRef)
   extends DivideAndConquerActor {
 
   import EntityMentionService._
@@ -91,7 +94,7 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
     EntityMentions(group)
 
   def numberOfWorkers = 10
-
+  def newWorker() = new ExtractionWorker
 
   class ExtractionWorker extends Worker {
     def doYourJob(job: EntityMentions) {
@@ -108,6 +111,26 @@ abstract class EntityMentionAlignmentExtractionService(val entityService: ActorR
 
 }
 
-object EntityMentionAlignmentExtractionService {
+object EntityMentionAlignerService {
+
+  def main(args: Array[String]) {
+    val entityService = actorOf(new EntityService("freebase")).start()
+    val alignmentService = actorOf(new EntityMentionAlignmentService("freebase-nyt")).start()
+    val entityMentionService = actorOf(new EntityMentionService("nyt")).start()
+    val aligner = actorOf(new EntityMentionAlignerService(entityService,alignmentService)).start()
+
+    DivideAndConquerActor.bigJobDoneHook(aligner) {
+      () =>
+        aligner.stop()
+        Scheduler.schedule(entityService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+        Scheduler.schedule(alignmentService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+        Scheduler.schedule(entityMentionService, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
+    }
+
+    for (EntityMentions(mentions) <- entityMentionService !! EntityMentionService.Query()) {
+      aligner ! EntityMentions(mentions)
+    }
+
+  }
 
 }

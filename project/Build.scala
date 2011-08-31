@@ -90,8 +90,11 @@ object Dependencies {
     "edu.stanford" % "stanford-corenlp-faust-models" % "2011-06-19",
     "xom" % "xom" % "1.2.5",
     "org.apache.opennlp" % "opennlp-tools" % "1.5.1-incubating",
-    "org.apache.opennlp" % "opennlp-tools-models" % "1.5"
-
+    "org.apache.opennlp" % "opennlp-tools-models" % "1.5",
+    "org.scala-tools.sbt" % "launcher-interface_2.8.1" % "0.10.1" % "provided",
+    //I don't know why this is necessary---it's already in nurupo. It only seems required
+    //in sbt launchers
+    "log4j" % "log4j" % "1.2.16"
   )
 
   val allDeps = lift ++ liftDeps ++ others
@@ -108,6 +111,7 @@ object ClusterHubBuild extends Build {
     file("."),
     settings = buildSettings ++ Seq(
       resolvers ++= allResolvers,
+      resolvers <+= sbtResolver.identity,
       libraryDependencies ++= allDeps
     )
   )

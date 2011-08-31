@@ -33,7 +33,9 @@ trait EntityCollectionPersistence extends MongoSupport {
   this: EntityService =>
 
   def entityColl(id: String): MongoCollection = {
-    collFor(id, "entities")
+    val coll = collFor(id, "entities")
+    coll.ensureIndex("name")
+    coll
   }
 
   def addEntity(entity: Entity) {

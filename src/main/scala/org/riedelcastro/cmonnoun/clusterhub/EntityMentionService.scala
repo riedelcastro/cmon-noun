@@ -11,12 +11,15 @@ import com.mongodb.casbah.Imports._
 /**
  * @author sriedel
  */
-class EntityMentionService(val collection: String) extends Actor with MongoSupport {
+class EntityMentionService(val collection: String) extends Actor with MongoSupport with StopWhenMailboxEmpty {
 
   import EntityMentionService._
 
+  def mentionColl(): MongoCollection = {
+    collFor("entityMentions", collection)
+  }
   def storeMention(entityMention: EntityMention) {
-    val coll = collFor("entityMentions", collection)
+    val coll = mentionColl()
     val dbo = MongoDBObject(
       "_id" -> entityMention.id,
       "phrase" -> entityMention.phrase,
@@ -36,25 +39,44 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
     val to = dbo.as[Int]("to")
     val ner = dbo.getAs[String]("ner")
     val phrase = dbo.as[String]("phrase")
-    EntityMention(SentenceSpec(docId, sent), from, to, id = id, ner = ner, phrase=phrase)
+    EntityMention(SentenceSpec(docId, sent), from, to, id = id, ner = ner, phrase = phrase)
+  }
+
+  private def query(q: Query) = {
+    val coll = mentionColl()
+    val dboQ = q.predicate match {
+      case All => MongoDBObject()
+    }
+    for (dbo <- coll.find(dboQ).skip(q.skip).limit(q.batchSize)) yield
+      toEntityMention(dbo)
   }
 
 
   protected def receive = {
-    case StoreEntityMention(m) =>
-      storeMention(m)
+
+    stopWhenMailboxEmpty orElse {
+      case StoreEntityMention(m) =>
+        storeMention(m)
+
+      case q: Query =>
+        val result = query(q)
+        self.channel ! EntityMentions(result)
+    }
 
   }
 }
 
 object EntityMentionService {
   case class EntityMention(sentence: SentenceSpec, from: Int, to: Int,
-                           phrase:String,
+                           phrase: String,
                            ner: Option[String] = None,
                            id: ObjectId = new ObjectId)
   case class StoreEntityMention(entityMention: EntityMention)
-  case class GetEntityMentions(ids:Stream[Any])
+  case class GetEntityMentions(ids: Stream[Any])
   case class EntityMentions(mentions: TraversableOnce[EntityMention])
+  sealed trait Predicate
+  case object All extends Predicate
+  case class Query(predicate: Predicate = All, skip: Int = 0, batchSize: Int = Int.MaxValue)
 }
 
 trait MentionManager {
