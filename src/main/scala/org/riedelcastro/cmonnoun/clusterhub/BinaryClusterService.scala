@@ -12,7 +12,8 @@ trait BinaryClusterService
   with HasListeners
   with BinaryClusterStorage
   with BinaryClusterEstimation
-  with BinaryClusterMaximization {
+  with BinaryClusterMaximization
+  with BinaryClusterInitialization {
 
   protected def receive = {
 
@@ -32,6 +33,11 @@ trait BinaryClusterService
         val probs = estimate(instances)
         storeProbabilities(probs)
         informListeners(ProbabilitiesChanged(self,probs))
+
+      case Initialize(ids) =>
+        val instances = loadInstances(ids)
+        initialize(instances)
+        informListeners(ModelChanged(self))
 
       case Maximize(ids) =>
         val instances = loadInstances(ids)
@@ -100,6 +106,11 @@ trait BinaryClusterMaximization {
   def maximize(instances:Stream[Instance])
 }
 
+trait BinaryClusterInitialization {
+  import BinaryClusterService._
+
+  def initialize(instances: Stream[Instance])
+}
 
 object BinaryClusterService {
 
@@ -117,6 +128,6 @@ object BinaryClusterService {
 
   case class Estimate(ids: Stream[Any])
   case class Maximize(ids: Stream[Any])
-
+  case class Initialize(ids: Stream[Any])
 }
 
