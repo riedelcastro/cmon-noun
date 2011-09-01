@@ -5,6 +5,7 @@ import akka.actor.Actor._
 import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.EntityMentions
 import akka.actor.{Scheduler, Actor, ActorRef}
 import java.util.concurrent.TimeUnit
+import org.riedelcastro.cmonnoun.clusterhub.EntityMentionAlignmentService.Alignment
 
 /**
  * Loads sentences from corpus, extracts mentions, and sends
@@ -103,7 +104,7 @@ class EntityMentionAlignerService(val entityService: ActorRef, val alignmentServ
         //todo: avoid blocking
         for (Entities(entities) <- entityService !! EntityService.Query(ByName(mention.phrase))) {
           for (entity <- entities.toStream.headOption) {
-            alignmentService ! EntityMentionAlignmentService.StoreAlignment(mention.id, entity.id)
+            alignmentService ! EntityMentionAlignmentService.StoreAlignment(Alignment(mention.id, entity.id))
           }
         }
       }

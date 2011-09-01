@@ -31,9 +31,11 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
     }
   }
 
-  def mentionsIdsFor(entityIds: Stream[Any]): TraversableOnce[Any] = {
+  def mentionsIdsFor(entityIds: Stream[Any]): TraversableOnce[Alignment] = {
     for (dbo <- coll.find(MongoDBObject("entity" -> MongoDBObject("$in" -> entityIds)))) yield {
-      dbo.as[Any]("mention")
+      val m = dbo.as[Any]("mention")
+      val e = dbo.as[Any]("entity")
+      Alignment(m,e)
     }
   }
 
@@ -49,8 +51,8 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
 
   protected def receive = {
     stopWhenMailboxEmpty orElse {
-      case StoreAlignment(mentionId, entityId) =>
-        storeAlignment(mentionId, entityId)
+      case StoreAlignment(alignment) =>
+        storeAlignment(alignment.mentionId, alignment.entityId)
 
       case GetEntities(m, mentionId) =>
         val entityIds = entityIdsFor(mentionId)
@@ -59,8 +61,8 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
       case GetEntityIds(mentionId) =>
         self.channel ! EntityIds(entityIdsFor(mentionId))
 
-      case GetMentionIds(entityIds) =>
-        self.channel ! MentionIds(mentionsIdsFor(entityIds))
+      case GetAlignments(entityIds) =>
+        self.channel ! Alignments(mentionsIdsFor(entityIds).map(a=>a.mentionId -> a.entityId).toMap)
 
       case GetMentions(m,entityIds) =>
         val mentionIds = mentionsIdsFor(entityIds)
@@ -71,10 +73,12 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
 }
 
 object EntityMentionAlignmentService {
-  case class StoreAlignment(mentionId: Any, entityId: Any)
+  case class Alignment(mentionId: Any, entityId: Any)
+  case class Alignments(alignments:Map[Any,Any])
+  case class StoreAlignment(alignment:Alignment)
   case class GetEntityIds(mentionId: Any)
   case class GetEntities(entityService: ScalaActorRef, mentionId: Any)
-  case class GetMentionIds(entityIds: Stream[Any])
+  case class GetAlignments(entityIds: Stream[Any])
   case class GetMentions(mentionService: ScalaActorRef, entityIds: Stream[Any])
 
 

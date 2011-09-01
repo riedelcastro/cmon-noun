@@ -2,7 +2,7 @@ package org.riedelcastro.cmonnoun.clusterhub
 
 import akka.actor.{ActorRef, Actor}
 import org.riedelcastro.cmonnoun.clusterhub.CorpusService.Sentences
-import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.{EntityMention, EntityMentions}
+import org.riedelcastro.cmonnoun.clusterhub.EntityMentionService.{ByIds, EntityMention, EntityMentions}
 
 /**
  * @author sriedel
@@ -21,23 +21,25 @@ class EntityFeatureExtractionService(val entityMentionAlignmentService: ActorRef
 
   protected def receive = {
     case ExtractFeatures(ids) =>
-      for (EntityMentions(entityMentions) <- entityMentionAlignmentService !! GetMentions(mentionService,ids)) {
-        val specs = entityMentions.map(_.sentence).toSet
-        for (Sentences(sents) <- corpusService !! CorpusService.Query()) {
+      //todo: this is a crazy way to do a join, maybe easier if alignments store mention specs
+      for (Alignments(alignments) <- entityMentionAlignmentService !! GetAlignments(ids);
+           mentionIds = alignments.keys;
+           EntityMentions(mentions) <- mentionService !! EntityMentionService.Query(ByIds(mentionIds))) {
+        //all sentences the mentions are part of
+        val specs = mentions.map(_.sentence).toSet
+        for (Sentences(sents) <- corpusService !! CorpusService.Query(CorpusService.BySpecs(specs.toStream))) {
           val spec2sentence = sents.map(s => s.sentenceSpec -> s).toMap
-          val perSentenceFeats = entityMentions.map(mention => extract(mention,spec2sentence(mention.sentence)))
-          val summarized = perSentenceFeats.reduce(_ ++ _)
+          val id2mention = mentions.map(m => m.id.asInstanceOf[Any] -> m).toMap
+          val allFeats = for (entityId <- ids) yield {
+            val entityMentionIds = mentionIds.filter(alignments(_) == entityId).toSet
+            val entityMentions = entityMentionIds.map(id2mention(_))
+            val feats = entityMentions.map(m=>extract(m,spec2sentence(m.sentence)))
+            val summarized = feats.reduce(_ ++ _)
+            FeatureService.NamedFeatures(entityId,summarized)
+          }
+          featureService ! FeatureService.StoreNamedFeatures(allFeats)
         }
       }
-      //for (MentionIds(ids) <- entityMentionAlignmentService !! EntityMentionAlignmentService.GetMentionIds(ids);
-      //     Mentions(mentions) <- mentionService !! EntityMentionService.GetEntityMentions(ids);
-      //     specs = sentenceSpecs(mentions);
-      //     Sentences(sents) <- corpusService !! CorpusManager.GetSentences(specs))
-      //val mentionIds = entityMentionAlignmentService !! EntityMentionAlignmentService.GetMentionIds(ids)
-      //val mentions = mentionService !! EntityMentionService.GetEntityMentions(mentionIds)
-      //val sentences = corpusService !! CorpusManager.GetSentences(mentions)
-      //val featuresAsStrings = extract(...)
-      //self.channel ! FeaturesAsStrings(featuresAsStrings)
   }
 }
 

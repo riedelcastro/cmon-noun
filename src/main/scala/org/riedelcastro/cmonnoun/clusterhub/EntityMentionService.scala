@@ -77,7 +77,7 @@ object EntityMentionService {
   case class EntityMentions(mentions: TraversableOnce[EntityMention])
   sealed trait Predicate
   case object All extends Predicate
-  case class ByIds(ids:Stream[Any]) extends Predicate
+  case class ByIds(ids:TraversableOnce[Any]) extends Predicate
   case class Query(predicate: Predicate = All, skip: Int = 0, batchSize: Int = Int.MaxValue)
 }
 
