@@ -77,7 +77,7 @@ class CorpusService extends Actor with MongoSupport with HasListeners with StopW
     val string = key.toString
     val index = string.lastIndexOf("#")
     val docId = string.slice(0,index)
-    val sentenceId = string.drop(index).toInt
+    val sentenceId = string.drop(index + 1).toInt
     SentenceSpec(docId,sentenceId)
   }
 

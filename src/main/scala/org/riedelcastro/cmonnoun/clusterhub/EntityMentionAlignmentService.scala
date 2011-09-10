@@ -25,6 +25,13 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
     }
   }
 
+  def entities(): TraversableOnce[Any] = {
+    for (dbo <- coll.find()) yield {
+      dbo.as[String]("entity")
+    }
+  }
+
+
   def mentionIdsFor(entityId: Any): TraversableOnce[Any] = {
     for (dbo <- coll.find(MongoDBObject("entity" -> entityId))) yield {
       dbo.as[Any]("mention")
@@ -58,6 +65,9 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
         val entityIds = entityIdsFor(mentionId)
         m.forward(EntityService.Query(ByIds(entityIds.toSeq)))
 
+      case GetEntitiesWithMentions =>
+        self.channel ! EntityIds(entities())
+
       case GetEntityIds(mentionId) =>
         self.channel ! EntityIds(entityIdsFor(mentionId))
 
@@ -80,6 +90,7 @@ object EntityMentionAlignmentService {
   case class GetEntities(entityService: ScalaActorRef, mentionId: Any)
   case class GetAlignments(entityIds: Stream[Any])
   case class GetMentions(mentionService: ScalaActorRef, entityIds: Stream[Any])
+  case object GetEntitiesWithMentions
 
 
   case class EntityIds(entityIds: TraversableOnce[Any])

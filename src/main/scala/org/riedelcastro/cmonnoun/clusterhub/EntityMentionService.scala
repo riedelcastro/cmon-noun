@@ -6,12 +6,14 @@ import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.DBObject
 import com.mongodb.casbah.Imports._
+import org.riedelcastro.nurupo.HasLogger
 
 
 /**
  * @author sriedel
  */
-class EntityMentionService(val collection: String) extends Actor with MongoSupport with StopWhenMailboxEmpty {
+class EntityMentionService(val collection: String)
+  extends Actor with MongoSupport with StopWhenMailboxEmpty with HasLogger {
 
   import EntityMentionService._
 
@@ -60,8 +62,9 @@ class EntityMentionService(val collection: String) extends Actor with MongoSuppo
         storeMention(m)
 
       case q: Query =>
-        val result = query(q)
-        self.channel ! EntityMentions(result)
+        val result = query(q).toStream
+        debugLazy("Found mention count: " + result.size)
+        self.reply(EntityMentions(result))
     }
 
   }

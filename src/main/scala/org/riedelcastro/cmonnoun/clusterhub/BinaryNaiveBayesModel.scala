@@ -63,7 +63,8 @@ class DirichletMultinomial(var lambda: Double = 1.0) {
   }
 }
 
-trait BinaryNaiveBayesModel extends BinaryClusterEstimation with BinaryClusterMaximization with BinaryClusterInitialization {
+trait BinaryNaiveBayesModel
+  extends BinaryClusterEstimation with BinaryClusterMaximization with BinaryClusterInitialization {
 
   import BinaryClusterService._
 
