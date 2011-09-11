@@ -1,11 +1,11 @@
 package org.riedelcastro.cmonnoun.clusterhub
 
-import akka.actor.Actor
 import com.mongodb.casbah.commons.MongoDBObject
 import com.mongodb.casbah.MongoCollection
 import org.riedelcastro.cmonnoun.clusterhub.EntityService._
 import com.mongodb.casbah.Imports._
-
+import collection.mutable.HashMap
+import akka.actor.{ActorRef, Actor}
 
 /**
  * @author sriedel
@@ -13,7 +13,6 @@ import com.mongodb.casbah.Imports._
 object EntityService {
 
   case class Entity(id: String, name: String,
-                    features: Seq[String] = Seq.empty,
                     freebaseTypes:Seq[String] = Seq.empty)
   case class Entities(entities: TraversableOnce[Entity])
   case class AddEntity(entity: Entity)
@@ -24,6 +23,9 @@ object EntityService {
   case class ById(id: Any) extends Predicate
   case class ByIds(ids: Seq[Any]) extends Predicate
   case class ByName(name:String) extends Predicate
+  case class ByNameRegex(regex:String) extends Predicate
+  case class ByIdRegex(regex:String) extends Predicate
+
 
   case object All extends Predicate
 
@@ -43,7 +45,6 @@ trait EntityCollectionPersistence extends MongoSupport {
     val dbo = MongoDBObject(
       "_id" -> entity.id,
       "name" -> entity.name,
-      "feats" -> entity.features,
       "freebaseTypes" -> entity.freebaseTypes
     )
     coll += dbo
@@ -55,14 +56,15 @@ trait EntityCollectionPersistence extends MongoSupport {
       case ById(entityId) => MongoDBObject("_id" -> entityId)
       case ByIds(ids) => MongoDBObject("_id" -> MongoDBObject("$in" -> ids))
       case ByName(name) => MongoDBObject("name" -> name)
+      case ByNameRegex(regex) => MongoDBObject("name" -> MongoDBObject("$regex" -> regex))
+      case ByIdRegex(regex) => MongoDBObject("_id" -> MongoDBObject("$regex" -> regex))
       case All => MongoDBObject()
     }
     val result = for (dbo <- coll.find(q).skip(query.skip).limit(query.batchSize)) yield {
       val id = dbo.as[String]("_id")
       val name = dbo.as[String]("name")
-      val feats = dbo.as[BasicDBList]("feats")
       val types = dbo.as[BasicDBList]("freebaseTypes")
-      Entity(id, name, feats.map(_.toString),types.map(_.toString))
+      Entity(id, name, types.map(_.toString))
     }
     result
   }
@@ -85,3 +87,15 @@ class EntityService(val collectionId: String)
     }
   }
 }
+
+
+class EntityServiceRegistry extends ServiceRegistry {
+  def registryName = "entity"
+  def create(name: String) = new EntityService(name)
+}
+
+class EntityMentionAlignmentServiceRegistry extends ServiceRegistry {
+  def create(name: String) = new EntityMentionAlignmentService(name)
+  def registryName = "entityMentionAlignment"
+}
+

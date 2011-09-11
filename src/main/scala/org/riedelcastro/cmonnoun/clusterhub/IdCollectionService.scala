@@ -2,6 +2,7 @@ package org.riedelcastro.cmonnoun.clusterhub
 
 import akka.actor.Actor
 import org.riedelcastro.cmonnoun.clusterhub.IdCollectionService.{Ids, StoreIds, GetIds}
+import com.mongodb.casbah.commons.MongoDBObject
 
 /**
  * @author sriedel
@@ -19,7 +20,7 @@ class IdCollectionService(val name: String) extends Actor with MongoSupport {
 
   def storeIds(ids: Seq[Any]) {
     for (id <- ids) {
-      coll += BasicDBObject("_id" -> id)
+      coll += MongoDBObject("_id" -> id)
     }
   }
 

@@ -83,8 +83,12 @@ class EntityMentionAlignmentService(id: String) extends Actor with MongoSupport 
 }
 
 object EntityMentionAlignmentService {
+
+  type EntityId = Any
+  type EntityMentionId = Any
+
   case class Alignment(mentionId: Any, entityId: Any)
-  case class Alignments(alignments:Map[Any,Any])
+  case class Alignments(alignments:Map[EntityMentionId,EntityId])
   case class StoreAlignment(alignment:Alignment)
   case class GetEntityIds(mentionId: Any)
   case class GetEntities(entityService: ScalaActorRef, mentionId: Any)

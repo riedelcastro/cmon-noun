@@ -1,8 +1,8 @@
 package org.riedelcastro.cmonnoun.comet
 
 import net.liftweb.http.CometActor
-import org.riedelcastro.cmonnoun.clusterhub.{Mailbox, ClusterHub}
 import akka.actor.{ActorRef, Actor, Actors}
+import org.riedelcastro.cmonnoun.clusterhub._
 
 trait WithBridge {
 
@@ -31,6 +31,12 @@ object Controller {
   val mailbox = Actors.actorOf(classOf[Mailbox]).start()
 }
 
+object Global {
+  val entityServiceRegistry = Actor.actorOf[EntityServiceRegistry].start()
+  val entityMentionAlignmentServiceRegistry = Actor.actorOf[EntityMentionAlignmentServiceRegistry].start()
+  val clusterServiceRegistry = Actor.actorOf[BinaryClusterServiceRegistry].start()
+
+}
 
 class BridgeActor extends Actor {
   private var target: Option[CometActor] = None

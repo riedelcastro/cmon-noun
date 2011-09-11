@@ -1,0 +1,56 @@
+<!--suppress XmlUnboundNsPrefix -->
+<div class="lift:surround?with=default;at=content">
+    <div class="lift:EntitiesSnippet">
+
+        <lift:comet id="entities" type="EntityListViewer" name="replaceme">
+            <h2>Entities
+                <div class="entity_service_name"></div>
+            </h2>
+            <div>
+                Clusters:
+                <div id="cluster_names"></div>
+            </div>
+            <div>
+                Name:
+                <div id="name_search"></div>
+            </div>
+            <div>
+                Id:
+                <div id="id_search"></div>
+            </div>
+            <div>
+
+                <table id="entities" class="stdtable" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr class="header">
+                        <!--<th>Entity ID</th>-->
+                        <th>Name</th>
+                        <th>Freebase Types</th>
+                        <th>Mentions</th>
+
+
+                    </tr>
+
+                    <tr class="entity">
+                        <!--<td class="entity_id"></td>-->
+                        <td class="entity_name"></td>
+                        <td class="entity_types"></td>
+                        <td class="entity_mentions"></td>
+                        <td class="entity_clusters"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div id="prev"></div>
+            <div id="next"></div>
+
+        </lift:comet>
+
+    </div>
+
+
+</div>
+

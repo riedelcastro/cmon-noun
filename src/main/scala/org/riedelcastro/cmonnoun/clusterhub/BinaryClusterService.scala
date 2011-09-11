@@ -3,6 +3,8 @@ package org.riedelcastro.cmonnoun.clusterhub
 import org.riedelcastro.cmonnoun.clusterhub.BinaryClusterService._
 import collection.mutable.HashMap
 import akka.actor.{ActorRef, Actor}
+import com.mongodb.casbah.Imports._
+
 /**
  * @author sriedel
  */
@@ -111,6 +113,55 @@ trait InMemoryBinaryClusterStorage extends BinaryClusterStorage {
   }
 }
 
+trait MongoBinaryClusterStorage extends BinaryClusterStorage with MongoSupport {
+
+  this: BinaryClusterService =>
+
+  lazy val coll = collFor("cluster",name)
+  def loadInstances(ids: Stream[Any]) = {
+    val q = MongoDBObject("_id" -> MongoDBObject("$in" -> ids))
+    val result = for (dbo <- coll.find(q)) yield {
+      val id = dbo("_id")
+      val prob = dbo.getAs[Double]("prob").getOrElse(0.5)
+      val label = dbo.getAs[Double]("label")
+      val feats = dbo.getAs[BasicDBList]("feats").map(_.toSeq)
+      val penalty = dbo.as[Double]("penalty")
+      BinaryClusterService.Instance(id,prob,penalty,label,feats.getOrElse(Seq.empty).map(_.asInstanceOf[Int]).toSet)
+    }
+    result.toStream
+  }
+
+  private def storeField[T](data:Seq[T],field:String, id:T=>Any, value:T=>Any) {
+    for (d <- data) {
+      val q = MongoDBObject("_id" -> id(d))
+      val u = MongoDBObject("$set" -> MongoDBObject("feats" -> value(d)))
+      coll.update(q,u)
+    }
+  }
+
+  private def storeOptionalField[T](data:Seq[T],field:String, id:T=>Any, value:T=>Option[Any]) {
+    for (d <- data; v <- value(d)) {
+      val q = MongoDBObject("_id" -> id(d))
+      val u = MongoDBObject("$set" -> MongoDBObject("feats" -> v))
+      coll.update(q,u)
+    }
+  }
+
+
+  def storeFeatures(features: Stream[BinaryClusterService.Features]) {
+    storeField[BinaryClusterService.Features](features,"feats",_.id, _.features.toArray)
+  }
+  def storeLabels(labels: Stream[Label]) {
+    storeField[BinaryClusterService.Label](labels,"label",_.id, _.label)
+  }
+  def storePenalties(penalties: Stream[Penalty]) {
+    storeField[BinaryClusterService.Penalty](penalties,"penalty",_.id, _.penalty)
+  }
+  def storeProbabilities(probabilities: Stream[Probability]) {
+    storeField[BinaryClusterService.Probability](probabilities,"prob",_.id, _.prob)
+  }
+}
+
 
 trait BinaryClusterEstimation {
 
@@ -174,6 +225,11 @@ object BinaryClusterService {
 class BasicBinaryClusterService(val name:String)
   extends BinaryClusterService with InMemoryBinaryClusterStorage with BinaryNaiveBayesModel
 
+class BinaryClusterServiceRegistry extends ServiceRegistry {
+  def create(name: String) = new BasicBinaryClusterService(name)
+  def registryName = "cluster"
+}
+
 class BinaryClusterHelper(val clusterService: ActorRef) extends Actor {
 
   protected def receive = {
@@ -223,8 +279,6 @@ object BinaryClusterTest {
     featureService.stop()
     clusterService.stop()
     entityService.stop()
-
-
 
   }
 }

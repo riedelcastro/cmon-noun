@@ -7,6 +7,7 @@ import org.riedelcastro.cmonnoun.clusterhub.TaskManager.SetTask
 import org.riedelcastro.cmonnoun.clusterhub.Mailbox
 import org.riedelcastro.cmonnoun.clusterhub.ClusterManager.SetCluster
 import org.riedelcastro.cmonnoun.clusterhub.CorpusService.SetCorpus
+import org.riedelcastro.cmonnoun.comet.EntityListViewer.SetParams
 
 /**
  * @author sriedel
@@ -29,7 +30,14 @@ case class ClusterParam(taskName: String, clusterId: String)
 case object Noop
 class ClusterSnippet(val param: String) extends CometInitializer(
   "cluster",
-  param, SetCluster(param, Controller.clusterHub))
+  param,
+  SetCluster(param, Controller.clusterHub))
+
+class EntitiesSnippet(val param: String) extends CometInitializer(
+  "entities",
+  param,
+  SetParams(param,Some("freebasenyt")))
+
 
 class CorpusSnippet(val param: String) extends CometInitializer("corpus", param, SetCorpus(param))
 
