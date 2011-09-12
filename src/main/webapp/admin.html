@@ -1,0 +1,30 @@
+<!--suppress ALL -->
+<div class="lift:surround?with=default;at=content">
+    <h2>Admin</h2>
+
+    <div class="lift:LoadFreebaseEntitiesSnippet">
+        Load Freebase Entities
+        <form method="get">
+            <div id="load_entities_dest"></div>
+            <div id="load_entities_workers"></div>
+            <div id="load_entities_submit"></div>
+        </form>
+        <lift:comet type="ProgressMonitorComet" name="freebase_load_monitor">
+            <div id="monitor"></div>
+        </lift:comet>
+
+
+    </div>
+
+    <div id="nyt">
+        <form method="get">
+            <div id="load_nyt_prefix"></div>
+            <div id="load_nyt_dest"></div>
+            <div id="load_nyt_workers"></div>
+            <div id="load_nyt_submit"></div>
+        </form>
+    </div>
+
+
+</div>
+

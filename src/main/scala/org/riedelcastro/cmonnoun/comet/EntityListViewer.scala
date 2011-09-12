@@ -117,10 +117,10 @@ class EntityListViewer extends CallMailboxFirst with HasLogger {
         case ents => ".entity *" #> ents.map(ent => {
           Seq(
             ".entity_id *" #> ent.entity.id,
-            ".entity_types *" #> freebaseEntityTypeFilter(ent.entity.freebaseTypes).mkString(","),
+            ".entity_types *" #> freebaseEntityTypeFilter(ent.entity.freebaseTypes).mkString(", "),
             ".entity_name *" #> ent.entity.name,
             ".entity_mentions *" #> ent.mentions.size,
-            ".entity_clusters *" #> ent.clusters.mkString(",")
+            ".entity_clusters *" #> ent.clusters.mkString(", ")
           ).reduce(_ & _)
         })
       }

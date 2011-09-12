@@ -135,21 +135,30 @@ trait MongoBinaryClusterStorage extends BinaryClusterStorage with MongoSupport {
     for (d <- data) {
       val q = MongoDBObject("_id" -> id(d))
       val u = MongoDBObject("$set" -> MongoDBObject("feats" -> value(d)))
-      coll.update(q,u)
+      coll.update(q,u,true,false)
     }
   }
+
+  private def storeListField[T](data:Seq[T],field:String, id:T=>Any, value:T=>Any) {
+    for (d <- data) {
+      val q = MongoDBObject("_id" -> id(d))
+      val u = MongoDBObject("$pushAll" -> MongoDBObject("feats" -> value(d)))
+      coll.update(q,u,true,false)
+    }
+  }
+
 
   private def storeOptionalField[T](data:Seq[T],field:String, id:T=>Any, value:T=>Option[Any]) {
     for (d <- data; v <- value(d)) {
       val q = MongoDBObject("_id" -> id(d))
       val u = MongoDBObject("$set" -> MongoDBObject("feats" -> v))
-      coll.update(q,u)
+      coll.update(q,u,true,false)
     }
   }
 
 
   def storeFeatures(features: Stream[BinaryClusterService.Features]) {
-    storeField[BinaryClusterService.Features](features,"feats",_.id, _.features.toArray)
+    storeListField[BinaryClusterService.Features](features,"feats",_.id, _.features.toArray)
   }
   def storeLabels(labels: Stream[Label]) {
     storeField[BinaryClusterService.Label](labels,"label",_.id, _.label)
@@ -223,7 +232,7 @@ object BinaryClusterService {
 }
 
 class BasicBinaryClusterService(val name:String)
-  extends BinaryClusterService with InMemoryBinaryClusterStorage with BinaryNaiveBayesModel
+  extends BinaryClusterService with MongoBinaryClusterStorage with BinaryNaiveBayesModel
 
 class BinaryClusterServiceRegistry extends ServiceRegistry {
   def create(name: String) = new BasicBinaryClusterService(name)

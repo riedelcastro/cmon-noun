@@ -17,17 +17,6 @@ import org.riedelcastro.cmonnoun.snippet.ClusterParam
  */
 class Boot {
   def boot {
-//    if (!DB.jndiJdbcConnAvailable_?) {
-//      val vendor =
-//        new StandardDBVendor(Props.get("db.driver") openOr "org.h2.Driver",
-//          Props.get("db.url") openOr
-//            "jdbc:h2:lift_proto.db;AUTO_SERVER=TRUE",
-//          Props.get("db.user"), Props.get("db.password"))
-//
-//      LiftRules.unloadHooks.append(vendor.closeAllConnections_! _)
-//
-//      DB.defineConnectionManager(DefaultConnectionIdentifier, vendor)
-//    }
 
 //    StatelessJson.init()
     //LiftRules.dispatch.append(AsyncRest)
@@ -54,11 +43,12 @@ class Boot {
       s => Full(s),
       pi => pi) / "entities"
 
+    val admin = Menu("Admin") / "admin"
 
 
     // Build SiteMap
     def sitemap() = SiteMap(
-      menu, cluster, corpus, entities ,
+      menu, cluster, corpus, entities , admin,
       Menu("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
       // Menu with special Link
       Menu(Loc("Static", Link(List("static"), true, "/static/index"),

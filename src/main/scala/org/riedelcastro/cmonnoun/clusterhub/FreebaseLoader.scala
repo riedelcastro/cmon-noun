@@ -15,10 +15,12 @@ object FreebaseLoader extends HasLogger {
 
   case class LoadEntities(lines: TraversableOnce[String])
 
-  class EntityLoaderMaster2(val em: ActorRef) extends SimpleDivideAndConquerActor {
+  trait EntityLoading extends DivideAndConquer {
+
+    def em:ActorRef
+
     type BigJob = LoadEntities
     type SmallJob = LoadEntities
-    def numberOfWorkers = 10
     def unwrapJob = {case l: LoadEntities => l}
     def divide(bigJob: LoadEntities) = for (group <- bigJob.lines.toIterator.grouped(10000)) yield
       LoadEntities(group)
@@ -38,20 +40,25 @@ object FreebaseLoader extends HasLogger {
     }
   }
 
+  class EntityLoaderMaster2(val em: ActorRef, val numberOfWorkers:Int)
+    extends SimpleDivideAndConquerActor with EntityLoading {
+
+  }
+
+  class EntityLoader(val em: ActorRef,val numberOfWorkers:Int)
+    extends SimpleDivideAndConquerActor with EntityLoading {
+
+  }
+
+
 
   def main(args: Array[String]) {
     val entityFile = NeoConf.get[File]("freebase-entities")
     val lines = LoadEntities(Source.fromFile(entityFile).getLines())
     val em = Actor.actorOf(new EntityService("freebase")).start()
-    em.mailboxSize
-    val entityLoader = actorOf(new EntityLoaderMaster2(em)).start()
-    DivideAndConquerActor.bigJobDoneHook(entityLoader) {
-      () =>
-        entityLoader.stop()
-        Scheduler.schedule(em, StopWhenMailboxEmpty, 0, 1, TimeUnit.SECONDS)
-    }
-
-    entityLoader ! lines
+    val entityLoader = actorOf(new EntityLoader(em,10)).start()
+    entityLoader !! lines
+    Actor.registry.shutdownAll()
 
 
   }
