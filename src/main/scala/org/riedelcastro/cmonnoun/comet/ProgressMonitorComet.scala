@@ -34,7 +34,7 @@ class ProgressMonitorComet extends WithBridge with CometActor {
   }
 
   def render = {
-    "#monitor" #> Text(lastProgress.map(p => "%d / %d".format(p.solved, p.of)).getOrElse("N/A"))
+    ".monitor" #> Text(lastProgress.map(p => "%d / %d".format(p.solved, p.of)).getOrElse("N/A"))
   }
 }
 

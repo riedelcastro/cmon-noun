@@ -2,27 +2,58 @@
 <div class="lift:surround?with=default;at=content">
     <h2>Admin</h2>
 
+    <h3>Load Freebase Entities</h3>
     <div class="lift:LoadFreebaseEntitiesSnippet">
-        Load Freebase Entities
         <form method="get">
-            <div id="load_entities_dest"></div>
-            <div id="load_entities_workers"></div>
+            Dest: <div id="load_entities_dest"></div>
+            Workers: <div id="load_entities_workers"></div>
             <div id="load_entities_submit"></div>
         </form>
         <lift:comet type="ProgressMonitorComet" name="freebase_load_monitor">
-            <div id="monitor"></div>
+            <div class="monitor"></div>
         </lift:comet>
 
 
     </div>
 
-    <div id="nyt">
+    <h3>Load NYT documents</h3>
+    <div class="lift:LoadNYTSnippet">
         <form method="get">
-            <div id="load_nyt_prefix"></div>
-            <div id="load_nyt_dest"></div>
-            <div id="load_nyt_workers"></div>
+            Prefix: <div id="load_nyt_prefix"></div>
+            Dest: <div id="load_nyt_dest"></div>
+            Workers: <div id="load_nyt_workers"></div>
             <div id="load_nyt_submit"></div>
         </form>
+        <lift:comet type="ProgressMonitorComet" name="nyt_load_monitor">
+            <div class="monitor"></div>
+        </lift:comet>
+    </div>
+
+    <h3>Extract mentions</h3>
+    <div class="lift:ExtractMentionsSnippet">
+        <form method="get">
+            Source Corpus: <div id="extract_mention_source"></div>
+            Dest: <div id="extract_mention_dest"></div>
+            Workers: <div id="extract_mention_workers"></div>
+            <div id="extract_mention_submit"></div>
+        </form>
+        <lift:comet type="ProgressMonitorComet" name="extract_mention_monitor">
+            <div class="monitor"></div>
+        </lift:comet>
+    </div>
+
+    <h3>Extract mentions</h3>
+    <div class="lift:ExtractMentionsSnippet">
+        <form method="get">
+            Source Mentions: <div id="align_mention_source_mentions"></div>
+            Source Entities: <div id="align_mention_source_entities"></div>
+            Dest: <div id="align_mention_dest"></div>
+            Workers: <div id="align_mention_workers"></div>
+            <div id="align_mention_submit"></div>
+        </form>
+        <lift:comet type="ProgressMonitorComet" name="extract_mention_monitor">
+            <div class="monitor"></div>
+        </lift:comet>
     </div>
 
 
